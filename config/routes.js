@@ -20,6 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /': 'HomepageController.index',
+  'GET /download/windows': 'DownloadController.index',
 
 
   /***************************************************************************
