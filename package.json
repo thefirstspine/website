@@ -5,17 +5,21 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
+    "@types/node": "^13.5.0",
     "bulma": "^0.8.0",
+    "dotenv": "^8.2.0",
     "grunt": "1.0.4",
     "grunt-sass": "^3.1.0",
+    "node-fetch": "^2.6.0",
+    "node-sass": "*",
     "sails": "^1.2.3",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
-    "sails-hook-sockets": "^2.0.0",
-    "node-sass": "*"
+    "sails-hook-sockets": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "5.16.0"

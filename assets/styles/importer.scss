@@ -21,12 +21,29 @@ $table-background-color: rgba(0, 0, 0, .1);
 $table-color: #FFF;
 $table-head-cell-color: $primary;
 
-/* Import the icons */
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
-
 /* Import TFS globals */
 @import "../../node_modules/bulma/bulma.sass";
 
+hr {
+  height: 1px;
+  background: #666;
+  border: 0;
+}
+
 .has-margin-top {
   margin-top: 1em;
+}
+
+.has-margin-top-2 {
+  margin-top: 50px;
+}
+
+.container {
+  padding: 0 1em;
+}
+
+.small-content {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
