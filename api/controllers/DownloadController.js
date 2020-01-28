@@ -8,8 +8,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 
-//const BASE_DIR = '/data/dist_production';
-const BASE_DIR = `${__dirname}/../../dist_production`;
+const BASE_DIR = '/data/dist_production';
+//const BASE_DIR = `${__dirname}/../../dist_production`;
 
 const getVersion = function() {
   const path = `${BASE_DIR}/version`;
