@@ -133,3 +133,5 @@ lib-cov
 *.pid
 
 dist_production
+
+.env
