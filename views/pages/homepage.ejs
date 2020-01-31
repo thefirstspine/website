@@ -76,3 +76,51 @@
     <p class="has-margin-top">Oui ! A la fin de cette phase de tests, vos récompenses vous seront restituées après la phase de tests via un code et envoyés à l'adresse e-mail correspondante au compte utilisé.</p>
   </div>
 </div>
+
+<hr class="has-margin-top-2" />
+
+<div class="container">
+  <div class="small-content has-margin-top-2"></div>
+    <h2 class="is-size-2 has-margin-top-2">Etat des services</h2>
+    <div class="columns has-margin-top-2">
+      <div class="column is-size-4">
+        <script>
+          checkservice('http://beta.arena.thefirstspine.fr/status')
+        </script>
+        Parties en ligne
+      </div>
+      <div class="column is-size-4">
+        <script>
+          checkservice('http://beta.auth.thefirstspine.fr/status')
+        </script>
+        Authentification
+      </div>
+      <div class="column is-size-4">
+        <script>
+          checkservice('http://beta.bots.thefirstspine.fr/status')
+        </script>
+        JcE
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-size-4">
+        <script>
+          checkservice('http://beta.messaging.thefirstspine.fr/status')
+        </script>
+        Notifications en direct
+      </div>
+      <div class="column is-size-4">
+        <script>
+          checkservice('http://beta.rest.thefirstspine.fr/status')
+        </script>
+        Ressources
+      </div>
+      <div class="column is-size-4">
+        <script>
+          checkservice('http://beta.rooms.thefirstspine.fr/status')
+        </script>
+        Espaces de discussions
+      </div>
+    </div>
+  </div>
+</div>
