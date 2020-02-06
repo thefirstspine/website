@@ -15,17 +15,45 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
-        Téléchargez le client<br />
-        <small class="is-size-6">Version <%= version %></small>
+        Téléchargez le client
       </h1>
+
+      <% if (windowsVersion) { %>
       <a class="button is-info is-size-5" href="/download/windows" target="_blank" onclick="ga('send', 'event', 'Download', 'windows', '<%= version %>')">
         <i class="fab fa-windows"></i> &nbsp;
-        Téléchargez pour Windows
+        Windows (v<%= windowsVersion %>)
       </a>
-      <a disabled class="button is-light is-size-5">
-        <i class="fab fa-apple"></i> &nbsp;
-        Téléchargez pour Mac
-      </a>
+      <% } else { %>
+        <a disabled class="button is-info is-size-5">
+          <i class="fab fa-windows"></i> &nbsp;
+          Bientôt disponible
+        </a>
+      <% } %>
+
+      <% if (macosVersion) { %>
+        <a disabled class="button is-light is-size-5">
+          <i class="fab fa-apple"></i> &nbsp;
+          Mac OS (v<%= macosVersion %>)
+        </a>
+      <% } else { %>
+        <a disabled class="button is-light is-size-5">
+          <i class="fab fa-apple"></i> &nbsp;
+          Bientôt disponible
+        </a>
+      <% } %>
+
+      <% if (linuxVersion) { %>
+        <a disabled class="button is-primary is-size-5">
+          <i class="fab fa-linux"></i> &nbsp;
+          Linux (v<%= linuxVersion %>)
+        </a>
+      <% } else { %>
+        <a disabled class="button is-primary is-size-5">
+          <i class="fab fa-linux"></i> &nbsp;
+          Bientôt disponible
+        </a>
+      <% } %>
+
     </div>
   </div>
 </section>

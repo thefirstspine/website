@@ -6,16 +6,15 @@
  */
 
 const fs = require('fs');
-const yaml = require('js-yaml');
 
 const BASE_DIR = '/data/dist_production';
 
-const getVersion = function() {
+const getVersion = function(plateform) {
   try {
-    const path = `${BASE_DIR}/version`;
+    const path = `${BASE_DIR}/${plateform}/version`;
     return fs.readFileSync(path);
   } catch (e) {
-    return 'unknown';
+    return false;
   }
 };
 
@@ -24,8 +23,8 @@ module.exports = {
   windows(req, res) {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.exe');
-      const version = getVersion();
-      const filepath = `${BASE_DIR}/app-${version}.exe`;
+      const version = getVersion('windows');
+      const filepath = `${BASE_DIR}/windows/app-${version}.exe`;
       if (!fs.existsSync(filepath)) {
         throw new Error("500");
       }
@@ -36,11 +35,26 @@ module.exports = {
     }
   },
 
-  apple(req, res) {
+  macos(req, res) {
     try {
-      res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.app');
-      const version = getVersion();
-      const filepath = `${BASE_DIR}/app-${version}.app`;
+      res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.pkg');
+      const version = getVersion('macos');
+      const filepath = `${BASE_DIR}/macos/app-${version}.pkg`;
+      if (!fs.existsSync(filepath)) {
+        throw new Error("500");
+      }
+      const filestream = fs.createReadStream(filepath);
+      filestream.pipe(res);
+    } catch (e) {
+      throw new Error("500");
+    }
+  },
+
+  linux(req, res) {
+    try {
+      res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.deb');
+      const version = getVersion('linux');
+      const filepath = `${BASE_DIR}/linux/app-${version}.deb`;
       if (!fs.existsSync(filepath)) {
         throw new Error("500");
       }

@@ -9,12 +9,12 @@ const fs = require('fs');
 
 const BASE_DIR = '/data/dist_production';
 
-const getVersion = function() {
+const getVersion = function(plateform) {
   try {
-    const path = `${BASE_DIR}/version`;
+    const path = `${BASE_DIR}/${plateform}/version`;
     return fs.readFileSync(path);
   } catch (e) {
-    return 'unknown';
+    return false;
   }
 };
 
@@ -24,7 +24,9 @@ module.exports = {
     return res.view(
       'pages/homepage.ejs',
       {
-        version: getVersion(),
+        windowsVersion: getVersion('windows'),
+        macosVersion: getVersion('macos'),
+        linuxVersion: getVersion('linux'),
       }
     );
   }
