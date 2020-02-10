@@ -5,7 +5,7 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
- const BASE_DIR = '/block-storage/website/data';
+const BASE_DIR = '/block-storage/website/data/dist_production';
 
 module.exports = {
 
