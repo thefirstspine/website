@@ -53,6 +53,31 @@ body {
   }
 }
 
-.under-navbar-fixed-top {
-  padding-top: 100px;
+.separator {
+  background-image: url(../images/separator.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60px;
+}
+
+#homepage {
+  .homepage-hero {
+    background-image: url(../images/top-hunter.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 700px;
+    padding-top: 200px;
+    .content {
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      margin: 0 auto;
+      p {
+        text-shadow: #000 0 0 20px, #000 0 0 10px, #000 0 0 5px;
+      }
+      a {
+        text-shadow: none;
+      }
+    }
+  }
 }
