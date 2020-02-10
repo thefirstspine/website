@@ -7,7 +7,7 @@
 
 module.exports = {
 
-  windows(req, res) {
+  async windows(req, res) {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.exe');
       const version = await sails.helpers.getAppVersion('windows');
@@ -22,7 +22,7 @@ module.exports = {
     }
   },
 
-  macos(req, res) {
+  async macos(req, res) {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.pkg');
       const version = await sails.helpers.getAppVersion('macos');
@@ -37,7 +37,7 @@ module.exports = {
     }
   },
 
-  linux(req, res) {
+  async linux(req, res) {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.deb');
       const version = await sails.helpers.getAppVersion('linux');
