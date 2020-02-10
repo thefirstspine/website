@@ -24,6 +24,12 @@ $table-head-cell-color: $primary;
 /* Import TFS globals */
 @import "../../node_modules/bulma/bulma.sass";
 
+[disabled] {
+  opacity: .5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 body {
   font-size: 18px;
 }
