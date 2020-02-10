@@ -5,6 +5,8 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+ const BASE_DIR = '/block-storage/website/data';
+
 module.exports = {
 
   async windows(req, res) {

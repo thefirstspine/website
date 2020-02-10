@@ -8,6 +8,7 @@ module.exports = {
   },
 
   fn: function(inputs, exits) {
+    const BASE_DIR = '/block-storage/website/data';
     try {
       const path = `${BASE_DIR}/${inputs.plateform}/version`;
       return exits.success(fs.readFileSync(path));
