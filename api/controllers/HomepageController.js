@@ -5,10 +5,6 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const fs = require('fs');
-
-const BASE_DIR = '/data/dist_production';
-
 module.exports = {
 
   async index(req, res) {
