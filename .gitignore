@@ -135,3 +135,4 @@ lib-cov
 dist_production
 
 .env
+data

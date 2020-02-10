@@ -3,7 +3,7 @@
     <h1 class="has-text-centered is-size-3">Téléchargez le client</h1>
     <p class="has-text-centered">
       <% if (windowsVersion) { %>
-      <a class="button is-info is-size-5" href="/download/windows" target="_blank" onclick="ga('send', 'event', 'Download', 'windows', '<%= version %>')">
+      <a class="button is-info is-size-5" href="/download/windows">
         <i class="fab fa-windows"></i> &nbsp;
         Windows (v<%= windowsVersion %>)
       </a>
@@ -15,7 +15,7 @@
       <% } %>
 
       <% if (macosVersion) { %>
-        <a disabled class="button is-light is-size-5">
+        <a class="button is-light is-size-5" href="/download/macos">
           <i class="fab fa-apple"></i> &nbsp;
           Mac OS (v<%= macosVersion %>)
         </a>
@@ -27,7 +27,7 @@
       <% } %>
 
       <% if (linuxVersion) { %>
-        <a disabled class="button is-primary is-size-5">
+        <a class="button is-primary is-size-5" href="/download/linux">
           <i class="fab fa-linux"></i> &nbsp;
           Linux (v<%= linuxVersion %>)
         </a>

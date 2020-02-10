@@ -5,7 +5,10 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const BASE_DIR = '/block-storage/website/data/dist_production';
+const fs = require('fs');
+const distDirectory = sails.config.custom.dotenv ?
+  sails.config.custom.dotenv.DATA + 'dist_production' :
+  process.env.DATA + 'dist_production';
 
 module.exports = {
 
@@ -13,7 +16,7 @@ module.exports = {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.exe');
       const version = await sails.helpers.getAppVersion('windows');
-      const filepath = `${BASE_DIR}/windows/app-${version}.exe`;
+      const filepath = `${distDirectory}/windows/app-${version}.exe`;
       if (!fs.existsSync(filepath)) {
         throw new Error("500");
       }
@@ -28,7 +31,7 @@ module.exports = {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.pkg');
       const version = await sails.helpers.getAppVersion('macos');
-      const filepath = `${BASE_DIR}/macos/app-${version}.pkg`;
+      const filepath = `${distDirectory}/macos/app-${version}.pkg`;
       if (!fs.existsSync(filepath)) {
         throw new Error("500");
       }
@@ -43,7 +46,7 @@ module.exports = {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.deb');
       const version = await sails.helpers.getAppVersion('linux');
-      const filepath = `${BASE_DIR}/linux/app-${version}.deb`;
+      const filepath = `${distDirectory}/linux/app-${version}.deb`;
       if (!fs.existsSync(filepath)) {
         throw new Error("500");
       }

@@ -1,3 +1,8 @@
+const fs = require('fs');
+const distDirectory = sails.config.custom.dotenv ?
+  sails.config.custom.dotenv.DATA + 'dist_production' :
+  process.env.DATA + 'dist_production';
+
 module.exports = {
 
   inputs: {
@@ -8,9 +13,8 @@ module.exports = {
   },
 
   fn: function(inputs, exits) {
-    const BASE_DIR = '/block-storage/website/data/dist_production';
     try {
-      const path = `${BASE_DIR}/${inputs.plateform}/version`;
+      const path = `${distDirectory}/${inputs.plateform}/version`;
       return exits.success(fs.readFileSync(path));
     } catch (e) {
       return exits.success(false);
