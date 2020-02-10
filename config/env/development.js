@@ -252,6 +252,7 @@ module.exports = {
     ***************************************************************************/
     onlyAllowOrigins: [
      'http://beta.arena.thefirstspine.fr',
+     'http://localhost:1337',
     ],
 
 
