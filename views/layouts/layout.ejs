@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The First Spine Arena</title>
+    <title>The First Spine</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -34,15 +34,7 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157147603-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-157147603-1');
-    </script>
+    <script src="<%= solidPancakeUrl %>/sirup.js"></script>
     <script>
       function checkservice(uri) {
         fetch(uri)
@@ -62,6 +54,42 @@
   </head>
 
   <body>
+    <nav class="navbar is-fixed-top is-tfs">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-burger burger">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <a href="/" class="navbar-item">
+              Accueil
+            </a>
+            <a href="/about" class="navbar-item">
+              A propos du jeu
+            </a>
+            <a href="/arena" class="navbar-item">
+              Jouer en ligne
+            </a>
+            <a href="/arena" class="navbar-item">
+              Jouer avec la version PnP
+            </a>
+            <a href="/events" class="navbar-item">
+              Evenements
+            </a>
+          </div>
+          <div class="navbar-end">
+            <a href="/login" class="navbar-item">
+              &nbsp;
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <%- body %>
 
     <footer class="has-margin-top-2">
