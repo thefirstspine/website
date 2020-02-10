@@ -5,25 +5,12 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const fs = require('fs');
-
-const BASE_DIR = '/data/dist_production';
-
-const getVersion = function(plateform) {
-  try {
-    const path = `${BASE_DIR}/${plateform}/version`;
-    return fs.readFileSync(path);
-  } catch (e) {
-    return false;
-  }
-};
-
 module.exports = {
 
   windows(req, res) {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.exe');
-      const version = getVersion('windows');
+      const version = await sails.helpers.getAppVersion('windows');
       const filepath = `${BASE_DIR}/windows/app-${version}.exe`;
       if (!fs.existsSync(filepath)) {
         throw new Error("500");
@@ -38,7 +25,7 @@ module.exports = {
   macos(req, res) {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.pkg');
-      const version = getVersion('macos');
+      const version = await sails.helpers.getAppVersion('macos');
       const filepath = `${BASE_DIR}/macos/app-${version}.pkg`;
       if (!fs.existsSync(filepath)) {
         throw new Error("500");
@@ -53,7 +40,7 @@ module.exports = {
   linux(req, res) {
     try {
       res.setHeader('Content-disposition', 'attachment; filename=the-first-spine-arena-setup.deb');
-      const version = getVersion('linux');
+      const version = await sails.helpers.getAppVersion('linux');
       const filepath = `${BASE_DIR}/linux/app-${version}.deb`;
       if (!fs.existsSync(filepath)) {
         throw new Error("500");
