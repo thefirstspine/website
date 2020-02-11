@@ -58,6 +58,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 60px;
+  &.has-margin {
+    margin: 2em 0;
+  }
 }
 
 #arena {
