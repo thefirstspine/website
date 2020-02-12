@@ -30,8 +30,29 @@ $table-head-cell-color: $primary;
   cursor: not-allowed;
 }
 
+.has-margin-top-2 {
+  margin-top: 2em;
+}
+
+.has-margin-top-1 {
+  margin-top: 1em;
+}
+
 body {
   font-size: 18px;
+}
+
+.button {
+  &.is-facebook {
+    background-color: #3b5998;
+    border-color: #3b5998;
+    color: #FFF;
+  }
+  &.is-youtube {
+    background-color: #E62117;
+    border-color: #E62117;
+    color: #FFF;
+  }
 }
 
 .navbar.is-tfs {
