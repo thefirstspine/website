@@ -21,6 +21,7 @@ module.exports.routes = {
 
   'GET /': 'HomepageController.index',
   'GET /arena': 'ArenaController.index',
+  'GET /beta': 'BetaController.index',
   'GET /download/windows': 'DownloadController.windows',
 
 

@@ -40,6 +40,24 @@ $table-head-cell-color: $primary;
 
 body {
   font-size: 18px;
+  &.has-announcement {
+    padding-top: 2em;
+    .navbar.is-tfs {
+      top: 2em!important;
+    }
+  }
+}
+
+.announcement {
+  background: $danger;
+  color: #FFF;
+  height: 2em;
+  padding: .25em;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  text-align: center;
 }
 
 .button {
@@ -84,7 +102,7 @@ body {
   }
 }
 
-#arena {
+#arena, #beta {
   padding-top: 150px;
 }
 
