@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
     <script src="<%= solidPancakeUrl %>/sirup.js"></script>
+    <script>sirup.persistantSession('tfs-website', navigator.platform).then(() => { sirup.event('viewPage', 'navigation', document.location.href); })</script>
     <script>
       function checkservice(uri) {
         fetch(uri)
