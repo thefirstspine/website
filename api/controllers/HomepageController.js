@@ -18,6 +18,9 @@ module.exports = {
         news: await sails.models.news.find({
           limit: 3,
           sort: 'createdAt DESC',
+          where: {
+            language: 'fr',
+          },
         }),
         currentCycle: await sails.helpers.getCycle('current'),
       }
