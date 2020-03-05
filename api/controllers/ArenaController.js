@@ -11,7 +11,7 @@ module.exports = {
     return res.view(
       'pages/arena.ejs',
       {
-        ...await sails.helpers.layoutConfig(),
+        ...await sails.helpers.layoutConfig(req.session.access_token),
         windowsVersion: await sails.helpers.getAppVersion('windows'),
         macosVersion: await sails.helpers.getAppVersion('macos'),
         linuxVersion: await sails.helpers.getAppVersion('linux'),
