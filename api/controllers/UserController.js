@@ -53,6 +53,10 @@ module.exports = {
 
   async profile(req, res) {
     const layoutConfig = await sails.helpers.layoutConfig(req.session.access_token);
+    if (!layoutConfig.user_id) {
+      return res.forbidden()
+    }
+
     const errors = [];
 
     if (req.method === 'POST') {
