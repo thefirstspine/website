@@ -51,6 +51,21 @@ module.exports = {
     );
   },
 
+  async subscribe(req, res) {
+    const errors = [];
+
+    if (req.method === 'POST') {
+    }
+
+    return res.view(
+      'pages/subscribe.ejs',
+      {
+        ...await sails.helpers.layoutConfig(req.session.access_token),
+        errors,
+      }
+    );
+  },
+
   async profile(req, res) {
     const layoutConfig = await sails.helpers.layoutConfig(req.session.access_token);
     if (!layoutConfig.user_id) {

@@ -21,6 +21,7 @@ module.exports.routes = {
 
   // Pages
   'GET /': 'HomepageController.index',
+  'GET /cgu': 'CGUController.index',
 
   // Arena
   'GET /arena': 'ArenaController.index',
@@ -30,6 +31,9 @@ module.exports.routes = {
   'POST /login': 'UserController.login',
   'GET /login': 'UserController.login',
   'GET /profile': 'UserController.profile',
+  'POST /profile': 'UserController.profile',
+  'GET /subscribe': 'UserController.subscribe',
+  'POST /subscribe': 'UserController.subscribe',
 
 
   /***************************************************************************

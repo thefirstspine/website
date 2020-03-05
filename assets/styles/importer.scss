@@ -126,7 +126,7 @@ body {
   }
 }
 
-#arena, #beta, #login, #profile {
+#arena, #beta, #login, #profile, #subscribe, #cgu {
   padding-top: 150px;
 }
 
@@ -200,5 +200,45 @@ body {
     p {
       margin-top: 1em;
     }
+  }
+}
+
+#subscribe {
+  .illustration {
+    height: 100%;
+    background-image: url(../images/subscribe.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  h1 {
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+  }
+  hr {
+    height: 1px;
+    background: #FFF;
+    margin: 1em 0;
+  }
+  .middle {
+    vertical-align: middle;
+  }
+  .button {
+    width: 100%;
+  }
+  .buttons {
+    margin-top: 2em;
+    .field {
+      width: 100%;
+    }
+  }
+}
+
+#cgu {
+  h2 {
+    margin: 2em 0;
+  }
+  p {
+    margin: 1em 0;
   }
 }
