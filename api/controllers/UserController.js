@@ -45,7 +45,23 @@ module.exports = {
     return res.view(
       'pages/login.ejs',
       {
-        ...await sails.helpers.layoutConfig(),
+        ...await sails.helpers.layoutConfig(req.session.access_token),
+        errors,
+      }
+    );
+  },
+
+  async profile(req, res) {
+    const layoutConfig = await sails.helpers.layoutConfig(req.session.access_token);
+    const errors = [];
+
+    if (req.method === 'POST') {
+    }
+
+    return res.view(
+      'pages/profile.ejs',
+      {
+        ...layoutConfig,
         errors,
       }
     );
