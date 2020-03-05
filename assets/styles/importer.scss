@@ -80,15 +80,39 @@ body {
   background-position: center;
   padding: 27px;
   z-index: 1;
+  a.navbar-item:focus,
+  a.navbar-item:focus-within,
+  a.navbar-item:hover,
+  a.navbar-item.is-active,
+  .navbar-link:focus,
+  .navbar-link:focus-within,
+  .navbar-link:hover,
+  .navbar-link.is-active {
+    background: transparent;
+  }
   .navbar-item {
     color: #FFF;
     text-transform: uppercase;
     padding: 0.5rem 1.5rem;
     position: relative;
-    &:hover {
+    &:hover, &:focus {
       color: $primary;
       background: transparent;
+      .navbar-link {
+        background: transparent;
+      }
     }
+  }
+  .navbar-link {
+    color: #FFF;
+    background: transparent;
+  }
+  .navbar-link:not(.is-arrowless)::after {
+    right: 0.125em;
+    border-color: $primary;
+  }
+  .navbar-dropdown {
+    background: #222;
   }
 }
 
@@ -102,7 +126,7 @@ body {
   }
 }
 
-#arena, #beta {
+#arena, #beta, #login {
   padding-top: 150px;
 }
 
@@ -124,6 +148,57 @@ body {
       a {
         text-shadow: none;
       }
+    }
+  }
+  .news-list {
+    margin-top: -150px;
+    margin-bottom: 100px;
+    text-align: center;
+    height: 500px;
+    overflow: hidden;
+    .news-item {
+      width: 420px;
+      height: 500px;
+      display: inline-block;
+      padding: 20px;
+      background: url(/images/square-news.png);
+    }
+  }
+}
+
+#login {
+  .illustration {
+    height: 100%;
+    background-image: url(../images/login.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  h1 {
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+  }
+  hr {
+    height: 1px;
+    background: #FFF;
+    margin: 1em 0;
+  }
+  .middle {
+    vertical-align: middle;
+  }
+  .button {
+    width: 100%;
+  }
+  .buttons {
+    margin-top: 2em;
+    .field {
+      width: 100%;
+    }
+  }
+  .informations {
+    margin-top: 2em;
+    p {
+      margin-top: 1em;
     }
   }
 }

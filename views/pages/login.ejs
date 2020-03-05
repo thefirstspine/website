@@ -1,0 +1,72 @@
+<div id="login" class="">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <div class="columns">
+          <div class="column is-one-third">
+            <div class="illustration"></div>
+          </div>
+          <form class="column" method="POST" action="/login">
+            <h1 class="is-size-3 has-text-centered">CONNEXION</h1>
+            <% if(errors.length) { %>
+              <% errors.forEach(function(error){ %>
+                <article  class="message is-danger">
+                  <div class="message-body">
+                    <%= error %>
+                  </div>
+                </article >
+              <% }); %>
+            <% } %>
+            <div class="field">
+              <div class="control has-icons-left">
+                <input class="input is-medium" type="email" name="email" placeholder="Adresse e-mail">
+                <span class="icon is-medium is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control has-icons-left">
+                <input class="input is-medium" type="password" name="password" placeholder="Mot de passe">
+                <span class="icon is-medium is-left">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+            </div>
+            <div class="buttons">
+              <div class="field">
+                <div class="control">
+                  <input type="submit" value="Se connecter maintenant" class="button is-primary is-size-5" />
+                </div>
+              </div>
+              <div class="field">
+                <div class="columns">
+                  <div class="column">
+                    <hr class="middle" />
+                  </div>
+                  <div class="column has-text-centered is-one-quarter">
+                    <span class="middle">ou</span>
+                  </div>
+                  <div class="column">
+                    <hr class="middle" />
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <a class="button is-facebook is-size-5">Connexion avec Facebook</a>
+                </div>
+              </div>
+            </div>
+            <div class="informations">
+              <p class="has-text-centered">
+                <a href="/forgotten-password" class="has-text-primary">Mot de passe oublié</a> &bull;
+                <a href="/subscribe" class="has-text-primary">Inscription</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

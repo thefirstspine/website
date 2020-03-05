@@ -20,8 +20,9 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /': 'HomepageController.index',
+  'POST /login': 'UserController.login',
+  'GET /login': 'UserController.login',
   'GET /arena': 'ArenaController.index',
-  'GET /beta': 'BetaController.index',
   'GET /download/windows': 'DownloadController.windows',
 
 
