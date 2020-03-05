@@ -1,0 +1,109 @@
+<script>
+Vue.component('card', {
+  data: function () {
+    return {
+    }
+  },
+  methods: {
+    formatHtml: function(text) {
+
+      const statStyle =  `position: relative; display: inline-block; width: 45px; height: 45px; padding: 3px; font-size: 22px; text-align: center; border-radius: 200px; border: 4px double #FFF; margin: -3px 0;`;
+      const map = {
+        '\{creature\}': `<span style="color: hsl(348, 100%, 61%); font-weight: bold;">`,
+        '\{/creature\}': `</span>`,
+        '\{artifact\}': `<span style="color: hsl(204, 86%, 53%); font-weight: bold;">`,
+        '\{/artifact\}': `</span>`,
+        '\{spell\}': `<span style="color: hsl(48, 100%, 67%); font-weight: bold;">`,
+        '\{/spell\}': `</span>`,
+        '\{life\}': `<span style="${statStyle} background: radial-gradient(ellipse at center, #4e4d4d 0%,#000000 50%); transform: scale(.8); margin: -2px;">`,
+        '\{/life\}': `</span>`,
+        '\{strength\}': `<span style="${statStyle} background: radial-gradient(ellipse at center, #882a18 0%,#6d0019 50%); transform: scale(.8); margin: -2px;">`,
+        '\{/strength\}': `</span>`,
+        '\{defense\}': `<span style="${statStyle} background: radial-gradient(ellipse at center, #365e89 0%,#002447 50%); transform: scale(.8); margin: -2px;">`,
+        '\{/defense\}': `</span>`,
+        '\{capacity\}': `<span style="${statStyle} background: radial-gradient(ellipse at center, #4e4d4d 0%,#000000 50%); transform: scale(.8); margin: -2px;"><span class="capacity-`,
+        '\{/capacity\}': `"></span></span>`,
+      };
+
+      Object.keys(map).forEach((key) => {
+        const find = new RegExp(key);
+        text = text.replace(find, map[key]).replace(find, map[key]).replace(find, map[key]).replace(find, map[key]);
+      });
+
+      return text;
+    }
+  },
+  props: ['card', 'stats', 'micro', 'holo', 'premium', 'color', 'cardStyle'],
+  template: '#card',
+})
+</script>
+
+<script type="text/x-template" id="card">
+  <div card>
+    <div 
+      :class="`
+        card-component
+        ${(micro ? 'is-micro' : '')}
+        ${(holo ? 'is-holo' : '')}
+        ${(premium ? 'is-premium' : '')}
+        ${(card.type === 'square' ? 'is-square' : '')}
+        style-${cardStyle}
+      `" 
+      :style="{backgroundColor: color}"
+      v-on:mousedown="$emit('mousedown')"
+      v-on:mouseup="$emit('mouseup')"
+      v-on:mouseenter="$emit('mouseenter')"
+      v-on:mouseleave="$emit('mouseleave')">
+      <div class="container">
+        <div class="image" :style="{backgroundImage: 'url(/images/' + card.imageUrl.replace('https://static.thefirstspine.fr/', '') + ')'}"></div>
+        <div class="holo-stars"></div>
+        <div class="holo-color"></div>
+        <div :class="'type type1 type-' + card.type"></div>
+        <div :class="'type type2 type-' + card.type"></div>
+        <div class="name">{{ card.name['fr'] }}</div>
+        <div class="description">
+          {{ formatHtml(card.text['fr']) }}
+        </div>
+        <div v-if="card.stats" class="stats">
+          <div v-for="side in ['top', 'right', 'bottom', 'left']" v-bind:key="side" :class="side" :style="{paddingTop: (side === 'left' || side === 'right') && !card.stats[side].capacity ? '23px': 'auto'}">
+            <div 
+              :class="{
+                stat: true,
+                strength: true,
+                plus: stats && stats[side] && stats[side].strength > card.stats[side].strength,
+                minus: stats && stats[side] && stats[side].strength < card.stats[side].strength,
+              }">{{ stats && stats[side] && stats[side].strength ? stats[side].strength : card.stats[side].strength }}</div>
+            <div 
+              :class="{
+                stat: true,
+                defense: true,
+                plus: stats && stats[side] && stats[side].defense > card.stats[side].defense,
+                minus: stats && stats[side] && stats[side].defense < card.stats[side].defense,
+              }">{{ stats && stats[side] && stats[side].defense ? stats[side].defense : card.stats[side].defense }}</div>
+            <div
+              class="stat capacity"
+              v-if="(stats && stats[side] && stats[side].capacity) || card.stats[side].capacity"
+            >
+              <span :class="'capacity-' + (stats && stats[side] && stats[side].capacity ? stats[side].capacity : card.stats[side].capacity)"></span>
+            </div>
+          </div>
+          <div class="center">
+            <div
+              :class="{
+                stat: true,
+                life: true,
+                plus: stats && stats && stats.life > card.stats.life,
+                minus: stats && stats && stats.life < card.stats.life,
+              }">{{ stats ? stats.life : card.stats.life }}</div>
+            <div class="stat capacity"
+              v-for="capacity in (stats && stats.capacities ? stats.capacities : card.stats.capacities)"
+              v-bind:key="capacity">
+              <span :class="'capacity-' + capacity"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glow"></div>
+    </div>
+  </div>
+</script>

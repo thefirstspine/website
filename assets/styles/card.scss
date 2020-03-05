@@ -1,0 +1,451 @@
+div[card] {
+  * {
+    transform-style: flat;
+  }
+
+  .card-component {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    display: inline-block;
+    color: #FFF!important;
+    line-height: 2em;
+    &.is-holo {
+      .holo-color {
+        display: block;
+      }
+    }
+    &.is-premium {
+      .glow {
+        box-shadow: rgba(200, 200, 255, .5) 0 0 100px, rgba(200, 200, 255, .75) 0 0 10px, rgba(200, 200, 255, 1) 0 0 3px;
+      }
+      .holo-stars {
+        display: block;
+      }
+    }
+    &.is-micro {
+      height: 250px;
+      .description, .name {
+        display: none;
+      }
+      .name {
+        top: 75px;
+      }
+      .stats {
+        color: #FFF;
+        .left, .right {
+          top: 50px;
+        }
+        .center {
+          top: 100px;
+        }
+      }
+      .image, .holo-stars {
+        height: 200px;
+      }
+    }
+  }
+
+  .container {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .holo-color {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    height: 400px;
+    width: 400px;
+    background-image: linear-gradient(
+      115deg,
+      transparent 0%,
+      rgb(0, 231, 255) 30%,
+      rgb(255, 0, 231) 70%,
+      transparent 100%
+    );
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 300% 300%;
+    mix-blend-mode: color-dodge;
+    animation: holoGradient 15s ease infinite;
+    opacity: 0;
+    display: none;
+  }
+
+  .holo-stars {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 440px;
+    width: 440px;
+    background-image: url(/images/sparkles.gif);
+    background-position: center;
+    mix-blend-mode: screen;
+    animation: holoSparkle 20s ease infinite;
+    display: none;
+  }
+  @keyframes holoSparkle {
+    0% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes holoGradient {
+    3% {
+      opacity: 0;
+    }
+    5% {
+      background-position: 0% 0%;
+    }
+    7% {
+      opacity: 0.5;
+    }
+    9% {
+      background-position: 100% 100%;
+    }
+    11% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+      background-position: 100% 100%;
+    }
+    55% {
+      opacity: 0.3;
+    }
+    70% {
+      opacity: 0;
+      background-position: 0% 0%;
+    }
+  }
+
+  .type {
+    position: absolute;
+    width: 94%;
+    left: 3%;
+    &.type1 {
+      height: 47%;
+      top: 3%;
+      background-position: top;
+    }
+    &.type2 {
+      height: 47%;
+      top: 50%;
+      background-position: bottom;
+    }
+    &.type-creature {
+      background-image: url(/images/creature.png);
+      background-size: cover;
+    }
+    &.type-artifact {
+      background-image: url(/images/artifact.png);
+      background-size: cover;
+    }
+    &.type-spell {
+      background-image: url(/images/spell.png);
+      background-size: cover;
+    }
+    &.type-player {
+      background-image: url(/images/player.png);
+      background-size: cover;
+    }
+  }
+
+  .image {
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    height: 360px;
+    width: 360px;
+    background-color: #000;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .name {
+    font-size: 30px;
+    position: absolute;
+    width: 320px;
+    left: 90px;
+    top: 85px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: #000 0 0 5px, #000 0 0 10px, #000 0 0 20px;
+  }
+
+  .description {
+    font-size: 20px;
+    position: absolute;
+    width: 340px;
+    left: 80px;
+    bottom: 80px;
+    text-align: left;
+    text-shadow: #000 0 0 5px, #000 0 0 10px, #000 0 0 20px;
+  }
+
+  .stats {
+    .top {
+      position: absolute;
+      width: 100%;
+      top: 5px;
+      text-align: center;
+    }
+    .bottom {
+      position: absolute;
+      width: 100%;
+      bottom: 5px;
+      text-align: center;
+    }
+    .left {
+      position: absolute;
+      width: 45px;
+      top: 175px;
+      left: 5px;
+    }
+    .right {
+      position: absolute;
+      width: 45px;
+      top: 175px;
+      right: 5px;
+    }
+    .center {
+      position: absolute;
+      width: 100%;
+      top: 150px;
+      text-align: center;
+    }
+    .stat {
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      padding: 3px;
+      font-size: 22px;
+      text-align: center;
+      border-radius: 200px;
+      border: 4px double #FFF;
+      margin: 3px;
+    }
+    .strength {
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#882a18+0,6d0019+100 */
+      background: #882a18; /* Old browsers */
+      background: -moz-radial-gradient(center, ellipse cover, #c7523a 0%, #6d0019 50%); /* FF3.6-15 */
+      background: -webkit-radial-gradient(center, ellipse cover, #c7523a 0%,#6d0019 50%); /* Chrome10-25,Safari5.1-6 */
+      background: radial-gradient(ellipse at center, #c7523a 0%,#6d0019 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7523a', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    .life, .capacity {
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4e4d4d+1,000000+100 */
+      background: #4e4d4d; /* Old browsers */
+      background: -moz-radial-gradient(center, ellipse cover, #4e4d4d 0%, #000000 50%); /* FF3.6-15 */
+      background: -webkit-radial-gradient(center, ellipse cover, #4e4d4d 0%,#000000 50%); /* Chrome10-25,Safari5.1-6 */
+      background: radial-gradient(ellipse at center, #4e4d4d 0%,#000000 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4d4d', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    .defense {
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#365e89+0,002447+100 */
+      background: #365e89; /* Old browsers */
+      background: -moz-radial-gradient(center, ellipse cover, #6392c5 0%, #002447 50%); /* FF3.6-15 */
+      background: -webkit-radial-gradient(center, ellipse cover, #6392c5 0%,#002447 50%); /* Chrome10-25,Safari5.1-6 */
+      background: radial-gradient(ellipse at center, #6392c5 0%,#002447 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6392c5', endColorstr='#002447',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    .plus {
+      color: #efd700;
+      font-weight: bolder;
+      text-shadow: #000 0 0 5px, #000 0 0 10px, #000 0 0 15px;
+    }
+    .minus {
+      color: #d2232a;
+      font-weight: bolder;
+      text-shadow: #000 0 0 5px, #000 0 0 10px, #000 0 0 15px;
+    }
+  }
+
+  .glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .style-nostalgy {
+    .stat {
+      background: #231f20;
+      border: none;
+      padding: 5px;
+      height: 43px;
+      width: 43px;
+      &.strength {
+        color: #d2232a;
+      }
+      &.defense {
+        color: #00aeef;
+      }
+    }
+    .stats {
+      .top {
+        top: 25px;
+      }
+      .bottom {
+        bottom: 25px;
+      }
+      .right {
+        right: 29px;
+      }
+      .left {
+        left: 25px;
+      }
+    }
+    .type-creature {
+      background-image: url(/images/creature-nostalgy.png);
+    }
+    .type-artifact {
+      background-image: url(/images/artifact-nostalgy.png);
+    }
+    .type-spell {
+      background-image: url(/images/spell-nostalgy.png);
+    }
+    .type-player {
+      background-image: url(/images/player-nostalgy.png);
+    }
+  }
+
+  .style-scales {
+    .image, .holo-color, .holo-stars {
+      top: 40px;
+      left: 40px;
+      width: 420px;
+      height: 420px;
+    }
+    .stat {
+      background: #000;
+      border: 1px solid #9d9d9d;
+      background: rgb(157,157,157);
+      background: radial-gradient(circle, rgba(157,157,157,1) 0%, rgba(0,0,0,1) 50%);
+      box-shadow: #000 0 0 10px;
+      text-shadow: #000 0 0 5px, #000 0 0 5px, #000 0 0 5px;
+      padding: 2px;
+      height: 43px;
+      width: 43px;
+      &.strength {
+        border-color: #d2232a;
+        background: rgb(210,35,42);
+        background: radial-gradient(circle, rgba(210,35,42,1) 0%, rgba(0,0,0,1) 50%);
+      }
+      &.defense {
+        border-color: #00aeef;
+        background: rgb(0,174,239);
+        background: radial-gradient(circle, rgba(0,174,239,1) 0%, rgba(0,0,0,1) 50%);
+      }
+    }
+    .stats {
+      .top {
+        top: 15px;
+      }
+      .bottom {
+        bottom: 15px;
+      }
+      .right {
+        right: 19px;
+      }
+      .left {
+        left: 15px;
+      }
+    }
+    .type-creature {
+      background-image: url(/images/creature-scales.png);
+    }
+    .type-artifact {
+      background-image: url(/images/artifact-scales.png);
+    }
+    .type-spell {
+      background-image: url(/images/spell-scales.png);
+    }
+    .type-player {
+      background-image: url(/images/player-scales.png);
+    }
+  }
+
+  .style-cartographer {
+    .image, .holo-color, .holo-stars {
+      top: 20px;
+      left: 20px;
+      width: 460px;
+      height: 460px;
+    }
+    .stat {
+      background: rgb(0,0,0);
+      background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.39539565826330536) 100%);
+      border: none;
+      padding: 5px;
+      height: 43px;
+      width: 43px;
+      &.strength {
+        color: #d2232a;
+      }
+      &.defense {
+        color: #00aeef;
+      }
+    }
+    .stats {
+      .top {
+        top: 38px;
+      }
+      .bottom {
+        bottom: 38px;
+      }
+      .right {
+        right: 42px;
+      }
+      .left {
+        left: 38px;
+      }
+    }
+    .type1 {
+      top: 0;
+      left: 0;
+      height: 50%;
+      width: 100%;
+    }
+    .type2 {
+      top: 50%;
+      left: 0;
+      height: 50%;
+      width: 100%;
+    }
+    .type-creature {
+      background-image: url(/images/creature-cartographer.png);
+    }
+    .type-artifact {
+      background-image: url(/images/artifact-cartographer.png);
+    }
+    .type-spell {
+      background-image: url(/images/spell-cartographer.png);
+    }
+    .type-player {
+      background-image: url(/images/player-cartographer.png);
+    }
+  }
+
+  .is-square {
+    .image, .holo-color, .holo-stars {
+      top: 20px;
+      left: 20px;
+      width: 460px;
+      height: 460px;
+    }
+  }
+}
