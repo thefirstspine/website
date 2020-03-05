@@ -25,7 +25,7 @@ module.exports.policies = {
     'tryLogin': ['load-user'],
     'viewSubscriptionForm': ['load-user'],
     'submitSubscription': ['load-user'],
-  }, 
+  },
 
   // Blueprint API
   'news/*':['load-user', 'is-logged-in', 'is-admin'],
