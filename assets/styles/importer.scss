@@ -24,6 +24,9 @@ $table-head-cell-color: $primary;
 /* Import TFS globals */
 @import "../../node_modules/bulma/bulma.sass";
 
+/* Import Vue components */
+@import "./card.scss";
+
 [disabled] {
   opacity: .5;
   pointer-events: none;
@@ -45,6 +48,19 @@ body {
     .navbar.is-tfs {
       top: 2em!important;
     }
+  }
+}
+
+footer {
+  margin-top: 50px;
+  padding: 50px 0;
+  margin-bottom: 0;
+  background-image: url(../images/separator.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: black;
+  h4 {
+    margin-bottom: 1em;
   }
 }
 
@@ -121,6 +137,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 60px;
+  position: relative;
   &.has-margin {
     margin: 2em 0;
   }
@@ -132,7 +149,18 @@ body {
 
 #homepage {
   .homepage-hero {
-    background-image: url(../images/top-hunter.png);
+    &.sorcerer {
+      background-image: url(../images/top-sorcerer.png);
+    }
+    &.hunter {
+      background-image: url(../images/top-hunter.png);
+    }
+    &.summoner {
+      background-image: url(../images/top-summoner.png);
+    }
+    &.conjurer {
+      background-image: url(../images/top-conjurer.png);
+    }
     background-position: center;
     background-repeat: no-repeat;
     min-height: 700px;
@@ -156,12 +184,34 @@ body {
     text-align: center;
     height: 500px;
     overflow: hidden;
+    position: relative;
     .news-item {
       width: 420px;
       height: 500px;
       display: inline-block;
-      padding: 20px;
       background: url(/images/square-news.png);
+      vertical-align: top;
+      .image {
+        height: 200px;
+        background-color: #333;
+        margin: 10px;
+        overflow: hidden;
+        img {
+          width: 500px;
+        }
+      }
+      p, h3 {
+        margin: 1em;
+      }
+    }
+  }
+  .cycle {
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 200px 0;
+    margin-top: -55px;
+    &.cycle-renewal-2020 {
+      background-image: url(../images/cycle-renewal.png);
     }
   }
 }

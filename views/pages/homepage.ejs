@@ -1,5 +1,5 @@
 <div id="homepage">
-  <div class="homepage-hero hunter">
+  <div class="homepage-hero <%= ['hunter', 'sorcerer', 'summoner', 'conjurer'][Math.floor(Math.random() * 4)] %>">
     <div class="content">
       <img src="/images/thefirstspine-white.svg" />
       <p class="is-size-4 is-uppercase has-text-centered">Jeu de cartes stratégique</p>
@@ -12,23 +12,41 @@
   <div class="separator"></div>
 
   <div class="news-list">
-    <div class="news-item">
-      aaa
-    </div>
-    <div class="news-item">
-      aaa
-    </div>
-    <div class="news-item">
-      aaa
-    </div>
+    <% news.forEach(function(newsItem) { %>
+      <div class="news-item">
+        <div class="image">
+          <img src="/images/<%= newsItem.image %>" />
+        </div>
+        <h3 class="is-size-4 has-text-primary is-uppercase"><%= newsItem.title %></h3>
+        <p><%= 
+          (newsItem.text.replace(/(<([^>]+)>)/ig,' ').slice(0, 120).split(' ').slice(0, -1).join(' '))
+        %>…</p>
+        <p>
+          <a href="/blog/<%= newsItem.slug %>" class="button is-primary">Lire la suite</a>
+        </p>
+      </div>
+    <% }) %>
   </div>
 
   <div class="separator"></div>
 
   <div class="cycle cycle-<%= currentCycle.id %>">
     <div class="container">
-      <h1 class="has-text-centered is-size-4 is-uppercase">Cycle en cours sur Arena</h1>
-      <h1 class="has-text-centered is-size-3 is-uppercase"><%= currentCycle.name.fr %></h1>
+      <h3 class="has-text-centered is-size-4 is-uppercase">Cycle en cours sur Arena</h1>
+      <h2 class="has-text-centered is-size-3 is-uppercase"><%= currentCycle.name.fr %></h1>
+      <div class="columns has-margin-top-2 has-text-centered">
+        <div class="column">
+          <h4>Récompense de participation</h4>
+          <card :card="{'id':'shadows-banner','text':{'en':'','fr':''},'lore':{'en':'','fr':'« Je suis Mara. Je suis la messagère des Dieux. »\n- Mara, prophétesse d'Exodia.'},'art':'Maylhine','imageUrl':'https://static.thefirstspine.fr/shadows-banner.png','name':{'en':'','fr':'Bannière des Ombres'},'stats':{'life':1,'capacities':['death'],'bottom':{'defense':0,'strength':5,'capacity':'aura'},'left':{'defense':0,'strength':3,'capacity':'aura'},'right':{'defense':0,'strength':3,'capacity':'aura'},'top':{'defense':1,'strength':3,'capacity':'aura'}},'type':'artifact'}"></card>
+        </div>
+        <div class="column">
+          <h4>Récompense pour le meilleur joueur</h4>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="separator"></div>
+
+  aaa
 </div>
