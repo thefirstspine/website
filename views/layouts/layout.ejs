@@ -34,8 +34,10 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
-    <script src="<%= solidPancakeUrl %>/sirup.js"></script>
-    <script>sirup.persistantSession('tfs-website', navigator.platform).then(() => { sirup.event('viewPage', 'navigation', document.location.href); })</script>
+    <% if(typeof(solidPancakeUrl) !== 'undefined') { %>
+      <script src="<%= solidPancakeUrl %>/sirup.js"></script>
+      <script>sirup.persistantSession('tfs-website', navigator.platform).then(() => { sirup.event('viewPage', 'navigation', document.location.href); })</script>
+    <% } %>
     <script>
       function checkservice(uri) {
         fetch(uri)
@@ -52,6 +54,7 @@
           document.write(`<ins id="status--${uri}"></ins>`)
       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
 
   <body>
@@ -85,7 +88,7 @@
             <a href="/about" class="navbar-item" disabled>
               A propos
             </a>
-            <a href="/news" class="navbar-item" disabled>
+            <a href="/blog" class="navbar-item" disabled>
               Actualités
             </a>
             <a href="/events" class="navbar-item" disabled>
@@ -115,9 +118,50 @@
       </div>
     </nav>
 
-    <%- body %>
+    <%- include('../components/card.ejs'); %>
 
-    <footer class="level has-margin-top-2">
+    <div id="app">
+      <%- body %>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: '#app'
+      })
+    </script>
+
+    <footer>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <h4 class="has-text-primary is-uppercase">Restons connectés</h4>
+            <ul>
+              <li>
+                <a href="https://fb.com/thefirstspine" class="button is-facebook">
+                  <i class="fab fa-facebook-square"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4 class="has-text-primary is-uppercase">Explorer</h4>
+            <ul>
+              <li><a href="/arena">Jouer en ligne</a></li>
+              <li><a href="/pnp" disabled>Jouer à la version PnP</a></li>
+              <li><a href="/about" disabled>A propos</a></li>
+              <li><a href="/events" disabled>Evenements</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4 class="has-text-primary is-uppercase">Restez informés</h4>
+            <ul>
+              <% footer.news.forEach(function(newsItem) { %>
+                <li><a href="/blog/<%= newsItem.slug %>"><%= newsItem.title %></a></li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
 
 
