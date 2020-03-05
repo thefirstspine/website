@@ -2,7 +2,17 @@ const fetch = require('node-fetch');
 
 module.exports = async function (req, res, proceed) {
 
+  let accessToken = null;
+
   if (req.session.access_token) {
+    accessToken = req.session.access_token;
+  }
+
+  if (req.headers.authorization) {
+    accessToken = req.headers.authorization.replace(/Bearer /, '');
+  }
+
+  if (accessToken) {
     
     try {
       const baseUrl = sails.config.custom.dotenv ?
@@ -14,7 +24,7 @@ module.exports = async function (req, res, proceed) {
         {
           headers: {
             'Content-type': 'application/json',
-            'Authorization': `Bearer ${req.session.access_token}`,
+            'Authorization': `Bearer ${accessToken}`,
           },
           method: 'GET',
         }

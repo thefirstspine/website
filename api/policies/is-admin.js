@@ -13,7 +13,7 @@ module.exports = async function (req, res, proceed) {
       sails.config.custom.dotenv.ADMINS :
       process.env.ADMINS;
 
-    if (admins.split(',').includes(req.user_id)) {
+    if (admins.split(',').includes(`${req.user_id}`)) {
       return proceed();
     }
 
