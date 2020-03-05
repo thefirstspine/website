@@ -4,72 +4,31 @@
       <img src="/images/thefirstspine-white.svg" />
       <p class="is-size-4 is-uppercase has-text-centered">Jeu de cartes stratégique</p>
       <p class="is-uppercase has-text-centered">
-        <a href="/arena" class="button is-primary is-size-5">Essayer en ligne</a>
+        <a href="/arena" class="button is-primary is-size-5">Jouer en ligne</a>
       </p>
     </div>
   </div>
-</div>
 
-<div class="separator"></div>
+  <div class="separator"></div>
 
-<div class="container">
-  <p class="is-size-3 is-uppercase has-text-centered has-text-primary">Etat des services en ligne</p>
-  <div class="level has-margin-top-2">
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Parties en ligne</p>
-        <p class="title">
-          <script>checkservice('https://beta.arena.thefirstspine.fr/status')</script>
-        </p>
-      </div>
+  <div class="news-list">
+    <div class="news-item">
+      aaa
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Authentification</p>
-        <p class="title">
-          <script>checkservice('https://beta.auth.thefirstspine.fr/status')</script>
-        </p>
-      </div>
+    <div class="news-item">
+      aaa
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">JcE</p>
-        <p class="title">
-          <script>checkservice('https://beta.bots.thefirstspine.fr/status')</script>
-        </p>
-      </div>
+    <div class="news-item">
+      aaa
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Notifications en direct</p>
-        <p class="title">
-          <script>checkservice('https://beta.messaging.thefirstspine.fr/status')</script>
-        </p>
-      </div>
-    </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Ressources</p>
-        <p class="title">
-          <script>checkservice('https://beta.rest.thefirstspine.fr/status')</script>
-        </p>
-      </div>
-    </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Espaces de discussions</p>
-        <p class="title">
-          <script>checkservice('https://beta.rooms.thefirstspine.fr/status')</script>
-        </p>
-      </div>
-    </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Statistiques</p>
-        <p class="title">
-          <script>checkservice('https://beta.solid-pancake.thefirstspine.fr/status')</script>
-        </p>
-      </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="cycle cycle-<%= currentCycle.id %>">
+    <div class="container">
+      <h1 class="has-text-centered is-size-4 is-uppercase">Cycle en cours sur Arena</h1>
+      <h1 class="has-text-centered is-size-3 is-uppercase"><%= currentCycle.name.fr %></h1>
     </div>
   </div>
 </div>
