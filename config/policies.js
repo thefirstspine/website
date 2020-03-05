@@ -17,6 +17,17 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': ['load-user'],
+
+  UserController: {
+    '*': ['load-user', 'is-logged-in'],
+    'viewLoginForm': ['load-user'],
+    'tryLogin': ['load-user'],
+    'viewSubscriptionForm': ['load-user'],
+    'submitSubscription': ['load-user'],
+  }, 
+
+  // Blueprint API
+  'news/*':['load-user', 'is-logged-in', 'is-admin'],
 
 };

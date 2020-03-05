@@ -19,22 +19,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  // Pages
-  'GET /': 'HomepageController.index',
-  'GET /cgu': 'CGUController.index',
-
-  // Arena
-  'GET /arena': 'ArenaController.index',
-  'GET /download/windows': 'DownloadController.windows',
-  
-  // User & auth
-  'POST /login': 'UserController.login',
-  'GET /login': 'UserController.login',
-  'GET /profile': 'UserController.profile',
-  'POST /profile': 'UserController.profile',
-  'GET /subscribe': 'UserController.subscribe',
-  'POST /subscribe': 'UserController.subscribe',
-
 
   /***************************************************************************
   *                                                                          *
@@ -46,6 +30,22 @@ module.exports.routes = {
   * not match any of those, it is matched against static assets.             *
   *                                                                          *
   ***************************************************************************/
+
+  // Pages
+  'GET /': 'HomepageController.index',
+  'GET /cgu': 'CGUController.index',
+
+  // Arena
+  'GET /arena': 'ArenaController.index',
+  'GET /download/windows': 'DownloadController.windows',
+  
+  // User & auth
+  'GET /login': 'UserController.viewLoginForm',
+  'POST /login': 'UserController.tryLogin',
+  'GET /profile': 'UserController.viewProfile',
+  'POST /profile': 'UserController.editProfile',
+  'GET /subscribe': 'UserController.viewSubscriptionForm',
+  'POST /subscribe': 'UserController.submitSubscription',
 
 
 };

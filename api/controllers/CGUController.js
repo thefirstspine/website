@@ -11,7 +11,7 @@ module.exports = {
     return res.view(
       'pages/cgu.ejs',
       {
-        ...await sails.helpers.layoutConfig(req.session.access_token),
+        ...await sails.helpers.layoutConfig(req.user_id),
       }
     );
   }

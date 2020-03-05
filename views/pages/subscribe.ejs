@@ -5,7 +5,7 @@
         <div class="columns">
           <form class="column" method="POST" action="/subscribe">
             <h1 class="is-size-3 has-text-centered">INSCRIPTION</h1>
-            <% if(errors.length) { %>
+            <% if(typeof(errors) !== 'undefined' && errors && errors.length) { %>
               <% errors.forEach(function(error){ %>
                 <article  class="message is-danger">
                   <div class="message-body">
