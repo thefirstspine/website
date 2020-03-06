@@ -56,8 +56,6 @@ module.exports = {
       return constructCardForDisplay(cardId, rewardsForWinnerMap[cardId].isHolo, rewardsForWinnerMap[cardId].isPremium);
     });
 
-  console.log(cardsRewardsForWinner);
-
     return res.view(
       'pages/homepage.ejs',
       {
