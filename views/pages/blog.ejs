@@ -1,0 +1,26 @@
+<div id="blog">
+  <div class="blog-heading">
+    <div class="container">
+      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered">Actualités</h1>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="container">
+    <% news.forEach(function(newsItem) { %>
+      <div class="news-item has-text-centered">
+        <div class="image">
+          <img src="/images/<%= newsItem.image %>" />
+        </div>
+        <h3 class="is-size-4 has-text-primary is-uppercase"><%= newsItem.title %></h3>
+        <p><%= 
+          (newsItem.text.replace(/(<([^>]+)>)/ig,' ').slice(0, 120).split(' ').slice(0, -1).join(' '))
+        %>…</p>
+        <p>
+          <a href="/blog/<%= newsItem.slug %>" class="button is-primary">Lire la suite</a>
+        </p>
+      </div>
+    <% }) %>
+  </div>
+</div>

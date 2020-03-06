@@ -38,6 +38,10 @@ module.exports.routes = {
   // Arena
   'GET /arena': 'ArenaController.index',
   'GET /download/windows': 'DownloadController.windows',
+
+  // Blog
+  'GET /blog': 'BlogController.listArticles',
+  'GET /blog/:slug': 'BlogController.viewArticle',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
