@@ -37,17 +37,21 @@
       <div class="columns has-margin-top-2 has-text-centered">
         <div class="column">
           <h4 class="is-size-4">Récompense de participation</h4>
-          <card color="black"
-            :holo="<%= cycle.rewards.players[0].isHolo %>"
-            :premium="<%= cycle.rewards.players[0].isPremium %>"
-            cardId="<%= cycle.rewards.players[0].cardId %>"></card>
+          <div class="card-wrapper is-half">
+            <card color="black"
+              :holo="<%= cycle.rewards.players[0].isHolo %>"
+              :premium="<%= cycle.rewards.players[0].isPremium %>"
+              cardId="<%= cycle.rewards.players[0].cardId %>"></card>
+          </div>
         </div>
         <div class="column">
           <h4 class="is-size-4">Récompense pour le meilleur joueur</h4>
-          <card color="black"
-            :holo="<%= cycle.rewards.winner[0].isHolo %>"
-            :premium="<%= cycle.rewards.winner[0].isPremium %>"
-            cardId="<%= cycle.rewards.winner[0].cardId %>"></card>
+          <div class="card-wrapper is-half">
+            <card color="black"
+              :holo="<%= cycle.rewards.winner[0].isHolo %>"
+              :premium="<%= cycle.rewards.winner[0].isPremium %>"
+              cardId="<%= cycle.rewards.winner[0].cardId %>"></card>
+          </div>
         </div>
       </div>
     </div>
@@ -59,7 +63,16 @@
     <div class="container">
       <h1 class="has-text-centered has-text-primary is-uppercase is-size-2">Entrez votre code</h1>
       <p class="has-text-centered">Enregistrez votre code obtenu sur l’un de nos événements sur votre compte sorcier.</p>
-      <codeinput></codeinput>
+      <form class="has-text-centered has-margin-top-2">
+        <div class="field">
+          <div class="control codeinput">
+            <codeinput classname="input is-large" name="code" placeholder="0000-0000-0000"></codeinput>
+          </div>
+        </div>
+        <div class="field">
+          <input class="button is-primary is-medium" type="submit" value="Envoyer" />
+        </div>
+      </form>
     </div>
   </div>
 

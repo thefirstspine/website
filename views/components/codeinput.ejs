@@ -2,19 +2,56 @@
 Vue.component('codeinput', {
   data: function () {
     return {
+      val: "",
     }
   },
   mounted: async function() {
   },
   methods: {
+    keyhandler: function(event) {
+      event.preventDefault();
+      
+      const rawValue = this.$data.val.replace(/-/g, '');
+      let rawNewValue = '';
+
+      if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(event.key)) {
+        rawNewValue = rawValue + event.key;
+      } else if (event.key === 'Backspace') {
+        rawNewValue = rawValue.substring(0, rawValue.length - 1);
+      } else {
+        return;
+      }
+
+      const values = [];
+      let rawValuesCount = 0;
+      for (var i = 0; i < rawNewValue.length && i < 12; i ++) {
+        values.push(rawNewValue.charAt(i));
+        rawValuesCount ++;
+        if (rawValuesCount === 4 && i < 11) {
+          rawValuesCount = 0;
+          values.push('-');
+        }
+      }
+
+      this.$data.val = values.join('');
+    }
   },
-  props: [],
+  props: ['id', 'name', 'placeholder', 'classname'],
   template: '#codeinput',
 })
 </script>
 
 <script type="text/x-template" id="codeinput">
   <p>
-    //TODO
+    <input
+      type="text"
+      placeholder="0000-0000-0000"
+      v-on:keydown="keyhandler"
+      autocomplete="off"
+      :class="classname"
+      :id="id"
+      :name="name"
+      :placeholder="placeholder"
+      :value="val" />
   </p>
 </script>
