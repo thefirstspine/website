@@ -58,7 +58,6 @@
   </head>
 
   <body>
-    <!-- <a class="announcement" href="/beta">🥰 Merci de tester la bêta ! Cliquez ici pour savoir tout ce que cette version implique.</a> -->
     <nav class="navbar is-fixed-top is-tfs">
       <div class="container">
         <div class="navbar-brand">
@@ -118,12 +117,12 @@
       </div>
     </nav>
 
-    <%- include('../components/card.ejs'); %>
-
     <div id="app">
       <%- body %>
     </div>
 
+    <%- include('../components/card.ejs'); %>
+    <%- include('../components/codeinput.ejs'); %>
     <script>
       var app = new Vue({
         el: '#app'
