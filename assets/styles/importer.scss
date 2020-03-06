@@ -90,6 +90,18 @@ footer {
   }
 }
 
+.card-wrapper {
+  display: inline-block;
+  &.is-half {
+    width: 250px;
+    height: 250px;
+    div[card] {
+      transform: scale(.5);
+      margin: -125px;
+    }
+  }
+}
+
 .navbar.is-tfs {
   background-color: transparent;
   background-image: url(../images/menu.png);
@@ -144,7 +156,7 @@ footer {
   }
 }
 
-#arena, #beta, #login, #profile, #subscribe, #cgu {
+#arena, #beta, #login, #subscribe, #cgu {
   padding-top: 150px;
 }
 
@@ -162,10 +174,11 @@ footer {
     &.conjurer {
       background-image: url(../images/top-conjurer.png);
     }
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     min-height: 700px;
     padding-top: 200px;
+    background-attachment: fixed;
     .content {
       width: 100%;
       max-width: 500px;
@@ -209,14 +222,41 @@ footer {
   .cycle {
     background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 0 0 0;
+    background-size: cover;
+    padding: 100px 0;
     margin-top: -55px;
-    div[card] {
-      transform: scale(.5);
-      margin: -100px;
-    }
     &.cycle-renewal-2020 {
       background-image: url(../images/cycle-renewal.png);
+    }
+    &.cycle-great-old-2020 {
+      background-image: url(../images/cycle-great-old.png);
+    }
+    .card-wrapper {
+      margin: 2em auto 0 auto;
+      display: block;
+    }
+  }
+  .code {
+    background-image: url(../images/codes.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    margin: -55px 0;
+    .codeinput {
+      width: 100%;
+      max-width: 265px;
+      display: inline-block;
+      input {
+        background: rgba(0, 0, 0, .5);
+        border: 1px solid rgba(255, 255, 255, .5);
+        letter-spacing: 2px;
+        color: #FFF;
+        &::placeholder {
+          color: rgba(255, 255, 255, .5);
+          opacity: .75;
+          text-align: center;
+        }
+      }
     }
   }
 }
@@ -286,6 +326,67 @@ footer {
     .field {
       width: 100%;
     }
+  }
+}
+
+#blog {
+  .blog-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/heading-fox.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    .article-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110%;
+      height: 110%;
+      filter: blur(10px);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  .news-item {
+    width: 320px;
+    height: 440px;
+    display: inline-block;
+    background: #000;
+    border: 1px solid #FFF;
+    vertical-align: top;
+    margin: 5px;
+    .image {
+      height: 100px;
+      background-color: #333;
+      margin: 0;
+      overflow: hidden;
+      img {
+        width: 320px;
+        margin-top: -25%;
+      }
+    }
+    p, h3 {
+      margin: 1em;
+    }
+  }
+  article {
+    padding: 1em;
+    h2 {
+      margin: 1em 0;
+      font-size: 2rem;
+    }
+    p {
+      margin: 1rem 0;
+    }
+  }
+}
+
+#profile {
+  .profile-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/heading-barbers.png);
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
