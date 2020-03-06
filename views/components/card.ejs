@@ -2,7 +2,13 @@
 Vue.component('card', {
   data: function () {
     return {
+      card: null,
     }
+  },
+  mounted: async function() {
+    const cardId = this.$attrs.cardid;
+    const response = await fetch(`http://localhost:2405/rest/cards/${cardId}`);
+    this.card = await response.json();
   },
   methods: {
     formatHtml: function(text) {
@@ -33,13 +39,13 @@ Vue.component('card', {
       return text;
     }
   },
-  props: ['card', 'stats', 'micro', 'holo', 'premium', 'color', 'cardStyle'],
+  props: ['cardId', 'stats', 'micro', 'holo', 'premium', 'color', 'cardStyle'],
   template: '#card',
 })
 </script>
 
 <script type="text/x-template" id="card">
-  <div card>
+  <div card v-if="card">
     <div 
       :class="`
         card-component

@@ -26,6 +26,7 @@ $table-head-cell-color: $primary;
 
 /* Import Vue components */
 @import "./card.scss";
+@import "./capacities.scss";
 
 [disabled] {
   opacity: .5;
@@ -208,8 +209,12 @@ footer {
   .cycle {
     background-position: center;
     background-repeat: no-repeat;
-    padding: 200px 0;
+    padding: 100px 0 0 0;
     margin-top: -55px;
+    div[card] {
+      transform: scale(.5);
+      margin: -100px;
+    }
     &.cycle-renewal-2020 {
       background-image: url(../images/cycle-renewal.png);
     }

@@ -30,17 +30,24 @@
 
   <div class="separator"></div>
 
-  <div class="cycle cycle-<%= currentCycle.id %>">
+  <div class="cycle cycle-<%= cycle.current.id %>">
     <div class="container">
-      <h3 class="has-text-centered is-size-4 is-uppercase">Cycle en cours sur Arena</h1>
-      <h2 class="has-text-centered is-size-3 is-uppercase"><%= currentCycle.name.fr %></h1>
+      <h3 class="has-text-centered is-size-3 is-uppercase">Cycle en cours sur Arena</h1>
+      <h2 class="has-text-centered is-size-2 is-uppercase"><%= cycle.current.name.fr %></h1>
       <div class="columns has-margin-top-2 has-text-centered">
         <div class="column">
-          <h4>Récompense de participation</h4>
-          <card :card="{'id':'shadows-banner','text':{'en':'','fr':''},'lore':{'en':'','fr':'« Je suis Mara. Je suis la messagère des Dieux. »\n- Mara, prophétesse d'Exodia.'},'art':'Maylhine','imageUrl':'https://static.thefirstspine.fr/shadows-banner.png','name':{'en':'','fr':'Bannière des Ombres'},'stats':{'life':1,'capacities':['death'],'bottom':{'defense':0,'strength':5,'capacity':'aura'},'left':{'defense':0,'strength':3,'capacity':'aura'},'right':{'defense':0,'strength':3,'capacity':'aura'},'top':{'defense':1,'strength':3,'capacity':'aura'}},'type':'artifact'}"></card>
+          <h4 class="is-size-4">Récompense de participation</h4>
+          <card color="black"
+            :holo="<%= cycle.rewards.players[0].isHolo %>"
+            :premium="<%= cycle.rewards.players[0].isPremium %>"
+            cardId="<%= cycle.rewards.players[0].cardId %>"></card>
         </div>
         <div class="column">
-          <h4>Récompense pour le meilleur joueur</h4>
+          <h4 class="is-size-4">Récompense pour le meilleur joueur</h4>
+          <card color="black"
+            :holo="<%= cycle.rewards.winner[0].isHolo %>"
+            :premium="<%= cycle.rewards.winner[0].isPremium %>"
+            cardId="<%= cycle.rewards.winner[0].cardId %>"></card>
         </div>
       </div>
     </div>
