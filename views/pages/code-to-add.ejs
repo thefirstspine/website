@@ -16,34 +16,37 @@
         <a href="/subscribe?redirect=/code/use/<%= code.code %>" class="button is-danger is-medium">Je m'inscris</a>
       </p>
     </div>
+  </div>
+
+  <div class="separator has-margin"></div>
     
-    <div class="has-text-centered has-margin-top-2">
-      <div class="loots">
-        <% Object.keys(code.loots).forEach(function(loot) { %>
-          <div class="loot">
-            <% if(loot === 'shard') { %>
-              <h3 class="is-size-3 is-uppercase has-text-primary"><%= code.loots[loot] %> éclats de mana</h3>
-              <img src="/images/shard.png" />
-              <p class="is-size-5 is-italic has-margin-top-1">
-                De l'énergie de la Couronne cristalisée permettant à son détenteur de se démarquer des autres sorciers.
-              </p>
-              <p class="is-size-5 is-italic has-margin-top-1">
-                Permet d'acheter des cosmétiques dans Arena.
-              </p>
-            <% } %>
-            <% if(loot === 'coin') { %>
-              <h3 class="is-size-3 is-uppercase has-text-primary"><%= code.loots[loot] %> pièces étranges</h3>
-              <img src="/images/coin.png" />
-              <p class="is-size-5 is-italic has-margin-top-1">
-                Personne ne sait d'où viennent ces pièces faites d'un métal jaune inconnu.
-              </p>
-              <p class="is-size-5 is-italic has-margin-top-1">
-                Permet d'agrémenter le contenu de l'édition commandée lors de la future campagne Kickstarter.
-              </p>
-            <% } %>
-          </div>
-        <% }) %>
-      </div>
+  <div class="container has-text-centered has-margin-top-2">
+    <h2 class="is-size-4 is-uppercase">Votre code contient :</h2>
+    <div class="loots has-margin-top-2">
+      <% Object.keys(code.loots).forEach(function(loot) { %>
+        <div class="loot">
+          <% if(loot === 'shard') { %>
+            <h3 class="is-size-3 is-uppercase has-text-primary"><%= code.loots[loot] %> éclats de mana</h3>
+            <img src="/images/shard.png" />
+            <p class="is-size-5 is-italic has-margin-top-1">
+              De l'énergie de la Couronne cristalisée permettant à son détenteur de se démarquer des autres sorciers.
+            </p>
+            <p class="is-size-5 is-italic has-margin-top-1">
+              Permet d'acheter des cosmétiques dans Arena.
+            </p>
+          <% } %>
+          <% if(loot === 'coin') { %>
+            <h3 class="is-size-3 is-uppercase has-text-primary"><%= code.loots[loot] %> pièces étranges</h3>
+            <img src="/images/coin.png" />
+            <p class="is-size-5 is-italic has-margin-top-1">
+              Personne ne sait d'où viennent ces pièces faites d'un métal jaune inconnu.
+            </p>
+            <p class="is-size-5 is-italic has-margin-top-1">
+              Permet d'agrémenter le contenu de l'édition commandée lors de la future campagne Kickstarter.
+            </p>
+          <% } %>
+        </div>
+      <% }) %>
     </div>
   </div>
 

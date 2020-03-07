@@ -9,12 +9,17 @@ module.exports = {
   
   async submit(req, res) {
     const code = req.body.code && req.body.code.length >= 12 ? req.body.code.replace(/-/g, '') : null;
-    const codeEntity = await sails.models.code.findOne({code, user: null});
 
     if (!code) {
       return res.redirect('/codes');
     }
-    
+
+    return res.redirect(`/codes/use/${code}`);
+  },
+
+  async useCode(req, res) {
+    const codeEntity = await sails.models.code.findOne({code: req.param('code'), user: null});
+
     if (!codeEntity) {
       return res.view(
         'pages/code-not-found',
@@ -36,13 +41,13 @@ module.exports = {
     }
 
     // The user is not logged; display the landing page
-      return res.view(
-        'pages/code-to-add',
-        {
-          ...await sails.helpers.layoutConfig(req.user_id),
-          code: codeEntity,
-        }
-      );
+    return res.view(
+      'pages/code-to-add',
+      {
+        ...await sails.helpers.layoutConfig(req.user_id),
+        code: codeEntity,
+      }
+    );
   },
 
   async viewForm(req, res) {

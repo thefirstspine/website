@@ -54,6 +54,7 @@ module.exports.routes = {
   // Codes
   'POST /codes': 'CodesController.submit',
   'GET /codes': 'CodesController.viewForm',
+  'GET /codes/use/:code': 'CodesController.useCode',
 
 
 };
