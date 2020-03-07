@@ -61,9 +61,6 @@ module.exports = {
   async viewSubscriptionForm(req, res) {
     const errors = [];
 
-    if (req.method === 'POST') {
-    }
-
     return res.view(
       'pages/subscribe.ejs',
       {
@@ -75,9 +72,6 @@ module.exports = {
 
   async viewProfile(req, res) {
     const errors = [];
-
-    if (req.method === 'POST') {
-    }
 
     return res.view(
       'pages/profile.ejs',
