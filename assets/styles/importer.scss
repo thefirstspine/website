@@ -402,6 +402,33 @@ footer {
   }
 }
 
+#code {
+  .code-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/heading-fox.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .loots {
+    text-align: center;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    .loot {
+      width: 420px;
+      height: 500px;
+      display: inline-block;
+      background: url(/images/square-news.png);
+      vertical-align: top;
+      padding: 20px;
+      img {
+        height: 150px;
+        width: 150px;
+      }
+    }
+  }
+}
+
 #cgu {
   h2 {
     margin: 2em 0;
