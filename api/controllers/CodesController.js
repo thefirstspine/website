@@ -24,13 +24,16 @@ module.exports = {
       return res.view(
         'pages/code-not-found',
         {
-          ...await sails.helpers.layoutConfig(req.user_id)
+          ...await sails.helpers.layoutConfig(req.user_id),
         }
       );
     }
 
     if (req.user_id) {
       // Add the code to the profile
+      await sails.models.code.update({id: codeEntity.id}).set({
+        user: req.user_id,
+      });
       return res.view(
         'pages/code-added',
         {
