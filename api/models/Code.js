@@ -15,6 +15,7 @@ module.exports = {
 
     code: { type: 'string', unique: true, required: true },
     user: { type: 'number', allowNull: true },
+    event_id: { type: 'number', allowNull: true },
     loots: { type: 'json', required: true },
     createdAt: { type: 'number', autoCreatedAt: true },
     updatedAt: { type: 'number', autoUpdatedAt: true },
