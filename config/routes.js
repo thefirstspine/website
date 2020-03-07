@@ -51,5 +51,9 @@ module.exports.routes = {
   'GET /subscribe': 'UserController.viewSubscriptionForm',
   'POST /subscribe': 'UserController.submitSubscription',
 
+  // Codes
+  'POST /codes': 'CodesController.submit',
+  'GET /codes': 'CodesController.viewForm',
+
 
 };
