@@ -92,6 +92,8 @@ footer {
 
 .card-wrapper {
   display: inline-block;
+  width: 500px;
+  height: 500px;
   &.is-half {
     width: 250px;
     height: 250px;
@@ -257,6 +259,16 @@ footer {
           text-align: center;
         }
       }
+    }
+  }
+  .card-of-the-day {
+    background-image: url(../images/card-of-the-day.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    margin: -55px 0;
+    .card-wrapper {
+      margin: 2em auto 0 auto;
     }
   }
 }

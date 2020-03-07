@@ -56,6 +56,9 @@ module.exports = {
       return constructCardForDisplay(cardId, rewardsForWinnerMap[cardId].isHolo, rewardsForWinnerMap[cardId].isPremium);
     });
 
+    // Cards of the day
+    const cardsOfTheDay = ['the-fox', 'veneniagora', 'deadly-viper'];
+
     return res.view(
       'pages/homepage.ejs',
       {
@@ -73,7 +76,12 @@ module.exports = {
             players: cardsRewardsForPlayers,
             winner: cardsRewardsForWinner,
           }
-        }
+        },
+        cardOfTheDay: {
+          cardId: cardsOfTheDay[Math.floor((Date.now() / (1000 * 60 * 60 * 24))) % (cardsOfTheDay.length - 1)],
+          isHolo: false,
+          isPremium: false,
+        },
       }
     );
   },

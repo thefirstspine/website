@@ -76,17 +76,20 @@
     </div>
   </div>
 
-  <% /*
   <div class="separator"></div>
 
   <div class="card-of-the-day">
     <div class="container">
       <h2 class="has-text-centered is-size-3 is-uppercase">Carte du jour</h2>
-      <h3 class="has-text-centered is-size-2 is-uppercase">Le Renard</h3>
       <div class="has-text-centered">
-        <card color="black" cardId="the-fox"></card>
+        <div class="card-wrapper">
+          <card color="black"
+            :holo="<%= cardOfTheDay.isHolo %>"
+            :premium="<%= cardOfTheDay.isPremium %>"
+            cardId="<%= cardOfTheDay.cardId %>"></card>
+        </div>
       </div>
     </div>
   </div>
-  */ %>
+
 </div>
