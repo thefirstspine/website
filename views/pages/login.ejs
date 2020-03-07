@@ -6,7 +6,7 @@
           <div class="column is-one-third">
             <div class="illustration"></div>
           </div>
-          <form class="column" method="POST" action="/login">
+          <form class="column" method="POST" action="/login?redirect=<%= redirect %>">
             <h1 class="is-size-3 has-text-centered">CONNEXION</h1>
             <% if(typeof(errors) !== 'undefined' && errors && errors.length) { %>
               <% errors.forEach(function(error){ %>
@@ -60,8 +60,8 @@
             </div>
             <div class="informations">
               <p class="has-text-centered">
-                <a href="/forgotten-password" class="has-text-primary">Mot de passe oublié</a> &bull;
-                <a href="/subscribe" class="has-text-primary">Inscription</a>
+                <a href="/forgotten-password" target="_blank" class="has-text-primary">Mot de passe oublié</a> &bull;
+                <a href="/subscribe?redirect=<%= redirect %>" class="has-text-primary">Inscription</a>
               </p>
             </div>
           </form>

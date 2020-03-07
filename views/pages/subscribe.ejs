@@ -3,7 +3,7 @@
     <div class="columns">
       <div class="column is-8 is-offset-2">
         <div class="columns">
-          <form class="column" method="POST" action="/subscribe">
+          <form class="column" method="POST" action="/subscribe?redirect=<%= redirect %>">
             <h1 class="is-size-3 has-text-centered">INSCRIPTION</h1>
             <% if(typeof(errors) !== 'undefined' && errors && errors.length) { %>
               <% errors.forEach(function(error){ %>

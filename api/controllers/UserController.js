@@ -14,6 +14,7 @@ module.exports = {
       'pages/login.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        redirect: req.query.redirect,
       }
     );
   },
@@ -41,18 +42,19 @@ module.exports = {
       const json = await response.json();
       if (json.access_token) {
         req.session.access_token = json.access_token;
-        return res.redirect('/profile');
+        return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
       } else {
         errors.push(`Adresse e-mail ou mot de passe incorrecte.`);
       }
     } catch (e) {
-      errors.push(`Le système de connextion n'est actuellement pas disponible.`);
+      errors.push(`Le système de connexion n'est actuellement pas disponible.`);
     }
 
     return res.view(
       'pages/login.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        redirect: req.query.redirect,
         errors,
       }
     );
@@ -65,6 +67,7 @@ module.exports = {
       'pages/subscribe.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        redirect: req.query.redirect,
         errors,
       }
     );
@@ -77,6 +80,7 @@ module.exports = {
       'pages/profile.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        redirect: req.query.redirect,
         errors,
       }
     );
