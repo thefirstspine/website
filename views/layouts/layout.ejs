@@ -108,9 +108,18 @@
               <a href="/profile" class="navbar-brand">
                 <img src="/images/menu-login.png" />
               </a>
-              <a href="/profile" class="navbar-item">
-                Votre compte
-              </a>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="/play">Compte</a>
+                <div class="navbar-dropdown">
+                  <a href="/profile" class="navbar-item">
+                    Editer votre compte
+                  </a>
+                  <hr class="navbar-divider">
+                  <a href="/logout" class="navbar-item">
+                    Se déconnecter
+                  </a>
+                </div>
+              </div>
             </div>
           <% } %>
         </div>

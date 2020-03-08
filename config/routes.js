@@ -50,6 +50,7 @@ module.exports.routes = {
   'POST /profile': 'UserController.editProfile',
   'GET /subscribe': 'UserController.viewSubscriptionForm',
   'POST /subscribe': 'UserController.submitSubscription',
+  'GET /logout': 'UserController.logout',
 
   // Codes
   'POST /codes': 'CodesController.submit',

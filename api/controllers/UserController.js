@@ -60,6 +60,11 @@ module.exports = {
     );
   },
 
+  async logout(req, res) {
+    req.session.access_token = null;
+    return res.redirect('/');
+  },
+
   async viewSubscriptionForm(req, res) {
     const errors = [];
 
