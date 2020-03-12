@@ -19,6 +19,9 @@
  * https://sailsjs.com/docs/concepts/deployment
  */
 
+// Allow unsafe migrations because we do not want to handle them
+process.env.ALLOW_UNSAFE_MIGRATIONS = true;
+
 module.exports = {
 
 
@@ -90,7 +93,7 @@ module.exports = {
     * https://sailsjs.com/docs/concepts/models-and-orm/model-settings#?migrate *
     *                                                                          *
     ***************************************************************************/
-    // migrate: 'safe',
+    migrate: 'alter',
 
     /***************************************************************************
     *                                                                          *
