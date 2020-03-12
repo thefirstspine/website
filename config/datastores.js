@@ -13,6 +13,8 @@
  * https://sailsjs.com/config/datastores
  */
 
+const dotenv = require('dotenv').config().parsed;
+
 module.exports.datastores = {
 
 
@@ -48,9 +50,8 @@ module.exports.datastores = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    adapter: 'sails-disk',
-    filePath: '/data/',
-
+    adapter: require('sails-postgresql'),
+    url: `postgresql://${dotenv.PG_USERNAME}:${dotenv.PG_PASSWORD}@${dotenv.PG_HOST}:${dotenv.PG_PORT}/${dotenv.PG_DATABASE}`,
   },
 
 

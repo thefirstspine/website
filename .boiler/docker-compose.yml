@@ -1,6 +1,24 @@
 version: "3.2"
 
 services:
+  website_postgres:
+    image: postgres:11
+    container_name: thefirstspine_website_postgres_container
+    networks:
+      default:
+        ipv4_address: ${PG_HOST}
+    volumes:
+      - ${PG_DATA}:/var/lib/postgresql/data
+      - /var/log:/var/log
+    ports:
+      - "${PG_PORT}:${PG_PORT}"
+    tty: true
+    environment:
+      - POSTGRES_USER=${PG_USERNAME}
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+      - POSTGRES_DB=${PG_DATABASE}
+    command: -p ${PG_PORT}
+
   website:
     build: 'website'
     image: thefirstspine_website_image
@@ -15,6 +33,8 @@ services:
     tty: true
     env_file:
       - .env
+    depends_on:
+      - website_postgres
 
 networks:
   default:
