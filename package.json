@@ -19,9 +19,9 @@
     "node-sass": "*",
     "sails": "^1.2.3",
     "sails-hook-grunt": "^4.0.0",
+    "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0",
-    "sails-hook-orm": "^2.0.0-17",
-    "sails-postgresql": "1.0.0-10"
+    "sails-postgresql": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "5.16.0"
