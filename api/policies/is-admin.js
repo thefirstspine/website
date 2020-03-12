@@ -9,8 +9,8 @@ module.exports = async function (req, res, proceed) {
   // > custom hook (`api/hooks/custom/index.js`).
   if (req.user_id) {
 
-    const admins = sails.config.custom.dotenv ?
-      sails.config.custom.dotenv.ADMINS :
+    const admins = process.env ?
+      process.env.ADMINS :
       process.env.ADMINS;
 
     if (admins.split(',').includes(`${req.user_id}`)) {

@@ -1,6 +1,6 @@
 const fs = require('fs');
-const distDirectory = sails.config.custom.dotenv ?
-  sails.config.custom.dotenv.DIST_DIRECTORY :
+const distDirectory = process.env ?
+  process.env.DIST_DIRECTORY :
   process.env.DIST_DIRECTORY;
 
 module.exports = {

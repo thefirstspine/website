@@ -8,6 +8,9 @@
  * https://sailsjs.com/config/custom
  */
 
+// Load dotenv
+require('dotenv').config();
+
 module.exports.custom = {
 
   /***************************************************************************

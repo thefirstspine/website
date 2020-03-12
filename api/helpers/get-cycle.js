@@ -11,8 +11,8 @@ module.exports = {
 
   fn: async function(inputs, exits) {
     try {
-      const baseUrl = sails.config.custom.dotenv ?
-        sails.config.custom.dotenv.REST_URL :
+      const baseUrl = process.env ?
+        process.env.REST_URL :
         process.env.REST_URL;
       const url = `${baseUrl}/rest/cycles/${inputs.id}`;
       const result = await fetch(url);

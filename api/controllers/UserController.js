@@ -23,8 +23,8 @@ module.exports = {
     const errors = [];
 
     try {
-      const baseUrl = sails.config.custom.dotenv ?
-        sails.config.custom.dotenv.AUTH_URL :
+      const baseUrl = process.env ?
+        process.env.AUTH_URL :
         process.env.AUTH_URL;
       const response = await fetch(
         `${baseUrl}/api/login`,

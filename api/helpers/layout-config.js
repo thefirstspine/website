@@ -10,8 +10,8 @@ module.exports = {
   fn: async function(inputs, exits) {
     // Main config 
     const config = {
-      solidPancakeUrl: sails.config.custom.dotenv ?
-        sails.config.custom.dotenv.SOLID_PANCAKE_URL :
+      solidPancakeUrl: process.env ?
+        process.env.SOLID_PANCAKE_URL :
         process.env.SOLID_PANCAKE_URL,
       footer: {
         news: await sails.models.news.find({

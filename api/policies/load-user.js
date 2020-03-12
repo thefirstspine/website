@@ -15,8 +15,8 @@ module.exports = async function (req, res, proceed) {
   if (accessToken) {
     
     try {
-      const baseUrl = sails.config.custom.dotenv ?
-        sails.config.custom.dotenv.AUTH_URL :
+      const baseUrl = process.env ?
+        process.env.AUTH_URL :
         process.env.AUTH_URL;
       const url = `${baseUrl}/api/me`;
       const result = await fetch(
