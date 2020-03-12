@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   website_postgres:
-    image: postgres:11
+    image: postgres:10
     container_name: thefirstspine_website_postgres_container
     networks:
       default:
