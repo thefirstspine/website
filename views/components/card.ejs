@@ -7,7 +7,7 @@ Vue.component('card', {
   },
   mounted: async function() {
     const cardId = this.$attrs.cardid;
-    const response = await fetch(`http://localhost:2405/rest/cards/${cardId}`);
+    const response = await fetch(`<%= process.env.REST_URL %>/rest/cards/${cardId}`);
     this.card = await response.json();
   },
   methods: {
