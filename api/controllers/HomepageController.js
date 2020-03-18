@@ -8,6 +8,15 @@
 module.exports = {
 
   async index(req, res) {
+    if (Date.now() < (new Date("2020-04-03 17:00:00")).getTime()) {
+      return res.view(
+        'pages/wait.ejs',
+        {
+          layout: 'layouts/wait',
+          card: 'the-return',
+        }
+      );
+    }
 
     /**
      * Get a loot array & flat it to an object.
