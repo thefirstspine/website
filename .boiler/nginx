@@ -18,6 +18,18 @@ server {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
+    if ($host = thefirstspine.fr) {
+        return 301 https://www.thefirstspine.fr$request_uri;
+    }
+
+    if ($host = thefirstspine.com) {
+        return 301 https://www.thefirstspine.fr$request_uri;
+    }
+
+    if ($host = thefirstspine.com) {
+        return 301 https://www.thefirstspine.fr$request_uri;
+    }
+
 
     server_name www.thefirstspine.fr;
     listen 80;
