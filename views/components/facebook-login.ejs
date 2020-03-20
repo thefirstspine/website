@@ -1,0 +1,32 @@
+<script>
+Vue.component('facebook-login', {
+  data: function () {
+    return {
+    }
+  },
+  mounted: async function() {
+  },
+  methods: {
+    fblogin() {
+      FB.login(function(response) {
+          if (response.authResponse) {
+          console.log('Welcome!  Fetching your information.... ');
+          FB.api('/me', function(response) {
+            console.log('Good to see you, ' + response.name + '.');
+          });
+          } else {
+          console.log('User cancelled login or did not fully authorize.');
+          }
+      });
+    }
+  },
+  props: [],
+  template: '#facebook-login',
+})
+</script>
+
+<script type="text/x-template" id="facebook-login">
+  <div>
+    <a class="button is-facebook is-size-5" v-on:click="fblogin()">Connexion avec Facebook</a>
+  </div>
+</script>
