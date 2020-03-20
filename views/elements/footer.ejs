@@ -1,0 +1,33 @@
+<footer>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h4 class="has-text-primary is-uppercase">Restons connectés</h4>
+        <ul>
+          <li>
+            <a href="https://fb.com/thefirstspine" class="button is-facebook">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <h4 class="has-text-primary is-uppercase">Explorer</h4>
+        <ul>
+          <li><a href="/arena">Jouer en ligne</a></li>
+          <li><a href="/pnp" disabled>Jouer à la version PnP</a></li>
+          <li><a href="/about" disabled>A propos</a></li>
+          <li><a href="/events" disabled>Evenements</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h4 class="has-text-primary is-uppercase">Restez informés</h4>
+        <ul>
+          <% footer.news.forEach(function(newsItem) { %>
+            <li><a href="/blog/<%= newsItem.slug %>"><%= newsItem.title %></a></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
