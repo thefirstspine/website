@@ -8,16 +8,7 @@ Vue.component('facebook-login', {
   },
   methods: {
     fblogin() {
-      FB.login(function(response) {
-          if (response.authResponse) {
-          console.log('Welcome!  Fetching your information.... ');
-          FB.api('/me', function(response) {
-            console.log('Good to see you, ' + response.name + '.');
-          });
-          } else {
-          console.log('User cancelled login or did not fully authorize.');
-          }
-      });
+      window.location.href = 'https://www.facebook.com/v6.0/dialog/oauth?client_id=481790999175484&redirect_uri=https://www.thefirstspine.fr/login-with-facebook&scope=email';
     }
   },
   props: [],
