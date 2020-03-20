@@ -23,11 +23,8 @@ module.exports = {
     const errors = [];
 
     try {
-      const baseUrl = process.env ?
-        process.env.AUTH_URL :
-        process.env.AUTH_URL;
       const response = await fetch(
-        `${baseUrl}/api/login`,
+        `${process.env.AUTH_URL}/api/login`,
         {
           method: 'POST',
           headers: {
@@ -62,7 +59,7 @@ module.exports = {
 
   async tryLoginWithFacebook(req, res) {
     const response = await fetch(
-      `${AuthService.HOST}/api/login-with-facebook`, {
+      `${process.env.AUTH_URL}/api/login-with-facebook`, {
         method: 'post',
         body: JSON.stringify({
           code: req.query.code,
