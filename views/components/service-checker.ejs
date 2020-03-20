@@ -1,0 +1,30 @@
+<script>
+Vue.component('service-checker', {
+  data: function () {
+    return {
+      status: null,
+    }
+  },
+  mounted: async function() {
+    fetch(this.url)
+      .then(() => {
+        this.status = true;
+      })
+      .catch(() => {
+        this.status = false;
+      });
+  },
+  methods: {
+  },
+  props: ['url'],
+  template: '#service-checker',
+})
+</script>
+
+<script type="text/x-template" id="service-checker">
+  <div>
+    <span v-if="status === true" class="has-text-success"><i class="fas fa-check-circle"></i></span>
+    <span v-if="status === false" class="has-text-danger"><i class="fas fa-times-circle"></i></span>
+    <span v-if="status === null" class="has-text-warning"><i class="fas fa-circle"></i></span>
+  </div>
+</script>

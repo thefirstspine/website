@@ -38,22 +38,6 @@
       <script src="<%= solidPancakeUrl %>/sirup.js"></script>
       <script>sirup.persistantSession('tfs-website', navigator.platform).then(() => { sirup.event('viewPage', 'navigation', document.location.href); })</script>
     <% } %>
-    <script>
-      function checkservice(uri) {
-        fetch(uri)
-            .then(() => {
-              document
-                .getElementById(`status--${uri}`)
-                .innerHTML = ('<span class="has-text-success"><i class="fas fa-check-circle"></i></span>')
-            })
-            .catch(() => {
-              document
-                .getElementById(`status--${uri}`)
-                .innerHTML = ('<span class="has-text-danger"><i class="fas fa-times-circle"></i></span>')
-            })
-          document.write(`<ins id="status--${uri}"></ins>`)
-      }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
 
@@ -62,6 +46,7 @@
     </div>
 
     <%- include('../components/card.ejs'); %>
+    <%- include('../components/service-checker.ejs'); %>
     <%- include('../components/codeinput.ejs'); %>
     <script>
       var app = new Vue({
