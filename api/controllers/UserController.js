@@ -63,7 +63,7 @@ module.exports = {
         method: 'post',
         body: JSON.stringify({
           code: req.query.code,
-          redirect_uri: redirectUri,
+          redirect_uri: 'https://www.thefirstspine.fr/login-with-facebook',
         }),
         headers: {
           'Content-type': 'application/json',
