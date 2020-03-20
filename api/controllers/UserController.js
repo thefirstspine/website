@@ -60,6 +60,28 @@ module.exports = {
     );
   },
 
+  async tryLoginWithFacebook(req, res) {
+    const response = await fetch(
+      `${AuthService.HOST}/api/login-with-facebook`, {
+        method: 'post',
+        body: JSON.stringify({
+          code: req.query.code,
+          redirect_uri: redirectUri,
+        }),
+        headers: {
+          'Content-type': 'application/json',
+        },
+      });
+
+    const responseJson = await response.json();
+    if (response.status >= 400) {
+      return res.redirect('/login');
+    }
+
+    req.session.access_token = responseJson.access_token;
+    return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
+  },
+
   async logout(req, res) {
     req.session.access_token = null;
     return res.redirect('/');

@@ -46,6 +46,7 @@ module.exports.routes = {
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
   'POST /login': 'UserController.tryLogin',
+  'GET /login-with-facebook': 'UserController.tryLoginWithFacebook',
   'GET /profile': 'UserController.viewProfile',
   'POST /profile': 'UserController.editProfile',
   'GET /subscribe': 'UserController.viewSubscriptionForm',
