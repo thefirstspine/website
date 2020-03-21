@@ -1,0 +1,82 @@
+<script>
+Vue.component('navigation', {
+  data: function () {
+    return {
+      isMenuOpened: false,
+    }
+  },
+  props: [],
+  template: '#navigation',
+})
+</script>
+
+<script type="text/x-template" id="navigation">
+  <nav class="navbar is-fixed-top is-tfs">
+    <div class="container">
+      <div class="navbar-brand">
+        <a v-on:click="isMenuOpened = !isMenuOpened" :class="{'navbar-burger': true, 'burger': true, 'is-active': isMenuOpened}">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div :class="{'navbar-menu': true, 'is-active': isMenuOpened}">
+        <div class="navbar-start">
+          <a href="/" class="navbar-item">
+            Accueil
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Jouer</a>
+            <div class="navbar-dropdown">
+              <a href="/arena" class="navbar-item">
+                Jouer en ligne
+              </a>
+              <hr class="navbar-divider">
+              <a href="/pnp" class="navbar-item" disabled>
+                Jouer à la version PnP
+              </a>
+            </div>
+          </div>
+          <a href="/about" class="navbar-item">
+            A propos
+          </a>
+          <a href="/blog" class="navbar-item">
+            Actualités
+          </a>
+          <a href="/events" class="navbar-item" disabled>
+            Evenements
+          </a>
+        </div>
+        <% if(typeof(user_id) === 'undefined' || !user_id) { %>
+          <div class="navbar-end">
+            <a href="/login" class="navbar-brand avatar">
+              <img src="/images/menu-login.png" />
+            </a>
+            <a href="/login" class="navbar-item">
+              Connexion
+            </a>
+          </div>
+        <% } else { %>
+          <div class="navbar-end">
+            <a href="/profile" class="navbar-brand avatar">
+              <img src="/images/menu-login.png" />
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">Compte</a>
+              <div class="navbar-dropdown">
+                <a href="/profile" class="navbar-item">
+                  Editer votre compte
+                </a>
+                <hr class="navbar-divider">
+                <a href="/logout" class="navbar-item">
+                  Se déconnecter
+                </a>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+  
+</script>
