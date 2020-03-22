@@ -140,7 +140,7 @@ footer {
   background-repeat: no-repeat;
   background-position: center 15px;
   padding: 27px;
-  z-index: 1;
+  z-index: 5;
   a.navbar-item:focus,
   a.navbar-item:focus-within,
   a.navbar-item:hover,
@@ -175,12 +175,17 @@ footer {
   .navbar-dropdown {
     background: #222;
   }
+  .navbar-burger {
+    margin-top: 7px;
+  }
 }
 
 @media screen and (max-width: 1023px) {
   .navbar.is-tfs {
     .navbar-menu {
       background: black;
+      border: 2px solid #333;
+      box-shadow: black 0 0 20px, black 0 0 40px, black 0 0 60px;
     }
     .avatar {
       display: none;
@@ -330,6 +335,11 @@ footer {
     height: 1px;
     background: #FFF;
     margin: 1em 0;
+  }
+  @media screen and (max-width: 768px) {
+    hr {
+      margin: 0;
+    }
   }
   .middle {
     vertical-align: middle;
