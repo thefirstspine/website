@@ -8,11 +8,10 @@
 module.exports = {
 
   async index(req, res) {
-    if (req.user_id !== 1 && Date.now() < (new Date("2020-04-03 17:00:00")).getTime()) {
+    if (req.user_id !== 1 && Date.now() < (new Date("Fri Mar 27 2020 17:00:00 GMT+0100")).getTime()) {
       return res.view(
         'pages/wait.ejs',
         {
-          layout: 'layouts/wait',
           card: 'the-return',
         }
       );
