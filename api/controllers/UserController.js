@@ -97,6 +97,63 @@ module.exports = {
     );
   },
 
+  async submitSubscription(req, res) {
+    const errors = [];
+
+    if (req.body.conditions !== 'accept') {
+      errors.push(`Veuillez accepter les conditions d'utilisation.`);
+    } else {
+      try {
+        const response = await fetch(
+          `${process.env.AUTH_URL}/api/signup`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: req.body.email,
+              password: req.body.password,
+            }),
+          }
+        );
+        const json = await response.json();
+        if (json.user_id) {
+          const response = await fetch(
+            `${process.env.AUTH_URL}/api/login`,
+            {
+              method: 'POST',
+              headers: {
+                'Content-type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: req.body.email,
+                password: req.body.password,
+              }),
+            }
+          );
+          const json = await response.json();
+          req.session.access_token = json.access_token;
+          return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
+        } else {
+          errors.push(`Oups, votre inscription n'a pas pu se faire. Vérifiez vos informations.`);
+        }
+      } catch (e) {
+        console.log(e);
+        errors.push(`Le système d'inscription n'est actuellement pas disponible.`);
+      }
+    }
+
+    return res.view(
+      'pages/subscribe.ejs',
+      {
+        ...await sails.helpers.layoutConfig(req.user_id),
+        redirect: req.query.redirect,
+        errors,
+      }
+    );
+  },
+
   async viewProfile(req, res) {
     const errors = [];
 
