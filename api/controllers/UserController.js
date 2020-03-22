@@ -154,6 +154,49 @@ module.exports = {
     );
   },
 
+  async viewForgottenPasswordForm(req, res) {
+    const errors = [];
+
+    return res.view(
+      'pages/forgottent-password.ejs',
+      {
+        ...await sails.helpers.layoutConfig(req.user_id),
+        redirect: req.query.redirect,
+        errors,
+      }
+    );
+  },
+
+  async sendNewPassword(req, res) {
+    const errors = [];
+    const messages = [];
+
+    await fetch(
+      `${process.env.AUTH_URL}/api/password-lost`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: req.body.email,
+        }),
+      }
+    );
+
+    messages.push('Votre mot de passe vous a été envoyé !');
+
+    return res.view(
+      'pages/forgottent-password.ejs',
+      {
+        ...await sails.helpers.layoutConfig(req.user_id),
+        redirect: req.query.redirect,
+        errors,
+        messages,
+      }
+    );
+  },
+
   async viewProfile(req, res) {
     const errors = [];
 

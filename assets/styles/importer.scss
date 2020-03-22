@@ -138,7 +138,7 @@ footer {
   background-color: transparent;
   background-image: url(../images/menu.png);
   background-repeat: no-repeat;
-  background-position: center 15px;
+  background-position: center 18px;
   padding: 27px;
   z-index: 5;
   a.navbar-item:focus,
@@ -176,7 +176,7 @@ footer {
     background: #222;
   }
   .navbar-burger {
-    margin-top: 7px;
+    margin-top: 10px;
   }
 }
 
@@ -204,7 +204,7 @@ footer {
   }
 }
 
-#arena, #beta, #login, #subscribe, #cgu {
+#arena, #beta, #login, #forgotten-password, #subscribe, #cgu {
   padding-top: 150px;
 }
 
@@ -346,6 +346,41 @@ footer {
   }
   .button {
     width: 100%;
+    margin: 0;
+  }
+  .buttons {
+    margin-top: 2em;
+    .field {
+      width: 100%;
+    }
+  }
+  .informations {
+    margin-top: 2em;
+    p {
+      margin-top: 1em;
+    }
+  }
+}
+
+#forgotten-password {
+  h1 {
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+  }
+  hr {
+    height: 1px;
+    background: #FFF;
+    margin: 1em 0;
+  }
+  @media screen and (max-width: 768px) {
+    hr {
+      margin: 0;
+    }
+  }
+  .button {
+    width: 100%;
+    margin: 0;
   }
   .buttons {
     margin-top: 2em;
@@ -383,6 +418,7 @@ footer {
   }
   .button {
     width: 100%;
+    margin: 0;
   }
   .buttons {
     margin-top: 2em;
