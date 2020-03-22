@@ -197,14 +197,81 @@ module.exports = {
     );
   },
 
-  async viewProfile(req, res) {
+  async editProfile(req, res) {
     const errors = [];
+    const messages = [];
+
+    if (req.body.password !== req.body.password2) {
+      errors.push(`Les mots de passe ne correspondent pas.`);
+    } else if (!req.body.password || req.body.password.length < 8) {
+      errors.push(`Le mot de passe doit avoir au moins 8 caractères.`);
+    } else {
+      const response = await fetch(
+        `${process.env.AUTH_URL}/api/me`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${req.session.access_token}`,
+          },
+          body: JSON.stringify({
+            password: req.body.password,
+          }),
+        }
+      );
+      if (response.status >= 400) {
+        errors.push(`Le changement de mot de passe a échoué.`);
+      } else {
+        messages.push(`Le mot de passe a été modifié.`);
+      }
+    }
+    
+
+    const response = await fetch(
+      `${process.env.ARENA_URL}/wizzard`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-type': 'application/json',
+          'Authorization': `Bearer ${req.session.access_token}`,
+        },
+      }
+    );
+    const wizard = await response.json();
 
     return res.view(
       'pages/profile.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
+        wizard,
+        errors,
+        messages,
+      }
+    );
+  },
+
+  async viewProfile(req, res) {
+    const errors = [];
+
+    const response = await fetch(
+      `${process.env.ARENA_URL}/wizzard`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-type': 'application/json',
+          'Authorization': `Bearer ${req.session.access_token}`,
+        },
+      }
+    );
+    const wizard = await response.json();
+
+    return res.view(
+      'pages/profile.ejs',
+      {
+        ...await sails.helpers.layoutConfig(req.user_id),
+        redirect: req.query.redirect,
+        wizard,
         errors,
       }
     );
