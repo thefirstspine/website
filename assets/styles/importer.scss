@@ -204,7 +204,7 @@ footer {
   }
 }
 
-#arena, #beta, #login, #forgotten-password, #subscribe, #cgu, #pnp {
+#beta, #login, #forgotten-password, #subscribe, #cgu, #pnp {
   padding-top: 150px;
 }
 
@@ -316,6 +316,15 @@ footer {
     .card-wrapper {
       margin: 2em auto 0 auto;
     }
+  }
+}
+
+#arena {
+  .arena-header {
+    background-image: url(../images/arena-header.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding: 150px 0 100px 0;
   }
 }
 
