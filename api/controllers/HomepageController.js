@@ -8,7 +8,7 @@
 module.exports = {
 
   async index(req, res) {
-    if (false && Date.now() < (new Date("2020-04-03 17:00:00")).getTime()) {
+    if (req.user_id !== 1 && Date.now() < (new Date("2020-04-03 17:00:00")).getTime()) {
       return res.view(
         'pages/wait.ejs',
         {
