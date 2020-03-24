@@ -1,8 +1,10 @@
+<%- include('../elements/nav.ejs') %>
+
 <div id="blog">
   <div class="blog-heading">
     <div class="article-image" style="background-image: url(/images/<%= article.image %>);"></div>
     <div class="container">
-      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered"><%= article.title %></h1>
+      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered has-text-shadow"><%= article.title %></h1>
     </div>
   </div>
 
@@ -18,3 +20,5 @@
     </div>
   </div>
 </div>
+
+<%- include('../elements/footer.ejs') %>

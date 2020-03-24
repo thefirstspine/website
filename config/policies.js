@@ -21,6 +21,9 @@ module.exports.policies = {
 
   UserController: {
     '*': ['load-user', 'is-logged-in'],
+    'tryLoginWithFacebook': ['load-user'],
+    'viewForgottenPasswordForm': ['load-user'],
+    'sendNewPassword': ['load-user'],
     'viewLoginForm': ['load-user'],
     'tryLogin': ['load-user'],
     'viewSubscriptionForm': ['load-user'],

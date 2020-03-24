@@ -152,7 +152,7 @@ module.exports = {
     ***************************************************************************/
     cors: {
       allowOrigins: [
-        'http://beta.thefirstspine.fr',
+        'http://thefirstspine.fr',
       ]
     },
 
@@ -254,7 +254,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-     'http://beta.arena.thefirstspine.fr',
+     'http://arena.thefirstspine.fr',
     ],
 
 

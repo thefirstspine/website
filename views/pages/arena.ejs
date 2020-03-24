@@ -1,49 +1,53 @@
+<%- include('../elements/nav.ejs') %>
+
 <div id="arena">
-  <div class="container">
-    <h1 class="has-text-centered has-text-primary is-size-2" style="margin: 2em 0">
-      <img src="images/arena-icon.png" width="250" /><br />
-      Téléchargez le client
-    </h1>
-    <p class="has-text-centered">
-      <% if (windowsVersion) { %>
-      <a class="button is-info is-size-5" href="/download/windows">
-        <i class="fab fa-windows"></i> &nbsp;
-        Windows (v<%= windowsVersion %>)
-      </a>
-      <% } else { %>
-        <a disabled class="button is-info is-size-5">
+  <div class="arena-header">
+    <div class="container">
+      <h1 class="has-text-centered has-text-primary is-uppercase is-size-2" style="margin: 2em 0">
+        <img src="images/arena-icon.png" width="250" /><br />
+        Jouez à The First Spine en ligne
+      </h1>
+      <p class="has-text-centered">
+        <% if (windowsVersion) { %>
+        <a class="button is-info is-size-5" href="/download/windows">
           <i class="fab fa-windows"></i> &nbsp;
-          Bientôt disponible
+          Windows (v<%= windowsVersion %>)
         </a>
-      <% } %>
+        <% } else { %>
+          <a disabled class="button is-info is-size-5">
+            <i class="fab fa-windows"></i> &nbsp;
+            Bientôt disponible
+          </a>
+        <% } %>
 
-      <% if (macosVersion) { %>
-        <a class="button is-light is-size-5" href="/download/macos">
-          <i class="fab fa-apple"></i> &nbsp;
-          Mac OS (v<%= macosVersion %>)
-        </a>
-      <% } else { %>
-        <a disabled class="button is-light is-size-5">
-          <i class="fab fa-apple"></i> &nbsp;
-          Bientôt disponible
-        </a>
-      <% } %>
+        <% if (macosVersion) { %>
+          <a class="button is-light is-size-5" href="/download/macos">
+            <i class="fab fa-apple"></i> &nbsp;
+            Mac OS (v<%= macosVersion %>)
+          </a>
+        <% } else { %>
+          <a disabled class="button is-light is-size-5">
+            <i class="fab fa-apple"></i> &nbsp;
+            Bientôt disponible
+          </a>
+        <% } %>
 
-      <% if (linuxVersion) { %>
-        <a class="button is-primary is-size-5" href="/download/linux">
-          <i class="fab fa-linux"></i> &nbsp;
-          Linux (v<%= linuxVersion %>)
-        </a>
-      <% } else { %>
-        <a disabled class="button is-primary is-size-5">
-          <i class="fab fa-linux"></i> &nbsp;
-          Bientôt disponible
-        </a>
-      <% } %>
-    </p>
+        <% if (linuxVersion) { %>
+          <a class="button is-primary is-size-5" href="/download/linux">
+            <i class="fab fa-linux"></i> &nbsp;
+            Linux (v<%= linuxVersion %>)
+          </a>
+        <% } else { %>
+          <a disabled class="button is-primary is-size-5">
+            <i class="fab fa-linux"></i> &nbsp;
+            Bientôt disponible
+          </a>
+        <% } %>
+      </p>
+    </div>
   </div>
 
-  <div class="separator has-margin"></div>
+  <div class="separator"></div>
 
   <div class="container">
     <div class="columns">
@@ -52,13 +56,13 @@
       </div>
       <div class="column">
         <h3 class="has-text-primary is-size-3">Toutes les cartes et rien de moins</h3>
-        <p>Toutes les cartes de The First Spine sont présentes dans Arena. Vous pouvez jouer avec les decks que vous voulez, quand vous voulez et gratuitement.</p>
+        <p class="has-margin-top-2">Toutes les cartes de The First Spine sont présentes dans Arena. Vous pouvez jouer avec les decks que vous voulez, quand vous voulez et gratuitement.</p>
       </div>
     </div>
     <div class="columns">
       <div class="column">
         <h3 class="has-text-primary is-size-3">Matchmaking classé ou rapide</h3>
-        <p>Deux types de matchmaking sont disponibles : le matchmaking classé vous mettra en face d'adversaires à votre taille, tandis que le matchmaking rapide vous fera combattre dès qu'un adversaire est disponible.</p>
+        <p class="has-margin-top-2">Deux types de matchmaking sont disponibles : le matchmaking classé vous mettra en face d'adversaires à votre taille, tandis que le matchmaking rapide vous fera combattre dès qu'un adversaire est disponible.</p>
       </div>
       <div class="column">
         <img src="images/matchmaking.gif" />
@@ -70,7 +74,7 @@
       </div>
       <div class="column">
         <h3 class="has-text-primary is-size-3">Triomphez de vos adversaires</h3>
-        <p>Enchaînez les victoires et débloquez des cosmétiques pour personnaliser vos cartes !</p>
+        <p class="has-margin-top-2">Enchaînez les victoires et débloquez des cosmétiques pour personnaliser vos cartes !</p>
       </div>
     </div>
   </div>
@@ -84,7 +88,7 @@
         <div>
           <p class="heading">Parties en ligne</p>
           <p class="title">
-            <script>checkservice('https://beta.arena.thefirstspine.fr/status')</script>
+            <service-checker url="https://arena.thefirstspine.fr/status"></service-checker>
           </p>
         </div>
       </div>
@@ -92,7 +96,7 @@
         <div>
           <p class="heading">Authentification</p>
           <p class="title">
-            <script>checkservice('https://beta.auth.thefirstspine.fr/status')</script>
+            <service-checker url="https://auth.thefirstspine.fr/status"></service-checker>
           </p>
         </div>
       </div>
@@ -100,7 +104,7 @@
         <div>
           <p class="heading">JcE</p>
           <p class="title">
-            <script>checkservice('https://beta.bots.thefirstspine.fr/status')</script>
+            <service-checker url="https://bots.thefirstspine.fr/status"></service-checker>
           </p>
         </div>
       </div>
@@ -108,7 +112,7 @@
         <div>
           <p class="heading">Notifications en direct</p>
           <p class="title">
-            <script>checkservice('https://beta.messaging.thefirstspine.fr/status')</script>
+            <service-checker url="https://messaging.thefirstspine.fr/status"></service-checker>
           </p>
         </div>
       </div>
@@ -116,7 +120,7 @@
         <div>
           <p class="heading">Ressources</p>
           <p class="title">
-            <script>checkservice('https://beta.rest.thefirstspine.fr/status')</script>
+            <service-checker url="https://rest.thefirstspine.fr/status"></service-checker>
           </p>
         </div>
       </div>
@@ -124,7 +128,7 @@
         <div>
           <p class="heading">Espaces de discussions</p>
           <p class="title">
-            <script>checkservice('https://beta.rooms.thefirstspine.fr/status')</script>
+            <service-checker url="https://rooms.thefirstspine.fr/status"></service-checker>
           </p>
         </div>
       </div>
@@ -132,7 +136,7 @@
         <div>
           <p class="heading">Statistiques</p>
           <p class="title">
-            <script>checkservice('https://beta.solid-pancake.thefirstspine.fr/status')</script>
+            <service-checker url="https://solid-pancake.thefirstspine.fr/status"></service-checker>
           </p>
         </div>
       </div>
@@ -140,3 +144,5 @@
   </div>
 
 </div>
+
+<%- include('../elements/footer.ejs') %>

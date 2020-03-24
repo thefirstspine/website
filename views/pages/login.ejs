@@ -1,3 +1,5 @@
+<%- include('../elements/nav.ejs') %>
+
 <div id="login" class="">
   <div class="container">
     <div class="columns">
@@ -54,7 +56,7 @@
               </div>
               <div class="field">
                 <div class="control">
-                  <a class="button is-facebook is-size-5">Connexion avec Facebook</a>
+                  <facebook-login></facebook-login>
                 </div>
               </div>
             </div>
@@ -70,3 +72,5 @@
     </div>
   </div>
 </div>
+
+<%- include('../elements/footer.ejs') %>

@@ -1,3 +1,5 @@
+<%- include('../elements/nav.ejs') %>
+
 <div id="subscribe" class="">
   <div class="container">
     <div class="columns">
@@ -24,7 +26,7 @@
             </div>
             <div class="field">
               <div class="control has-icons-left">
-                <input class="input is-medium" type="password" name="password" placeholder="Mot de passe">
+                <input class="input is-medium" type="password" name="password" placeholder="Mot de passe (8 caractères minimum)">
                 <span class="icon is-medium is-left">
                   <i class="fas fa-key"></i>
                 </span>
@@ -32,7 +34,7 @@
             </div>
             <div class="field">
               <label class="checkbox has-text-white">
-                <input type="checkbox" name="conditions">
+                <input type="checkbox" name="conditions" value="accept" />
                 J'accepte les <a class="has-text-primary" target="_blank" href="/cgu">conditions d'utilisations</a>
               </label>
             </div>
@@ -57,7 +59,7 @@
               </div>
               <div class="field">
                 <div class="control">
-                  <a class="button is-facebook is-size-5">Connexion avec Facebook</a>
+                  <facebook-login></facebook-login>
                 </div>
               </div>
             </div>
@@ -70,3 +72,5 @@
     </div>
   </div>
 </div>
+
+<%- include('../elements/footer.ejs') %>

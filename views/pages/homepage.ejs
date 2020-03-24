@@ -1,3 +1,5 @@
+<%- include('../elements/nav.ejs') %>
+
 <div id="homepage">
   <div class="homepage-hero <%= ['hunter', 'sorcerer', 'summoner', 'conjurer'][Math.floor(Math.random() * 4)] %>">
     <div class="content">
@@ -83,7 +85,7 @@
       <h2 class="has-text-centered is-size-3 is-uppercase">Carte du jour</h2>
       <h3 class="has-text-centered is-size-4 is-uppercase">Chaque jour, découvrez une carte du jeu</h3>
       <div class="has-text-centered">
-        <div class="card-wrapper">
+        <div class="card-wrapper is-fluid">
           <card color="#111"
             :holo="<%= cardOfTheDay.isHolo %>"
             :premium="<%= cardOfTheDay.isPremium %>"
@@ -94,3 +96,5 @@
   </div>
 
 </div>
+
+<%- include('../elements/footer.ejs') %>

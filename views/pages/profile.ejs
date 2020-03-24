@@ -1,19 +1,16 @@
+<%- include('../elements/nav.ejs') %>
+
 <div id="profile">
 
   <div class="profile-heading">
     <div class="container">
-      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered">Votre compte</h1>
+      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered has-text-shadow">Votre compte</h1>
     </div>
   </div>
 
   <div class="separator"></div>
 
   <div class="container">
-    <article  class="message is-danger">
-      <div class="message-body">
-        Malheuresement votre compte n'est pas (encore) éditable.
-      </div>
-    </article >
     <% if(errors.length) { %>
       <% errors.forEach(function(error){ %>
         <article  class="message is-danger">
@@ -23,5 +20,71 @@
         </article >
       <% }); %>
     <% } %>
+    <% if(typeof(messages) !== 'undefined' && messages && messages.length) { %>
+      <% messages.forEach(function(error){ %>
+        <article  class="message is-success">
+          <div class="message-body">
+            <%= error %>
+          </div>
+        </article >
+      <% }); %>
+    <% } %>
+    <div class="columns">
+      <div class="column is-6 is-offset-3">
+        <h2 class="has-text-primary is-size-3 has-text-centered">Modifier profil en ligne</h2>
+        <p>&nbsp;</p>
+        <p>Votre profil en ligne n'est pas modifiable ici. Téléchargez et installez <a href="/arena" class="has-text-primary">Arena</a> pour changer votre avatar ou votre nom de sorcier.</p>
+        <hr />
+        <h2 class="has-text-primary is-size-3 has-text-centered">Vos monnaies</h2>
+        <div class="columns has-text-centered">
+          <div class="column">
+            <img style="width: 100px;" src="/images/shard.png" />
+            <h3 class="is-size-5 is-uppercase has-text-primary"><%= wizard.items.find(i => i.name === 'shard') ? wizard.items.find(i => i.name === 'shard').num : 0 %> éclats de mana</h3>
+            <p class="is-size-5 is-italic has-margin-top-1 is-size-6">
+              De l'énergie de la Couronne cristalisée permettant à son détenteur de se démarquer des autres sorciers.
+            </p>
+            <p class="is-size-5 is-italic has-margin-top-1 is-size-6">
+              Permet d'acheter des cosmétiques dans Arena.
+            </p>
+          </div>
+          <div class="column">
+            <img style="width: 100px;" src="/images/coin.png" />
+            <h3 class="is-size-5 is-uppercase has-text-primary"><%= wizard.items.find(i => i.name === 'coin') ? wizard.items.find(i => i.name === 'coin').num : 0 %> pièces étranges</h3>
+            <p class="is-size-5 is-italic has-margin-top-1 is-size-6">
+              Personne ne sait d'où viennent ces pièces faites d'un métal jaune inconnu.
+            </p>
+            <p class="is-size-5 is-italic has-margin-top-1 is-size-6">
+              Permet d'agrémenter le contenu de l'édition commandée lors de la future campagne Kickstarter.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <h2 class="has-text-primary is-size-3 has-text-centered">Modifier votre mot de passe</h2>
+        <p>&nbsp;</p>
+        <form action="/profile" method="POST">
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" name="password" type="password" placeholder="Nouveau mot de passe">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" name="password2" type="password" placeholder="Confirmez votre mot de passe">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <p class="has-text-centered">
+            <input type="submit" class="button is-primary" value="Changer le mot de passe" />
+          </p>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
+
+<%- include('../elements/footer.ejs') %>

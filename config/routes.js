@@ -34,6 +34,8 @@ module.exports.routes = {
   // Pages
   'GET /': 'HomepageController.index',
   'GET /cgu': 'CGUController.index',
+  'GET /about': 'AboutController.index',
+  'GET /pnp': 'PnpController.index',
 
   // Arena
   'GET /arena': 'ArenaController.index',
@@ -46,6 +48,9 @@ module.exports.routes = {
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
   'POST /login': 'UserController.tryLogin',
+  'GET /forgotten-password': 'UserController.viewForgottenPasswordForm',
+  'POST /forgotten-password': 'UserController.sendNewPassword',
+  'GET /login-with-facebook': 'UserController.tryLoginWithFacebook',
   'GET /profile': 'UserController.viewProfile',
   'POST /profile': 'UserController.editProfile',
   'GET /subscribe': 'UserController.viewSubscriptionForm',
