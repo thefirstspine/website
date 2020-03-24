@@ -25,6 +25,7 @@ module.exports = {
         'pages/code-not-found',
         {
           ...await sails.helpers.layoutConfig(req.user_id),
+          title: 'Entrez un code obtenu lors d\'un événement',
         }
       );
     }
@@ -38,6 +39,7 @@ module.exports = {
         'pages/code-added',
         {
           ...await sails.helpers.layoutConfig(req.user_id),
+          title: 'Entrez un code obtenu lors d\'un événement',
           code: codeEntity,
         }
       );
@@ -48,6 +50,7 @@ module.exports = {
       'pages/code-to-add',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        title: 'Entrez un code obtenu lors d\'un événement',
         code: codeEntity,
       }
     );
@@ -57,7 +60,8 @@ module.exports = {
     return res.view(
       'pages/code-form',
       {
-        ...await sails.helpers.layoutConfig(req.user_id)
+        ...await sails.helpers.layoutConfig(req.user_id),
+        title: 'Entrez un code obtenu lors d\'un événement',
       }
     );
   },
