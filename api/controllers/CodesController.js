@@ -5,6 +5,8 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+const fetch = require('node-fetch');
+
 module.exports = {
   
   async submit(req, res) {
@@ -31,6 +33,24 @@ module.exports = {
 
     if (req.user_id) {
       // Add the code to the profile
+      // Add the rewards to the user
+      const promises = Object.keys(codeEntity.loots).map((lootName) => {
+        return fetch(
+          `${process.env.ARENA_URL}/wizzard/reward/${req.user_id}`,
+          {
+            method: 'POST',
+            body: JSON.stringify({
+              name: lootName,
+              num: codeEntity.loots[lootName],
+            }),
+            headers: {
+              'X-Client-Cert': Buffer.from(process.env.ARENA_PUBLIC_KEY.replace(/\\n/gm, '\n')).toString('base64'),
+              'Content-type': 'application/json',
+            },
+          });
+      });
+      await Promise.all(promises);
+      // Update the code
       await sails.models.code.update({id: codeEntity.id}).set({
         user: req.user_id,
       });
