@@ -13,6 +13,7 @@ module.exports = {
     return res.view(
       'pages/login.ejs',
       {
+        title: 'Connexion',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
       }
@@ -50,6 +51,7 @@ module.exports = {
     return res.view(
       'pages/login.ejs',
       {
+        title: 'Connexion',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,
@@ -90,6 +92,7 @@ module.exports = {
     return res.view(
       'pages/subscribe.ejs',
       {
+        title: 'Inscription',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,
@@ -147,6 +150,7 @@ module.exports = {
     return res.view(
       'pages/subscribe.ejs',
       {
+        title: 'Inscription',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,
@@ -189,6 +193,7 @@ module.exports = {
     return res.view(
       'pages/forgottent-password.ejs',
       {
+        title: 'Mot de passe perdu',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,
@@ -242,6 +247,7 @@ module.exports = {
     return res.view(
       'pages/profile.ejs',
       {
+        title: 'Profil',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         wizard,
@@ -269,6 +275,7 @@ module.exports = {
     return res.view(
       'pages/profile.ejs',
       {
+        title: 'Profil',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         wizard,

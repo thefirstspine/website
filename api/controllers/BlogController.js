@@ -12,6 +12,7 @@ module.exports = {
       'pages/blog.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        title: 'Actualités',
         news: await sails.models.news.find({
           sort: 'createdAt DESC',
           where: {
@@ -33,6 +34,7 @@ module.exports = {
       'pages/article.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        title: article.title,
         article,
       }
     );

@@ -12,6 +12,7 @@ module.exports = {
       'pages/pnp.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        title: 'Print and Play',
       }
     );
   }
