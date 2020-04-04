@@ -62,7 +62,7 @@ Vue.component('card', {
       v-on:mouseup="$emit('mouseup')"
       v-on:mouseenter="$emit('mouseenter')"
       v-on:mouseleave="$emit('mouseleave')">
-      <div class="container">
+      <div class="card-container">
         <div class="image" :style="{backgroundImage: 'url(/images/' + card.imageUrl.replace('https://static.thefirstspine.fr/', '') + ')'}"></div>
         <div class="holo-stars"></div>
         <div class="holo-color"></div>
