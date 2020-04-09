@@ -92,6 +92,11 @@ footer {
     border-color: #3b5998;
     color: #FFF;
   }
+  &.is-android {
+    background-color: #a4c639;
+    border-color: #a4c639;
+    color: #FFF;
+  }
   &.is-youtube {
     background-color: #E62117;
     border-color: #E62117;

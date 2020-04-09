@@ -32,6 +32,7 @@
           </a>
         <% } %>
 
+        <% /* %>
         <% if (linuxVersion) { %>
           <a class="button is-primary is-size-5" href="/download/linux">
             <i class="fab fa-linux"></i> &nbsp;
@@ -43,6 +44,19 @@
             Bientôt disponible
           </a>
         <% } %>
+        <% */ %>
+        
+        <a disabled class="button is-android is-size-5">
+          <i class="fab fa-android"></i> &nbsp;
+          Bientôt disponible
+        </a>
+        
+        <% /* %>
+        <a disabled class="button is-light is-size-5">
+          <i class="fab fa-app-store-ios"></i> &nbsp;
+          Bientôt disponible
+        </a>
+        <% */ %>
       </p>
     </div>
   </div>
@@ -137,6 +151,14 @@
           <p class="heading">Statistiques</p>
           <p class="title">
             <service-checker url="https://solid-pancake.thefirstspine.fr/status"></service-checker>
+          </p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Achats en ligne</p>
+          <p class="title">
+            <service-checker url="https://shop.thefirstspine.fr/status"></service-checker>
           </p>
         </div>
       </div>
