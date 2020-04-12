@@ -32,6 +32,8 @@ module.exports.policies = {
 
   // Blueprint API
   'news/*':['load-user', 'is-logged-in', 'is-admin'],
+  'news/find':[],
+  'news/findOne':[],
   'code/*':['load-user', 'is-logged-in', 'is-admin'],
 
 };

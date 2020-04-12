@@ -151,9 +151,9 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      allowOrigins: [
-        'http://thefirstspine.fr',
-      ]
+      allRoutes: true,
+      allowOrigins: '*',
+      allowCredentials: false,
     },
 
   },
