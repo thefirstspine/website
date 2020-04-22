@@ -55,6 +55,7 @@ Vue.component('card', {
         ${(holo ? 'is-holo' : '')}
         ${(premium ? 'is-premium' : '')}
         ${(card.type === 'square' ? 'is-square' : '')}
+        type-${card.type}
         style-${cardStyle}
       `" 
       :style="{backgroundColor: color}"
@@ -66,8 +67,8 @@ Vue.component('card', {
         <div class="image" :style="{backgroundImage: 'url(/images/' + card.imageUrl.replace('https://static.thefirstspine.fr/', '') + ')'}"></div>
         <div class="holo-stars"></div>
         <div class="holo-color"></div>
-        <div :class="'type type1 type-' + card.type"></div>
-        <div :class="'type type2 type-' + card.type"></div>
+        <div class="frame frame1"></div>
+        <div class="frame frame2"></div>
         <div class="name">{{ card.name['fr'] }}</div>
         <div class="description" v-html="formatHtml(card.text['fr'])">
         </div>
