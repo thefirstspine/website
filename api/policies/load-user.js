@@ -12,15 +12,14 @@ module.exports = async function (req, res, proceed) {
     accessToken = req.headers.authorization.replace(/Bearer /, '');
   }
 
+  // Get base URL for service
+  const baseUrl = process.env.AUTH_URL;
+
   if (accessToken) {
-    
+    // Try to retrieve the user with the token
     try {
-      const baseUrl = process.env ?
-        process.env.AUTH_URL :
-        process.env.AUTH_URL;
-      const url = `${baseUrl}/api/me`;
       const result = await fetch(
-        url,
+        `${baseUrl}/api/me`,
         {
           headers: {
             'Content-type': 'application/json',
@@ -32,6 +31,33 @@ module.exports = async function (req, res, proceed) {
       const resultJson = await result.json();
       if (resultJson.user_id) {
         req.user_id = resultJson.user_id; // store user ID for future purposes
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
+    // Decode access token
+    try {
+      const jwtPayload = accessToken.split('.')[1];
+      const decodedJwtPayload = Buffer.from(jwtPayload, 'base64').toString();
+      const jsonJwtPayload = JSON.parse(decodedJwtPayload);
+
+      // On a token too old (more than 6 hours), refresh the token
+      if ((Date.now() - (jsonJwtPayload.iat * 1000)) > (6 * 60 * 60 * 1000)) {
+        const result = await fetch(
+          `${baseUrl}/api/refresh`,
+          {
+            headers: {
+              'Content-type': 'application/json',
+              'Authorization': `Bearer ${accessToken}`,
+            },
+            method: 'POST',
+          }
+        );
+        const resultJson = await result.json();
+        if (resultJson.access_token) {
+          req.session.access_token = accessToken = resultJson.access_token; // store the refreshed access token
+        }
       }
     } catch (e) {
       console.log(e);
