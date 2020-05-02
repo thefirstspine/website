@@ -281,8 +281,10 @@ footer {
     &.cycle-renewal-2020 {
       background-image: url(../images/cycle-renewal.png);
     }
-    &.cycle-great-old-2020 {
-      background-image: url(../images/cycle-great-old.png);
+    &.cycle-great-ancient-2020 {
+      background-image: url(../images/background-great-ancient-2020.jpg);
+      background-size: 150%;
+      background-position: bottom;
     }
     .card-wrapper {
       margin: 2em auto 0 auto;
