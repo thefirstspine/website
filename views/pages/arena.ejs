@@ -8,59 +8,30 @@
         Jouez à The First Spine en ligne
       </h1>
       <p class="has-text-centered">
-        <a class="button is-link is-size-5" href="https://play.thefirstspine.fr/">
-          <i class="fas fa-desktop"></i> &nbsp;
-          Sur navigateur (experimental)
-        </a>
         <% if (windowsVersion) { %>
         <a class="button is-info is-size-5" href="/download/windows">
           <i class="fab fa-windows"></i> &nbsp;
           Windows (v<%= windowsVersion %>)
+        </a>
+        <a class="button is-link is-size-5" href="https://play.thefirstspine.fr/">
+          <i class="fas fa-desktop"></i> &nbsp;
+          Sur navigateur (v<%= windowsVersion %>)
         </a>
         <% } else { %>
           <a disabled class="button is-info is-size-5">
             <i class="fab fa-windows"></i> &nbsp;
             Bientôt disponible
           </a>
-        <% } %>
-
-        <% if (macosVersion) { %>
-          <a class="button is-light is-size-5" href="/download/macos">
-            <i class="fab fa-apple"></i> &nbsp;
-            Mac OS (v<%= macosVersion %>)
-          </a>
-        <% } else { %>
-          <a disabled class="button is-light is-size-5">
-            <i class="fab fa-apple"></i> &nbsp;
+          <a disabled class="button is-link is-size-5">
+            <i class="fas fa-desktop"></i> &nbsp;
             Bientôt disponible
           </a>
         <% } %>
-
-        <% /* %>
-        <% if (linuxVersion) { %>
-          <a class="button is-primary is-size-5" href="/download/linux">
-            <i class="fab fa-linux"></i> &nbsp;
-            Linux (v<%= linuxVersion %>)
-          </a>
-        <% } else { %>
-          <a disabled class="button is-primary is-size-5">
-            <i class="fab fa-linux"></i> &nbsp;
-            Bientôt disponible
-          </a>
-        <% } %>
-        <% */ %>
         
         <a disabled class="button is-android is-size-5">
           <i class="fab fa-android"></i> &nbsp;
           Bientôt disponible
         </a>
-        
-        <% /* %>
-        <a disabled class="button is-light is-size-5">
-          <i class="fab fa-app-store-ios"></i> &nbsp;
-          Bientôt disponible
-        </a>
-        <% */ %>
       </p>
     </div>
   </div>
