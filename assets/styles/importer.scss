@@ -26,12 +26,34 @@ $table-head-cell-color: $primary;
 
 /* Import Vue components */
 @import "./card.scss";
+@import "./card-autoload.scss";
 @import "./capacities.scss";
 
 [disabled] {
   opacity: .5;
   pointer-events: none;
   cursor: not-allowed;
+}
+
+.stat {
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+  border-radius: 1em;
+  border: 2px solid #FFF;
+  font-size: .75em;
+  margin: -.5em 0;
+  text-align: center;
+  padding: 2px;
+  &.strength {
+    background: radial-gradient(ellipse at center, #c7523a 0%, #6d0019 50%);
+  }
+  &.defense {
+    background: radial-gradient(ellipse at center, #6392c5 0%, #002447 50%);
+  }
+  &.life {
+    background: radial-gradient(ellipse at center, #4e4d4d 0%, #000000 50%);
+  }
 }
 
 .has-margin-top-2 {
@@ -108,10 +130,13 @@ footer {
   display: inline-block;
   width: 500px;
   height: 500px;
+  &.is-wrapped {
+    overflow: hidden;
+  }
   &.is-half {
     width: 250px;
     height: 250px;
-    div[card] {
+    div[card-autoload] {
       transform: scale(.5);
       margin: -125px;
     }
@@ -119,7 +144,7 @@ footer {
   &.is-one-third {
     width: 330px;
     height: 330px;
-    div[card] {
+    div[card-autoload] {
       transform: scale(0.66);
       margin: -85px;
     }
@@ -131,7 +156,7 @@ footer {
     @media screen and (max-width: 768px) {
       width: 250px;
       height: 250px;
-      div[card] {
+      div[card-autoload] {
         transform: scale(.5);
         margin: -125px;
       }
@@ -562,6 +587,21 @@ footer {
   hr {
     height: 1px;
     background-color: #999;
+  }
+}
+
+#rules {
+  .rules-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/top-summoner.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  hr {
+    height: 1px;
+    background-color: #999;
+    margin: 6em;
   }
 }
 

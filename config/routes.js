@@ -35,6 +35,7 @@ module.exports.routes = {
   'GET /': 'HomepageController.index',
   'GET /cgu': 'CGUController.index',
   'GET /about': 'AboutController.index',
+  'GET /rules': 'RulesController.index',
   'GET /pnp': 'PnpController.index',
 
   // Arena
