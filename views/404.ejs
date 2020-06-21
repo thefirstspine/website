@@ -3,6 +3,11 @@
   <div class="container" style="margin-top: 100px">
     <div class="has-text-centered">
       <h1 class="has-text-centered has-text-primary is-uppercase is-size-2">Que cherchez vous ?</h1>
+      <div class="has-margin-top-2">
+        <div class="card-wrapper is-half">
+          <card-autoload color="#111" cardId="the-void"></card-autoload>
+        </div>
+      </div>
       <p class="has-text-centered is-size-4">
         Il n'y a pas de page ici.<br />
         Et il n'y a pas de <%= ['vipère mortelle', 'renard', 'Grand Ancien'][Math.floor(Math.random() * 3)] %> non plus.
@@ -10,11 +15,6 @@
       <p class="has-margin-top-2">
         <a class="button is-primary" href="/">Retourner à l'accueil</a>
       </p>
-      <div class="has-margin-top-2">
-        <div class="card-wrapper is-half">
-          <card color="#111" cardId="the-fox"></card>
-        </div>
-      </div>
     </div>
   </div>
 
