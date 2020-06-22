@@ -26,7 +26,7 @@ Vue.component('navigation', {
             Accueil
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Jouer</a>
+            <a class="navbar-link" href="/arena">Jouer</a>
             <div class="navbar-dropdown">
               <a href="/arena" class="navbar-item">
                 Jouer en ligne
@@ -37,9 +37,18 @@ Vue.component('navigation', {
               </a>
             </div>
           </div>
-          <a href="/about" class="navbar-item">
-            A propos
-          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="/about">A propos</a>
+            <div class="navbar-dropdown">
+              <a href="/about" class="navbar-item">
+                Le jeu en quelques mots
+              </a>
+              <hr class="navbar-divider">
+              <a href="/rules" class="navbar-item">
+                Les règles
+              </a>
+            </div>
+          </div>
           <a href="/blog" class="navbar-item">
             Actualités
           </a>

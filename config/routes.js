@@ -37,6 +37,7 @@ module.exports.routes = {
   'GET /about': 'AboutController.index',
   'GET /rules': 'RulesController.index',
   'GET /pnp': 'PnpController.index',
+  'GET /pnp/build': 'PnpController.build',
 
   // Arena
   'GET /arena': 'ArenaController.index',

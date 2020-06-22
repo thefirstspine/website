@@ -1,18 +1,118 @@
 <%- include('../elements/nav.ejs') %>
 
-<div id="pnp" class="">
+<div id="pnp">
   <div class="container">
-    <div class="columns">
-      <div class="column is-8 is-offset-2 has-text-centered">
-        <h2 class="has-text-primary is-size-4 is-uppercase">Jouer à la version PnP</h2>
-        <p>&nbsp;</p>
-        <p>La version PnP de TFS est disponible sur Google Drive.</p>
-        <p>&nbsp;</p>
-        <p>
-          <a class="button is-link is-large" href="https://drive.google.com/open?id=0B3403nsbXYY7Z1NyeGd0NWlVY0k" target="_blank"><i class="fab fa-google-drive"></i> &nbsp; Télécharger</a>
-        </p>
+
+    <h1 class="has-text-primary is-size-2 is-uppercase has-text-centered">
+      <i class="far fa-file"></i><br />
+      Version Print & Play
+    </h1>
+    <p class="has-margin-top-1 has-text-centered">Cette nouvelle verison PnP vous permet de construire le contenu de votre édition et de personnaliser le style de vos cartes. Cette version remplace l'ancienne sur Google Drive. Elle est mise à jour continuellement en fonction de l'équilibrage du jeu et du nouveau contenu.</p>
+
+    <hr />
+
+    <form method="GET" action="/pnp/build" target="_blank">
+
+      <h2 class="has-text-primary is-size-4 is-uppercase has-margin-top-2">
+        <i class="fas fa-scroll"></i>
+        Contenu
+      </h2>
+      <p class="has-margin-top-1">Personnalisez le contenu de votre édition.</p>
+
+      <div class="columns">
+        <div class="column">
+          <h3 class="has-text-primary is-size-5 is-uppercase has-margin-top-2">Origines</h3>
+          <p class="has-margin-top-1">Une origine est un deck de 37 cartes (36 cartes jouables, et une carte personnage).</p>
+          <div class="field has-margin-top-1">
+            <label class="checkbox">
+              <input type="checkbox" name="conjurer" value="1" checked> Illusionniste
+            </label>
+          </div>
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" name="summoner" value="1" checked> Invocateur
+            </label>
+          </div>
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" name="sorcerer" value="1" checked> Prestidigitateur
+            </label>
+          </div>
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" name="hunter" value="1" checked> Chasseur
+            </label>
+          </div>
+        </div>
+        <div class="column">
+          <h3 class="has-text-primary is-size-5 is-uppercase has-margin-top-2">Destinées</h3>
+          <p class="has-margin-top-1">Une origine est un deck de 6 cartes. Une origine est déclinée pour chaque origine choisies.</p>
+          <div class="field has-margin-top-1">
+            <label class="checkbox">
+              <input type="checkbox" name="healer" value="1" checked> Guérisseur
+            </label>
+          </div>
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" name="architect" value="1" checked> Architecte
+            </label>
+          </div>
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" name="priest" value="1" checked> Prêtre
+            </label>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <h2 class="has-text-primary is-size-4 is-uppercase has-margin-top-2">
+        <i class="fas fa-magic"></i>
+        Style
+      </h2>
+      <p class="has-margin-top-1">Bien que la version physique du jeu ne contienne que le style "classique", nous vous permettons de modifier le style des cartes pour personnaliser votre édition.</p>
+      <div class="columns has-margin-top-1 has-text-centered">
+        <div class="column">
+          <label class="radio">
+            <div class="card-wrapper is-half is-wrapped">
+              <card-autoload color="CRIMSON" cardId="the-fox" cardStyle="classic"></card-autoload>
+            </div><br />
+            <input type="radio" name="style" value="classic" checked> Classique
+          </label>
+        </div>
+        <div class="column">
+          <label class="radio">
+            <div class="card-wrapper is-half is-wrapped">
+              <card-autoload color="CRIMSON" cardId="the-fox" cardStyle="nostalgy"></card-autoload>
+            </div><br />
+            <input type="radio" name="style" value="nostalgy"> Nostalgique
+          </label>
+        </div>
+        <div class="column">
+          <label class="radio">
+            <div class="card-wrapper is-half is-wrapped">
+              <card-autoload color="CRIMSON" cardId="the-fox" cardStyle="scales"></card-autoload>
+            </div><br />
+            <input type="radio" name="style" value="scales"> Ecailles
+          </label>
+        </div>
+        <div class="column">
+          <label class="radio">
+            <div class="card-wrapper is-half is-wrapped">
+              <card-autoload color="CRIMSON" cardId="the-fox" cardStyle="cartographer"></card-autoload>
+            </div><br />
+            <input type="radio" name="style" value="cartographer"> Cartographe
+          </label>
+        </div>
+      </div>
+
+      <hr />
+
+      <p class="has-text-centered">
+        <input type="submit" class="button is-primary is-large" value="Générer la version PnP" />
+      </p>
+
+    </form>
+
   </div>
 </div>
 

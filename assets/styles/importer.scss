@@ -35,6 +35,26 @@ $table-head-cell-color: $primary;
   cursor: not-allowed;
 }
 
+html.printable {
+  background: #FFF;
+  overflow: auto;
+  body {
+    background: #FFF;
+    color: #000;
+    strong {
+      color: inherit;
+    }
+    [card], [card-autoload] {
+      width: 6cm;
+      height: 6cm;
+      .card-component {
+        transform: scale(0.451);
+        margin: -137.6px;
+      }
+    }
+  }
+}
+
 .stat {
   width: 2em;
   height: 2em;
@@ -611,5 +631,24 @@ footer {
   }
   p {
     margin: 1em 0;
+  }
+}
+
+#pnp {
+  hr {
+    height: 1px;
+    background: #666;
+    margin: 5em;
+  }
+}
+
+#pnp-renderer {
+  .part {
+    clear: both;
+  }
+  [card-autoload] {
+    float: left;
+    border-right: 1px dotted #000;
+    border-bottom: 1px dotted #000;
   }
 }

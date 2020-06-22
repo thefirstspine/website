@@ -1,0 +1,58 @@
+<div id="pnp-renderer">
+  <div class="part">
+    <h1 class="is-size-2 is-uppercase">The First Spine : édition Print’n’Play</h1>
+    <h2 class="is-size-4 is-uppercase">Avant-propos</h2>
+    <p>Afin d’imprimer et monter l’édition Print’n’Play (imprimez et jouez) de The First Spine, veuillez lire les indications de ce document.</p>
+    <p>L’édition Print’n’Play ne contient pas toutes les cartes du jeu de l’édition finale et est susceptible de changer en fonction des retours des utilisateurs.</p>
+    <p>Cette version est montée <strong>à partir des données du serveur</strong>, ce qui signifie qu'elle est susceptible de changer en fonction des différents équilibrages du jeu.</p>
+    <h2 class="is-size-4 is-uppercase">Format</h2>
+    <p>Vous pouvez imprimer cette version sur n'importe quel format, votre imprimante devrait retravailler le document toute seule pour l'adapter.</p>
+    <h2 class="is-size-4 is-uppercase">Instructions</h2>
+    <p>1/ Imprimez cette page.</p>
+    <p>2/ Découpez les cartes sur les pointillés. Nous vous conseillons d'utiliser un cutter et une règle en métal pour plus de précision.</p>
+    <p>3/ Consultez les règles sur <span class="is-underline">thefirstspine.fr/rules</span> pour savoir comment jouer.</p>
+  </div>
+    <% destinies.forEach(function(destiny) { %>
+      <div class="part">
+        <h1 class="is-size-2 is-uppercase">Destinée <%= destiny.name.fr %></h1>
+      </div>
+      <div class="part">
+        <% destiny.cards.forEach(function(card) { %>
+          <card-autoload style="background: <%= colors[destiny.id] %>;" color="transparent" cardId="<%= card.id %>" cardStyle="<%= style %>"></card-autoload>
+        <% }); %>
+      </div>
+      <% origins.forEach(function(origin) { %>
+        <div class="part">
+          <h2 class="is-size-4 is-uppercase">Origine <%= origin.name.fr %> (pour la destinée <%= destiny.name.fr %>)</h2>
+        </div>
+        <div class="part">
+          <% origin.cards.forEach(function(card) { %>
+            <card-autoload style="background: <%= colors[destiny.id] %>;" color="transparent" cardId="<%= card.id %>" cardStyle="<%= style %>"></card-autoload>
+          <% }); %>
+        </div>
+      <% }); %>
+    <% }); %>
+  <div class="part">
+    <h1 class="is-size-2 is-uppercase">Les cases</h1>
+  </div>
+  <div class="part">
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
+  </div>
+</div>

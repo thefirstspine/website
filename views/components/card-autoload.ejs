@@ -3,11 +3,13 @@
     data: function () {
       return {
         card: null,
+        cardStyle: null,
       }
     },
     mounted: async function() {
       const cardId = this.$attrs.cardid;
       const response = await fetch(`<%= process.env.REST_URL %>/rest/cards/${cardId}`);
+      this.cardStyle = this.$attrs.cardstyle;
       this.card = await response.json();
     },
     props: ['cardId', 'holo', 'premium', 'color', 'cardStyle'],
