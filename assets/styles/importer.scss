@@ -88,6 +88,10 @@ html.printable {
   text-shadow: black 0 0 20px, black 0 0 20px, black 0 0 20px, black 0 0 20px, black 0 0 20px;
 }
 
+.has-text-pink {
+  color: HOTPINK!important;
+}
+
 .container {
   padding: 0 1em;
 }
@@ -650,5 +654,41 @@ footer {
     float: left;
     border-right: 1px dotted #000;
     border-bottom: 1px dotted #000;
+  }
+}
+
+#mentoring {
+  .mentoring-header {
+    background-image: url(../images/friendship.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 800px;
+    text-align: center;
+    padding-top: 200px;
+    text-transform: uppercase;
+    font-size: 42px;
+    letter-spacing: 10px;
+  }
+  hr {
+    height: 1px;
+    background: gray;
+    margin: 5em;
+  }
+  .stat {
+    font-size: 1.25em;
+    padding: .25em;
+  }
+  a.has-tooltip {
+    position: relative;
+    .tooltip {
+      position: absolute;
+      left: 50px;
+      background: black;
+      width: 100px;
+      color: white;
+      border: 1px solid #FFF;
+      padding: 5px;
+      opacity: .5;
+    }
   }
 }

@@ -38,6 +38,8 @@ module.exports.routes = {
   'GET /rules': 'RulesController.index',
   'GET /pnp': 'PnpController.index',
   'GET /pnp/build': 'PnpController.build',
+  'GET /refer-a-friend': 'ReferController.index',
+  'GET /refer-a-friend/:code': 'ReferController.code',
 
   // Arena
   'GET /arena': 'ArenaController.index',

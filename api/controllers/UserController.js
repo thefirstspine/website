@@ -87,15 +87,14 @@ module.exports = {
   },
 
   async viewSubscriptionForm(req, res) {
-    const errors = [];
-
     return res.view(
       'pages/subscribe.ejs',
       {
         title: 'Inscription',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
-        errors,
+        errors: [],
+        refering: req.query.refer ? await sails.models.refer.findOne({code: req.query.refer, user: null}) : null,
       }
     );
   },
@@ -104,9 +103,11 @@ module.exports = {
     const errors = [];
 
     if (req.body.conditions !== 'accept') {
+      // No accept GCU
       errors.push(`Veuillez accepter les conditions d'utilisation.`);
     } else {
       try {
+        // Sign up
         const response = await fetch(
           `${process.env.AUTH_URL}/api/signup`,
           {
@@ -122,6 +123,7 @@ module.exports = {
         );
         const json = await response.json();
         if (json.user_id) {
+          // We had a response!
           const response = await fetch(
             `${process.env.AUTH_URL}/api/login`,
             {
@@ -135,8 +137,21 @@ module.exports = {
               }),
             }
           );
-          const json = await response.json();
-          req.session.access_token = json.access_token;
+          const jsonLogin = await response.json();
+          // Store referer (if provided)
+          const refering = req.query.refer ? await sails.models.refer.findOne({code: req.query.refer, user: null}) : null;
+          if (refering) {
+            await sails.models.refer.update({
+                code: req.query.refer,
+                user: null,
+              })
+              .set({
+                user: json.user_id,
+              });
+          }
+          // Store the access token
+          req.session.access_token = jsonLogin.access_token;
+          // Redirect the user
           return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
         } else {
           errors.push(`Oups, votre inscription n'a pas pu se faire. Vérifiez vos informations.`);
@@ -154,6 +169,7 @@ module.exports = {
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,
+        refering: req.query.refer ? await sails.models.refer.findOne({code: req.query.refer, user: null}) : null,
       }
     );
   },
