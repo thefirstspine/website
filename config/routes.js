@@ -38,8 +38,6 @@ module.exports.routes = {
   'GET /rules': 'RulesController.index',
   'GET /pnp': 'PnpController.index',
   'GET /pnp/build': 'PnpController.build',
-  'GET /refer-a-friend': 'ReferAFriendController.index',
-  'GET /refer-a-friend/:code': 'ReferAFriendController.code',
 
   // Arena
   'GET /arena': 'ArenaController.index',
@@ -48,6 +46,10 @@ module.exports.routes = {
   // Blog
   'GET /blog': 'BlogController.listArticles',
   'GET /blog/:slug': 'BlogController.viewArticle',
+  
+  // Refer a friend
+  'GET /refer-a-friend': 'ReferAFriendController.index',
+  'GET /refer-a-friend/:code': 'ReferAFriendController.code',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
