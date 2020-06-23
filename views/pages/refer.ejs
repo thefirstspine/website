@@ -6,6 +6,12 @@
     <!-- Refer a friend -->
   </div>
 
+  <div class="notification is-danger">
+    <div class="container">
+      Le parrainage n'est pas (encore) terminé. Vous pouvez parrainer un filleul, mais les récompenses ne seront pas disponibles.
+    </div>
+  </div>
+
   <div class="container">
     
     <div class="columns  is-vcentered">
@@ -40,7 +46,7 @@
       <p class="is-size-3 has-text-white">
         <% if (refering) { %>
           <% if (refering.user) { %>
-            <span class="has-text-danger">Votre parainage est déjà activé !</span>
+            <span class="has-text-danger">Votre parrainage est déjà activé !</span>
           <% } else { %>
             <span class="has-text-grey" id="refer-link">https://www.thefirstspine.fr/refer-a-friend/<%= refering.code %></span>
             <a class="button is-primary has-tooltip" onclick="copyReferer(this)">
