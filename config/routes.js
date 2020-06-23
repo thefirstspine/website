@@ -51,6 +51,9 @@ module.exports.routes = {
   'GET /refer-a-friend': 'ReferAFriendController.index',
   'GET /refer-a-friend/:code': 'ReferAFriendController.code',
   
+  // Events
+  'GET /events': 'EventsController.index',
+  
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
   'POST /login': 'UserController.tryLogin',
