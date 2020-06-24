@@ -20,8 +20,40 @@ module.exports = {
   },
 
   async useCode(req, res) {
-    const codeEntity = await sails.models.code.findOne({code: req.param('code'), user: null});
+    const getCodeOrSecretCode = async (code, user) => {
+      // Find secret code
+      const secretCode = process.env.SECRET_CODES.split(',').find((secretCode) => {
+        const fragments = secretCode.split('?');
+        if (fragments[0] === code) {
+          return true;
+        }
+      });
+      // If the code is secret, find if it was used by the user
+      if (secretCode) {
+        const loots = JSON.parse(secretCode.split('?')[1]);
+        if (!user) {
+          const checkCodeEntity = await sails.models.code.findOne({code, user: null});
+          if (!checkCodeEntity) {
+            await sails.models.code.create({code, user: null, loots});
+          }
+        } else {
+          const secretCodeEntity = await sails.models.code.findOne({code, user});
+          // The user was found, skip find
+          if (secretCodeEntity) {
+            return undefined;
+          }
+        }
+      }
 
+      // If not, find not used in code database
+      const codeEntity = await sails.models.code.find({code, user: null});
+      return codeEntity.length > 0 ? codeEntity[0] : undefined;
+    }
+
+    // Find the code
+    const codeEntity = await getCodeOrSecretCode(req.param('code'), req.user_id);
+
+    // Render error on code not found
     if (!codeEntity) {
       return res.view(
         'pages/code-not-found',
