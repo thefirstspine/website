@@ -9,37 +9,12 @@ Vue.component('codeinput', {
   },
   methods: {
     keyhandler: function(event) {
-      const rawValue = this.$data.val.replace(/-/g, '');
-      let rawNewValue = '';
-      let prevent = true;
-
-      if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(event.key)) {
-        rawNewValue = rawValue + event.key;
-      } else if (event.key === 'Backspace') {
-        rawNewValue = rawValue.substring(0, rawValue.length - 1);
-      } else if (event.key === 'Enter') {
-        prevent = false;
-        return;
-      } else {
+      if (this.$data.val.length === 0) {
         return;
       }
-
-      if (prevent) {
-        event.preventDefault();
-      }
-
-      const values = [];
-      let rawValuesCount = 0;
-      for (var i = 0; i < rawNewValue.length && i < 12; i ++) {
-        values.push(rawNewValue.charAt(i));
-        rawValuesCount ++;
-        if (rawValuesCount === 4 && i < 11) {
-          rawValuesCount = 0;
-          values.push('-');
-        }
-      }
-
-      this.$data.val = values.join('');
+      const val = this.$data.val.split('-').join(''); // Remove dash (-) if mistakenly entered.
+      const finalVal = val.match(/.{1,4}/g).join('-');
+      this.$data.val = finalVal;
     }
   },
   props: ['id', 'name', 'placeholder', 'classname'],
@@ -52,12 +27,12 @@ Vue.component('codeinput', {
     <input
       type="text"
       placeholder="0000-0000-0000"
-      v-on:keydown="keyhandler"
+      v-on:keyup="keyhandler"
       autocomplete="off"
       :class="classname"
       :id="id"
       :name="name"
       :placeholder="placeholder"
-      :value="val" />
+      v-model="val" />
   </p>
 </script>
