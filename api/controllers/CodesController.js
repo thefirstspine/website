@@ -42,6 +42,10 @@ module.exports = {
           if (secretCodeEntity) {
             return undefined;
           }
+          const checkCodeEntity = await sails.models.code.findOne({code, user: null});
+          if (!checkCodeEntity) {
+            await sails.models.code.create({code, user: null, loots});
+          }
         }
       }
 
