@@ -26,12 +26,54 @@ $table-head-cell-color: $primary;
 
 /* Import Vue components */
 @import "./card.scss";
+@import "./card-autoload.scss";
 @import "./capacities.scss";
 
 [disabled] {
   opacity: .5;
   pointer-events: none;
   cursor: not-allowed;
+}
+
+html.printable {
+  background: #FFF;
+  overflow: auto;
+  body {
+    background: #FFF;
+    color: #000;
+    strong {
+      color: inherit;
+    }
+    [card], [card-autoload] {
+      width: 6cm;
+      height: 6cm;
+      .card-component {
+        transform: scale(0.451);
+        margin: -137.6px;
+      }
+    }
+  }
+}
+
+.stat {
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+  border-radius: 1em;
+  border: 2px solid #FFF;
+  font-size: .75em;
+  margin: -.5em 0;
+  text-align: center;
+  padding: 2px;
+  &.strength {
+    background: radial-gradient(ellipse at center, #c7523a 0%, #6d0019 50%);
+  }
+  &.defense {
+    background: radial-gradient(ellipse at center, #6392c5 0%, #002447 50%);
+  }
+  &.life {
+    background: radial-gradient(ellipse at center, #4e4d4d 0%, #000000 50%);
+  }
 }
 
 .has-margin-top-2 {
@@ -44,6 +86,10 @@ $table-head-cell-color: $primary;
 
 .has-text-shadow {
   text-shadow: black 0 0 20px, black 0 0 20px, black 0 0 20px, black 0 0 20px, black 0 0 20px;
+}
+
+.has-text-pink {
+  color: HOTPINK!important;
 }
 
 .container {
@@ -92,6 +138,11 @@ footer {
     border-color: #3b5998;
     color: #FFF;
   }
+  &.is-slack {
+    background-color: #4B0082;
+    border-color: #4B0082;
+    color: #FFF;
+  }
   &.is-android {
     background-color: #a4c639;
     border-color: #a4c639;
@@ -108,10 +159,13 @@ footer {
   display: inline-block;
   width: 500px;
   height: 500px;
+  &.is-wrapped {
+    overflow: hidden;
+  }
   &.is-half {
     width: 250px;
     height: 250px;
-    div[card] {
+    div[card-autoload] {
       transform: scale(.5);
       margin: -125px;
     }
@@ -119,7 +173,7 @@ footer {
   &.is-one-third {
     width: 330px;
     height: 330px;
-    div[card] {
+    div[card-autoload] {
       transform: scale(0.66);
       margin: -85px;
     }
@@ -131,7 +185,7 @@ footer {
     @media screen and (max-width: 768px) {
       width: 250px;
       height: 250px;
-      div[card] {
+      div[card-autoload] {
         transform: scale(.5);
         margin: -125px;
       }
@@ -565,11 +619,91 @@ footer {
   }
 }
 
+#rules {
+  .rules-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/top-summoner.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  hr {
+    height: 1px;
+    background-color: #999;
+    margin: 6em;
+  }
+}
+
+#events {
+  .events-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/top-conjurer.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+}
+
 #cgu {
   h2 {
     margin: 2em 0;
   }
   p {
     margin: 1em 0;
+  }
+}
+
+#pnp {
+  hr {
+    height: 1px;
+    background: #666;
+    margin: 5em;
+  }
+}
+
+#pnp-renderer {
+  .part {
+    clear: both;
+  }
+  [card-autoload] {
+    float: left;
+    border-right: 1px dotted #000;
+    border-bottom: 1px dotted #000;
+  }
+}
+
+#mentoring {
+  .mentoring-header {
+    background-image: url(../images/friendship.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 800px;
+    text-align: center;
+    padding-top: 200px;
+    text-transform: uppercase;
+    font-size: 42px;
+    letter-spacing: 10px;
+  }
+  hr {
+    height: 1px;
+    background: gray;
+    margin: 5em;
+  }
+  .stat {
+    font-size: 1.25em;
+    padding: .25em;
+  }
+  a.has-tooltip {
+    position: relative;
+    .tooltip {
+      position: absolute;
+      left: 50px;
+      background: black;
+      width: 100px;
+      color: white;
+      border: 1px solid #FFF;
+      padding: 5px;
+      opacity: .5;
+    }
   }
 }

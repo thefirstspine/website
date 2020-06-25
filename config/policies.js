@@ -34,6 +34,10 @@ module.exports.policies = {
   'news/*':['load-user', 'is-logged-in', 'is-admin'],
   'news/find':[],
   'news/findOne':[],
+  'event/*':['load-user', 'is-logged-in', 'is-admin'],
+  'event/find':[],
+  'event/findOne':[],
   'code/*':['load-user', 'is-logged-in', 'is-admin'],
+  'refer/*':['load-user', 'is-logged-in', 'is-admin'],
 
 };

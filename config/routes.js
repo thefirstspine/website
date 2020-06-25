@@ -35,7 +35,9 @@ module.exports.routes = {
   'GET /': 'HomepageController.index',
   'GET /cgu': 'CGUController.index',
   'GET /about': 'AboutController.index',
+  'GET /rules': 'RulesController.index',
   'GET /pnp': 'PnpController.index',
+  'GET /pnp/build': 'PnpController.build',
 
   // Arena
   'GET /arena': 'ArenaController.index',
@@ -44,6 +46,13 @@ module.exports.routes = {
   // Blog
   'GET /blog': 'BlogController.listArticles',
   'GET /blog/:slug': 'BlogController.viewArticle',
+  
+  // Refer a friend
+  'GET /refer-a-friend': 'ReferAFriendController.index',
+  'GET /refer-a-friend/:code': 'ReferAFriendController.code',
+  
+  // Events
+  'GET /events': 'EventsController.index',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',

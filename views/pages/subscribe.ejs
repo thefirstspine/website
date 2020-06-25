@@ -5,8 +5,13 @@
     <div class="columns">
       <div class="column is-8 is-offset-2">
         <div class="columns">
-          <form class="column" method="POST" action="/subscribe?redirect=<%= redirect %>">
+          <form class="column" method="POST" action="/subscribe?redirect=<%= redirect %>&refer=<%= refering ? refering.code : '' %>">
             <h1 class="is-size-3 has-text-centered">INSCRIPTION</h1>
+            <% if (refering) { %>
+              <p class="has-text-pink has-text-centered is-size-3 is-uppercase">Lien d'affiliation activé</p>
+              <p class="has-text-centered has-text-grey">Vous allez vous inscrire avec un lien de parainage.</p>
+              <hr />
+            <% } %>
             <% if(typeof(errors) !== 'undefined' && errors && errors.length) { %>
               <% errors.forEach(function(error){ %>
                 <article  class="message is-danger">

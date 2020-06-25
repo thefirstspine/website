@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html class="printable">
   <head>
     <title><%= typeof(title) === 'string' ? `${title} - The First Spine` : 'The First Spine - jeu de cartes stratégique' %></title>
-
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <%/* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
     <%/* <meta name="robots" content="noindex"> */%>
@@ -38,7 +35,7 @@
       <script src="<%= solidPancakeUrl %>/sirup.js"></script>
       <script>sirup.persistantSession('tfs-website', navigator.platform).then(() => { sirup.event('viewPage', 'navigation', document.location.href); })</script>
     <% } %>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
 
@@ -48,10 +45,6 @@
 
     <%- include('../components/card.ejs'); %>
     <%- include('../components/card-autoload.ejs'); %>
-    <%- include('../components/service-checker.ejs'); %>
-    <%- include('../components/facebook-login.ejs'); %>
-    <%- include('../components/codeinput.ejs'); %>
-    <%- include('../components/navigation.ejs'); %>
     <script>
       var app = new Vue({
         el: '#app'
