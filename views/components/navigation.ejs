@@ -26,6 +26,18 @@ Vue.component('navigation', {
             Accueil
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="/blog">Actualités</a>
+            <div class="navbar-dropdown">
+              <a href="/blog" class="navbar-item">
+                Blog
+              </a>
+              <hr class="navbar-divider">
+              <a href="/events" class="navbar-item" disabled>
+                Événements
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" href="/arena">Jouer</a>
             <div class="navbar-dropdown">
               <a href="/arena" class="navbar-item">
@@ -49,12 +61,6 @@ Vue.component('navigation', {
               </a>
             </div>
           </div>
-          <a href="/blog" class="navbar-item">
-            Actualités
-          </a>
-          <a href="/events" class="navbar-item" disabled>
-            Événements
-          </a>
         </div>
         <% if(typeof(user_id) === 'undefined' || !user_id) { %>
           <div class="navbar-end">

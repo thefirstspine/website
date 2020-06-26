@@ -200,6 +200,10 @@ footer {
   background-position: center 18px;
   padding: 27px;
   z-index: 5;
+  @media screen and (max-width: 768px) {
+    padding-top: 0;
+    background-position: center -5px;
+  }
   a.navbar-item:focus,
   a.navbar-item:focus-within,
   a.navbar-item:hover,
@@ -306,13 +310,25 @@ footer {
     height: 500px;
     overflow: hidden;
     position: relative;
+    @media screen and (max-width: 768px) {
+      height: 400px;
+    }
     .news-item {
+      @media screen and (max-width: 768px) {
+        width: 90%;
+        background: black;
+        border: 1px solid #FFF;
+        height: 400px;
+      }
       width: 420px;
       height: 500px;
       display: inline-block;
       background: url(/images/square-news.png);
       vertical-align: top;
       .image {
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
         height: 200px;
         background-color: #333;
         margin: 10px;
@@ -620,6 +636,11 @@ footer {
 }
 
 #rules {
+  .rotate-on-mobile {
+    @media screen and (max-width: 768px) {
+      transform: rotate(90deg);
+    }
+  }
   .rules-heading {
     padding: 200px 0 100px 0;
     background-image: url(../images/top-summoner.png);
