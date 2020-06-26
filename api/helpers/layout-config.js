@@ -3,8 +3,13 @@ module.exports = {
   inputs: {
     user_id: {
       type: 'number',
-      required: false
-    }
+      required: false,
+    },
+    locale: {
+      type: 'string',
+      required: false,
+      default: 'fr',
+    },
   },
 
   fn: async function(inputs, exits) {
@@ -18,7 +23,7 @@ module.exports = {
           limit: 3,
           sort: 'createdAt DESC',
           where: {
-            language: 'fr',
+            language: inputs.locale,
           },
         }),
       }

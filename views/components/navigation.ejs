@@ -23,41 +23,41 @@ Vue.component('navigation', {
       <div :class="{'navbar-menu': true, 'is-active': isMenuOpened}">
         <div class="navbar-start">
           <a href="/" class="navbar-item">
-            Accueil
+            <%= __("navigation.home") %>
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/blog">Actualités</a>
+            <a class="navbar-link" href="/blog"><%= __("navigation.news") %></a>
             <div class="navbar-dropdown">
               <a href="/blog" class="navbar-item">
-                Blog
+                <%= __("navigation.blog") %>
               </a>
               <hr class="navbar-divider">
               <a href="/events" class="navbar-item" disabled>
-                Événements
+                <%= __("navigation.events") %>
               </a>
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/arena">Jouer</a>
+            <a class="navbar-link" href="/arena"><%= __("navigation.play") %></a>
             <div class="navbar-dropdown">
               <a href="/arena" class="navbar-item">
-                Jouer en ligne
+                <%= __("navigation.online") %>
               </a>
               <hr class="navbar-divider">
               <a href="/pnp" class="navbar-item">
-                Jouer à la version PnP
+                <%= __("navigation.pnp") %>
               </a>
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/about">A propos</a>
+            <a class="navbar-link" href="/about"><%= __("navigation.about") %></a>
             <div class="navbar-dropdown">
               <a href="/about" class="navbar-item">
-                Le jeu en quelques mots
+                <%= __("navigation.fewWords") %>
               </a>
               <hr class="navbar-divider">
               <a href="/rules" class="navbar-item">
-                Les règles
+                <%= __("navigation.rules") %>
               </a>
             </div>
           </div>
@@ -76,21 +76,21 @@ Vue.component('navigation', {
               <img src="/images/menu-login.png" />
             </a>
             <a href="/login" class="navbar-item">
-              Connexion
+              <%= __("navigation.login") %>
             </a>
           <% } else { %>
             <a href="/profile" class="navbar-brand avatar">
               <img src="/images/menu-login.png" />
             </a>
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">Compte</a>
+              <a class="navbar-link"><%= __("navigation.account") %></a>
               <div class="navbar-dropdown">
                 <a href="/profile" class="navbar-item">
-                  Votre compte
+                  <%= __("navigation.yourAccount") %>
                 </a>
                 <hr class="navbar-divider">
                 <a href="/logout" class="navbar-item">
-                  Se déconnecter
+                  <%= __("navigation.logout") %>
                 </a>
               </div>
             </div>

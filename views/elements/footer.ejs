@@ -2,7 +2,7 @@
   <div class="container">
     <div class="columns">
       <div class="column">
-        <h4 class="has-text-primary is-uppercase">Restons connectés</h4>
+        <h4 class="has-text-primary is-uppercase"><%= __("footer.stayConnected") %></h4>
         <ul>
           <li>
             <a href="https://fb.com/thefirstspine" class="button is-facebook">
@@ -15,7 +15,7 @@
         </ul>
       </div>
       <div class="column">
-        <h4 class="has-text-primary is-uppercase">Langue</h4>
+        <h4 class="has-text-primary is-uppercase"><%= __("footer.locale") %></h4>
         <ul>
           <li>
             <a href="/l/fr"><img src="/images/fr.png" /></a>
@@ -24,17 +24,18 @@
         </ul>
       </div>
       <div class="column">
-        <h4 class="has-text-primary is-uppercase">Explorer</h4>
+        <h4 class="has-text-primary is-uppercase"><%= __("footer.explore") %></h4>
         <ul>
-          <li><a href="/arena">Jouer en ligne</a></li>
-          <li><a href="/pnp">Jouer à la version PnP</a></li>
-          <li><a href="/about">A propos</a></li>
-          <li><a href="/events" disabled>Événements</a></li>
+          <li><a href="/arena"><%= __("footer.playOnline") %></a></li>
+          <li><a href="/pnp"><%= __("footer.playPnp") %></a></li>
+          <li><a href="/about"><%= __("footer.about") %></a></li>
+          <li><a href="/rules"><%= __("footer.rules") %></a></li>
         </ul>
       </div>
       <div class="column">
-        <h4 class="has-text-primary is-uppercase">Restez informés</h4>
+        <h4 class="has-text-primary is-uppercase"><%= __("footer.stayInformed") %></h4>
         <ul>
+          <li><a href="/events" disabled><%= __("footer.events") %></a></li>
           <% footer.news.forEach(function(newsItem) { %>
             <li><a href="/blog/<%= newsItem.slug %>"><%= newsItem.title %></a></li>
           <% }) %>
