@@ -62,17 +62,23 @@ Vue.component('navigation', {
             </div>
           </div>
         </div>
-        <% if(typeof(user_id) === 'undefined' || !user_id) { %>
-          <div class="navbar-end">
+        <div class="navbar-end">
+          <div class="navbar-item flags">
+            <a href="/l/fr">
+              <img src="/images/fr.png" />
+            </a>
+            <a href="/l/en">
+              <img src="/images/us.png" />
+            </a>
+          </div>
+          <% if(typeof(user_id) === 'undefined' || !user_id) { %>
             <a href="/login" class="navbar-brand avatar">
               <img src="/images/menu-login.png" />
             </a>
             <a href="/login" class="navbar-item">
               Connexion
             </a>
-          </div>
-        <% } else { %>
-          <div class="navbar-end">
+          <% } else { %>
             <a href="/profile" class="navbar-brand avatar">
               <img src="/images/menu-login.png" />
             </a>
@@ -88,8 +94,8 @@ Vue.component('navigation', {
                 </a>
               </div>
             </div>
-          </div>
-        <% } %>
+          <% } %>
+        </div>
       </div>
     </div>
   </nav>

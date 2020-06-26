@@ -1,4 +1,5 @@
 {
-  "Welcome": "Bienvenue",
-  "A brand new app.": "Une toute nouvelle application."
+	"home": {
+		"strategicCardGame": "Jeu de cartes stratégique"
+	}
 }

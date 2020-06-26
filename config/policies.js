@@ -17,7 +17,7 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  '*': ['load-user'],
+  '*': ['load-user', 'set-locale'],
 
   UserController: {
     '*': ['load-user', 'is-logged-in'],
