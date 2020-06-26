@@ -119,12 +119,12 @@ module.exports = {
     return res.view(
       'pages/homepage.ejs',
       {
-        ...await sails.helpers.layoutConfig(req.user_id),
+        ...await sails.helpers.layoutConfig(req.user_id, req.session.locale),
         news: await sails.models.news.find({
           limit: 3,
           sort: 'createdAt DESC',
           where: {
-            language: 'fr',
+            language: req.session.locale,
           },
         }),
         cycle: {

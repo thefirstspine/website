@@ -1,5 +1,42 @@
 {
+	"locale": "fr",
+	"navigation": {
+		"home": "Accueil",
+		"news": "Actualités",
+		"blog": "Blog",
+		"events": "Événements",
+		"play": "Jouer",
+		"online": "Jouer en ligne",
+		"pnp": "Jouer à la version PnP",
+		"about": "A propos",
+		"fewWords": "Le jeu en quelques mots",
+		"rules": "Les règles",
+		"login": "Connexion",
+		"account": "Compte",
+		"yourAccount": "Votre compte",
+		"logout": "Se déconnecter"
+	},
+	"footer": {
+		"stayConnected": "Restons connectés",
+		"locale": "Langue",
+		"explore": "Explorer",
+		"playOnline": "Jouer en ligne",
+		"playPnp": "Jouer à la version PnP",
+		"about": "A propos",
+		"rules": "Les règles",
+		"stayInformed": "Restez informés",
+		"events": "Événements"
+	},
 	"home": {
-		"strategicCardGame": "Jeu de cartes stratégique"
+		"strategicCardGame": "Jeu de cartes stratégique",
+		"playOnline": "Jouer en ligne",
+		"readMore": "Lire la suite",
+		"currentCycle": "Cycle en cours sur Arena",
+		"participationReward": "Récompense de participation",
+		"winnerReward": "Récompense pour le meilleur joueur",
+		"enterYourCode": "Entrez votre code",
+		"enterYourCodeText": "Enregistrez votre code obtenu sur l’un de nos événements sur votre compte sorcier.",
+		"cardOfTheDay": "Carte du jour",
+		"cardOfTheDaytext": "Chaque jour, découvrez une carte du jeu"
 	}
 }

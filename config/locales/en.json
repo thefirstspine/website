@@ -1,5 +1,42 @@
 {
+	"locale": "en",
+	"navigation": {
+		"home": "Home",
+		"news": "News",
+		"blog": "Blog",
+		"events": "Events",
+		"play": "Play",
+		"online": "Play online",
+		"pnp": "Play to the PnP",
+		"about": "About",
+		"fewWords": "About the game",
+		"rules": "The rules",
+		"login": "Sign in",
+		"account": "Account",
+		"yourAccount": "Your account",
+		"logout": "Sign out"
+	},
+	"footer": {
+		"stayConnected": "Keep in touch",
+		"locale": "Language",
+		"explore": "Explore",
+		"playOnline": "Play online",
+		"playPnp": "Play to the PnP",
+		"about": "About",
+		"rules": "The rules",
+		"stayInformed": "Keep informed",
+		"events": "Events"
+	},
 	"home": {
-		"strategicCardGame": "Strategic card game"
+		"strategicCardGame": "Strategic cards game",
+		"playOnline": "Play online",
+		"readMore": "Read more",
+		"currentCycle": "Current cycle on Arena",
+		"participationReward": "Reward for participating",
+		"winnerReward": "Reward for the winner",
+		"enterYourCode": "Register your code",
+		"enterYourCodeText": "Register your code obtained on one of our events on your wizard account.",
+		"cardOfTheDay": "Card of the day",
+		"cardOfTheDaytext": "Discover a card of the game every day"
 	}
 }

@@ -6,7 +6,7 @@
       <img src="/images/thefirstspine-white.svg" />
       <p class="is-size-4 is-uppercase has-text-centered"><%= __("home.strategicCardGame") %></p>
       <p class="is-uppercase has-text-centered">
-        <a href="/arena" class="button is-primary is-size-5">Jouer en ligne</a>
+        <a href="/arena" class="button is-primary is-size-5"><%= __("home.playOnline") %></a>
       </p>
     </div>
   </div>
@@ -24,7 +24,7 @@
           (newsItem.text.replace(/(<([^>]+)>)/ig,' ').slice(0, 120).split(' ').slice(0, -1).join(' '))
         %>…</p>
         <p>
-          <a href="/blog/<%= newsItem.slug %>" class="button is-primary">Lire la suite</a>
+          <a href="/blog/<%= newsItem.slug %>" class="button is-primary"><%= __("home.readMore") %></a>
         </p>
       </div>
     <% }) %>
@@ -34,22 +34,24 @@
 
   <div class="cycle cycle-<%= cycle.current.id %>">
     <div class="container">
-      <h3 class="has-text-centered is-size-3 is-uppercase">Cycle en cours sur Arena</h3>
-      <h2 class="has-text-centered is-size-2 is-uppercase"><%= cycle.current.name.fr %></h2>
+      <h3 class="has-text-centered is-size-3 is-uppercase"><%= __("home.currentCycle") %></h3>
+      <h2 class="has-text-centered is-size-2 is-uppercase"><%= cycle.current.name[__("locale")] %></h2>
       <div class="columns has-margin-top-2 has-text-centered">
         <div class="column">
-          <h4 class="is-size-4">Récompense de participation</h4>
+          <h4 class="is-size-4"><%= __("home.participationReward") %></h4>
           <div class="card-wrapper is-half">
             <card-autoload color="black"
+              locale="<%= __("locale") %>"
               :holo="<%= cycle.rewards.players[0].isHolo %>"
               :premium="<%= cycle.rewards.players[0].isPremium %>"
               cardId="<%= cycle.rewards.players[0].cardId %>"></card-autoload>
           </div>
         </div>
         <div class="column">
-          <h4 class="is-size-4">Récompense pour le meilleur joueur</h4>
+          <h4 class="is-size-4"><%= __("home.winnerReward") %></h4>
           <div class="card-wrapper is-half">
             <card-autoload color="black"
+              locale="<%= __("locale") %>"
               :holo="<%= cycle.rewards.winner[0].isHolo %>"
               :premium="<%= cycle.rewards.winner[0].isPremium %>"
               cardId="<%= cycle.rewards.winner[0].cardId %>"></card-autoload>
@@ -63,8 +65,8 @@
 
   <div class="code">
     <div class="container">
-      <h1 class="has-text-centered has-text-primary is-uppercase is-size-2">Entrez votre code</h1>
-      <p class="has-text-centered">Enregistrez votre code obtenu sur l’un de nos événements sur votre compte sorcier.</p>
+      <h1 class="has-text-centered has-text-primary is-uppercase is-size-2"><%= __("home.enterYourCode") %></h1>
+      <p class="has-text-centered"><%= __("home.enterYourCodeText") %></p>
       <form action="/codes" method="POST" class="has-text-centered has-margin-top-2">
         <div class="field">
           <div class="control codeinput">
@@ -82,11 +84,12 @@
 
   <div class="card-of-the-day">
     <div class="container">
-      <h2 class="has-text-centered is-size-3 is-uppercase">Carte du jour</h2>
-      <h3 class="has-text-centered is-size-4 is-uppercase">Chaque jour, découvrez une carte du jeu</h3>
+      <h2 class="has-text-centered is-size-3 is-uppercase"><%= __("home.cardOfTheDay") %></h2>
+      <h3 class="has-text-centered is-size-4 is-uppercase"><%= __("home.cardOfTheDaytext") %></h3>
       <div class="has-text-centered">
         <div class="card-wrapper is-fluid">
           <card-autoload color="#111"
+            locale="<%= __("locale") %>"
             :holo="<%= cardOfTheDay.isHolo %>"
             :premium="<%= cardOfTheDay.isPremium %>"
             cardId="<%= cardOfTheDay.cardId %>"></card-autoload>
