@@ -2,6 +2,7 @@
 Vue.component('card', {
   data: function () {
     return {
+      locale: this.$attrs.locale,
     }
   },
   mounted: async function() {
@@ -37,7 +38,7 @@ Vue.component('card', {
       return text;
     }
   },
-  props: ['card', 'stats', 'micro', 'holo', 'premium', 'color', 'cardStyle'],
+  props: ['locale', 'card', 'stats', 'micro', 'holo', 'premium', 'color', 'cardStyle'],
   template: '#card',
 })
 </script>
@@ -65,8 +66,8 @@ Vue.component('card', {
         <div class="holo-color"></div>
         <div class="frame frame1"></div>
         <div class="frame frame2"></div>
-        <div class="name">{{ card.name['fr'] }}</div>
-        <div class="description" v-html="formatHtml(card.text['fr'])">
+        <div class="name">{{ card.name[locale] }}</div>
+        <div class="description" v-html="formatHtml(card.text[locale])">
         </div>
         <div v-if="card.stats" class="stats">
           <div v-for="side in ['top', 'right', 'bottom', 'left']" v-bind:key="side" :class="side" :style="{paddingTop: (side === 'left' || side === 'right') && !card.stats[side].capacity ? '23px': 'auto'}">
