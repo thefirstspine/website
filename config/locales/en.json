@@ -1,5 +1,8 @@
 {
 	"locale": "en",
+	"template": {
+		"title": "strategic card game"
+	},
 	"navigation": {
 		"home": "Home",
 		"news": "News",

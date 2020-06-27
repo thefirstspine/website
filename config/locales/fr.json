@@ -1,5 +1,8 @@
 {
 	"locale": "fr",
+  "template": {
+    "title": "jeu de cartes stratégique"
+  },
 	"navigation": {
 		"home": "Accueil",
 		"news": "Actualités",
