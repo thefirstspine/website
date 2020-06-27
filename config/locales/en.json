@@ -39,5 +39,30 @@
 		"send": "Send",
 		"cardOfTheDay": "Card of the day",
 		"cardOfTheDaytext": "Discover a card of the game every day"
+	},
+	"code": {
+		"title": "Enter a code obtained during an event",
+		"addACode": "Add a code",
+		"send": "Send",
+		"codeAdded": "Your code has been added to your account",
+		"yourCodeHas": "Your code has :",
+		"getPrepared": "Settle in, and get ready to fight.",
+		"toAssociate": "To associate this code with your account, choose one of these two options",
+		"ihaveAnAccount": "I already have an account",
+		"iSignUp": "I sign up",
+		"happy": "We are happy to see you again!",
+		"oops": "Oops!",
+		"notAvailable": "This code is not available.",
+		"notAvailableText": "It is possible that you made a mistake or that your code was invalidated.",
+		"loots": {
+			"shard": {
+				"title": "%s mana shards",
+				"text": "Crystallized energy from the Crown allowing its holder to stand out from other wizards. Allows you to buy cosmetics in Arena."
+			},
+			"coin": {
+				"title": "%s strange coins",
+				"text": "Nobody knows where these pieces made of an unknown yellow metal come from. Enables the content of the edition ordered during the future Kickstarter campaign."
+			}
+		}
 	}
 }

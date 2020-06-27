@@ -39,5 +39,30 @@
 		"send": "Envoyer",
 		"cardOfTheDay": "Carte du jour",
 		"cardOfTheDaytext": "Chaque jour, découvrez une carte du jeu"
+	},
+	"code": {
+		"title": "Entrez un code obtenu lors d'un événement",
+		"addACode": "Ajouter un code",
+		"send": "Envoyer",
+		"codeAdded": "Votre code a été ajouté à votre compte",
+		"yourCodeHas": "Votre code contient :",
+		"getPrepared": "Installez-vous, et préparez-vous à combattre.",
+		"toAssociate": "Pour associer ce code à votre compte, choisissez une de ces deux options",
+		"ihaveAnAccount": "J'ai déjà un compte",
+		"iSignUp": "Je m'inscris",
+		"happy": "On est heureux de vous revoir !",
+		"oops": "Oups !",
+		"notAvailable": "Ce code n'est pas disponible.",
+		"notAvailableText": "Il est possible que vous ayez fait une erreur ou que votre code ait été invalidé.",
+		"loots": {
+			"shard": {
+				"title": "%s éclats de mana",
+				"text": "De l'énergie de la Couronne cristallisée permettant à son détenteur de se démarquer des autres sorciers. Permet d'acheter des cosmétiques dans Arena."
+			},
+			"coin": {
+				"title": "%s pièces étranges",
+				"text": "Personne ne sait d'où viennent ces pièces faites d'un métal jaune inconnu. Permet d'agrémenter le contenu de l'édition commandée lors de la future campagne Kickstarter."
+			}
+		}
 	}
 }
