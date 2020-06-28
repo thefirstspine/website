@@ -67,5 +67,32 @@
 				"text": "Nobody knows where these pieces made of an unknown yellow metal come from. Enables the content of the edition ordered during the future Kickstarter campaign."
 			}
 		}
+	},
+	"arena": {
+		"playOnline": "Play The First Spine Online",
+		"windows": "Windows",
+		"browser": "Browser",
+		"soon": "Soon",
+		"googlePlay": "Google Play",
+		"introduction": "Play The First Spine online for free! A highly strategic board game, where you can summon creatures and artifacts on a large game board.",
+		"allTheContentTitle": "All the content, nothing less",
+		"allTheContentText1": "No need to buy cards, no need to play for hours to get the same cards as your opponents. The First Spine is above all a highly competitive board game, it is normal that everyone has the same chances of winning.",
+		"allTheContentText2": "Only your strategy and your talent will allow you to triumph over your opponents",
+		"cyclesTitle": "Events every 6 weeks",
+		"cyclesText": "Free events will be released in 6 week cycles. Each cycle has its own cosmetics to unlock and a few additional rules that will radically change the way you play!",
+		"versionsTitle": "Multiple devices, one account",
+		"versionsText1": "Your freedom is important to us: you can continue your game from the PC or browser version, or continue it on these supports.",
+		"versionsText2": "And above all, you can play together, whatever your device.",
+		"helpTitle": "Help finance the game",
+		"helpText": "By playing, you will participate financing the game in its physical version! We want to make The First Spine an independant, self-funded game, without pressure from publishers. We want to make our own game design choices, our own artistic choices, and thanks to you we will get there!",
+		"services": "State of online services",
+		"arena": "Online games",
+		"auth": "Authentication",
+		"bots": "PvE",
+		"messaging": "Live notifications",
+		"rest": "Resources",
+		"rooms": "Discussion rooms",
+		"solid-pancake": "Statistics",
+		"shop": "Online shopping"
 	}
 }

@@ -4,32 +4,32 @@
   <div class="arena-header">
     <div class="container">
       <h1 class="has-text-centered has-text-primary is-uppercase is-size-1" style="margin: .5em 0">
-        Jouez à The First Spine en ligne
+        <%= __("arena.playOnline") %>
       </h1>
       <p class="has-text-centered">
         <% if (windowsVersion) { %>
         <a class="button is-info is-size-5" href="/download/windows">
           <i class="fab fa-windows"></i> &nbsp;
-          Windows (v<%= windowsVersion %>)
+          <%= __("arena.windows") %> (v<%= windowsVersion %>)
         </a>
         <a class="button is-link is-size-5" href="https://play.thefirstspine.fr/">
           <i class="fas fa-desktop"></i> &nbsp;
-          Sur navigateur (v<%= windowsVersion %>)
+          <%= __("arena.browser") %> (v<%= windowsVersion %>)
         </a>
         <% } else { %>
           <a disabled class="button is-info is-size-5">
             <i class="fab fa-windows"></i> &nbsp;
-            Bientôt disponible
+            <%= __("arena.soon") %>
           </a>
           <a disabled class="button is-link is-size-5">
             <i class="fas fa-desktop"></i> &nbsp;
-            Bientôt disponible
+            <%= __("arena.soon") %>
           </a>
         <% } %>
         
         <a class="button is-android is-size-5" href="https://play.google.com/store/apps/details?id=fr.thefirstspine.arena.mobile" target="_blank">
           <i class="fab fa-android"></i> &nbsp;
-          Google Play
+          <%= __("arena.googlePlay") %>
         </a>
       </p>
     </div>
@@ -40,7 +40,7 @@
   <div class="container">
     <div class="columns">
       <div class="column is-8 is-offset-2 has-text-centered">
-        <p class="has-margin-top-2 is-size-4">Jouez à The First Spine en ligne gratuitement&nbsp;! Un jeu de société hautement stratégique, où vous pouvez invoquer créatures et artefacts sur un grand plateau de jeu.</p>
+        <p class="has-margin-top-2 is-size-4"><%= __("arena.introduction") %></p>
         <img class="has-margin-top-2" src="images/arena-0.png" />
       </div>
     </div>
@@ -50,16 +50,16 @@
         <img src="images/arena-1.png" />
       </div>
       <div class="column">
-        <h3 class="has-text-primary is-size-3">Tout le contenu, rien de moins</h3>
-        <p class="has-margin-top-2">Pas besoin d'acheter de cartes, pas besoin de jouer des heures pour avoir les mêmes cartes que vos opposants. The First Spine est avant tout un jeu de société hautement compétitif, il est normal que chacun ait les mêmes chances de gagner.</p>
-        <p class="has-margin-top-2">Seuls votre stratégie et votre talent vous permettront de triompher de vos adversaires</p>
+        <h3 class="has-text-primary is-size-3"><%= __("arena.allTheContentTitle") %></h3>
+        <p class="has-margin-top-2"><%= __("arena.allTheContentText1") %></p>
+        <p class="has-margin-top-2"><%= __("arena.allTheContentText2") %></p>
       </div>
     </div>
     
     <div class="columns is-vcentered">
       <div class="column">
-        <h3 class="has-text-primary is-size-3">Des événements toutes les 6 semaines</h3>
-        <p class="has-margin-top-2">Des événements gratuits sortiront par cycle de 6 semaines. Chaque cycle dispose de ses propres cosmétiques à débloquer et de quelques règles supplémentaires qui changeront radicalement votre façon de jouer&nbsp;!</p>
+        <h3 class="has-text-primary is-size-3"><%= __("arena.cyclesTitle") %></h3>
+        <p class="has-margin-top-2"><%= __("arena.cyclesText") %></p>
       </div>
       <div class="column has-text-centered">
         <img src="images/arena-2.png" />
@@ -71,16 +71,16 @@
         <img src="images/arena-3.png" />
       </div>
       <div class="column">
-        <h3 class="has-text-primary is-size-3">Plusieurs supports, un même compte</h3>
-        <p class="has-margin-top-2">Votre liberté est importante pour nous : vous pouvez continuer votre partie provenant de la version PC ou navigateur, ou la continuer sur ces supports.</p>
-        <p class="has-margin-top-2">Et surtout, vous pouvez jouer ensemble, quel que soit votre support de jeu.</p>
+        <h3 class="has-text-primary is-size-3"><%= __("arena.versionsTitle") %></h3>
+        <p class="has-margin-top-2"><%= __("arena.versionsText1") %></p>
+        <p class="has-margin-top-2"><%= __("arena.versionsText2") %></p>
       </div>
     </div>
     
     <div class="columns is-vcentered">
       <div class="column">
-        <h3 class="has-text-primary is-size-3">Aidez au financement du jeu</h3>
-        <p class="has-margin-top-2">En jouant, vous participerez au financement du jeu dans sa version physique&nbsp;! Nous voulons faire de The First Spine un jeu libre, auto-financé, sans pression d'éditeurs. Nous voulons faire nos propres choix de game design, nos propres choix artistiques, et grâce à vous nous y arriverons&nbsp;!</p>
+        <h3 class="has-text-primary is-size-3"><%= __("arena.helpTitle") %></h3>
+        <p class="has-margin-top-2"><%= __("arena.helpText") %></p>
       </div>
       <div class="column has-text-centered">
         <img src="images/arena-4.png" />
@@ -91,11 +91,11 @@
   <div class="separator has-margin"></div>
 
   <div class="container">
-    <p class="is-size-3 is-uppercase has-text-centered has-text-primary">Etat des services en ligne</p>
+    <p class="is-size-3 is-uppercase has-text-centered has-text-primary"><%= __("arena.services") %></p>
     <div class="level has-margin-top-2">
       <div class="level-item has-text-centered">
         <div>
-          <p class="heading">Parties en ligne</p>
+          <p class="heading"><%= __("arena.arena") %></p>
           <p class="title">
             <service-checker url="https://arena.thefirstspine.fr/status"></service-checker>
           </p>
@@ -103,7 +103,7 @@
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <p class="heading">Authentification</p>
+          <p class="heading"><%= __("arena.auth") %></p>
           <p class="title">
             <service-checker url="https://auth.thefirstspine.fr/status"></service-checker>
           </p>
@@ -111,7 +111,7 @@
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <p class="heading">JcE</p>
+          <p class="heading"><%= __("arena.bots") %></p>
           <p class="title">
             <service-checker url="https://bots.thefirstspine.fr/status"></service-checker>
           </p>
@@ -119,7 +119,7 @@
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <p class="heading">Notifications en direct</p>
+          <p class="heading"><%= __("arena.messaging") %></p>
           <p class="title">
             <service-checker url="https://messaging.thefirstspine.fr/status"></service-checker>
           </p>
@@ -127,7 +127,7 @@
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <p class="heading">Ressources</p>
+          <p class="heading"><%= __("arena.rest") %></p>
           <p class="title">
             <service-checker url="https://rest.thefirstspine.fr/status"></service-checker>
           </p>
@@ -135,7 +135,7 @@
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <p class="heading">Espaces de discussions</p>
+          <p class="heading"><%= __("arena.rooms") %></p>
           <p class="title">
             <service-checker url="https://rooms.thefirstspine.fr/status"></service-checker>
           </p>
@@ -143,7 +143,7 @@
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <p class="heading">Statistiques</p>
+          <p class="heading"><%= __("arena.solid-pancake") %></p>
           <p class="title">
             <service-checker url="https://solid-pancake.thefirstspine.fr/status"></service-checker>
           </p>
@@ -151,7 +151,7 @@
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <p class="heading">Achats en ligne</p>
+          <p class="heading"><%= __("arena.shop") %></p>
           <p class="title">
             <service-checker url="https://shop.thefirstspine.fr/status"></service-checker>
           </p>
