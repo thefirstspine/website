@@ -1,8 +1,8 @@
 {
 	"locale": "fr",
-  "template": {
-    "title": "jeu de cartes stratégique"
-  },
+	"template": {
+		"title": "jeu de cartes stratégique"
+	},
 	"navigation": {
 		"home": "Accueil",
 		"news": "Actualités",
@@ -67,32 +67,56 @@
 				"text": "Personne ne sait d'où viennent ces pièces faites d'un métal jaune inconnu. Permet d'agrémenter le contenu de l'édition commandée lors de la future campagne Kickstarter."
 			}
 		}
-  },
-  "arena": {
-    "playOnline": "Jouez à The First Spine en ligne",
-    "windows": "Windows",
-    "browser": "Sur navigateur",
-    "soon": "Bientôt disponible",
-    "googlePlay": "Google Play",
-    "introduction": "Jouez à The First Spine en ligne gratuitement&nbsp;! Un jeu de société hautement stratégique, où vous pouvez invoquer créatures et artefacts sur un grand plateau de jeu.",
-    "allTheContentTitle": "Tout le contenu, rien de moins",
-    "allTheContentText1": "Pas besoin d'acheter de cartes, pas besoin de jouer des heures pour avoir les mêmes cartes que vos opposants. The First Spine est avant tout un jeu de société hautement compétitif, il est normal que chacun ait les mêmes chances de gagner.",
-    "allTheContentText2": "Seuls votre stratégie et votre talent vous permettront de triompher de vos adversaires",
-    "cyclesTitle": "Des événements toutes les 6 semaines",
-    "cyclesText": "Des événements gratuits sortiront par cycle de 6 semaines. Chaque cycle dispose de ses propres cosmétiques à débloquer et de quelques règles supplémentaires qui changeront radicalement votre façon de jouer&nbsp;!",
-    "versionsTitle": "Plusieurs supports, un même compte",
-    "versionsText1": "Votre liberté est importante pour nous : vous pouvez continuer votre partie provenant de la version PC ou navigateur, ou la continuer sur ces supports.",
-    "versionsText2": "Et surtout, vous pouvez jouer ensemble, quel que soit votre support de jeu.",
-    "helpTitle": "Aidez au financement du jeu",
-    "helpText": "En jouant, vous participerez au financement du jeu dans sa version physique&nbsp;! Nous voulons faire de The First Spine un jeu libre, auto-financé, sans pression d'éditeurs. Nous voulons faire nos propres choix de game design, nos propres choix artistiques, et grâce à vous nous y arriverons&nbsp;!",
-    "services": "Etat des services en ligne",
-    "arena": "Parties en ligne",
-    "auth": "Authentification",
-    "bots": "JcE",
-    "messaging": "Notifications en direct",
-    "rest": "Ressources",
-    "rooms": "Espaces de discussions",
-    "solid-pancake": "Statistiques",
-    "shop": "Achats en ligne"
-  }
+	},
+	"arena": {
+		"playOnline": "Jouez à The First Spine en ligne",
+		"windows": "Windows",
+		"browser": "Sur navigateur",
+		"soon": "Bientôt disponible",
+		"googlePlay": "Google Play",
+		"introduction": "Jouez à The First Spine en ligne gratuitement&nbsp;! Un jeu de société hautement stratégique, où vous pouvez invoquer créatures et artefacts sur un grand plateau de jeu.",
+		"allTheContentTitle": "Tout le contenu, rien de moins",
+		"allTheContentText1": "Pas besoin d'acheter de cartes, pas besoin de jouer des heures pour avoir les mêmes cartes que vos opposants. The First Spine est avant tout un jeu de société hautement compétitif, il est normal que chacun ait les mêmes chances de gagner.",
+		"allTheContentText2": "Seuls votre stratégie et votre talent vous permettront de triompher de vos adversaires",
+		"cyclesTitle": "Des événements toutes les 6 semaines",
+		"cyclesText": "Des événements gratuits sortiront par cycle de 6 semaines. Chaque cycle dispose de ses propres cosmétiques à débloquer et de quelques règles supplémentaires qui changeront radicalement votre façon de jouer&nbsp;!",
+		"versionsTitle": "Plusieurs supports, un même compte",
+		"versionsText1": "Votre liberté est importante pour nous : vous pouvez continuer votre partie provenant de la version PC ou navigateur, ou la continuer sur ces supports.",
+		"versionsText2": "Et surtout, vous pouvez jouer ensemble, quel que soit votre support de jeu.",
+		"helpTitle": "Aidez au financement du jeu",
+		"helpText": "En jouant, vous participerez au financement du jeu dans sa version physique&nbsp;! Nous voulons faire de The First Spine un jeu libre, auto-financé, sans pression d'éditeurs. Nous voulons faire nos propres choix de game design, nos propres choix artistiques, et grâce à vous nous y arriverons&nbsp;!",
+		"services": "Etat des services en ligne",
+		"arena": "Parties en ligne",
+		"auth": "Authentification",
+		"bots": "JcE",
+		"messaging": "Notifications en direct",
+		"rest": "Ressources",
+		"rooms": "Espaces de discussions",
+		"solid-pancake": "Statistiques",
+		"shop": "Achats en ligne"
+	},
+	"pnp": {
+		"title": "Version Print & Play",
+		"introduction": "Cette nouvelle verison PnP vous permet de construire le contenu de votre édition et de personnaliser le style de vos cartes. Cette version remplace l'ancienne sur Google Drive. Elle est mise à jour continuellement en fonction de l'équilibrage du jeu et du nouveau contenu.",
+		"content": "Contenu",
+		"contentText": "Personnalisez le contenu de votre édition.",
+		"destinies": "Destinées",
+		"destiniesText": "Une destinée est un deck de 37 cartes (36 cartes jouables, et une carte personnage).",
+		"conjurer": "Illusionniste",
+		"summoner": "Invocateur",
+		"sorcerer": "Prestidigitateur",
+		"hunter": "Chasseur",
+		"origins": "Origines",
+		"originsText": "Une origine est un deck de 6 cartes qui accompagne chaque destinée.",
+		"healer": "Guérisseur",
+		"priest": "Prêtre",
+		"architect": "Architecte",
+		"style": "Style",
+		"styleText": "Bien que la version physique du jeu ne contienne que le style \"classique\", nous vous permettons de modifier le style des cartes pour personnaliser votre édition.",
+		"classic": "Classique",
+		"nostalgy": "Nostalgique",
+		"scales": "Ecailles",
+		"cartographer": "Cartographe",
+		"generate": "Générer la version PnP"
+	}
 }

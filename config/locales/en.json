@@ -94,5 +94,29 @@
 		"rooms": "Discussion rooms",
 		"solid-pancake": "Statistics",
 		"shop": "Online shopping"
+	},
+	"pnp": {
+		"title": "Print & Play version",
+		"introduction": "This new PnP version allows you to build the content of your edition and customize the style of your cards. This version replaces the old one on Google Drive. It is updated continuously according to the balance of the game and the new content.",
+		"content": "Content",
+		"contentText": "Customize the content of your edition.",
+		"destinies": "Destinies",
+		"destiniesText": "Destiny is a deck of 37 cards (36 playable cards, and a character card).",
+		"conjurer": "Conjurer",
+		"summoner": "Summoner",
+		"sorcerer": "Sorcerer",
+		"hunter": "Hunter",
+		"origins": "Origins",
+		"originsText": "An origin is a deck of 6 cards which accompanies each destiny.",
+		"healer": "Healer",
+		"priest": "Priest",
+		"architect": "Architect",
+		"style": "Style",
+		"styleText": "Although the physical version of the game only contains the \"classic\" style, we allow you to modify the style of the cards to personalize your edition.",
+		"classic": "Classic",
+		"nostalgy": "Nostalgy",
+		"scales": "Scales",
+		"cartographer": "Cartographer",
+		"generate": "Generate the PnP version"
 	}
 }
