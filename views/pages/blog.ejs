@@ -3,7 +3,7 @@
 <div id="blog">
   <div class="blog-heading">
     <div class="container">
-      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered has-text-shadow">Actualités</h1>
+      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered has-text-shadow"><%= __("news.title") %></h1>
     </div>
   </div>
 
@@ -20,7 +20,7 @@
           (newsItem.text.replace(/(<([^>]+)>)/ig,' ').slice(0, 120).split(' ').slice(0, -1).join(' '))
         %>…</p>
         <p>
-          <a href="/blog/<%= newsItem.slug %>" class="button is-primary">Lire la suite</a>
+          <a href="/blog/<%= newsItem.slug %>" class="button is-primary"><%= __("news.readMore") %></a>
         </p>
       </div>
     <% }) %>

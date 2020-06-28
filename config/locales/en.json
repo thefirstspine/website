@@ -134,5 +134,10 @@
 		"storyText2": "The story of the first prophet named Dementia is told on the continent of Exodia. This one managed to create a powerful artifact called The Crown; the presence of this artifact gave the people of Aetheria extremely powerful supernatural powers.",
 		"storyText3": "We are now capable of the greatest wonders, as of the greatest misdeeds. Some are able to build artifacts by the mere strength of their mind. Others have the power to materialize creatures that were unknown to us. And finally, some have the power to cast powerful spells by saying simple words.",
 		"storyText4": "Today, The Crown is lost. Legend says it can only be found by the most powerful of all wizards."
-	}
+	},
+	"news": {
+		"title": "News",
+		"readMore": "Read more"
+	},
+	"Print and Play": "Print and Play"
 }
