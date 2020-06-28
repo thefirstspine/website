@@ -63,7 +63,7 @@ module.exports = {
         'pages/code-not-found',
         {
           ...await sails.helpers.layoutConfig(req.user_id),
-          title: sails.__("code.title"),
+          title: "code.title",
         }
       );
     }
@@ -95,7 +95,7 @@ module.exports = {
         'pages/code-added',
         {
           ...await sails.helpers.layoutConfig(req.user_id),
-          title: sails.__("code.title"),
+          title: "code.title",
           code: codeEntity,
         }
       );
@@ -106,7 +106,7 @@ module.exports = {
       'pages/code-to-add',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
-        title: sails.__("code.title"),
+        title: "code.title",
         code: codeEntity,
       }
     );
@@ -117,7 +117,7 @@ module.exports = {
       'pages/code-form',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
-        title: sails.__("code.title"),
+        title: "code.title",
       }
     );
   },
