@@ -13,7 +13,7 @@ module.exports = {
     return res.view(
       'pages/login.ejs',
       {
-        title: 'Connexion',
+        title: 'login.title',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
       }
@@ -42,16 +42,16 @@ module.exports = {
         req.session.access_token = json.access_token;
         return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
       } else {
-        errors.push(`Adresse e-mail ou mot de passe incorrecte.`);
+        errors.push("login.error-wrongEmailOrPassword");
       }
     } catch (e) {
-      errors.push(`Le système de connexion n'est actuellement pas disponible.`);
+      errors.push("login.error-unavailable");
     }
 
     return res.view(
       'pages/login.ejs',
       {
-        title: 'Connexion',
+        title: 'login.title',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,
@@ -90,7 +90,7 @@ module.exports = {
     return res.view(
       'pages/subscribe.ejs',
       {
-        title: 'Inscription',
+        title: 'subscribe.title',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors: [],
@@ -104,7 +104,7 @@ module.exports = {
 
     if (req.body.conditions !== 'accept') {
       // No accept GCU
-      errors.push(`Veuillez accepter les conditions d'utilisation.`);
+      errors.push("subscribe.error-cgu");
     } else {
       try {
         // Sign up
@@ -154,18 +154,18 @@ module.exports = {
           // Redirect the user
           return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
         } else {
-          errors.push(`Oups, votre inscription n'a pas pu se faire. Vérifiez vos informations.`);
+          errors.push("subscribe.error-check");
         }
       } catch (e) {
         console.log(e);
-        errors.push(`Le système d'inscription n'est actuellement pas disponible.`);
+        errors.push("subscribe.error-unavailable");
       }
     }
 
     return res.view(
       'pages/subscribe.ejs',
       {
-        title: 'Inscription',
+        title: 'subscribe.title',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,
@@ -204,12 +204,12 @@ module.exports = {
       }
     );
 
-    messages.push('Votre mot de passe vous a été envoyé !');
+    messages.push('forgottent-password.message-sent');
 
     return res.view(
       'pages/forgottent-password.ejs',
       {
-        title: 'Mot de passe perdu',
+        title: 'forgottent-password.title',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,
@@ -263,7 +263,7 @@ module.exports = {
     return res.view(
       'pages/profile.ejs',
       {
-        title: 'Profil',
+        title: 'profile.title',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         wizard,
@@ -291,7 +291,7 @@ module.exports = {
     return res.view(
       'pages/profile.ejs',
       {
-        title: 'Profil',
+        title: 'profile.title',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         wizard,

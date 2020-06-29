@@ -254,5 +254,38 @@
 		"card-vs-ruleText1": "If a card contradicts the rules, the card wins.",
 		"card-vs-cardTitle": "Card vs card",
 		"card-vs-cardText1": "If two cards contradict each other, the one saying you can't do anything wins out over the one saying you can do it."
+	},
+	"login": {
+		"title": "Sign in",
+		"error-wrongEmailOrPassword": "Wrong email or password",
+		"error-unavailable": "Auth service is not available",
+		"email": "Email address",
+		"password": "Password",
+		"loginNow": "Sign in now",
+		"loginWithFacebook": "Sign in with Facebook",
+		"or": "or"
+	},
+	"forgottent-password": {
+		"title": "Forgotten password",
+		"message-sent": "Your password has been sent to you!",
+		"email": "Email address",
+		"send": "Resend a password",
+		"message": "Have you lost your password? Enter your e-mail address below and we will resend you a password:"
+	},
+	"subscribe": {
+		"title": "Register",
+		"error-check": "Oops, your registration could not be completed. Verify your information.",
+		"error-unavailable": "The registration system is currently not available.",
+		"error-cgu": "Please accept the terms of use.",
+		"referingActivated": "Refering link activated",
+		"referingActivatedText": "You will register with a refering link.",
+		"email": "Email address",
+		"password": "Mot de passe (8 caractères minimum)",
+		"cgu": "I accept <a class=\"has-text-primary\" target=\"_blank\" href=\"/cgu\">the terms of use</a>",
+		"subscribe": "Register",
+		"or": "or"
+	},
+	"profile": {
+		"title": "Profile"
 	}
 }

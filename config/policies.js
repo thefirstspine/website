@@ -20,14 +20,14 @@ module.exports.policies = {
   '*': ['load-user', 'set-locale'],
 
   UserController: {
-    '*': ['load-user', 'is-logged-in'],
-    'tryLoginWithFacebook': ['load-user'],
-    'viewForgottenPasswordForm': ['load-user'],
-    'sendNewPassword': ['load-user'],
-    'viewLoginForm': ['load-user'],
-    'tryLogin': ['load-user'],
-    'viewSubscriptionForm': ['load-user'],
-    'submitSubscription': ['load-user'],
+    '*': ['load-user', 'set-locale', 'is-logged-in'],
+    'tryLoginWithFacebook': ['load-user', 'set-locale'],
+    'viewForgottenPasswordForm': ['load-user', 'set-locale'],
+    'sendNewPassword': ['load-user', 'set-locale'],
+    'viewLoginForm': ['load-user', 'set-locale'],
+    'tryLogin': ['load-user', 'set-locale'],
+    'viewSubscriptionForm': ['load-user', 'set-locale'],
+    'submitSubscription': ['load-user', 'set-locale'],
   },
 
   // Blueprint API
