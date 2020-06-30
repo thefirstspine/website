@@ -366,6 +366,7 @@ footer {
     }
     &.cycle-souvenirs-2020 {
       background-image: url(../images/background-souvenirs-2020.jpg);
+      background-attachment: fixed;
     }
     .card-wrapper {
       margin: 2em auto 0 auto;
