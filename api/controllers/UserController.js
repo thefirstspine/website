@@ -178,7 +178,7 @@ module.exports = {
     const errors = [];
 
     return res.view(
-      'pages/forgottent-password.ejs',
+      'pages/forgotten-password.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
@@ -204,12 +204,12 @@ module.exports = {
       }
     );
 
-    messages.push('forgottent-password.message-sent');
+    messages.push('forgotten-password.message-sent');
 
     return res.view(
-      'pages/forgottent-password.ejs',
+      'pages/forgotten-password.ejs',
       {
-        title: 'forgottent-password.title',
+        title: 'forgotten-password.title',
         ...await sails.helpers.layoutConfig(req.user_id),
         redirect: req.query.redirect,
         errors,

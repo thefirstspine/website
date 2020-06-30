@@ -265,7 +265,7 @@
 		"loginWithFacebook": "Connexion avec Facebook",
 		"or": "ou"
 	},
-	"forgottent-password": {
+	"forgotten-password": {
 		"title": "Mot de passe oublié",
 		"message-sent": "Votre mot de passe vous a été envoyé !",
 		"email": "Adresse e-mail",
