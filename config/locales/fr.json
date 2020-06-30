@@ -286,6 +286,18 @@
 		"or": "ou"
 	},
 	"profile": {
-		"title": "Profil"
+		"title": "Profil",
+		"yourAccount": "Votre compte",
+		"editOnlineProfile": "Modifier votre profil en ligne",
+		"download": "Votre profil en ligne n'est pas modifiable ici. Téléchargez et installez <a href=\"/arena\" class=\"has-text-primary\">Arena</a> pour changer votre avatar ou votre nom de sorcier.",
+		"currencies": "Vos monnaies",
+		"editPAssword": "Modifier votre mot de passe",
+		"newPassword": "Nouveau mot de passe",
+		"confirmPassword": "Confirmez votre mot de passe",
+		"changePassword": "Changer le mot de passe",
+		"error-confirmationNotPatch": "Les mots de passe ne correspondent pas.",
+		"error-length": "Le mot de passe doit avoir au moins 8 caractères.",
+		"error-unkown": "Le changement de mot de passe a échoué.",
+		"message-passwordChanged": "Le mot de passe a été modifié."
 	}
 }

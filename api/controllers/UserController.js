@@ -223,9 +223,9 @@ module.exports = {
     const messages = [];
 
     if (req.body.password !== req.body.password2) {
-      errors.push(`Les mots de passe ne correspondent pas.`);
+      errors.push("profile.error-confirmationNotPatch");
     } else if (!req.body.password || req.body.password.length < 8) {
-      errors.push(`Le mot de passe doit avoir au moins 8 caractères.`);
+      errors.push("profile.error-length");
     } else {
       const response = await fetch(
         `${process.env.AUTH_URL}/api/me`,
@@ -241,9 +241,9 @@ module.exports = {
         }
       );
       if (response.status >= 400) {
-        errors.push(`Le changement de mot de passe a échoué.`);
+        errors.push("profile.error-unkown");
       } else {
-        messages.push(`Le mot de passe a été modifié.`);
+        messages.push("profile.message-passwordChanged");
       }
     }
     

@@ -286,6 +286,18 @@
 		"or": "or"
 	},
 	"profile": {
-		"title": "Profile"
+		"title": "Profile",
+		"yourAccount": "Your account",
+		"editOnlineProfile": "Edit your online profile",
+		"download": "Your online profile cannot be changed here. Download and install <a href=\"/arena\" class=\"has-text-primary\">Arena</a> to change your avatar or wizard name.",
+		"currencies": "Your currencies",
+		"editPAssword": "Change your password",
+		"newPassword": "New Password",
+		"confirmPassword": "Confirm your password",
+		"changePassword": "Change the password",
+		"error-confirmationNotPatch": "Passwords do not match.",
+		"error-length": "Password must be at least 8 characters long.",
+		"error-unkown": "Password change failed.",
+		"message-passwordChanged": "Password has been changed."
 	}
 }
