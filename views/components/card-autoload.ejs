@@ -4,6 +4,7 @@
       return {
         card: null,
         cardStyle: null,
+        locale: this.$attrs.locale,
       }
     },
     mounted: async function() {
@@ -12,13 +13,13 @@
       this.cardStyle = this.$attrs.cardstyle;
       this.card = await response.json();
     },
-    props: ['cardId', 'holo', 'premium', 'color', 'cardStyle'],
+    props: ['cardId', 'holo', 'premium', 'color', 'cardStyle', 'locale'],
     template: '#card-autoload',
   })
 </script>
 
 <script type="text/x-template" id="card-autoload">
   <div card-autoload v-if="card">
-    <card :card="card" :holo="holo" :premium="premium" :color="color" :cardStyle="cardStyle"></card>
+    <card :locale="locale" :card="card" :holo="holo" :premium="premium" :color="color" :cardStyle="cardStyle"></card>
   </div>
 </script>

@@ -241,6 +241,11 @@ footer {
   .navbar-burger {
     margin-top: 10px;
   }
+  .flags {
+    a {
+      margin: .5em;
+    }
+  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -358,6 +363,10 @@ footer {
       background-image: url(../images/background-great-ancient-2020.jpg);
       background-size: 150%;
       background-position: bottom;
+    }
+    &.cycle-souvenirs-2020 {
+      background-image: url(../images/background-souvenirs-2020.jpg);
+      background-attachment: fixed;
     }
     .card-wrapper {
       margin: 2em auto 0 auto;

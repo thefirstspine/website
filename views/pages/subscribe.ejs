@@ -6,24 +6,24 @@
       <div class="column is-8 is-offset-2">
         <div class="columns">
           <form class="column" method="POST" action="/subscribe?redirect=<%= redirect %>&refer=<%= refering ? refering.code : '' %>">
-            <h1 class="is-size-3 has-text-centered">INSCRIPTION</h1>
+            <h1 class="is-size-3 has-text-centered is-uppercase"><%= __("subscribe.title") %></h1>
             <% if (refering) { %>
-              <p class="has-text-pink has-text-centered is-size-3 is-uppercase">Lien d'affiliation activé</p>
-              <p class="has-text-centered has-text-grey">Vous allez vous inscrire avec un lien de parainage.</p>
+              <p class="has-text-pink has-text-centered is-size-3 is-uppercase"><%= __("subscribe.referingActivated") %></p>
+              <p class="has-text-centered has-text-grey"><%= __("subscribe.referingActivatedText") %></p>
               <hr />
             <% } %>
             <% if(typeof(errors) !== 'undefined' && errors && errors.length) { %>
               <% errors.forEach(function(error){ %>
                 <article  class="message is-danger">
                   <div class="message-body">
-                    <%= error %>
+                    <%= __(error) %>
                   </div>
                 </article >
               <% }); %>
             <% } %>
             <div class="field">
               <div class="control has-icons-left">
-                <input class="input is-medium" type="email" name="email" placeholder="Adresse e-mail">
+                <input class="input is-medium" type="email" name="email" placeholder="<%= __("subscribe.email") %>">
                 <span class="icon is-medium is-left">
                   <i class="fas fa-envelope"></i>
                 </span>
@@ -31,7 +31,7 @@
             </div>
             <div class="field">
               <div class="control has-icons-left">
-                <input class="input is-medium" type="password" name="password" placeholder="Mot de passe (8 caractères minimum)">
+                <input class="input is-medium" type="password" name="password" placeholder="<%= __("subscribe.password") %>">
                 <span class="icon is-medium is-left">
                   <i class="fas fa-key"></i>
                 </span>
@@ -40,13 +40,13 @@
             <div class="field">
               <label class="checkbox has-text-white">
                 <input type="checkbox" name="conditions" value="accept" />
-                J'accepte les <a class="has-text-primary" target="_blank" href="/cgu">conditions d'utilisations</a>
+                <%- __("subscribe.cgu") %>
               </label>
             </div>
             <div class="buttons">
               <div class="field">
                 <div class="control">
-                  <input type="submit" value="Inscription" class="button is-primary is-size-5" />
+                  <input type="submit" value="<%= __("subscribe.subscribe") %>" class="button is-primary is-size-5" />
                 </div>
               </div>
               <div class="field">
@@ -55,7 +55,7 @@
                     <hr class="middle" />
                   </div>
                   <div class="column has-text-centered is-one-quarter">
-                    <span class="middle">ou</span>
+                    <span class="middle"><%= __("subscribe.or") %></span>
                   </div>
                   <div class="column">
                     <hr class="middle" />

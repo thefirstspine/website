@@ -12,11 +12,11 @@ module.exports = {
       'pages/blog.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
-        title: 'Actualités',
+        title: "news.title",
         news: await sails.models.news.find({
           sort: 'createdAt DESC',
           where: {
-            language: 'fr',
+            language: req.session.locale,
           },
         }),
       }

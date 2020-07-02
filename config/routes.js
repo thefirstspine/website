@@ -30,6 +30,10 @@ module.exports.routes = {
   * not match any of those, it is matched against static assets.             *
   *                                                                          *
   ***************************************************************************/
+  
+  // LOcales
+  'GET /l/fr': 'LocaleController.fr',
+  'GET /l/en': 'LocaleController.en',
 
   // Pages
   'GET /': 'HomepageController.index',
