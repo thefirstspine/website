@@ -75,5 +75,8 @@ module.exports.routes = {
   'GET /codes': 'CodesController.viewForm',
   'GET /codes/use/:code': 'CodesController.useCode',
 
+  // Report
+  'GET /report/:id': 'ReportController.index',
+  'POST /report/:id': 'ReportController.report',
 
 };

@@ -18,6 +18,8 @@
     "moment": "^2.27.0",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.14.1",
+    "nodemailer": "^6.4.10",
+    "nodemailer-smtp-transport": "^2.7.4",
     "sails": "^1.2.4",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
