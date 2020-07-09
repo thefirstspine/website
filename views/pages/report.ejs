@@ -1,0 +1,93 @@
+<%- include('../elements/nav.ejs') %>
+
+<div id="about" class="">
+  <div class="about-heading">
+    <div class="container">
+      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered has-text-shadow"><%= __("report.title") %></h1>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="container">
+    <div class="columns">
+      <form class="column is-8 is-offset-2" method="POST">
+        <% if(typeof(errors) !== 'undefined' && errors && errors.length) { %>
+          <% errors.forEach(function(error){ %>
+            <article class="message is-danger">
+              <div class="message-body">
+                <%= __(error) %>
+              </div>
+            </article>
+          <% }); %>
+        <% } %>
+        <% if(typeof(message) !== 'undefined') { %>
+          <article class="message is-success">
+            <div class="message-body">
+              <%= __(message) %>
+            </div>
+          </article>
+        <% } %>
+        <h2 class="is-size-3 has-text-primary has-margin-top-2"><%= __("report.form") %></h2>
+        <div class="field has-margin-top-2">
+          <label class="label has-text-white"><%= __("report.reason") %></label>
+          <div class="control">
+            <div class="select">
+              <select name="reason">
+                <option><%= __("report.chose") %></option>
+                <option <%= typeof reason === "string" && reason === "cheat" ? "selected" : "" %> value="cheat"><%= __("report.cheat") %></option>
+                <option <%= typeof reason === "string" && reason === "inappropriate-behavior-insults" ? "selected" : "" %> value="inappropriate-behavior-insults"><%= __("report.inappropriate-behavior-insults") %></option>
+                <option <%= typeof reason === "string" && reason === "harassment-or-intimidation" ? "selected" : "" %> value="harassment-or-intimidation"><%= __("report.harassment-or-intimidation") %></option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label has-text-white"><%= __("report.moreDetails") %></label>
+          <div class="control">
+            <textarea name="details" class="textarea" placeholder="<%= __("report.detailsPlaceholder") %>"><%= typeof details === "string" ? details : "" %></textarea>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <input type="submit" class="button is-danger" value="<%= __("report.reportPlayer") %>" />
+          </div>
+        </div>
+        <h2 class="is-size-3 has-text-primary has-margin-top-2"><%= __("report.sanctions") %></h2>
+        <p class="has-margin-top-2"><%= __("report.sanctionsText") %></p>
+        <table class="table has-margin-top-2">
+          <thead>
+            <tr>
+              <th><%= __("report.reason") %></th>
+              <th><%= __("report.penalty") %></th>
+              <th><%= __("report.penaltyRecurrence") %></th>
+              <th><%= __("report.penaltyRecurrence2") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= __("report.cheat") %></td>
+              <td><%= __("report.curse") %> x 2</td>
+              <td><%= __("report.curse") %> x 4</td>
+              <td class="has-text-danger"><%= __("report.banishment") %></td>
+            </tr>
+            <tr>
+              <td><%= __("report.inappropriate-behavior-insults") %></td>
+              <td><%= __("report.curse") %> x 3</td>
+              <td class="has-text-danger"><%= __("report.banishment") %></td>
+              <td class="has-text-danger"><%= __("report.banishment") %></td>
+            </tr>
+            <tr>
+              <td><%= __("report.harassment-or-intimidation") %></td>
+              <td class="has-text-danger"><%= __("report.banishment") %></td>
+              <td class="has-text-danger"><%= __("report.banishment") %></td>
+              <td class="has-text-danger"><%= __("report.banishment") %></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../elements/footer.ejs') %>

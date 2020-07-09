@@ -299,5 +299,27 @@
 		"error-length": "Le mot de passe doit avoir au moins 8 caractères.",
 		"error-unkown": "Le changement de mot de passe a échoué.",
 		"message-passwordChanged": "Le mot de passe a été modifié."
+	},
+	"report": {
+		"title": "Signaler un joueur",
+		"form": "Formulaire de signalement",
+		"reason": "Raison du signalement",
+		"chose": "Choisissez...",
+		"cheat": "Triche",
+		"inappropriate-behavior-insults": "Comportement inapproprié, injures",
+		"harassment-or-intimidation": "Harcèlement ou intimidation",
+		"moreDetails": "Donnez-nous plus de détails à propos de votre signalement",
+		"detailsPlaceholder": "Soyez le plus précis possible, avec des horaires et des copies de vos transcriptions. Nous ne pourrons pas prendre les mesures nécessaires si le moindre doute subsiste.",
+		"reportPlayer": "Signaler ce joueur",
+		"sanctions": "Les sanctions appliquées",
+		"sanctionsText": "Voici les sanctions plancher que nous appliquons. Si nous constatons des circonstances aggravantes (installation d'un logiciel espion sur le client d'un autre joueur par exemple), nous nous réservons le droit d'ajouter des malédictions ou d'appliquer un bannissement définitif immédiatement.",
+		"penalty": "Sanction sans récidive",
+		"penaltyRecurrence": "Sanction si récidive",
+		"penaltyRecurrence2": "Sanction à la seconde récidive",
+		"curse": "Malédiction",
+		"banishment": "Bannissement définitif",
+		"errorInvalidReason": "Raison invalide",
+		"errorMoreDetails": "Donnez plus de détails",
+		"messageReportSent": "Votre signalement a été envoyé !"
 	}
 }

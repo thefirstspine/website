@@ -21,6 +21,6 @@ module.exports = async function (req, res, proceed) {
 
   //--•
   // Otherwise, this request did not come from a logged-in user.
-  return res.forbidden();
+  return res.forbidden('not-admin');
 
 };

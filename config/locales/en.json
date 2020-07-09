@@ -299,5 +299,27 @@
 		"error-length": "Password must be at least 8 characters long.",
 		"error-unkown": "Password change failed.",
 		"message-passwordChanged": "Password has been changed."
+	},
+	"report": {
+		"title": "Report a player",
+		"form": "Reporting form",
+		"reason": "Reason for reporting",
+		"chose": "Choose...",
+		"cheat": "Cheat",
+		"inappropriate-behavior-insults": "Inappropriate behavior, insults",
+		"harassment-or-intimidation": "Harassment or intimidation",
+		"moreDetails": "Give us more details about your report",
+		"detailsPlaceholder": "Be as specific as possible, with timetables and copies of your transcripts. We will not be able to take the necessary measures if the slightest doubt remains.",
+		"reportPlayer": "Report this player",
+		"sanctions": "The sanctions applied",
+		"sanctionsText": "Here are the floor sanctions we apply. If we find aggravating circumstances (installing spyware on another player's client, for example), we reserve the right to add curses or apply a permanent ban immediately.",
+		"penalty": "Penalty without recurrence",
+		"penaltyRecurrence": "Penalty if recurrence",
+		"penaltyRecurrence2": "Penalty for second recidivism",
+		"curse": "Curse",
+		"banishment": "Banishment",
+    "errorInvalidReason": "Invalid reason",
+    "errorMoreDetails": "Please give more details",
+    "messageReportSent": "Your report was sent!"
 	}
 }

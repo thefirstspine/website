@@ -30,6 +30,10 @@ module.exports.policies = {
     'submitSubscription': ['load-user', 'set-locale'],
   },
 
+  ReportController: {
+    '*': ['load-user', 'set-locale', 'is-logged-in'],
+  },
+
   // Blueprint API
   'news/*':['load-user', 'is-logged-in', 'is-admin'],
   'news/find':[],
