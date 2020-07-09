@@ -249,7 +249,7 @@ module.exports = {
     
 
     const response = await fetch(
-      `${process.env.ARENA_URL}/wizard`,
+      `${process.env.ARENA_URL}/wizard/me`,
       {
         method: 'GET',
         headers: {
@@ -277,7 +277,7 @@ module.exports = {
     const errors = [];
 
     const response = await fetch(
-      `${process.env.ARENA_URL}/wizard`,
+      `${process.env.ARENA_URL}/wizard/me`,
       {
         method: 'GET',
         headers: {
