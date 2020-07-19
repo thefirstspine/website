@@ -16,8 +16,6 @@ module.exports = {
     code: { type: 'string', unique: true, required: true },
     referer: { type: 'number', required: true, allowNull: false },
     user: { type: 'number', allowNull: true },
-    hadFirstPlayGift: { type: 'boolean', defaultsTo: false },
-    lastCyclePlay: { type: 'string', allowNull: true },
     createdAt: { type: 'number', autoCreatedAt: true },
     updatedAt: { type: 'number', autoUpdatedAt: true },
 
