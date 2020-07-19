@@ -2,51 +2,22 @@
 
 <div id="mentoring" class="">
   <div class="mentoring-header has-text-primary">
-    <h1>Parrainer un ami</h1>
-    <!-- Refer a friend -->
-  </div>
-
-  <div class="notification is-danger">
-    <div class="container">
-      Le parrainage n'est pas (encore) terminé. Vous pouvez parrainer un filleul, mais les récompenses ne seront pas disponibles.
-    </div>
+    <h1><%= __("refer-a-friend.title") %></h1>
   </div>
 
   <div class="container">
-    
-    <div class="columns  is-vcentered">
-      <div class="column has-text-centered">
-        <img src="images/friendship-gift.png" />
-      </div>
-      <div class="column">
-        <h2 class="is-size-3 has-text-primary">Un cadeau de bienvenue pour vous deux</h2>
-        <p class="is-size-5 has-text-white has-margin-top-1">Dès que votre filleul aura joué sa première partie classique ou en tournoi, vous obtiendrez tous les deux 100 éclats de mana.<sup class="has-text-grey">*</sup></p>
-        <p class="is-size-5 has-text-white has-margin-top-1">Une bonne façon de souhaitez la bienvenue à votre filleul !</p>
-      </div>
-    </div>
-    
-    <div class="columns is-vcentered">
-      <div class="column">
-        <h2 class="is-size-3 has-text-primary">Il progresse, vous y gagnez</h2>
-        <p class="is-size-5 has-text-white has-margin-top-1">A la fin de chaque cycle, vous recevrez des éclats de mana à la hauteur des progrès de votre filleul. Pour chaque partie gagnée, vous remporterez 3 éclats de mana !<sup class="has-text-grey">**</sup></p>
-        <p class="is-size-5 has-text-white has-margin-top-1">Choisissez bien votre filleul, plus il sera fort, plus il vous sera profitable !</p>
-      </div>
-      <div class="column has-text-centered">
-        <img src="images/friendship-serial.png" />
-      </div>
-    </div>
 
     <hr />
 
     <div class="has-text-centered">
-      <h2 class="is-size-2 has-text-primary is-uppercase">Comment devenir parrain ?</h2>
+      <h2 class="is-size-2 has-text-primary is-uppercase"><%= __("refer-a-friend.howTo") %></h2>
       <p class="is-size-5 has-text-white has-margin-top-2">
-        Donnez ce lien vers le formulaire d'inscription à votre futur filleur :
+        <%= __("refer-a-friend.howToLink") %>
       </p>
       <p class="is-size-3 has-text-white">
         <% if (refering) { %>
           <% if (refering.user) { %>
-            <span class="has-text-danger">Votre parrainage est déjà activé !</span>
+            <span class="has-text-danger"><%= __("refer-a-friend.alreadyActivated") %></span>
           <% } else { %>
             <span class="has-text-grey" id="refer-link">https://www.thefirstspine.fr/refer-a-friend/<%= refering.code %></span>
             <a class="button is-primary has-tooltip" onclick="copyReferer(this)">
@@ -54,19 +25,41 @@
             </a>
           <% } %>
         <% } else { %>
-          <span class="has-text-danger">Connectez-vous afin d'activer le lien d'affiliation.</span>
+          <span class="has-text-danger"><%= __("refer-a-friend.login") %></span>
         <% } %>
       </p>
       <p class="is-size-5 has-text-white has-margin-top-2">
-        En s'inscrivant avec ce lien, votre lien d'affiliation sera activé !
+        <%= __("refer-a-friend.howToLink2") %>
       </p>
     </div>
 
     <hr />
+    
+    <div class="columns  is-vcentered">
+      <div class="column has-text-centered">
+        <img src="images/friendship-gift.png" />
+      </div>
+      <div class="column">
+        <h2 class="is-size-3 has-text-primary"><%= __("refer-a-friend.giftTitle") %></h2>
+        <p class="is-size-5 has-text-white has-margin-top-1"><%= __("refer-a-friend.giftText1") %><sup class="has-text-grey">*</sup></p>
+        <p class="is-size-5 has-text-white has-margin-top-1"><%= __("refer-a-friend.giftText2") %></p>
+      </div>
+    </div>
+    
+    <div class="columns is-vcentered">
+      <div class="column">
+        <h2 class="is-size-3 has-text-primary"><%= __("refer-a-friend.progressTitle") %></h2>
+        <p class="is-size-5 has-text-white has-margin-top-1"><%= __("refer-a-friend.progressText1") %><sup class="has-text-grey">**</sup></p>
+        <p class="is-size-5 has-text-white has-margin-top-1"><%= __("refer-a-friend.progressText2") %></p>
+      </div>
+      <div class="column has-text-centered">
+        <img src="images/friendship-serial.png" />
+      </div>
+    </div>
 
     <div class="has-margin-top-2 has-text-grey">
-      <p><small>* sous forme de code envoyé par e-mail. Les codes sont envoyés une fois par jour, l'envoi n'est pas immédiat. Dans la limite d'un filleul par compte. Hors parties entre un parrain et son filleul.</small></p>
-      <p><small>** sous forme de code envoyé par e-mail. Le code sera envoyé dans un maximum de cinq jours après la fin du cycle. Gain maximum de 300 éclats de mana. Hors parties entre un parrain et son filleul.</small></p>
+      <p><small>* <%= __("refer-a-friend.conditions1") %></small></p>
+      <p><small>** <%= __("refer-a-friend.conditions2") %></small></p>
     </div>
 
   </div>

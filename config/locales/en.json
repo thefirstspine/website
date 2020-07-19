@@ -17,7 +17,8 @@
 		"login": "Sign in",
 		"account": "Account",
 		"yourAccount": "Your account",
-		"logout": "Sign out"
+		"logout": "Sign out",
+		"referAFriend": "Refer a friend"
 	},
 	"footer": {
 		"stayConnected": "Keep in touch",
@@ -318,8 +319,25 @@
 		"penaltyRecurrence2": "Penalty for second recidivism",
 		"curse": "Curse",
 		"banishment": "Banishment",
-    "errorInvalidReason": "Invalid reason",
-    "errorMoreDetails": "Please give more details",
-    "messageReportSent": "Your report was sent!"
-	}
+		"errorInvalidReason": "Invalid reason",
+		"errorMoreDetails": "Please give more details",
+		"messageReportSent": "Your report was sent!"
+	},
+	"refer-a-friend": {
+		"title": "Refer a friend",
+		"howTo": "How to refer a friend?",
+		"howToLink": "Give this link to the registration form to your future referral:",
+		"alreadyActivated": "Your refering is already activated!",
+		"login": "Log in to activate the affiliate link.",
+		"howToLink2": "By registering with this link, your affiliate link will be activated!",
+		"giftTitle": "A welcome gift for both of you",
+		"giftText1": "As soon as your godchild has played their first classic or tournament game, you will both get 100 mana shards.",
+		"giftText2": "A good way to welcome your referral!",
+		"progressTitle": "He progresses, you gain",
+		"progressText1": "At the end of each cycle, you will receive bursts of mana at the height of your referral's progress. For each game you win, you will earn 3 Mana Shards!",
+		"progressText2": "Choose your referal well, the stronger it will be, the more it will be profitable for you!",
+		"conditions1": "as a code sent by email. The codes are sent once a day, the sending is not immediate. Within the limit of one sponsored person per account. Excluding parties between a referer and his referal.",
+		"conditions2": "as a code sent by email. The code will be sent within a maximum of five days after the end of the cycle. Maximum gain of 300 Mana Shards. Excluding parties between a referer and his referal."
+	},
+	"Update of PC (2.1.0) and mobile (1.2.0) clients": "Update of PC (2.1.0) and mobile (1.2.0) clients"
 }
