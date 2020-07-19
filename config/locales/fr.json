@@ -17,7 +17,8 @@
 		"login": "Connexion",
 		"account": "Compte",
 		"yourAccount": "Votre compte",
-		"logout": "Se déconnecter"
+		"logout": "Se déconnecter",
+		"referAFriend": "Parrainer un ami"
 	},
 	"footer": {
 		"stayConnected": "Restons connectés",
@@ -321,5 +322,21 @@
 		"errorInvalidReason": "Raison invalide",
 		"errorMoreDetails": "Donnez plus de détails",
 		"messageReportSent": "Votre signalement a été envoyé !"
+	},
+	"refer-a-friend": {
+		"title": "Parrainer un ami",
+		"howTo": "Comment devenir parrain ?",
+		"howToLink": "Donnez ce lien vers le formulaire d'inscription à votre futur filleul :",
+		"alreadyActivated": "Votre parrainage est déjà activé !",
+		"login": "Connectez-vous afin d'activer le lien d'affiliation.",
+		"howToLink2": "En s'inscrivant avec ce lien, votre lien d'affiliation sera activé !",
+		"giftTitle": "Un cadeau de bienvenue pour vous deux",
+		"giftText1": "Dès que votre filleul aura joué sa première partie classique ou en tournoi, vous obtiendrez tous les deux 100 éclats de mana.",
+		"giftText2": "Une bonne façon de souhaiter la bienvenue à votre filleul !",
+		"progressTitle": "Il progresse, vous y gagnez",
+		"progressText1": "A la fin de chaque cycle, vous recevrez des éclats de mana à la hauteur des progrès de votre filleul. Pour chaque partie gagnée, vous remporterez 3 éclats de mana !",
+		"progressText2": "Choisissez bien votre filleul, plus il sera fort, plus il vous sera profitable !",
+		"conditions1": "sous forme de code envoyé par e-mail. Les codes sont envoyés une fois par jour, l'envoi n'est pas immédiat. Dans la limite d'un filleul par compte. Hors parties entre un parrain et son filleul.",
+		"conditions2": "sous forme de code envoyé par e-mail. Le code sera envoyé dans un maximum de cinq jours après la fin du cycle. Gain maximum de 300 éclats de mana. Hors parties entre un parrain et son filleul."
 	}
 }
