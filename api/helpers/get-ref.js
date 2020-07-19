@@ -19,10 +19,11 @@ module.exports = {
 
     const code = Math.random().toString(36).substring(7);
 
-    const createdRef = await sails.models.refer.create({
+    await sails.models.refer.create({
       code,
       referer: inputs.referer,
     });
+    const createdRef = await sails.models.refer.findOne({referer: inputs.referer});
 
     return exits.success(createdRef);
   }
