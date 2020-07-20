@@ -62,8 +62,8 @@ Vue.component('card', {
       v-on:mouseleave="$emit('mouseleave')">
       <div class="card-container">
         <div class="image" :style="{backgroundImage: 'url(/images/' + card.imageUrl.replace('https://static.thefirstspine.fr/', '') + ')'}"></div>
-        <div class="holo-stars"></div>
-        <div class="holo-color"></div>
+        <img class="premium-filter" src="/images/premium-filter.gif" />
+        <img class="holo-filter" src="/images/holo-filter.gif" />
         <div class="frame frame1"></div>
         <div class="frame frame2"></div>
         <div class="name">{{ card.name[locale] }}</div>
