@@ -318,8 +318,8 @@
 		"penaltyRecurrence2": "Penalty for second recidivism",
 		"curse": "Curse",
 		"banishment": "Banishment",
-    "errorInvalidReason": "Invalid reason",
-    "errorMoreDetails": "Please give more details",
-    "messageReportSent": "Your report was sent!"
+		"errorInvalidReason": "Invalid reason",
+		"errorMoreDetails": "Please give more details",
+		"messageReportSent": "Your report was sent!"
 	}
 }
