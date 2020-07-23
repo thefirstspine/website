@@ -192,7 +192,7 @@ module.exports = {
     const messages = [];
 
     await fetch(
-      `${process.env.AUTH_URL}/api-v2/reset-password`,
+      `${process.env.AUTH_URL}/api/v2/reset-password`,
       {
         method: 'POST',
         headers: {
