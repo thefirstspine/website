@@ -1,10 +1,3 @@
-div[card] {
-  width: 500px;
-  height: 500px;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-
   * {
     transform-style: flat;
   }
@@ -26,38 +19,23 @@ div[card] {
       position: absolute;
     }
 
-    .holo-color {
+    .holo-filter {
       position: absolute;
       top: 50px;
       left: 50px;
       height: 400px;
       width: 400px;
-      background-image: linear-gradient(
-        115deg,
-        transparent 0%,
-        rgb(0, 231, 255) 30%,
-        rgb(255, 0, 231) 70%,
-        transparent 100%
-      );
-      background-position: 0% 0%;
-      background-repeat: no-repeat;
-      background-size: 300% 300%;
       mix-blend-mode: color-dodge;
-      animation: holoGradient 15s ease infinite;
-      opacity: 0;
       display: none;
     }
 
-    .holo-stars {
+    .premium-filter {
       position: absolute;
       top: 30px;
       left: 30px;
       height: 440px;
       width: 440px;
-      background-image: url(/images/sparkles.gif);
-      background-position: center;
       mix-blend-mode: screen;
-      animation: holoSparkle 20s ease infinite;
       display: none;
     }
 
@@ -197,7 +175,7 @@ div[card] {
     }
 
     &.is-holo {
-      .holo-color {
+      .holo-filter {
         display: block;
       }
     }
@@ -205,7 +183,7 @@ div[card] {
       .glow {
         box-shadow: rgba(200, 200, 255, .5) 0 0 100px, rgba(200, 200, 255, .75) 0 0 10px, rgba(200, 200, 255, 1) 0 0 3px;
       }
-      .holo-stars {
+      .premium-filter {
         display: block;
       }
     }
@@ -226,7 +204,7 @@ div[card] {
           top: 110px;
         }
       }
-      .image, .holo-stars {
+      .image, .premium-filter {
         height: 200px;
       }
     }
@@ -315,7 +293,7 @@ div[card] {
       &.type-player .frame {
         background-image: url(/images/player-scales.png);
       }
-      .image, .holo-color, .holo-stars {
+      .image, .holo-filter, .premium-filter {
         top: 40px;
         left: 40px;
         width: 420px;
@@ -371,7 +349,7 @@ div[card] {
       &.type-player .frame {
         background-image: url(/images/player-cartographer.png);
       }
-      .image, .holo-color, .holo-stars {
+      .image, .holo-filter, .premium-filter {
         top: 20px;
         left: 20px;
         width: 460px;
@@ -418,54 +396,139 @@ div[card] {
         width: 100%;
       }
     }
-  }
-  @keyframes holoSparkle {
-    0% {
-      opacity: 0.2;
+
+    &.style-corsair {
+      background-image: url(/images/card-corsair.png);
+      &.type-creature .frame {
+        background-image: url(/images/creature-corsair.png);
+      }
+      &.type-artifact .frame {
+        background-image: url(/images/artifact-corsair.png);
+      }
+      &.type-spell .frame {
+        background-image: url(/images/spell-corsair.png);
+      }
+      &.type-player .frame {
+        background-image: url(/images/player-corsair.png);
+      }
+      .image, .holo-filter, .premium-filter {
+        top: 50px;
+        left: 50px;
+        width: 400px;
+        height: 400px;
+      }
+      .image {
+        mix-blend-mode: screen;
+      }
+      .stat {
+        background: rgb(0,0,0);
+        border: none;
+        box-shadow: black 0 10px 5px inset;
+        padding: 0px;
+        height: 35px;
+        width: 35px;
+        &.strength {
+          background: #720407;
+        }
+        &.defense {
+          background: #014a64;
+        }
+      }
+      .stats {
+        .top {
+          top: 31px;
+        }
+        .bottom {
+          bottom: 31px;
+        }
+        .right {
+          right: 31px;
+        }
+        .left {
+          left: 31px;
+        }
+      }
+      .type1 {
+        top: 0;
+        left: 0;
+        height: 50%;
+        width: 100%;
+      }
+      .type2 {
+        top: 50%;
+        left: 0;
+        height: 50%;
+        width: 100%;
+      }
     }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0.2;
+
+    &.style-ghostly {
+      background-image: url(/images/card-ghostly.png);
+      opacity: .9;
+      animation: ghostly 10s infinite;
+      &.type-creature .frame {
+        background-image: url(/images/creature-ghostly.png);
+      }
+      &.type-artifact .frame {
+        background-image: url(/images/artifact-ghostly.png);
+      }
+      &.type-spell .frame {
+        background-image: url(/images/spell-ghostly.png);
+      }
+      &.type-player .frame {
+        background-image: url(/images/player-ghostly.png);
+      }
+      .image {
+        mix-blend-mode: screen;
+        filter: grayscale(80%);
+      }
+      .stat {
+        background: rgba(0, 0, 0, .5);
+        border: 1px solid rgba(200, 200, 255, .5);
+        padding: 5px;
+        height: 43px;
+        width: 43px;
+        &.strength {
+          color: #d2232a;
+        }
+        &.defense {
+          color: #00aeef;
+        }
+      }
+      .stats {
+        .top {
+          top: 25px;
+        }
+        .bottom {
+          bottom: 25px;
+        }
+        .right {
+          right: 29px;
+        }
+        .left {
+          left: 25px;
+        }
+      }
     }
   }
 
-  @keyframes holoGradient {
-    3% {
-      opacity: 0;
-    }
-    5% {
-      background-position: 0% 0%;
-    }
-    7% {
-      opacity: 0.5;
-    }
-    9% {
-      background-position: 100% 100%;
-    }
-    11% {
-      opacity: 0;
+  @keyframes ghostly {
+    0% {
+      opacity: .9;
     }
     50% {
-      opacity: 0;
-      background-position: 100% 100%;
+      opacity: .6;
     }
-    55% {
-      opacity: 0.3;
-    }
-    70% {
-      opacity: 0;
-      background-position: 0% 0%;
+    100% {
+      opacity: .9;
     }
   }
 
   .is-square {
-    .image, .holo-color, .holo-stars {
+    .image, .holo-filter, .premium-filter {
       top: 20px;
       left: 20px;
       width: 460px;
       height: 460px;
     }
   }
-}

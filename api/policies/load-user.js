@@ -19,7 +19,7 @@ module.exports = async function (req, res, proceed) {
     // Try to retrieve the user with the token
     try {
       const result = await fetch(
-        `${baseUrl}/api/me`,
+        `${baseUrl}/api/v2/me`,
         {
           headers: {
             'Content-type': 'application/json',
@@ -45,7 +45,7 @@ module.exports = async function (req, res, proceed) {
       // On a token too old (more than 6 hours), refresh the token
       if ((Date.now() - (jsonJwtPayload.iat * 1000)) > (6 * 60 * 60 * 1000)) {
         const result = await fetch(
-          `${baseUrl}/api/refresh`,
+          `${baseUrl}/api/v2/refresh`,
           {
             headers: {
               'Content-type': 'application/json',
