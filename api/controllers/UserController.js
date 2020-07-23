@@ -25,7 +25,7 @@ module.exports = {
 
     try {
       const response = await fetch(
-        `${process.env.AUTH_URL}/api/login`,
+        `${process.env.AUTH_URL}/api/v2/login`,
         {
           method: 'POST',
           headers: {
@@ -61,7 +61,7 @@ module.exports = {
 
   async tryLoginWithFacebook(req, res) {
     const response = await fetch(
-      `${process.env.AUTH_URL}/api/login-with-facebook`, {
+      `${process.env.AUTH_URL}/api/v2/login-with-facebook`, {
         method: 'post',
         body: JSON.stringify({
           code: req.query.code,
@@ -109,7 +109,7 @@ module.exports = {
       try {
         // Sign up
         const response = await fetch(
-          `${process.env.AUTH_URL}/api/signup`,
+          `${process.env.AUTH_URL}/api/v2/signup`,
           {
             method: 'POST',
             headers: {
@@ -125,7 +125,7 @@ module.exports = {
         if (json.user_id) {
           // We had a response!
           const response = await fetch(
-            `${process.env.AUTH_URL}/api/login`,
+            `${process.env.AUTH_URL}/api/v2/login`,
             {
               method: 'POST',
               headers: {
@@ -192,7 +192,7 @@ module.exports = {
     const messages = [];
 
     await fetch(
-      `${process.env.AUTH_URL}/api/reset-password`,
+      `${process.env.AUTH_URL}/api-v2/reset-password`,
       {
         method: 'POST',
         headers: {
@@ -228,7 +228,7 @@ module.exports = {
       errors.push("profile.error-length");
     } else {
       const response = await fetch(
-        `${process.env.AUTH_URL}/api/me`,
+        `${process.env.AUTH_URL}/api/v2/me`,
         {
           method: 'PUT',
           headers: {
