@@ -3,7 +3,7 @@
 <div id="events" class="">
   <div class="events-heading">
     <div class="container">
-      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered has-text-shadow">Événéments</h1>
+      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered has-text-shadow"><%= __('events.title') %></h1>
     </div>
   </div>
 
@@ -41,10 +41,10 @@
                       <p class="title is-4"><%= events[j].title %></p>
                       <p class="subtitle is-7">
                         <% if (events[j].type === 'online') { %>
-                          <i class="fas fa-wifi"></i> En ligne
+                          <i class="fas fa-wifi"></i> <%= __('events.online') %>
                         <% } %>
                         <% if (events[j].type === 'offline') { %>
-                          <i class="fas fa-map-marker-alt"></i> Physique
+                          <i class="fas fa-map-marker-alt"></i> <%= __('events.physic') %>
                         <% } %>
                       </p>
                     </div>

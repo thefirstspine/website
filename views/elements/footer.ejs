@@ -35,7 +35,7 @@
       <div class="column">
         <h4 class="has-text-primary is-uppercase"><%= __("footer.stayInformed") %></h4>
         <ul>
-          <li><a href="/events" disabled><%= __("footer.events") %></a></li>
+          <li><a href="/events"><%= __("footer.events") %></a></li>
           <% footer.news.forEach(function(newsItem) { %>
             <li><a href="/blog/<%= newsItem.slug %>"><%= newsItem.title %></a></li>
           <% }) %>

@@ -11,7 +11,7 @@ module.exports = {
     const events = await sails.models.event.find({
       sort: 'datetimeFrom ASC',
       where: {
-        language: 'fr',
+        language: req.session.locale,
         datetimeTo: {'>': Date.now()},
       },
     });
@@ -20,7 +20,7 @@ module.exports = {
       'pages/events.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
-        title: 'Événements',
+        title: 'events.title',
         events,
       }
     );

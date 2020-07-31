@@ -338,5 +338,10 @@
 		"progressText2": "Choisissez bien votre filleul, plus il sera fort, plus il vous sera profitable !",
 		"conditions1": "sous forme de code envoyé par e-mail. Les codes sont envoyés une fois par jour, l'envoi n'est pas immédiat. Dans la limite d'un filleul par compte. Hors parties entre un parrain et son filleul.",
 		"conditions2": "sous forme de code envoyé par e-mail. Le code sera envoyé dans un maximum de cinq jours après la fin du cycle. Gain maximum de 300 éclats de mana. Hors parties entre un parrain et son filleul."
+	},
+	"events": {
+		"title": "Evénements",
+		"online": "En ligne",
+		"physic": "IRL"
 	}
 }
