@@ -353,6 +353,10 @@ footer {
     background-size: cover;
     padding: 100px 0;
     margin-top: -55px;
+    text-shadow: black 0 0 50px, black 0 0 20px, black 0 0 10px;
+    a.button {
+      text-shadow: none;
+    }
     &.cycle-renewal-2020 {
       background-image: url(../images/cycle-renewal.png);
     }
@@ -366,6 +370,10 @@ footer {
     }
     &.cycle-souvenirs-2020 {
       background-image: url(../images/background-souvenirs-2020.jpg);
+      background-attachment: fixed;
+    }
+    &.cycle-harvest-2020 {
+      background-image: url(../images/background-harvest-2020.jpg);
       background-attachment: fixed;
     }
     .card-wrapper {

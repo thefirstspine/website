@@ -341,7 +341,7 @@
 	},
 	"events": {
 		"title": "Events",
-    "online": "Online",
-    "physic": "IRL"
+		"online": "Online",
+		"physic": "IRL"
 	}
 }
