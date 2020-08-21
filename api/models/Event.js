@@ -15,7 +15,19 @@ module.exports = {
 
     title: { type: 'string', required: true },
     text: { type: 'string', required: true },
-    type: { type: 'string', isIn: ['online', 'offline'], required: true },
+    type: { type: 'string', isIn: [
+      'online', // deprecated
+      'offline', // deprecated
+      'online:target:933',
+      'online:target:934',
+      'online:target:935',
+      'online:target:1141',
+      'online:corsairs',
+      'online:tournament',
+      'offline:festival',
+      'offline:tournament',
+      'offline:demo',
+    ], required: true },
     datetimeFrom: { type: 'string', columnType: 'bigint', required: true },
     datetimeTo: { type: 'string', columnType: 'bigint', required: true },
     latitude: { type: 'number', allowNull: true },
