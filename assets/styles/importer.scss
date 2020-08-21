@@ -680,6 +680,12 @@ footer {
     background-repeat: no-repeat;
     position: relative;
   }
+  .card {
+    &.active {
+      border: 1px solid $primary;
+      box-shadow: $primary 0 0 20px;
+    }
+  }
 }
 
 #cgu {

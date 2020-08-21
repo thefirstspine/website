@@ -10,63 +10,28 @@
   <div class="separator"></div>
 
   <div class="container">
-    <div class="tile is-ancestor">
-      <% for(let i = 0; i < 3; i ++) { %>
-      <div class="tile is-vertical is-4">
-        <% for(let j = i; j < events.length; j += 3) { %>
-          <div class="tile is-parent">
-            <div class="tile">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-3by1">
-                    <% if (events[j].type === 'online') { %>
-                      <img src="/images/event-placeholder.png" alt="Placeholder image">
-                    <% } %>
-                    <% if (events[j].type === 'offline') { %>
-                      //TODO: MAP
-                    <% } %>
-                  </figure>
-                </div>
-                <div class="card-header">
-                  
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="/images/event-image.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4"><%= events[j].title %></p>
-                      <p class="subtitle is-7">
-                        <% if (events[j].type === 'online') { %>
-                          <i class="fas fa-wifi"></i> <%= __('events.online') %>
-                        <% } %>
-                        <% if (events[j].type === 'offline') { %>
-                          <i class="fas fa-map-marker-alt"></i> <%= __('events.physic') %>
-                        <% } %>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="content">
-                    <%- events[j].text %>
-                  </div>
-                  <div class="card-footer">
-                    <p class="card-footer-item">
-                      <%= sails.moment(parseInt(events[j].datetimeFrom, 10)).format('DD/MM/YYYY HH:mm') %>
-                      -
-                      <%= sails.moment(parseInt(events[j].datetimeTo, 10)).format('DD/MM/YYYY HH:mm') %>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <% for(let i = 0; i < events.length; i += 3) { %>
+        <div class="columns">
+        <% for(let j = i; j < i + 3 && j < events.length; j ++) { %>
+          <div class="column is-one-third">
+            <%- include(
+              '../elements/' +
+              {
+                'online:target:933': 'event-online-target.ejs',
+                'online:target:934': 'event-online-target.ejs',
+                'online:target:935': 'event-online-target.ejs',
+                'online:target:1141': 'event-online-target.ejs',
+                'online:corsairs': 'event-online-corsairs.ejs',
+                'online:tournament': 'event-online-tournament.ejs',
+              }[events[j].type],
+              {
+                event: events[j],
+              }
+            ) %>
           </div>
         <% } %>
       </div>
       <% } %>
-    </div>
   </div>
 </div>
 
