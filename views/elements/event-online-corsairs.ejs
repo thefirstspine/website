@@ -18,9 +18,9 @@
     </div>
     <div class="card-footer">
       <p class="card-footer-item">
-        <%= sails.moment(parseInt(event.datetimeFrom, 10)).format('DD/MM/YYYY HH:mm') %>
-        -
-        <%= sails.moment(parseInt(event.datetimeTo, 10)).format('DD/MM/YYYY HH:mm') %>
+        <date timestamp="<%= event.datetimeFrom %>"></date>
+        &nbsp;-&nbsp;
+        <date timestamp="<%= event.datetimeTo %>"></date>
       </p>
     </div>
   </div>
