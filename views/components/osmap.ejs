@@ -1,0 +1,20 @@
+<script>
+  Vue.component('osmap', {
+    data: function () {
+      return {
+      }
+    },
+    mounted: async function() {
+    },
+    props: ['latitude', 'longitude'],
+    template: '#osmap',
+  })
+</script>
+
+<script type="text/x-template" id="osmap">
+  <div>
+    <iframe
+      style="width:100%;height:100%"
+      src="https://www.google.com/maps/embed/v1/search?key=AIzaSyA-rfhoUVRxrdyg3q7n6w6Biw3o3f0xjys&q=44.3843,6.64951"></iframe>
+  </div>
+</script>
