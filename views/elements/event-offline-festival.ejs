@@ -1,6 +1,6 @@
 <div class="card <%= event.datetimeFrom < Date.now() && event.datetimeTo > Date.now() ? 'active' : 'inactive' %>">
   <div class="card-image">
-    <osmap latitude="<%= event.latitude %>" longitude="<%= event.longitude %>"></osmap>
+    <gmap latitude="<%= event.latitude %>" longitude="<%= event.longitude %>" gkey="<%= gkey %>"></gmap>
   </div>
   <div class="card-content">
     <div class="media">
