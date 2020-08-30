@@ -18,7 +18,7 @@
       </div>
       <div class="part">
         <% destiny.cards.forEach(function(card) { %>
-          <card-autoload style="background: <%= colors[destiny.id] %>;" color="transparent" cardId="<%= card.id %>" cardStyle="<%= style %>"></card-autoload>
+          <card-autoload style="background: <%= colors[destiny.id] %>;" color="transparent" cardId="<%= card.id %>" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
         <% }); %>
       </div>
       <% origins.forEach(function(origin) { %>
@@ -27,7 +27,7 @@
         </div>
         <div class="part">
           <% origin.cards.forEach(function(card) { %>
-            <card-autoload style="background: <%= colors[destiny.id] %>;" color="transparent" cardId="<%= card.id %>" cardStyle="<%= style %>"></card-autoload>
+            <card-autoload style="background: <%= colors[destiny.id] %>;" color="transparent" cardId="<%= card.id %>" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
           <% }); %>
         </div>
       <% }); %>
@@ -36,23 +36,23 @@
     <h1 class="is-size-2 is-uppercase">Les cases</h1>
   </div>
   <div class="part">
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
-    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="lava" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="water" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
+    <card-autoload style="background: DIMGRAY;" color="transparent" cardId="ditch" cardStyle="<%= style %>" locale="<%= __("locale") %>"></card-autoload>
   </div>
 </div>
