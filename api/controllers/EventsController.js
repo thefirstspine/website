@@ -22,6 +22,7 @@ module.exports = {
         ...await sails.helpers.layoutConfig(req.user_id),
         title: 'events.title',
         events,
+        gkey: process.env.GKEY,
       }
     );
   }

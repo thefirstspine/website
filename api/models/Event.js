@@ -32,6 +32,7 @@ module.exports = {
     datetimeTo: { type: 'string', columnType: 'bigint', required: true },
     latitude: { type: 'number', allowNull: true },
     longitude: { type: 'number', allowNull: true },
+    address: { type: 'string', allowNull: true },
     language: { type: 'string', required: true },
     createdAt: { type: 'number', autoCreatedAt: true },
     updatedAt: { type: 'number', autoUpdatedAt: true },

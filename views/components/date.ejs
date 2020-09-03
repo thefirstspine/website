@@ -1,0 +1,21 @@
+<script>
+  Vue.component('date', {
+    data: function () {
+      return {
+        dateStr: '',
+      }
+    },
+    mounted: async function() {
+      const date = new Date(parseInt(this.timestamp.toString()));
+      this.dateStr = ('0' + date.getDate()).slice(-2) + '/' + ('0' + (date.getMonth() + 1)).slice(-2) + '/' + date.getFullYear() + ' ' + ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
+    },
+    props: ['timestamp'],
+    template: '#date',
+  })
+</script>
+
+<script type="text/x-template" id="date">
+  <div>
+    {{ dateStr }}
+  </div>
+</script>
