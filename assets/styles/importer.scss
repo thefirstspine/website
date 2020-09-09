@@ -28,6 +28,7 @@ $table-head-cell-color: $primary;
 @import "./card.scss";
 @import "./card-autoload.scss";
 @import "./capacities.scss";
+@import "./carousel.scss";
 
 [disabled] {
   opacity: .5;
