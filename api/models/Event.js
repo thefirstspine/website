@@ -24,6 +24,7 @@ module.exports = {
       'online:target:1141',
       'online:corsairs',
       'online:tournament',
+      'online:tricks-celebration',
       'offline:festival',
       'offline:tournament',
       'offline:demo',
