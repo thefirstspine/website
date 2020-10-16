@@ -16,7 +16,7 @@
     "grunt-sass": "^3.1.0",
     "js-yaml": "^3.14.0",
     "moment": "^2.27.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "nodemailer": "^6.4.10",
     "nodemailer-smtp-transport": "^2.7.4",
