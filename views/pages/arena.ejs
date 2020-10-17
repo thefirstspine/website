@@ -3,12 +3,18 @@
 <div id="arena">
   <div class="arena-header">
     <div class="container has-text-centered">
+      <article class="message is-danger">
+        <div class="message-body">
+          <p>Les clients lourds (les versions Windows et Android en téléchargement) ont été abandonnée au profit des versions web.</p>
+          <p><a href="/blog/abandon-des-clients-lourds">Plus d'informations ici</a></p>
+        </div>
+      </article>
       <h1 class="has-text-primary is-uppercase is-size-1" style="margin: .5em 0">
         <%= __("arena.playOnline") %>
       </h1>
       <p class="mt-4 is-size-4"><%= __("arena.introduction") %></p>
       <p class="mt-4">
-        <a class="button is-link is-size-5" href="https://play.thefirstspine.fr/">
+        <a class="button is-link is-size-5" href="https://play.thefirstspine.fr/" target="_blank">
           <i class="fas fa-desktop"></i> &nbsp;
           <%= __("arena.browser") %>
         </a>
