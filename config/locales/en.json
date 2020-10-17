@@ -72,7 +72,8 @@
 	"arena": {
 		"playOnline": "Play The First Spine Online",
 		"windows": "Windows",
-		"browser": "Browser",
+		"browser": "On your computer's browser",
+		"mobile": "On your mobile",
 		"soon": "Soon",
 		"googlePlay": "Google Play",
 		"introduction": "Play The First Spine online for free! A highly strategic board game, where you can summon creatures and artifacts on a large game board.",

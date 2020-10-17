@@ -13,9 +13,10 @@ module.exports = {
       {
         ...await sails.helpers.layoutConfig(req.user_id),
         title: "arena.playOnline",
-        windowsVersion: await sails.helpers.getAppVersion('windows'),
-        macosVersion: await sails.helpers.getAppVersion('macos'),
-        linuxVersion: await sails.helpers.getAppVersion('linux'),
+        /*
+        browserVersion: await sails.helpers.getWebAppVersion('play'),
+        mobileVersion: await sails.helpers.getWebAppVersion('play.m'),
+        */
       }
     );
   }
