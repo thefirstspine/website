@@ -71,7 +71,7 @@
       position: absolute;
       width: 320px;
       left: 90px;
-      top: 85px;
+      top: 80px;
       text-align: center;
       text-transform: uppercase;
       text-shadow: #000 0 0 5px, #000 0 0 10px, #000 0 0 20px;
@@ -115,7 +115,7 @@
       .center {
         position: absolute;
         width: 100%;
-        top: 150px;
+        top: 155px;
         text-align: center;
       }
       .stat {
@@ -128,31 +128,19 @@
         text-align: center;
         border-radius: 200px;
         border: 4px double #FFF;
-        margin: 3px;
+        margin: 1px;
       }
       .strength {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#882a18+0,6d0019+100 */
-        background: #882a18; /* Old browsers */
-        background: -moz-radial-gradient(center, ellipse cover, #c7523a 0%, #6d0019 50%); /* FF3.6-15 */
-        background: -webkit-radial-gradient(center, ellipse cover, #c7523a 0%,#6d0019 50%); /* Chrome10-25,Safari5.1-6 */
-        background: radial-gradient(ellipse at center, #c7523a 0%,#6d0019 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7523a', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjczNUNBOUZCRkQxNTExRUFBREQxRkREMTJFRTk0RDJFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjczNUNBOUZDRkQxNTExRUFBREQxRkREMTJFRTk0RDJFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzM1Q0E5RjlGRDE1MTFFQUFERDFGREQxMkVFOTREMkUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzM1Q0E5RkFGRDE1MTFFQUFERDFGREQxMkVFOTREMkUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6B3dlGAAAGK0lEQVR42pxY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');
+        background-size: contain;
       }
       .life, .capacity {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4e4d4d+1,000000+100 */
-        background: #4e4d4d; /* Old browsers */
-        background: -moz-radial-gradient(center, ellipse cover, #4e4d4d 0%, #000000 50%); /* FF3.6-15 */
-        background: -webkit-radial-gradient(center, ellipse cover, #4e4d4d 0%,#000000 50%); /* Chrome10-25,Safari5.1-6 */
-        background: radial-gradient(ellipse at center, #4e4d4d 0%,#000000 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4d4d', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjdBQTZGODYxRkQxNTExRUFBQUQwQzQwREMzRTBDMjc3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjdBQTZGODYyRkQxNTExRUFBQUQwQzQwREMzRTBDMjc3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6N0FBNkY4NUZGRDE1MTFFQUFBRDBDNDBEQzNFMEMyNzciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6N0FBNkY4NjBGRDE1MTFFQUFBRDBDNDBEQzNFMEMyNzciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6RrE6yAAAEnUlEQVR42pyYXU/bMBSGmzb0A8rHhtqVC8YGN0hwC0JiF7D//0dGJwRMLWmSJnvtNz45cdMSalXBpI4fn/d82Gnw48f3VoPWbrfH428nJ5Ojoy/7+/vdbjfP8zRN43gxm83//Xt7eXl5fn5+e3vD/SYThh+OODg4uLq6+vnzfGdnJ7dtaRuo+LbTCQeDQRiGw+FwMjmJovfp9O/T0584jrcH7+7u3t7eAhkEQe5adQjvmGuW4bMMgvbx8de9vb3X15fpdIr1fRp8eXl5c3MLK9d8X6wj85sRA7f7/cFkMoH+s9msKbjT6dzf/zo/LwzllSjhOaRcl/ikqdEf1yRJ4YrlMoMXWq1gPp+tOt4HI2oeH39jsTJUqFSadqFDNK7W4+Zqzc0s0uB5DYIWIiBJkk3gdrvz8PA4Ho8xHVbqKYuLJRUdp2whr7Ct3QU1TROrQfqB1Hd3d6PRyE5dxJPD59ZE4ZUKE2k7JKXOYrQEd2ErB8N05GQN+OLi4vT0FEPAxAiQ0AGS39JWiZ8qsrSS/aWQk8TGmnmUE9o5Fbjf719fX2MaSwqIl0EST5aUKRdKBwBgDMniEuQxqQRzHoyTNCnAoMLBFtyGyGAjnL3kgc3Ki6kz0fBUJJsOoLjFCJDs5wU3KbgBI98RxhhGMfEFbeW1mj8GnaYiJKkJP2IxvcuEprXCxmgkTgE+OzuzS4PzDbVWZ/ytxq1FpKRSZHyMvPyCMSGZKGxoiklQKkKQRqOxrQCGiqgiVMzlSlVMZdqdccGK6Vp6F2DnV105AmYpnjNg7AG4h+epsL0EKonLIs2tQaReLCK7O4G0iKIods2Fca6LD1dPm5mZ4eHhIZ4Hz/o8EJE9BzOkyaaqNm6LDhtTVlNV0SsXwOQMkUhQCSBaLM51O1JRN1RpXAumrSyoUgBqjcfIEHJjBgKdzmXjLAQzhSS4FosFdZaAUjtnaXEdGLG9DNHFw1phvT045bKyKrJeJAbsxbCyr+USqWDTHLljpNb7RjWSixHMeimQqQtfaMv7Kg60rRqZu4WVSwm9M4oXGhRZNiK95zhka9WXbucuZfMSyxQQeAqLqvJyteSV44WzXcbI4x5YaVvZ2iktwJHN2vJRb6t3/+Y8QFnxfftqwWKxtpV9U0CiaGEDqphdBad/tFstCzpQFTXzkPr8JKcrBFcsgVs3u87IMnZqjdY5U1nUqoPRREmCV8cpXiVBPUxdjVx7sg/DTuhqjb801VkFt1bta4jkS4kJLvbceSzYzNMhswG8uaFIF/uxqhv5Ol4VXOPLhq9MaDz9hGK+e93Ia030VJRVNjeUbTDos3yGEt+2EvnBvI7d3KO6Qdper1eYWlUgr2ZkbUHz32VajdtwuFeGmF4O7PaiRtynrhr/iQaRMX/9mwTTGvW/qmGNrp+l9npdEdm3WF7akN3keZu5NvqzVPva+NFrKtiQHbuWVyC3MJQKe7ZuejFHoMEf8/m7PZBuScXqEU3ar41+EUBm4zEcE97foy2o6wxt+uNL1zYcdLB7bvhBQ+934EGw6plxq199qDx/8nFvwOU7IJPQ7K+mdYIPga79F2AAVmMQY7NI6sMAAAAASUVORK5CYII=');
+        background-size: contain;
       }
       .defense {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#365e89+0,002447+100 */
-        background: #365e89; /* Old browsers */
-        background: -moz-radial-gradient(center, ellipse cover, #6392c5 0%, #002447 50%); /* FF3.6-15 */
-        background: -webkit-radial-gradient(center, ellipse cover, #6392c5 0%,#002447 50%); /* Chrome10-25,Safari5.1-6 */
-        background: radial-gradient(ellipse at center, #6392c5 0%,#002447 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6392c5', endColorstr='#002447',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjgyQ0M4RUJERkQxNTExRUE4Q0Y3Q0E5OTlFREJBQkM0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgyQ0M4RUJFRkQxNTExRUE4Q0Y3Q0E5OTlFREJBQkM0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODJDQzhFQkJGRDE1MTFFQThDRjdDQTk5OUVEQkFCQzQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODJDQzhFQkNGRDE1MTFFQThDRjdDQTk5OUVEQkFCQzQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6IZvQxAAAFuUlEQVR42qSYW3cbNRDHJe0ttuPUxGmTXnKA0hYeCvQcXoAeHnji8EX47EBpS0hS27vSiJnR6LK5Ou12vV2vN/rt/z8Xydbt6z/UFpvR+uHB4vGDxf7ebG82aevae2+d2wz2fLX592z1/r/ztydneILXtxmwvvWOxe70++fHz44ftHWFQwKAA+8cDNbhp5Uxk67F43zaPbq/WG36v9+d/vn2BB/o48GzSff6u2fPjw+1VijD81begG+8XPXAT6OVXt6boSPvTz+8eX9qHdwZ/PKrxz9/+6xtqis/9fFJIOwgJ479wLdow9HyHuIxENuC68r8+sM3LFTj8EGuSuJEugIGhJ14DjDklo8YBYv/OZi0jVYK2f5WcNvUv//08tHBIrmaqXwM+rJWD4EqRwRbYLzseKcxBj+9CYw58tuPLw/39/B2nZQW4YQiosCbc2JvOrJu2QdrST3exPhrwb+8enG4P2ecvAhfmJztJW6AiVwW6qLbtDMSBrLchUeuquoK8NefH33xcInDIcsojK5nzSIaIlhgEld5K0gx2YViCzte9EAWId5g0ptqBMYkxGLFITiZNJUFbzHMElRHd3ga3UoehZMkLsB6azf9MPCj4FMo7zTXgd2smskMfczgVy+OK6OJq5iMx2i4FI8PrYO0Zmqy1IZjiKvrB/qIhAOJVWy0nAxr3UwEvMtNhxKQ0UabILUIsJIWIWWTnbxux3/A6RB4KoLtZt3UHTpO4KeP7jsqe0w8jbkHyhU2x06hVKqZK8BOHEat/YCZbIFLLVIzmIYaVrqd1agO64dc0dp4bSi5iJrkBnYIcAEmBh2pYCzDXKD27HmBpJ1jTM+CJ3Z93iB4MZ/i0Pj3wWEsNk1TUZFWSl6cvVnxGtOHYBbnA5wbNj2dcEoFasEGx3kCin3AsbTra5x88O/JZO1ZKO4uZpiKVGDFwhZebxESTgKVHOaQERUSW7QWhqPb63qy0+BAKBGDq1WuonJGCm1SSpYTmAvGJsVJKzcXRxLJVRAk5CdQdJFyjGKMo4S6NSallBr1De5TqTkkq3tBklaMa0JS4cZs4iuulEtq+hUuJBQ+e0pjTQWcpwcCcmaFIkYeehk68Hoz9CGlB+vD6FI8SGXd2V5pIHyRuj7WWo1yk74U11S+YVZIFRxi3LPKPnQQn7yVuBJDrkQkxBjHeZwaCModzfCxO/uIjPM8debACv2BI0ru6VCgkV0ENVaRCIVEZTAtjmLR5HYhL6ECxDr2jjeAbGaUaGNQJZ91iquUk89HU9UYqlg2IjZgQoDzsoa7tMRJxeFCbfiUU+mik3bBrkmkVZZbEbgfSpgNE5DKqinpwuoDQJBZR9AXxLnYIshwzaXgY1y1Gi0UTdPVnKgQwDx61p/6R37eHKqRqz6ntOj241RKlSLgbloDJaplGTAKQwx4WPbIuU+iE1hKaNyqXPG3V2y63a3pQxAbdfZTjXiqpPoMC5gQ17JwyRV1HRXjC82kDms8bANxOTnWXZbBBZ9HoiXAcsONWzNf4jqn5kcwagOhP17D8xea7djnpP5aleNvKMu09NF1U9t+rSW7LksstfoLc23ct6K2e0tv2rzmwvzWmzWP7i6qzM9Rii4UFwV684ZLTD1/GG5Ni2xcgk3HglyRrsXb0C5Gc85WVNy65RNv6ksL+qqtm25Yn18RTu+vcthvFdFk8nwJO5/l3B5ZsbNbN80oS6FU7IoFzd2ozXSuFk9GRXUxCtP9quku5ZH7FK1INftfhnX8dWBa8lTzg2ayeym5Ujbd2WG9fIrL122+mGs9W3ZNtzn5S7lx/dwFiTmM2VTGdatfBHy72x1M4OzNcPbuzlSt2/k+Vg6Y+mN+A/Eay+6omy39+Vt7+g84e/uPQ1WNHRF7E3YJ/4m/+njTqPlRPT80w8r3Z7D5AMMabM/TiaLvPHVrmh2c6XDOwe7vld7GlP8FGACEYKpLTxM8MAAAAABJRU5ErkJggg==');
+        background-size: contain;
       }
       .plus {
         color: #efd700;
@@ -238,6 +226,37 @@
       }
     }
 
+    &.style- {
+      .top {
+        .stat {
+          margin: 0 7px;
+        }
+      }
+      .bottom {
+        .stat {
+          margin: 0 7px;
+        }
+      }
+      .left {
+        .stat {
+          margin: 7px 0;
+        }
+      }
+      .right {
+        .stat {
+          margin: 7px 0;
+        }
+      }
+      .center {
+        .stat {
+          margin: 0 7px;
+        }
+      }
+      .stat {
+        box-shadow: black 0 0 10px;
+      }
+    }
+
     &.style-nostalgy {
       &.type-creature .frame {
         background-image: url(/images/creature-nostalgy.png);
@@ -257,6 +276,7 @@
         padding: 5px;
         height: 43px;
         width: 43px;
+        margin: 3px;
         &.strength {
           color: #d2232a;
         }
@@ -303,35 +323,36 @@
         background: #000;
         border: 1px solid #9d9d9d;
         background: rgb(157,157,157);
-        background: radial-gradient(circle, rgba(157,157,157,1) 0%, rgba(0,0,0,1) 50%);
+        background: radial-gradient(circle, rgba(157,157,157,1) 0%, rgba(157,157,157,.25) 50%);
         box-shadow: #000 0 0 10px;
         text-shadow: #000 0 0 5px, #000 0 0 5px, #000 0 0 5px;
         padding: 2px;
         height: 43px;
         width: 43px;
+        margin: 3px;
         &.strength {
           border-color: #d2232a;
           background: rgb(210,35,42);
-          background: radial-gradient(circle, rgba(210,35,42,1) 0%, rgba(0,0,0,1) 50%);
+          background: radial-gradient(circle, rgba(210,35,42,1) 0%, rgba(210,35,42,.5) 50%);
         }
         &.defense {
           border-color: #00aeef;
           background: rgb(0,174,239);
-          background: radial-gradient(circle, rgba(0,174,239,1) 0%, rgba(0,0,0,1) 50%);
+          background: radial-gradient(circle, rgba(0,174,239,1) 0%, rgba(0,174,239,.25) 50%);
         }
       }
       .stats {
         .top {
-          top: 30px;
+          top: 10px;
         }
         .bottom {
-          bottom: 30px;
+          bottom: 10px;
         }
         .right {
-          right: 30px;
+          right: 10px;
         }
         .left {
-          left: 30px;
+          left: 10px;
         }
       }
     }
@@ -362,6 +383,7 @@
         padding: 5px;
         height: 43px;
         width: 43px;
+        margin: 3px;
         &.strength {
           color: #d2232a;
         }
@@ -427,6 +449,7 @@
         padding: 0px;
         height: 35px;
         width: 35px;
+        margin: 3px;
         &.strength {
           background: #720407;
         }
@@ -488,6 +511,7 @@
         padding: 5px;
         height: 43px;
         width: 43px;
+        margin: 3px;
         &.strength {
           color: #d2232a;
         }
@@ -510,6 +534,383 @@
         }
       }
     }
+
+    &.style-sunlight {
+      &.type-creature .frame {
+        background-image: url(/images/creature-sunlight.png);
+      }
+      &.type-artifact .frame {
+        background-image: url(/images/artifact-sunlight.png);
+      }
+      &.type-spell .frame {
+        background-image: url(/images/spell-sunlight.png);
+      }
+      &.type-player .frame {
+        background-image: url(/images/player-sunlight.png);
+      }
+      .image {
+        top: 40px;
+        left: 40px;
+        width: 420px;
+        height: 420px;
+        filter: brightness(150%);
+        &:after {
+          content: "";
+          display: inline-block;
+          top: 40px;
+          left: 40px;
+          width: 420px;
+          height: 420px;
+          background-color: #fcc10f;
+          mix-blend-mode: hue;
+        }
+      }
+      .stat {
+        background: #000;
+        border: 2px solid #fcc10f;
+        padding: 0;
+        height: 37px;
+        width: 37px;
+        margin: 3px;
+        &.strength {
+          color: #d2232a;
+        }
+        &.defense {
+          color: #00aeef;
+        }
+      }
+      .stats {
+        .top {
+          top: 18px;
+        }
+        .bottom {
+          bottom: 18px;
+        }
+        .right {
+          right: 18px;
+        }
+        .left {
+          left: 18px;
+        }
+      }
+    }
+
+    &.style-burning {
+      &.type-creature .frame {
+        background-image: url(/images/creature-buring.png);
+      }
+      &.type-artifact .frame {
+        background-image: url(/images/artifact-buring.png);
+      }
+      &.type-spell .frame {
+        background-image: url(/images/spell-buring.png);
+      }
+      &.type-player .frame {
+        background-image: url(/images/player-buring.png);
+      }
+      .stats {
+        .top {
+          top: 25px;
+        }
+        .bottom {
+          bottom: 25px;
+        }
+        .right {
+          right: 25px;
+        }
+        .left {
+          left: 25px;
+        }
+      }
+      .stat {
+        background: #000;
+        border: 2px solid #fcac00;
+        padding: 0;
+        height: 37px;
+        width: 37px;
+        margin: 3px;
+        &.strength {
+          background: #de4e4e;
+        }
+        &.defense {
+          background: #3893de;
+        }
+      }
+      .image, .holo-filter, .premium-filter {
+        top: 52px;
+        left: 52px;
+        width: 396px;
+        height: 396px;
+      }
+      .image {
+        filter: brightness(120%);
+        &:after {
+          content: "";
+          display: inline-block;
+          top: 52px;
+          left: 52px;
+          width: 396px;
+          height: 396px;
+          background-color: #fcac00;
+          mix-blend-mode: hue;
+        }
+      }
+    }
+
+    &.style-luminescent {
+      &.type-creature .frame {
+        background-image: url(/images/creature-luminescent.png);
+      }
+      &.type-artifact .frame {
+        background-image: url(/images/artifact-luminescent.png);
+      }
+      &.type-spell .frame {
+        background-image: url(/images/spell-luminescent.png);
+      }
+      &.type-player .frame {
+        background-image: url(/images/player-luminescent.png);
+      }
+      .stats {
+        .top {
+          top: 25px;
+        }
+        .bottom {
+          bottom: 25px;
+        }
+        .right {
+          right: 25px;
+        }
+        .left {
+          left: 25px;
+        }
+      }
+      .stat {
+        background: #000;
+        border: 2px solid #68ffd3;
+        padding: 0;
+        height: 37px;
+        width: 37px;
+        margin: 3px;
+        &.strength {
+          background: #de4e4e;
+        }
+        &.defense {
+          background: #3893de;
+        }
+      }
+      .image, .holo-filter, .premium-filter {
+        top: 52px;
+        left: 52px;
+        width: 396px;
+        height: 396px;
+      }
+      .image {
+        &:after {
+          content: "";
+          display: inline-block;
+          top: 52px;
+          left: 52px;
+          width: 396px;
+          height: 396px;
+          background-color: #68ffd3;
+          mix-blend-mode: hue;
+        }
+      }
+    }
+
+    &.style-bloody {
+      &.type-creature .frame {
+        background-image: url(/images/creature-bloody.png);
+      }
+      &.type-artifact .frame {
+        background-image: url(/images/artifact-bloody.png);
+      }
+      &.type-spell .frame {
+        background-image: url(/images/spell-bloody.png);
+      }
+      &.type-player .frame {
+        background-image: url(/images/player-bloody.png);
+      }
+      .stats {
+        .top {
+          top: 25px;
+        }
+        .bottom {
+          bottom: 25px;
+        }
+        .right {
+          right: 25px;
+        }
+        .left {
+          left: 25px;
+        }
+      }
+      .stat {
+        background: #000;
+        border: 2px solid #8b2012;
+        padding: 0;
+        height: 37px;
+        width: 37px;
+        margin: 3px;
+        &.strength {
+          background: #de4e4e;
+        }
+        &.defense {
+          background: #3893de;
+        }
+      }
+      .image, .holo-filter, .premium-filter {
+        top: 52px;
+        left: 52px;
+        width: 396px;
+        height: 396px;
+      }
+      .image {
+        &:after {
+          content: "";
+          display: inline-block;
+          top: 52px;
+          left: 52px;
+          width: 396px;
+          height: 396px;
+          background-color: #7c4240;
+          mix-blend-mode: hue;
+        }
+      }
+    }
+
+    &.style-scary {
+      &.type-creature .frame {
+        background-image: url(/images/creature-scary.png);
+      }
+      &.type-artifact .frame {
+        background-image: url(/images/artifact-scary.png);
+      }
+      &.type-spell .frame {
+        background-image: url(/images/spell-scary.png);
+      }
+      &.type-player .frame {
+        background-image: url(/images/player-scary.png);
+      }
+      .stat {
+        background: #000;
+        border: 1px solid #000;
+        box-shadow: 0 -2px 2px rgba(0, 0, 0, .5) inset, 0 2px 2px rgba(255, 255, 255, .5) inset;
+        padding: 0;
+        height: 42px;
+        width: 42px;
+        margin: 3px;
+        padding: 3px 4px;
+        &.strength {
+          background: #c71515;
+        }
+        &.defense {
+          background: #0e67b1;
+        }
+        &.life, &.capacity {
+          background: #333;
+        }
+      }
+      .stats {
+        .top {
+          top: 18px;
+        }
+        .bottom {
+          bottom: 18px;
+        }
+        .right {
+          right: 18px;
+        }
+        .left {
+          left: 18px;
+        }
+      }
+      .image, .holo-filter, .premium-filter {
+        top: 50px;
+        left: 50px;
+        width: 400px;
+        height: 400px;
+      }
+      .image {
+        &:after {
+          content: "";
+          display: inline-block;
+          top: 50px;
+          left: 50px;
+          width: 400px;
+          height: 400px;
+          background: url(/images/style-scary.gif);
+          mix-blend-mode: screen;
+        }
+      }
+    }
+
+    &.style-purple-candy {
+      &.type-creature .frame {
+        background-image: url(/images/creature-purple-candy.png);
+      }
+      &.type-artifact .frame {
+        background-image: url(/images/artifact-purple-candy.png);
+      }
+      &.type-spell .frame {
+        background-image: url(/images/spell-purple-candy.png);
+      }
+      &.type-player .frame {
+        background-image: url(/images/player-purple-candy.png);
+      }
+      .stat {
+        background: #000;
+        border: 0;
+        box-shadow: 0 -4px 4px rgba(0, 0, 0, .25) inset, 0 4px 4px rgba(255, 255, 255, .25) inset;
+        padding: 0;
+        height: 42px;
+        width: 42px;
+        margin: 3px;
+        padding: 3px 4px;
+        &.strength {
+          background: #800c0c;
+        }
+        &.defense {
+          background: #073961;
+        }
+        &.life, &.capacity {
+          background: rgb(19, 19, 19);
+        }
+      }
+      .stats {
+        .top {
+          top: 12px;
+        }
+        .bottom {
+          bottom: 12px;
+        }
+        .right {
+          right: 12px;
+        }
+        .left {
+          left: 12px;
+        }
+      }
+      .image, .holo-filter, .premium-filter {
+        top: 50px;
+        left: 50px;
+        width: 400px;
+        height: 400px;
+      }
+      .image {
+        &:after {
+          content: "";
+          display: inline-block;
+          top: 40px;
+          left: 40px;
+          width: 400px;
+          height: 400px;
+          background-color: #ee00e2;
+          mix-blend-mode: hue;
+        }
+      }
+    }
+
   }
 
   @keyframes ghostly {
