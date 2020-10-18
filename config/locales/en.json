@@ -95,7 +95,10 @@
 		"rest": "Resources",
 		"rooms": "Discussion rooms",
 		"solid-pancake": "Statistics",
-		"shop": "Online shopping"
+		"shop": "Online shopping",
+		"dropClientsText": "The heavy clients (Windows and Android versions for download) have been abandoned in favor of web versions.",
+		"dropClientsSlug": "dropped-heavy-clients",
+		"dropClientsFurtherMore": "Further more here"
 	},
 	"pnp": {
 		"title": "Print & Play version",

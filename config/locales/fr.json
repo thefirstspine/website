@@ -95,7 +95,10 @@
 		"rest": "Ressources",
 		"rooms": "Espaces de discussions",
 		"solid-pancake": "Statistiques",
-		"shop": "Achats en ligne"
+		"shop": "Achats en ligne",
+		"dropClientsText": "Les clients lourds (les versions Windows et Android en téléchargement) ont été abandonnée au profit des versions web.",
+		"dropClientsSlug": "abandon-des-clients-lourds",
+		"dropClientsFurtherMore": "Plus d'informations ici"
 	},
 	"pnp": {
 		"title": "Version Print & Play",
