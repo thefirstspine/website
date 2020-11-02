@@ -43,5 +43,6 @@ module.exports.policies = {
   'event/findOne':[],
   'code/*':['load-user', 'is-logged-in', 'is-admin'],
   'refer/*':['load-user', 'is-logged-in', 'is-admin'],
+  'scheduledloot/*':['load-user', 'is-logged-in', 'is-admin'],
 
 };
