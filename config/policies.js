@@ -44,5 +44,6 @@ module.exports.policies = {
   'code/*':['load-user', 'is-logged-in', 'is-admin'],
   'refer/*':['load-user', 'is-logged-in', 'is-admin'],
   'scheduledloot/*':['load-user', 'is-logged-in', 'is-admin'],
+  'userScheduledloot/*':['load-user', 'is-logged-in', 'is-admin'],
 
 };
