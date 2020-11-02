@@ -57,6 +57,9 @@ module.exports.routes = {
   
   // Events
   'GET /events': 'EventsController.index',
+
+  // Adventures
+  'GET /adventures': 'AdventuresController.index',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',

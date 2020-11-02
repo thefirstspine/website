@@ -653,6 +653,16 @@ footer {
   }
 }
 
+#adventures {
+  .adventures-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/top-summoner.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+}
+
 #rules {
   .rotate-on-mobile {
     @media screen and (max-width: 768px) {
