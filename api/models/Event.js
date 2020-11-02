@@ -25,6 +25,7 @@ module.exports = {
       'online:corsairs',
       'online:tournament',
       'online:tricks-celebration',
+      'online:mystery-of-the-day',
       'offline:festival',
       'offline:tournament',
       'offline:demo',
