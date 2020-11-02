@@ -37,7 +37,6 @@ module.exports = {
     }
 
     // Reward the user
-    console.log(scheduledLoot.loots);
     const promises = Object.keys(scheduledLoot.loots).map((lootName) => {
       return fetch(
         `${process.env.ARENA_URL}/wizard/${req.user_id}/reward`,
