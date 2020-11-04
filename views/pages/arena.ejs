@@ -2,36 +2,28 @@
 
 <div id="arena">
   <div class="arena-header">
-    <div class="container">
-      <h1 class="has-text-centered has-text-primary is-uppercase is-size-1" style="margin: .5em 0">
+    <div class="container has-text-centered">
+      <article class="message is-danger">
+        <div class="message-body">
+          <p><%= __("arena.dropClientsText") %></p>
+          <p><a href="/blog/<%= __("arena.dropClientsSlug") %>"><%= __("arena.dropClientsFurtherMore") %></a></p>
+        </div>
+      </article>
+      <h1 class="has-text-primary is-uppercase is-size-1" style="margin: .5em 0">
         <%= __("arena.playOnline") %>
       </h1>
-      <p class="has-text-centered">
-        <% if (windowsVersion) { %>
-        <a class="button is-info is-size-5" href="/download/windows">
-          <i class="fab fa-windows"></i> &nbsp;
-          <%= __("arena.windows") %> (v<%= windowsVersion %>)
-        </a>
-        <a class="button is-link is-size-5" href="https://play.thefirstspine.fr/">
+      <p class="mt-4 is-size-4"><%= __("arena.introduction") %></p>
+      <p class="mt-4">
+        <a class="button is-link is-size-5" href="https://play.thefirstspine.fr/" target="_blank">
           <i class="fas fa-desktop"></i> &nbsp;
-          <%= __("arena.browser") %> (v<%= windowsVersion %>)
+          <%= __("arena.browser") %>
         </a>
-        <% } else { %>
-          <a disabled class="button is-info is-size-5">
-            <i class="fab fa-windows"></i> &nbsp;
-            <%= __("arena.soon") %>
-          </a>
-          <a disabled class="button is-link is-size-5">
-            <i class="fas fa-desktop"></i> &nbsp;
-            <%= __("arena.soon") %>
-          </a>
-        <% } %>
-        
-        <a class="button is-android is-size-5" href="https://play.google.com/store/apps/details?id=fr.thefirstspine.arena.mobile" target="_blank">
-          <i class="fab fa-android"></i> &nbsp;
-          <%= __("arena.googlePlay") %>
+        <a class="button is-success is-size-5" href="https://play.m.thefirstspine.fr/" target="_blank">
+          <i class="fas fa-mobile-alt"></i> &nbsp;
+          <%= __("arena.mobile") %>
         </a>
       </p>
+      <img class="mt-4" src="images/arena-0.png" />
     </div>
   </div>
 
@@ -40,81 +32,6 @@
   <div class="container">
     <div class="columns">
       <div class="column is-10 is-offset-1 has-text-centered">
-        <section class="carousel" aria-label="Gallery">
-          <ol class="carousel__viewport">
-            <li id="carousel__slide1"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__content">
-                  <img src="/images/arena-screenshot-1.jpg" />
-                </div>
-              <div class="carousel__snapper">
-                <a href="#carousel__slide4"
-                   class="carousel__prev">Go to last slide</a>
-                <a href="#carousel__slide2"
-                   class="carousel__next">Go to next slide</a>
-              </div>
-            </li>
-            <li id="carousel__slide2"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__content">
-                  <img src="/images/arena-screenshot-2.jpg" />
-                </div>
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide1"
-                 class="carousel__prev">Go to previous slide</a>
-              <a href="#carousel__slide3"
-                 class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide3"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__content">
-                  <img src="/images/arena-screenshot-3.jpg" />
-                </div>
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide2"
-                 class="carousel__prev">Go to previous slide</a>
-              <a href="#carousel__slide4"
-                 class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide4"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__content">
-                  <img src="/images/arena-screenshot-4.jpg" />
-                </div>
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide3"
-                 class="carousel__prev">Go to previous slide</a>
-              <a href="#carousel__slide1"
-                 class="carousel__next">Go to first slide</a>
-            </li>
-          </ol>
-          <aside class="carousel__navigation">
-            <ol class="carousel__navigation-list">
-              <li class="carousel__navigation-item">
-                <a href="#carousel__slide1"
-                   class="carousel__navigation-button">Go to slide 1</a>
-              </li>
-              <li class="carousel__navigation-item">
-                <a href="#carousel__slide2"
-                   class="carousel__navigation-button">Go to slide 2</a>
-              </li>
-              <li class="carousel__navigation-item">
-                <a href="#carousel__slide3"
-                   class="carousel__navigation-button">Go to slide 3</a>
-              </li>
-              <li class="carousel__navigation-item">
-                <a href="#carousel__slide4"
-                   class="carousel__navigation-button">Go to slide 4</a>
-              </li>
-            </ol>
-          </aside>
-        </section>
-        <p class="has-margin-top-2 is-size-4"><%= __("arena.introduction") %></p>
-        <img class="has-margin-top-2" src="images/arena-0.png" />
       </div>
     </div>
 
@@ -124,15 +41,15 @@
       </div>
       <div class="column">
         <h3 class="has-text-primary is-size-3"><%= __("arena.allTheContentTitle") %></h3>
-        <p class="has-margin-top-2"><%= __("arena.allTheContentText1") %></p>
-        <p class="has-margin-top-2"><%= __("arena.allTheContentText2") %></p>
+        <p class="mt-4"><%= __("arena.allTheContentText1") %></p>
+        <p class="mt-4"><%= __("arena.allTheContentText2") %></p>
       </div>
     </div>
     
     <div class="columns is-vcentered">
       <div class="column">
         <h3 class="has-text-primary is-size-3"><%= __("arena.cyclesTitle") %></h3>
-        <p class="has-margin-top-2"><%= __("arena.cyclesText") %></p>
+        <p class="mt-4"><%= __("arena.cyclesText") %></p>
       </div>
       <div class="column has-text-centered">
         <img src="images/arena-2.png" />
@@ -145,15 +62,15 @@
       </div>
       <div class="column">
         <h3 class="has-text-primary is-size-3"><%= __("arena.versionsTitle") %></h3>
-        <p class="has-margin-top-2"><%= __("arena.versionsText1") %></p>
-        <p class="has-margin-top-2"><%= __("arena.versionsText2") %></p>
+        <p class="mt-4"><%= __("arena.versionsText1") %></p>
+        <p class="mt-4"><%= __("arena.versionsText2") %></p>
       </div>
     </div>
     
     <div class="columns is-vcentered">
       <div class="column">
         <h3 class="has-text-primary is-size-3"><%= __("arena.helpTitle") %></h3>
-        <p class="has-margin-top-2"><%= __("arena.helpText") %></p>
+        <p class="mt-4"><%= __("arena.helpText") %></p>
       </div>
       <div class="column has-text-centered">
         <img src="images/arena-4.png" />
@@ -165,7 +82,7 @@
 
   <div class="container">
     <p class="is-size-3 is-uppercase has-text-centered has-text-primary"><%= __("arena.services") %></p>
-    <div class="level has-margin-top-2">
+    <div class="level mt-4">
       <div class="level-item has-text-centered">
         <div>
           <p class="heading"><%= __("arena.arena") %></p>

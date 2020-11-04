@@ -12,7 +12,7 @@
   <div class="container has-text-centered">
     <h2 class="is-size-4 is-uppercase"><%= __("code.getPrepared") %></h2>
     <h3 class="is-size-4"><%= __("code.toAssociate") %></h3>
-    <p class="has-margin-top-2">
+    <p class="mt-4">
       <a href="/login?redirect=codes/use/<%= code.code %>" class="button is-info is-medium"><%= __("code.ihaveAnAccount") %></a>
       <a href="/subscribe?redirect=codes/use/<%= code.code %>" class="button is-danger is-medium"><%= __("code.iSignUp") %></a>
     </p>
@@ -20,22 +20,22 @@
 
   <div class="separator has-margin"></div>
     
-  <div class="container has-text-centered has-margin-top-2">
+  <div class="container has-text-centered mt-4">
     <h2 class="is-size-4 is-uppercase"><%= __("code.yourCodeHas") %></h2>
-    <div class="loots has-margin-top-2">
+    <div class="loots mt-4">
       <% Object.keys(code.loots).forEach(function(loot) { %>
         <div class="loot">
           <% if(loot === 'shard') { %>
             <h3 class="is-size-3 is-uppercase has-text-primary"><%= __("code.loots.shard.title", code.loots[loot]) %></h3>
             <img src="/images/shard.png" />
-            <p class="is-size-5 is-italic has-margin-top-1">
+            <p class="is-size-5 is-italic mt-2">
               <%= __("code.loots.shard.text") %>
             </p>
           <% } %>
           <% if(loot === 'coin') { %>
             <h3 class="is-size-3 is-uppercase has-text-primary"><%= __("code.loots.coin.title", code.loots[loot]) %></h3>
             <img src="/images/coin.png" />
-            <p class="is-size-5 is-italic has-margin-top-1">
+            <p class="is-size-5 is-italic mt-2">
               <%= __("code.loots.coin.text") %>
             </p>
           <% } %>

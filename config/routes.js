@@ -57,6 +57,9 @@ module.exports.routes = {
   
   // Events
   'GET /events': 'EventsController.index',
+
+  // Adventures
+  'GET /adventures': 'AdventuresController.index',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
@@ -78,5 +81,8 @@ module.exports.routes = {
   // Report
   'GET /report/:id': 'ReportController.index',
   'POST /report/:id': 'ReportController.report',
+
+  // Scheduled loots
+  'POST /scheduled-loot': 'ScheduledLoot.index',
 
 };
