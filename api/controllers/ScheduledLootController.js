@@ -29,9 +29,7 @@ module.exports = {
       return res.json(
         {
           rewarded: false,
-          scheduledLoot: {
-            scheduledLoot,
-          },
+          scheduledLoot,
         }
       );
     }
@@ -64,9 +62,7 @@ module.exports = {
     return res.json(
       {
         rewarded: true,
-        scheduledLoot: {
-          scheduledLoot,
-        },
+        scheduledLoot,
       }
     );
   }
