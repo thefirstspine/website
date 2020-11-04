@@ -225,7 +225,7 @@
 		"actionsText7": "You can move a creature from one space on the game board to another free space. Diagonals are not allowed.",
 		"confrontationsTitle": "Confrontations",
 		"confrontationsText1": "Procedure",
-		"confrontationsText2": "If a creature or artifact with the Threat (see abilities at the end of the rules) you control is placed next to another card controlled by an opponent, or next to an opposing wizard, they must enter into confrontation . If one of your cards must confront several cards, you choose the card with which it enters into confrontation.",
+		"confrontationsText2": "If a creature you control is placed next to another card controlled by an opponent the cards must enter into confrontation. If one of your cards must confront several cards, you choose the card with which it enters into confrontation.",
 		"confrontationsText3": "During a confrontation, you must calculate the hit points lost by each card. To do this, you must take the attack (in red) on the side of the confronting cards and subtract the defense (in blue) from their opposite card. The result obtained must be deducted from the hit points of the cards..",
 		"confrontationsText4": "The confrontation phase must close the player's turn.",
 		"confrontationsText5": "Example",

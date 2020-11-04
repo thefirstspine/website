@@ -225,7 +225,7 @@
 		"actionsText7": "Vous pouvez déplacer une créature d’une seule case sur le plateau de jeu vers une autre case libre. Les diagonales ne sont pas autorisées.",
 		"confrontationsTitle": "Confrontations",
 		"confrontationsText1": "Déroulement",
-		"confrontationsText2": "Si une créature ou un artefact disposant de la Menace (voir les capacités à la fin des règles) que vous contrôlez est placé à côté d’une autre carte contrôlée par un adversaire ou à côté d’un sorcier adverse, elles doivent entrer en confrontation. Si une de vos cartes doit entrer en confrontation avec plusieurs cartes, vous choisissez la carte avec laquelle elle entre en confrontation.",
+		"confrontationsText2": "Si une créature que vous contrôlez est placée à côté d’une autre carte contrôlée par un adversaire les cartes doivent entrer en confrontation. Si une de vos cartes doit entrer en confrontation avec plusieurs cartes, vous choisissez la carte avec laquelle elle entre en confrontation.",
 		"confrontationsText3": "Lors d’une confrontation, il faut calculer les points de vie perdues par chaque carte. Pour ce faire, il faut prendre l’attaque (en rouge) du côté des cartes qui entrent en confrontation et soustraire la défense (en bleu) de leur carte opposée. Le résultat obtenu doit être retranché aux points de vie des cartes.",
 		"confrontationsText4": "La phase de confrontation doit clôturer le tour du joueur.",
 		"confrontationsText5": "Exemple",
