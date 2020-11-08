@@ -72,7 +72,8 @@
 	"arena": {
 		"playOnline": "Play The First Spine Online",
 		"windows": "Windows",
-		"browser": "Browser",
+		"browser": "On your computer's browser",
+		"mobile": "On your mobile",
 		"soon": "Soon",
 		"googlePlay": "Google Play",
 		"introduction": "Play The First Spine online for free! A highly strategic board game, where you can summon creatures and artifacts on a large game board.",
@@ -82,7 +83,7 @@
 		"cyclesTitle": "Events every 6 weeks",
 		"cyclesText": "Free events will be released in 6 week cycles. Each cycle has its own cosmetics to unlock and a few additional rules that will radically change the way you play!",
 		"versionsTitle": "Multiple devices, one account",
-		"versionsText1": "Your freedom is important to us: you can continue your game from the PC or browser version, or continue it on these supports.",
+		"versionsText1": "Your freedom is important to us: you can continue your game from the browser or mobile version, or continue it on these supports.",
 		"versionsText2": "And above all, you can play together, whatever your device.",
 		"helpTitle": "Help finance the game",
 		"helpText": "By playing, you will participate financing the game in its physical version! We want to make The First Spine an independant, self-funded game, without pressure from publishers. We want to make our own game design choices, our own artistic choices, and thanks to you we will get there!",
@@ -94,7 +95,10 @@
 		"rest": "Resources",
 		"rooms": "Discussion rooms",
 		"solid-pancake": "Statistics",
-		"shop": "Online shopping"
+		"shop": "Online shopping",
+		"dropClientsText": "The heavy clients (Windows and Android versions for download) have been abandoned in favor of web versions.",
+		"dropClientsSlug": "dropped-heavy-clients",
+		"dropClientsFurtherMore": "Further more here"
 	},
 	"pnp": {
 		"title": "Print & Play version",
@@ -221,7 +225,7 @@
 		"actionsText7": "You can move a creature from one space on the game board to another free space. Diagonals are not allowed.",
 		"confrontationsTitle": "Confrontations",
 		"confrontationsText1": "Procedure",
-		"confrontationsText2": "If a creature or artifact with the Threat (see abilities at the end of the rules) you control is placed next to another card controlled by an opponent, or next to an opposing wizard, they must enter into confrontation . If one of your cards must confront several cards, you choose the card with which it enters into confrontation.",
+		"confrontationsText2": "If a creature you control is placed next to another card controlled by an opponent the cards must enter into confrontation. If one of your cards must confront several cards, you choose the card with which it enters into confrontation.",
 		"confrontationsText3": "During a confrontation, you must calculate the hit points lost by each card. To do this, you must take the attack (in red) on the side of the confronting cards and subtract the defense (in blue) from their opposite card. The result obtained must be deducted from the hit points of the cards..",
 		"confrontationsText4": "The confrontation phase must close the player's turn.",
 		"confrontationsText5": "Example",

@@ -72,7 +72,8 @@
 	"arena": {
 		"playOnline": "Jouez à The First Spine en ligne",
 		"windows": "Windows",
-		"browser": "Sur navigateur",
+		"browser": "Sur le navigateur de votre ordinateur",
+		"mobile": "Sur votre mobile",
 		"soon": "Bientôt disponible",
 		"googlePlay": "Google Play",
 		"introduction": "Jouez à The First Spine en ligne gratuitement ! Un jeu de société hautement stratégique, où vous pouvez invoquer créatures et artefacts sur un grand plateau de jeu.",
@@ -82,7 +83,7 @@
 		"cyclesTitle": "Des événements toutes les 6 semaines",
 		"cyclesText": "Des événements gratuits sortiront par cycle de 6 semaines. Chaque cycle dispose de ses propres cosmétiques à débloquer et de quelques règles supplémentaires qui changeront radicalement votre façon de jouer !",
 		"versionsTitle": "Plusieurs supports, un même compte",
-		"versionsText1": "Votre liberté est importante pour nous : vous pouvez continuer votre partie provenant de la version PC ou navigateur, ou la continuer sur ces supports.",
+		"versionsText1": "Votre liberté est importante pour nous : vous pouvez continuer votre partie provenant de la version navigateur ou mobile, ou la continuer sur ces supports.",
 		"versionsText2": "Et surtout, vous pouvez jouer ensemble, quel que soit votre support de jeu.",
 		"helpTitle": "Aidez au financement du jeu",
 		"helpText": "En jouant, vous participerez au financement du jeu dans sa version physique ! Nous voulons faire de The First Spine un jeu libre, auto-financé, sans pression d'éditeurs. Nous voulons faire nos propres choix de game design, nos propres choix artistiques, et grâce à vous nous y arriverons !",
@@ -94,7 +95,10 @@
 		"rest": "Ressources",
 		"rooms": "Espaces de discussions",
 		"solid-pancake": "Statistiques",
-		"shop": "Achats en ligne"
+		"shop": "Achats en ligne",
+		"dropClientsText": "Les clients lourds (les versions Windows et Android en téléchargement) ont été abandonnée au profit des versions web.",
+		"dropClientsSlug": "abandon-des-clients-lourds",
+		"dropClientsFurtherMore": "Plus d'informations ici"
 	},
 	"pnp": {
 		"title": "Version Print & Play",
@@ -221,7 +225,7 @@
 		"actionsText7": "Vous pouvez déplacer une créature d’une seule case sur le plateau de jeu vers une autre case libre. Les diagonales ne sont pas autorisées.",
 		"confrontationsTitle": "Confrontations",
 		"confrontationsText1": "Déroulement",
-		"confrontationsText2": "Si une créature ou un artefact disposant de la Menace (voir les capacités à la fin des règles) que vous contrôlez est placé à côté d’une autre carte contrôlée par un adversaire ou à côté d’un sorcier adverse, elles doivent entrer en confrontation. Si une de vos cartes doit entrer en confrontation avec plusieurs cartes, vous choisissez la carte avec laquelle elle entre en confrontation.",
+		"confrontationsText2": "Si une créature que vous contrôlez est placée à côté d’une autre carte contrôlée par un adversaire les cartes doivent entrer en confrontation. Si une de vos cartes doit entrer en confrontation avec plusieurs cartes, vous choisissez la carte avec laquelle elle entre en confrontation.",
 		"confrontationsText3": "Lors d’une confrontation, il faut calculer les points de vie perdues par chaque carte. Pour ce faire, il faut prendre l’attaque (en rouge) du côté des cartes qui entrent en confrontation et soustraire la défense (en bleu) de leur carte opposée. Le résultat obtenu doit être retranché aux points de vie des cartes.",
 		"confrontationsText4": "La phase de confrontation doit clôturer le tour du joueur.",
 		"confrontationsText5": "Exemple",
@@ -343,6 +347,5 @@
 		"title": "Evénements",
 		"online": "En ligne",
 		"physic": "IRL"
-	},
-	"AMise à jour des clients PC (2.2.0) et mobile (1.3.0)": "AMise à jour des clients PC (2.2.0) et mobile (1.3.0)"
+	}
 }
