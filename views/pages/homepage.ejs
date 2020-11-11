@@ -20,7 +20,7 @@
           <img src="/images/<%= newsItem.image %>" />
         </div>
         <h3 class="is-size-4 has-text-primary is-uppercase"><%= newsItem.title %></h3>
-        <p><%= 
+        <p><%- 
           (newsItem.text.replace(/(<([^>]+)>)/ig,' ').slice(0, 120).split(' ').slice(0, -1).join(' '))
         %>…</p>
         <p>
