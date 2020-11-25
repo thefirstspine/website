@@ -11,10 +11,8 @@ module.exports = {
 
   fn: async function(inputs, exits) {
     try {
-      const baseUrl = process.env ?
-        process.env.REST_URL :
-        process.env.REST_URL;
-      const url = `${baseUrl}/rest/cycles/${inputs.id}`;
+      const baseUrl = process.env.CALENDAR_URL;
+      const url = `${baseUrl}/cycles/${inputs.id}`;
       const result = await fetch(url);
       const resultJson = await result.json();
       return exits.success(resultJson);
