@@ -32,13 +32,13 @@
 
   <div class="separator"></div>
 
-  <div class="cycle cycle-<%= cycle.current.id %>">
+  <div class="cycle cycle-<%= cycle.current.name %>">
     <div class="container">
       <h3 class="has-text-centered is-size-3 is-uppercase"><%= __("home.currentCycle") %></h3>
-      <h2 class="has-text-centered is-size-2 is-uppercase"><%= cycle.current.name[__("locale")] %></h2>
+      <h2 class="has-text-centered is-size-2 is-uppercase"><%= cycle.current[`title_${__("locale")}`] %></h2>
       <div class="columns mt-4">
         <div class="column is-4 is-offset-4 has-text-centered">
-          <p><%= cycle.current.description[__("locale")] %></p>
+          <p><%= cycle.current[`text_${__("locale")}`] %></p>
           <p class="is-uppercase has-text-centered mt-4">
             <a href="/arena" class="button is-primary is-size-5"><%= __("home.playOnline") %></a>
           </p>

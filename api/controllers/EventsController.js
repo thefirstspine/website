@@ -8,7 +8,8 @@
 module.exports = {
 
   async index(req, res) {
-    const events = await sails.models.event.find({
+    // Getting internal events
+    const internalEvents = await sails.models.event.find({
       sort: 'datetimeFrom ASC',
       where: {
         language: req.session.locale,
@@ -16,12 +17,22 @@ module.exports = {
       },
     });
 
+    const eventsFromCalendar = await sails.helpers.getEvents();
+
     return res.view(
       'pages/events.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
         title: 'events.title',
-        events,
+        events: [
+          ...internalEvents,
+          ...eventsFromCalendar.map(
+            (event) => {
+              event.type = `online:${event.type}`;
+              return event;
+            }
+          ),
+        ],
         gkey: process.env.GKEY,
       }
     );

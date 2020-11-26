@@ -82,7 +82,4 @@ module.exports.routes = {
   'GET /report/:id': 'ReportController.index',
   'POST /report/:id': 'ReportController.report',
 
-  // Scheduled loots
-  'POST /scheduled-loot': 'ScheduledLoot.index',
-
 };
