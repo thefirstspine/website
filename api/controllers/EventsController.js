@@ -29,6 +29,8 @@ module.exports = {
           ...eventsFromCalendar.map(
             (event) => {
               event.type = `online:${event.type}`;
+              event.title = event[`title_${req.session.locale}`];
+              event.text = event[`text_${req.session.locale}`];
               return event;
             }
           ),
