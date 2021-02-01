@@ -18,9 +18,9 @@
     </div>
     <div class="card-footer">
       <p class="card-footer-item">
-        <date timestamp="<%= event.datetimeFrom %>"></date>
+        <date timestamp="<%= new Date(event.datetimeFrom).getTime() %>"></date>
         &nbsp;-&nbsp;
-        <date timestamp="<%= event.datetimeTo %>"></date>
+        <date timestamp="<%= new Date(event.datetimeTo).getTime() %>"></date>
       </p>
     </div>
   </div>
