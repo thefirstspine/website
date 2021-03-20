@@ -30,8 +30,6 @@ module.exports = {
       });
       // If the code is secret, find if it was used by the user
       if (secretCode) {
-        console.log(secretCode);
-        console.log(secretCode.split('?')[1]);
         const loots = JSON.parse(secretCode.split('?')[1]);
         if (!user) {
           const checkCodeEntity = await sails.models.code.findOne({code, user: null});
