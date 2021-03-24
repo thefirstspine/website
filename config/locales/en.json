@@ -18,7 +18,8 @@
 		"account": "Account",
 		"yourAccount": "Your account",
 		"logout": "Sign out",
-		"referAFriend": "Refer a friend"
+		"referAFriend": "Refer a friend",
+    "driftersTales": "Drifter's Tales"
 	},
 	"footer": {
 		"stayConnected": "Keep in touch",
