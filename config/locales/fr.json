@@ -72,7 +72,7 @@
 	"arena": {
 		"playOnline": "Jouez à The First Spine en ligne",
 		"windows": "Windows",
-		"browser": "Sur le navigateur de votre ordinateur",
+		"browser": "Sur votre ordinateur",
 		"mobile": "Sur votre mobile",
 		"soon": "Bientôt disponible",
 		"googlePlay": "Google Play",
@@ -99,7 +99,8 @@
 		"shop": "Achats en ligne",
 		"dropClientsText": "Les clients lourds (les versions Windows et Android en téléchargement) ont été abandonnées au profit des versions web.",
 		"dropClientsSlug": "abandon-des-clients-lourds",
-		"dropClientsFurtherMore": "Plus d'informations ici"
+		"dropClientsFurtherMore": "Plus d'informations ici",
+		"realms": "Etat des domaines"
 	},
 	"pnp": {
 		"title": "Version Print & Play",

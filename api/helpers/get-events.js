@@ -9,7 +9,7 @@ module.exports = {
     try {
       const baseUrl = process.env.CALENDAR_URL;
       const date = (new Date()).toISOString();
-      const url = `${baseUrl}/events?filter=datetimeTo||gt||${date}`;
+      const url = `${baseUrl}/events?filter=datetimeTo||gt||${date}&sort=datetimeFrom,ASC`;
       const result = await fetch(url);
       const resultJson = await result.json();
       return exits.success(resultJson);
