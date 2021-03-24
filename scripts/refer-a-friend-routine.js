@@ -23,7 +23,7 @@ module.exports = {
       // Load wizard account
       const wizardResponse = await fetch(`${process.env.ARENA_URL}/wizard/${referCode.user}`);
       const wizard = await wizardResponse.json();
-      sails.log(`Wizard "${wizard.name}" loaded.`);
+      sails.log(`Wizard "${wizard.name}" (#${wizard.id}) loaded.`);
 
       // Had play first game?
       if (!referCode.hadFirstPlayGift) {
@@ -48,14 +48,38 @@ module.exports = {
           }).fetch();
           sails.log(`Code for referer created:`, codeToReferal.code);
 
+          // Load user informations
+          const refererUserRequest = await fetch(
+            `${process.env.AUTH_URL}/api/v2/users/${referCode.referer}`,
+            {
+              headers: {
+                'X-Client-Cert': Buffer.from(process.env.AUTH_PUBLIC_KEY.replace(/\\n/gm, '\n')).toString('base64'),
+                'X-Client-Cert-Encoding': 'base64',
+              }
+            }
+          );
+          const refererUser = await refererUserRequest.json();
+          sails.log(`Referer loaded:`, refererUser);
+          const referalUserRequest = await fetch(
+            `${process.env.AUTH_URL}/api/v2/users/${referCode.user}`,
+            {
+              headers: {
+                'X-Client-Cert': Buffer.from(process.env.AUTH_PUBLIC_KEY.replace(/\\n/gm, '\n')).toString('base64'),
+                'X-Client-Cert-Encoding': 'base64',
+              }
+            }
+          );
+          const referalUser = await referalUserRequest.json();
+          sails.log(`Referal loaded:`, referalUser);
+
           // Send the emails
           sails.log(`Send email to referer`);
           const templateToReferer = fs.readFileSync('./assets/html/refer-first-game-referer.html').toString().replace('{{code}}', codeToReferer.code);
           await new Promise((resolve, reject) => {
             transport.sendMail({
               from: 'noreply@thefirstspine.fr', // sender address
-              to: 'teddy@coretizone.com', // list of receivers
-              subject: '🎁 Votre parrain a terminé sa première partie !', // Subject line
+              to: refererUser.email, // list of receivers
+              subject: '🎁 Votre filleul a terminé sa première partie !', // Subject line
               html:  templateToReferer, // plaintext body
             }, function(error, info){
               if(error) {
@@ -72,7 +96,7 @@ module.exports = {
           await new Promise((resolve, reject) => {
             transport.sendMail({
               from: 'noreply@thefirstspine.fr', // sender address
-              to: 'teddy@coretizone.com', // list of receivers
+              to: referalUser.email, // list of receivers
               subject: '🎁 Vous avez terminé votre première partie !', // Subject line
               html:  templateToReferal, // plaintext body
             }, function(error, info){
