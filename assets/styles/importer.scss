@@ -29,6 +29,7 @@ $table-head-cell-color: $primary;
 @import "./card-autoload.scss";
 @import "./capacities.scss";
 @import "./carousel.scss";
+@import "./room.scss";
 
 /* Import pages */
 @import "./about.scss";
@@ -47,6 +48,7 @@ $table-head-cell-color: $primary;
 @import "./profile.scss";
 @import "./rules.scss";
 @import "./subscribe.scss";
+@import "./tournament.scss";
 
 [disabled] {
   opacity: .5;
