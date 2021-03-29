@@ -1,0 +1,51 @@
+#blog {
+  .blog-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/top-sorcerer.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    .article-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110%;
+      height: 110%;
+      filter: blur(10px);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  .news-item {
+    width: 313px;
+    height: 470px;
+    display: inline-block;
+    background: #000;
+    border: 1px solid #FFF;
+    vertical-align: top;
+    margin: 5px;
+    .image {
+      height: 100px;
+      background-color: #333;
+      margin: 0;
+      overflow: hidden;
+      img {
+        width: 320px;
+        margin-top: -25%;
+      }
+    }
+    p, h3 {
+      margin: 1em;
+    }
+  }
+  article {
+    padding: 1em;
+    h2 {
+      margin: 1em 0;
+      font-size: 2rem;
+    }
+    p {
+      margin: 1rem 0;
+    }
+  }
+}

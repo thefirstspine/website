@@ -1,0 +1,15 @@
+#events {
+  .events-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/top-conjurer.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .card {
+    &.active {
+      border: 1px solid $primary;
+      box-shadow: $primary 0 0 20px;
+    }
+  }
+}

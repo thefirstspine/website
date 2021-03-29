@@ -1,0 +1,149 @@
+#homepage {
+  .homepage-hero {
+    &.sorcerer {
+      background-image: url(../images/top-sorcerer.png);
+    }
+    &.hunter {
+      background-image: url(../images/top-hunter.png);
+    }
+    &.summoner {
+      background-image: url(../images/top-summoner.png);
+    }
+    &.conjurer {
+      background-image: url(../images/top-conjurer.png);
+    }
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 700px;
+    padding-top: 200px;
+    background-attachment: fixed;
+    .content {
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      margin: 0 auto;
+      p {
+        text-shadow: #000 0 0 20px, #000 0 0 10px, #000 0 0 5px;
+      }
+      a {
+        text-shadow: none;
+      }
+    }
+  }
+  .news-list {
+    margin-top: -150px;
+    margin-bottom: 100px;
+    text-align: center;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    @media screen and (max-width: 768px) {
+      height: 400px;
+    }
+    .news-item {
+      @media screen and (max-width: 768px) {
+        width: 90%;
+        background: black;
+        border: 1px solid #FFF;
+        height: 400px;
+      }
+      width: 420px;
+      height: 500px;
+      display: inline-block;
+      background: url(/images/square-news.png);
+      vertical-align: top;
+      .image {
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+        height: 200px;
+        background-color: #333;
+        margin: 10px;
+        overflow: hidden;
+        img {
+          width: 500px;
+        }
+      }
+      p, h3 {
+        margin: 1em;
+      }
+    }
+  }
+  .cycle {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    margin-top: -55px;
+    text-shadow: black 0 0 50px, black 0 0 20px, black 0 0 10px;
+    a.button {
+      text-shadow: none;
+    }
+    &.cycle-renewal-2020 {
+      background-image: url(../images/cycle-renewal.png);
+    }
+    &.cycle-treasure-2020, &.cycle-treasure-2021 {
+      background-image: url(../images/cycle-treasure.png);
+    }
+    &.cycle-great-ancient-2020, &.cycle-great-ancient-2021 {
+      background-image: url(../images/background-great-ancient-2020.jpg);
+      background-size: 150%;
+      background-position: bottom;
+    }
+    &.cycle-souvenirs-2020, &.cycle-souvenirs-2021 {
+      background-image: url(../images/background-souvenirs-2020.jpg);
+    }
+    &.cycle-harvest-2020, &.cycle-harvest-2021 {
+      background-image: url(../images/background-harvest-2020.jpg);
+    }
+    &.cycle-crowned-souls-2020, &.cycle-crowned-souls-2021 {
+      background-image: url(../images/background-crowned-souls-2020.jpg);
+    }
+    &.cycle-snow-man-2020, &.cycle-snow-man-2021 {
+      background-image: url(../images/background-snow-man-2020.jpg);
+    }
+    &.cycle-renewal-2021 {
+      background-image: url(../images/background-renewal-2021.jpg);
+    }
+    &.cycle-absurdal-2021 {
+      background-image: url(../images/background-absurdal-2021.jpg);
+    }
+    .card-wrapper {
+      margin: 2em auto 0 auto;
+      display: block;
+    }
+  }
+  .code {
+    background-image: url(../images/codes.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    margin: -55px 0;
+    .codeinput {
+      width: 100%;
+      max-width: 265px;
+      display: inline-block;
+      input {
+        background: rgba(0, 0, 0, .5);
+        border: 1px solid rgba(255, 255, 255, .5);
+        letter-spacing: 2px;
+        color: #FFF;
+        &::placeholder {
+          color: rgba(255, 255, 255, .5);
+          opacity: .75;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .card-of-the-day {
+    background-image: url(../images/card-of-the-day.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    margin: -55px 0;
+    .card-wrapper {
+      margin: 2em auto 0 auto;
+    }
+  }
+}
