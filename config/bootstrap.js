@@ -27,6 +27,12 @@ module.exports.bootstrap = async function(cb) {
   // ]);
   // ```
 
+  // bootstrapping all the cronjobs in the crontab folder
+  const schedule = require('node-schedule');
+  sails.config.crontab.crons().forEach(function(item){
+    schedule.scheduleJob(item.interval, sails.config.crontab[item.method]);
+  });
+
   sails.moment = require('moment');
   cb();
 
