@@ -82,4 +82,8 @@ module.exports.routes = {
   'GET /report/:id': 'ReportController.index',
   'POST /report/:id': 'ReportController.report',
 
+  // Report
+  'GET /tournaments/:slug': 'TournamentsController.viewPage',
+  'POST /tournaments/:slug/register': 'TournamentsController.register',
+
 };

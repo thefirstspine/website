@@ -350,5 +350,10 @@
 		"title": "Evénements",
 		"online": "En ligne",
 		"physic": "IRL"
+	},
+	"tournament": {
+		"modifiers": {
+			"quick": "Rapide"
+		}
 	}
 }
