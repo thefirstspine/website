@@ -19,7 +19,7 @@
 		"yourAccount": "Your account",
 		"logout": "Sign out",
 		"referAFriend": "Refer a friend",
-    "driftersTales": "Drifter's Tales"
+		"driftersTales": "Drifter's Tales"
 	},
 	"footer": {
 		"stayConnected": "Keep in touch",
@@ -101,7 +101,7 @@
 		"dropClientsText": "The heavy clients (Windows and Android versions for download) have been abandoned in favor of web versions.",
 		"dropClientsSlug": "dropped-heavy-clients",
 		"dropClientsFurtherMore": "Further more here",
-    "realms": "State of realms"
+		"realms": "State of realms"
 	},
 	"pnp": {
 		"title": "Print & Play version",
