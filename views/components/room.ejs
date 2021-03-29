@@ -1,0 +1,91 @@
+<script>
+  Vue.component('room', {
+    data: function () {
+      return {
+        roomId: null,
+        accessToken: null,
+        message: "",
+        messages: [
+        ],
+      }
+    },
+    mounted: async function() {
+      this.$data.roomId = this.roomid;
+      this.$data.accessToken = this.accesstoken;
+      this.updateMessages();
+      setInterval(() => this.updateMessages(), 10000);
+    },
+    methods: {
+      async updateMessages() {
+        const response = await fetch(
+          `<%= process.env.ROOMS_URL %>/api/subjects/arena/rooms/${this.$data.roomId}/messages`, {
+            headers: {
+              'Authorization': `Bearer ${this.$data.accessToken}`
+            },
+          }
+        );
+        const json = await response.json();
+        this.$data.messages = await Promise.all(json.data.reverse().map(async (message) => {
+          const response = await fetch(`<%= process.env.ARENA_URL %>/wizard/${message.user}`);
+          const json = await response.json();
+          return {
+            ...message,
+            wizard: json,
+          };
+        }));
+        setTimeout(() => {
+          const objDiv = document.getElementById("room-messages");
+          objDiv.scrollTop = objDiv.scrollHeight;
+        }, 1);
+      },
+      async sendMessage() {
+        if (this.$data.message === "") {
+          return;
+        }
+
+        const message = this.$data.message;
+        this.$data.message = "";
+        
+        const response = await fetch(
+          `<%= process.env.ROOMS_URL %>/api/subjects/arena/rooms/${this.$data.roomId}/messages`, {
+            method: "POST",
+            body: JSON.stringify({
+              message,
+            }),
+            headers: {
+              'Authorization': `Bearer ${this.$data.accessToken}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
+        this.updateMessages();
+      }
+    },
+    props: ['roomid', 'baseurl', 'accesstoken'],
+    template: '#room',
+  })
+</script>
+
+<script type="text/x-template" id="room">
+  <div>
+    <div id="room-messages" class="room-messages">
+      <div class="room-message" v-for="message in messages">
+        <p class="has-text-primary has-text-weight-bold">{{ message.wizard.name ? message.wizard.name : "Sans nom" }} (#{{ message.user }})</p>
+        <p>{{ message.message }}</p>
+      </div>
+    </div>
+    <div class="room-input" v-if="accessToken">
+      <div class="field has-addons">
+        <div class="control is-expanded">
+          <input v-model="message" class="input" type="text" placeholder="Message">
+        </div>
+        <div class="control">
+          <a class="button is-primary" v-on:click="sendMessage()">
+            <i class="fas fa-comments"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
