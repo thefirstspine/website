@@ -118,9 +118,17 @@
                 <tr>
                   <td class="p-4"><%= match.wizard1.name ? match.wizard1.name : "Sans nom" %> (#<%= match.userId1 %>)</td>
                   <td class="p-4"><%= match.wizard2.name ? match.wizard2.name : "Sans nom" %> (#<%= match.userId2 %>)</td>
-                  <td class="p-4">
-                    <matchcode tournamentslug="<%= tournament.slug %>" matchcodeid="<%= match.id %>"></matchcode>
-                  </td>
+                  <% if (!match.matchWinner) { %>
+                    <td class="p-4">
+                      <matchcode tournamentslug="<%= tournament.slug %>" matchcodeid="<%= match.id %>"></matchcode>
+                    </td>
+                  <% } else { %>
+                    <td class="p-4">
+                      <span class="<%= match.matchWinner == req.user_id ? 'has-text-success' : 'has-text-danger' %>">
+                        <%= match.matchWinner == req.user_id ? 'Victoire' : 'Défaite' %>
+                      </span>
+                    </td>
+                  <% } %>
                 </tr>
               <% }) %>
             </table>

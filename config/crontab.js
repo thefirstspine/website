@@ -11,6 +11,7 @@ module.exports.crontab = {
     return [
       {interval: '0 0 * * *', method: 'refer-a-friend-send-emails'},
       {interval: '* * * * *', method: 'tournaments-open'},
+      {interval: '* * * * *', method: 'tournaments-watch-match'},
     ];
   },
   
@@ -21,5 +22,8 @@ module.exports.crontab = {
   },
   'tournaments-open': function() {
     require('../crontab/tournaments-open.js').run();
+  },
+  'tournaments-watch-match': function() {
+    require('../crontab/tournaments-watch-match.js').run();
   },
 };

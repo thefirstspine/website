@@ -18,6 +18,7 @@ module.exports = {
     tournamentId: { type: 'string', columnType: 'bigint' },
     matchCode: { type: 'string', allowNull: true },
     matchCodeExpiresAt: { type: 'string', columnType: 'bigint', allowNull: true },
+    matchWinner: { type: 'string', allowNull: true },
     createdAt: { type: 'number', autoCreatedAt: true },
     updatedAt: { type: 'number', autoUpdatedAt: true },
 
