@@ -73,9 +73,6 @@ module.exports = {
       
       return;
     }));
-
-    // Done
-    sails.log(`End.`);
   }
 
 };
