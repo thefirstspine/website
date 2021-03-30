@@ -34,7 +34,6 @@ module.exports = {
       'replacement',
       'smoky-totem',
       'barbers',
-      'gargoyle',
       'banshee',
       'the-fox',
       'veneniagora',
@@ -42,18 +41,12 @@ module.exports = {
       'ether',
       'conjurer',
       'sorcerer',
-      'the-wall',
       'shadows-banner',
       'insanes-run',
-      'growing-oak',
       'monstrous-portal',
-      'jester',
-      'paladin-of-the-ninth-desert',
       'volkha',
       'insanes-echo',
-      'alter-the-fate',
       'fire',
-      'achieve',
       /*
       These cards are digital-only.
       TODO: Think about to add them

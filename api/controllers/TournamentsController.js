@@ -22,7 +22,13 @@ module.exports = {
 
     if (req.user_id) {
       const registration = await sails.models.tournamentregistration.findOne({tournamentId: tournament.id, userId: req.user_id});
-      const matches = await sails.models.tournamentmatch.find({tournamentId: tournament.id});
+      const matches = await sails.models.tournamentmatch.find({
+        tournamentId: tournament.id,
+        or: [
+          { userId1: req.user_id },
+          { userId2: req.user_id }
+        ]
+      });
       const cachedWizards = {};
       const matchesConsolidated = await Promise.all(matches.map(async (match) => {
         if (typeof cachedWizards[match.userId1] === "undefined") {
