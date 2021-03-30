@@ -17,7 +17,7 @@ module.exports = {
       sails.log(`Look for refer ${referCode.code} (referer: ${referCode.referer}, referral: ${referCode.user})`);
 
       // Load wizard account
-      const wizardResponse = await fetch(`${process.env.ARENA_URL}/wizard/${referCode.user}`);
+      const wizardResponse = await fetch(`${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/${referCode.user}`);
       const wizard = await wizardResponse.json();
       sails.log(`Wizard "${wizard.name}" (#${wizard.id}) loaded.`);
 
