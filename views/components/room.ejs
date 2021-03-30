@@ -7,13 +7,14 @@
         message: "",
         messages: [
         ],
+        cachedWizards: {},
       }
     },
     mounted: async function() {
       this.$data.roomId = this.roomid;
       this.$data.accessToken = this.accesstoken;
       this.updateMessages();
-      setInterval(() => this.updateMessages(), 10000);
+      setInterval(() => this.updateMessages(), 1000);
     },
     methods: {
       async updateMessages() {
@@ -26,8 +27,15 @@
         );
         const json = await response.json();
         this.$data.messages = await Promise.all(json.data.reverse().map(async (message) => {
-          const response = await fetch(`<%= process.env.ARENA_URL %>/wizard/${message.user}`);
+          if (typeof this.$data.cachedWizards[message.user] !== "undefined") {
+            return {
+              ...message,
+              wizard: this.$data.cachedWizards[message.user],
+            };
+          }
+          const response = await fetch(`<%= process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire') %>/wizard/${message.user}`);
           const json = await response.json();
+          this.$data.cachedWizards[message.user] = json;
           return {
             ...message,
             wizard: json,
