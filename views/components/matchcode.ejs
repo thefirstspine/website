@@ -4,6 +4,7 @@
       return {
         matchcodeid: '',
         matchCode: null,
+        matchCodeExpiresAt: null,
       }
     },
     mounted: async function() {
@@ -17,11 +18,13 @@
         const response = await fetch(`/tournamentmatch/${this.$data.matchcodeid}`);
         const json = await response.json();
         this.$data.matchCode = json.matchCode;
+        this.$data.matchCodeExpiresAt = json.matchCodeExpiresAt ? parseInt(json.matchCodeExpiresAt) : 0;
       },
       async createMatchCode() {
         const response = await fetch(`/tournaments/${this.$data.tournamentslug}/match/${this.$data.matchcodeid}`, {method: 'POST'});
         const json = await response.json();
         this.$data.matchCode = json.matchCode;
+        this.$data.matchCodeExpiresAt = json.matchCodeExpiresAt ? parseInt(json.matchCodeExpiresAt) : 0;
       },
       copy() {
         navigator.clipboard.writeText(this.$data.matchCode);
@@ -34,10 +37,10 @@
 
 <script type="text/x-template" id="matchcode">
   <span>
-    <a v-if="matchCode === null" class="button is-primary" v-on:click="createMatchCode()">
+    <a v-if="matchCode === null || matchCodeExpiresAt <= Date.now()" class="button is-primary" v-on:click="createMatchCode()">
       <i class="fas fa-sync-alt"></i>
     </a>
-    <span v-if="matchCode !== null">
+    <span v-if="matchCode !== null && matchCodeExpiresAt > Date.now()">
       {{ matchCode }}
       <a v-on:click="copy()">
         <i class="fas fa-copy"></i>

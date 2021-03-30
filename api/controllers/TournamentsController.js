@@ -142,7 +142,7 @@ module.exports = {
     }
 
     // Update entity
-    tournamentmatch.matchCodeExpiresAt = jsonResult.expiresAt;
+    tournamentmatch.matchCodeExpiresAt = jsonResult.result.expiresAt;
     tournamentmatch.matchCode = jsonResult.result.key;
     await sails.models.tournamentmatch.update({id: tournamentmatch.id}).set({
       ...tournamentmatch
