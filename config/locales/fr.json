@@ -353,7 +353,12 @@
 	},
 	"tournament": {
 		"modifiers": {
-			"quick": "Rapide"
+			"great-ancients-eggs": "Les oeufs de Grands Anciens",
+			"souvenirs-from-your-enemy": "Souvenirs de votre adversaire",
+			"harvesting-souls": "Moisson d'Âmes",
+			"annihilation-matts": "Mâts de l'Annihilation",
+			"frozen-statues": "Statues gelées",
+			"mutations": "Mutations"
 		}
 	}
 }

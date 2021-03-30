@@ -48,5 +48,7 @@ module.exports.policies = {
   'refer/*':['load-user', 'is-logged-in', 'is-admin'],
   'tournamentregistration/*':['load-user', 'is-logged-in', 'is-admin'],
   'tournamentmatch/*':['load-user', 'is-logged-in', 'is-admin'],
+  'tournamentmatch/find':[],
+  'tournamentmatch/findOne':[],
 
 };

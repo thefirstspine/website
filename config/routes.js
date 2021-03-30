@@ -31,7 +31,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   
-  // LOcales
+  // Locales
   'GET /l/fr': 'LocaleController.fr',
   'GET /l/en': 'LocaleController.en',
 
@@ -82,8 +82,9 @@ module.exports.routes = {
   'GET /report/:id': 'ReportController.index',
   'POST /report/:id': 'ReportController.report',
 
-  // Report
+  // Tournament
   'GET /tournaments/:slug': 'TournamentsController.viewPage',
   'POST /tournaments/:slug/register': 'TournamentsController.register',
+  'POST /tournaments/:slug/match/:id': 'TournamentsController.createMatchCode',
 
 };

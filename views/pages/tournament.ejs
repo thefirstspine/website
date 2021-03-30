@@ -46,7 +46,7 @@
           <%= tournament.speed === 0.5 ? "Rapide" : "" %>
           <%= tournament.speed === 1 ? "Normale" : "" %>
           <%= tournament.speed === 2 ? "Lente" : "" %>
-          <%= tournament.speed === 99 ? "Tour par tour" : "" %>
+          <%= tournament.speed === 999 ? "Tour par tour" : "" %>
         </p>
       </div>
     </div>
@@ -96,24 +96,36 @@
           </div>
         </div>
       <% } else if (registration) { %>
+        <article class="message is-info">
+          <div class="message-body">
+            <h5 class="has-text-info has-text-weight-bold"><i class="fas fa-info-circle"></i> Jouer un match en tournoi</h5>
+            <p>La liste des matchs à jouer est présente ci-dessous. Syncronisez-vous avec vos opposants dans la messagerie du tournoi et générez le code de partie.</p>
+            <p>Pour utiliser ce code, vous et votre adversaire devront aller dans Arena et choisir de rejoindre une partie privée avec le code de partie.</p>
+            <p>Note : vous devrez peut-être changer de domaine pour accéder au tournoi. Pour ce faire, sur Arena allez dans les options de jeu et cliquez sur "Changer de domaine" dans les options de compte.</p>
+          </div>
+        </article>
         <div class="columns">
-          <div class="column is-9">
+          <div class="column">
             <table class="table" width="100%">
               <thead>
                 <tr>
-                  <td>Participant 1</td>
-                  <td>Participant 2</td>
+                  <td class="p-4">Participant 1</td>
+                  <td class="p-4">Participant 2</td>
+                  <td class="p-4">Code de partie</td>
                 </tr>
               </thead>
               <% matches.forEach(function(match) { %>
                 <tr>
-                  <td><%= match.wizard1.name ? match.wizard1.name : "Sans nom" %></td>
-                  <td><%= match.wizard2.name ? match.wizard2.name : "Sans nom" %></td>
+                  <td class="p-4"><%= match.wizard1.name ? match.wizard1.name : "Sans nom" %> (#<%= match.userId1 %>)</td>
+                  <td class="p-4"><%= match.wizard2.name ? match.wizard2.name : "Sans nom" %> (#<%= match.userId2 %>)</td>
+                  <td class="p-4">
+                    <matchcode tournamentslug="<%= tournament.slug %>" matchcodeid="<%= match.id %>"></matchcode>
+                  </td>
                 </tr>
               <% }) %>
             </table>
           </div>
-          <div class="column is-3">
+          <div class="column is-4">
             <room roomid="tournament-<%= tournament.id %>" accesstoken="<%= session.access_token %>"></room>
           </div>
         </div>

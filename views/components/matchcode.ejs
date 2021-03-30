@@ -1,0 +1,47 @@
+<script>
+  Vue.component('matchcode', {
+    data: function () {
+      return {
+        matchcodeid: '',
+        matchCode: null,
+      }
+    },
+    mounted: async function() {
+      this.$data.matchcodeid = this.$props.matchcodeid;
+      this.$data.tournamentslug = this.$props.tournamentslug;
+      this.updateCode();
+      setInterval(() => this.updateCode(), 5000);
+    },
+    methods: {
+      async updateCode() {
+        const response = await fetch(`/tournamentmatch/${this.$data.matchcodeid}`);
+        const json = await response.json();
+        this.$data.matchCode = json.matchCode;
+      },
+      async createMatchCode() {
+        const response = await fetch(`/tournaments/${this.$data.tournamentslug}/match/${this.$data.matchcodeid}`, {method: 'POST'});
+        const json = await response.json();
+        this.$data.matchCode = json.matchCode;
+      },
+      copy() {
+        navigator.clipboard.writeText(this.$data.matchCode);
+      }
+    },
+    props: ['matchcodeid', 'tournamentslug'],
+    template: '#matchcode',
+  })
+</script>
+
+<script type="text/x-template" id="matchcode">
+  <span>
+    <a v-if="matchCode === null" class="button is-primary" v-on:click="createMatchCode()">
+      <i class="fas fa-sync-alt"></i>
+    </a>
+    <span v-if="matchCode !== null">
+      {{ matchCode }}
+      <a v-on:click="copy()">
+        <i class="fas fa-copy"></i>
+      </a>
+    </span>
+  </span>
+</script>

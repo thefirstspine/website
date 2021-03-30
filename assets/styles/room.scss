@@ -1,6 +1,6 @@
 .room-messages {
   display: block;
-  height: 30em;
+  height: 35em;
   overflow: auto;
   margin-bottom: .5em;
 
@@ -34,10 +34,10 @@
     background: #6B6B6B;
     border-radius: 10px;
   }
-  &::-webkit-scrollbar-thumb:hover{
+  &::-webkit-scrollbar-thumb:hover {
     background: #8B8B8B;
   }
-  &::-webkit-scrollbar-track{
+  &::-webkit-scrollbar-track {
     background: #222;
     border-radius: 10px;
   }
