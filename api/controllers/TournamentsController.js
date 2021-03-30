@@ -27,9 +27,13 @@ module.exports = {
       tournament,
       ...await sails.helpers.layoutConfig(req.user_id),
     }
+    
+    // Init cache
+    const cachedWizards = {};
 
     // User-relatd informations
     if (req.user_id) {
+      // Get self registration
       const registration = await sails.models.tournamentregistration.findOne({tournamentId: tournament.id, userId: req.user_id});
       const matches = await sails.models.tournamentmatch.find({
         tournamentId: tournament.id,
@@ -38,7 +42,8 @@ module.exports = {
           { userId2: req.user_id }
         ]
       });
-      const cachedWizards = {};
+      dataToView.registration = registration;
+      // Get matches
       const matchesConsolidated = await Promise.all(matches.map(async (match) => {
         if (typeof cachedWizards[match.userId1] === "undefined") {
           const wizard1Response = await fetch(`${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/${match.userId1}`);
@@ -54,9 +59,48 @@ module.exports = {
         match.wizard2 = cachedWizards[match.userId2];
         return match;
       }));
-      dataToView.registration = registration;
       dataToView.matches = matchesConsolidated;
     }
+    
+    // Get ranked users
+    const registrations = await sails.models.tournamentregistration.find({tournamentId: tournament.id});
+    const registrationConsolidated = await Promise.all(registrations.map(async (reg) => {
+      const regMatches = await sails.models.tournamentmatch.find({
+        tournamentId: tournament.id,
+        or: [
+          { userId1: reg.userId },
+          { userId2: reg.userId }
+        ]
+      });
+      if (typeof cachedWizards[reg.userId] === "undefined") {
+        const wizard1Response = await fetch(`${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/${reg.userId}`);
+        const wizard1Json = await wizard1Response.json();
+        cachedWizards[reg.userId] = wizard1Json;
+      }
+      reg.wizard = cachedWizards[reg.userId];
+      const wins = regMatches.filter((m) => m.matchWinner === reg.userId && m.matchWinner !== null).length;
+      const loses = regMatches.filter((m) => m.matchWinner !== reg.userId && m.matchWinner !== null).length;
+      const noPlayed = regMatches.filter((m) => m.matchWinner === null).length;
+      const points = wins * 3 + loses * 1;
+      return {
+        ...reg,
+        wins,
+        loses,
+        noPlayed,
+        points,
+      };
+    }));
+    dataToView.rankedRegistrations = registrationConsolidated.sort((a, b) => {
+      if (a.points < b.points) {
+        return 1;
+      }
+      if (a.points > b.points) {
+        return -1;
+      }
+      if (a.userId < b.userId) {
+        return 1;
+      }
+    });
 
     // Render
     return res.view(

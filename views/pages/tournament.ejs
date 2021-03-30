@@ -145,7 +145,26 @@
         </div>
       <% } %>
     <% } else { %>
-      closed
+      <table class="table" width="100%">
+        <thead>
+          <tr>
+            <td class="p-4">#</td>
+            <td class="p-4">Sorcier</td>
+            <td class="p-4">Points</td>
+            <td class="p-4">Victoires</td>
+            <td class="p-4">Défaites</td>
+          </tr>
+        </thead>
+        <% rankedRegistrations.forEach(function(rankedRegistration, index) { %>
+          <tr>
+            <td class="p-4 has-text-primary has-text-weight-bold"><%= (index + 1) %></td>
+            <td class="p-4"><%= rankedRegistration.wizard.name ? rankedRegistration.wizard.name : "Sans nom" %> (#<%= rankedRegistration.userId %>)</td>
+            <td class="p-4"><%= rankedRegistration.points %></td>
+            <td class="p-4"><%= rankedRegistration.wins %></td>
+            <td class="p-4"><%= rankedRegistration.loses %></td>
+          </tr>
+        <% }) %>
+      </table>
     <% } %>
   </div>
 </div>
