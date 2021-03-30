@@ -30,6 +30,21 @@
       }
     }
   }
+  .band {
+    height: 600px;
+    background-position: center;
+    &.band-1 {
+      background-image: url(../images/band-1.jpg);
+    }
+    &.band-2 {
+      background-image: url(../images/band-2.jpg);
+    }
+    .column {
+      &.is-full-height {
+        height: 600px;
+      }
+    }
+  }
   .news-list {
     margin-top: -150px;
     margin-bottom: 100px;
