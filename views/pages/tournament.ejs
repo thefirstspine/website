@@ -11,7 +11,6 @@
         <% if (tournament.registrationCloseAt > Date.now()) { %>
           Fin des inscriptions dans <countdown :date="<%= tournament.registrationCloseAt %>"></countdown>
         <% } else if (tournament.tournamentCloseAt > Date.now()) { %>
-          combat
           Clôture du tournois dans <countdown :date="<%= tournament.tournamentCloseAt %>"></countdown>
         <% } %>
       </h2>
@@ -87,14 +86,44 @@
         <% } %>
       </div>
     <% } else if (tournament.tournamentCloseAt > Date.now()) { %>
-      <div class="columns">
-        <div class="column is-9">
-          //TODO
+      <% if (typeof user_id === "undefined")  { %>
+        <div class="columns has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <p class="has-text-danger">Vous devez être connecté pour accéder au contenu du tournoi.</p>
+            <p class="mt-3">
+              <a class="button is-danger" href="/login?redirect=tournaments/<%= tournament.slug %>">Se connecter</a>
+            </p>
+          </div>
         </div>
-        <div class="column is-3">
-          <room roomid="tournament-<%= tournament.id %>" accesstoken="<%= session.access_token %>"></room>
+      <% } else if (registration) { %>
+        <div class="columns">
+          <div class="column is-9">
+            <table class="table" width="100%">
+              <thead>
+                <tr>
+                  <td>Participant 1</td>
+                  <td>Participant 2</td>
+                </tr>
+              </thead>
+              <% matches.forEach(function(match) { %>
+                <tr>
+                  <td><%= match.wizard1.name ? match.wizard1.name : "Sans nom" %></td>
+                  <td><%= match.wizard2.name ? match.wizard2.name : "Sans nom" %></td>
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+          <div class="column is-3">
+            <room roomid="tournament-<%= tournament.id %>" accesstoken="<%= session.access_token %>"></room>
+          </div>
         </div>
-      </div>
+      <% } else { %>
+        <div class="columns has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <p class="has-text-danger">Vous ne pouvez accéder au contenu de ce tournoi que si vous y participez.</p>
+          </div>
+        </div>
+      <% } %>
     <% } else { %>
       closed
     <% } %>
