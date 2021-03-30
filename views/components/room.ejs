@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
 <script>
   Vue.component('room', {
     data: function () {
@@ -7,6 +9,7 @@
         message: "",
         messages: [
         ],
+        messagesHash: "",
         cachedWizards: {},
       }
     },
@@ -41,10 +44,16 @@
             wizard: json,
           };
         }));
-        setTimeout(() => {
-          const objDiv = document.getElementById("room-messages");
-          objDiv.scrollTop = objDiv.scrollHeight;
-        }, 1);
+
+        const newMessagesHash = CryptoJS.MD5(JSON.stringify(json)).toString();
+
+        if (this.$data.messagesHash !== newMessagesHash) {
+          this.$data.messagesHash = newMessagesHash;
+          setTimeout(() => {
+            const objDiv = document.getElementById("room-messages");
+            objDiv.scrollTop = objDiv.scrollHeight;
+          }, 1);
+        }
       },
       async sendMessage() {
         if (this.$data.message === "") {
