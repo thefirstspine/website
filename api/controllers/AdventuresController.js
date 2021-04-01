@@ -9,7 +9,7 @@ module.exports = {
 
   async index(req, res) {
     return res.view(
-      'pages/adventures.ejs',
+      'pages/drifter-s-tales.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
       }

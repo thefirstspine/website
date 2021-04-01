@@ -1,0 +1,172 @@
+<%- include('../elements/nav.ejs') %>
+
+<div id="tournament" class="">
+  <div class="tournament-heading">
+    <div class="article-image" style="background-image: url(/images/<%= tournament.image %>);"></div>
+    <div class="container">
+      <h1 class="is-size-2 is-uppercase has-text-primary has-text-centered has-text-shadow">
+        <%= tournament.title %>
+      </h1>
+      <h2 class="is-size-4 is-uppercase has-text-primary has-text-centered has-text-shadow">
+        <% if (tournament.registrationCloseAt > Date.now()) { %>
+          Fin des inscriptions dans <countdown :date="<%= tournament.registrationCloseAt %>"></countdown>
+        <% } else if (tournament.tournamentCloseAt > Date.now()) { %>
+          Clôture du tournois dans <countdown :date="<%= tournament.tournamentCloseAt %>"></countdown>
+        <% } %>
+      </h2>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="container">
+    <div class="has-text-centered content">
+      <%- tournament.text %>
+    </div>
+    <div class="mt-6 columns has-text-centered">
+      <div class="column">
+        <p class="is-size-3">🌍</p>
+        <p class="is-size-4 is-uppercase">Domaine</p>
+        <hr />
+        <p><%= tournament.realm %></p>
+      </div>
+      <div class="column">
+        <p class="is-size-3">✨</p>
+        <p class="is-size-4 is-uppercase">Modificateurs</p>
+        <hr />
+        <% tournament.modifiers.split(',').forEach(function(modifier){ %>
+          <p><%= __(`tournament.modifiers.${modifier}`) %></p>
+        <% }); %>
+      </div>
+      <div class="column">
+        <p class="is-size-3">⌚</p>
+        <p class="is-size-4 is-uppercase">Vitesse</p>
+        <hr />
+        <p>
+          <%= tournament.speed === 0.5 ? "Rapide" : "" %>
+          <%= tournament.speed === 1 ? "Normale" : "" %>
+          <%= tournament.speed === 2 ? "Lente" : "" %>
+          <%= tournament.speed === 999 ? "Tour par tour" : "" %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator my-6"></div>
+
+  <div class="container">
+    <% if (tournament.registrationCloseAt > Date.now()) { %>
+      <div class="has-text-centered">
+        <% if (typeof user_id === "undefined")  { %>
+          <div class="columns">
+            <div class="column is-4 is-offset-4">
+              <p class="has-text-danger">Pour vous inscrire à ce tournoi vous devez être conntecté à votre compte sorcier.</p>
+              <p class="mt-3">
+                <a class="button is-danger" href="/login?redirect=tournaments/<%= tournament.slug %>">Se connecter</a>
+              </p>
+            </div>
+          </div>
+        <% } else if (registration) { %>
+          <div class="columns">
+            <div class="column is-4 is-offset-4">
+              <p>Votre inscription a été prise en compte.</p>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="columns">
+            <div class="column is-4 is-offset-4">
+              <p>Vous pouvez vous inscrire à ce tournoi. Attention, toute inscription est définitive.</p>
+              <p class="mt-3">
+                <form action="/tournaments/<%= tournament.slug %>/register" method="POST">
+                  <input type="submit" class="button is-primary is-size-4" value="S'inscrire" />
+                </form>
+              </p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    <% } else if (tournament.tournamentCloseAt > Date.now()) { %>
+      <% if (typeof user_id === "undefined")  { %>
+        <div class="columns has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <p class="has-text-danger">Vous devez être connecté pour accéder au contenu du tournoi.</p>
+            <p class="mt-3">
+              <a class="button is-danger" href="/login?redirect=tournaments/<%= tournament.slug %>">Se connecter</a>
+            </p>
+          </div>
+        </div>
+      <% } else if (registration) { %>
+        <article class="message is-info">
+          <div class="message-body">
+            <h5 class="has-text-info has-text-weight-bold"><i class="fas fa-info-circle"></i> Jouer un match en tournoi</h5>
+            <p>La liste des matchs à jouer est présente ci-dessous. Syncronisez-vous avec vos opposants dans la messagerie du tournoi et générez le code de partie.</p>
+            <p>Pour utiliser ce code, vous et votre adversaire devront aller dans Arena et choisir de rejoindre une partie privée avec le code de partie.</p>
+            <p>Note : vous devrez peut-être changer de domaine pour accéder au tournoi. Pour ce faire, sur Arena allez dans les options de jeu et cliquez sur "Changer de domaine" dans les options de compte.</p>
+          </div>
+        </article>
+        <div class="columns">
+          <div class="column">
+            <table class="table" width="100%">
+              <thead>
+                <tr>
+                  <td class="p-4">Participant 1</td>
+                  <td class="p-4">Participant 2</td>
+                  <td class="p-4">Code de partie</td>
+                </tr>
+              </thead>
+              <% matches.forEach(function(match) { %>
+                <tr>
+                  <td class="p-4"><%= match.wizard1.name ? match.wizard1.name : "Sans nom" %> (#<%= match.userId1 %>)</td>
+                  <td class="p-4"><%= match.wizard2.name ? match.wizard2.name : "Sans nom" %> (#<%= match.userId2 %>)</td>
+                  <% if (!match.matchWinner) { %>
+                    <td class="p-4">
+                      <matchcode tournamentslug="<%= tournament.slug %>" matchcodeid="<%= match.id %>"></matchcode>
+                    </td>
+                  <% } else { %>
+                    <td class="p-4">
+                      <span class="<%= match.matchWinner == req.user_id ? 'has-text-success' : 'has-text-danger' %>">
+                        <%= match.matchWinner == req.user_id ? 'Victoire' : 'Défaite' %>
+                      </span>
+                    </td>
+                  <% } %>
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+          <div class="column is-4">
+            <room roomid="tournament-<%= tournament.id %>" accesstoken="<%= session.access_token %>"></room>
+          </div>
+        </div>
+      <% } else { %>
+        <div class="columns has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <p class="has-text-danger">Vous ne pouvez accéder au contenu de ce tournoi que si vous y participez.</p>
+          </div>
+        </div>
+      <% } %>
+    <% } else { %>
+      <table class="table" width="100%">
+        <thead>
+          <tr>
+            <td class="p-4">#</td>
+            <td class="p-4">Sorcier</td>
+            <td class="p-4">Points</td>
+            <td class="p-4">Victoires</td>
+            <td class="p-4">Défaites</td>
+          </tr>
+        </thead>
+        <% rankedRegistrations.forEach(function(rankedRegistration, index) { %>
+          <tr>
+            <td class="p-4 has-text-primary has-text-weight-bold"><%= (index + 1) %></td>
+            <td class="p-4"><%= rankedRegistration.wizard.name ? rankedRegistration.wizard.name : "Sans nom" %> (#<%= rankedRegistration.userId %>)</td>
+            <td class="p-4"><%= rankedRegistration.points %></td>
+            <td class="p-4"><%= rankedRegistration.wins %></td>
+            <td class="p-4"><%= rankedRegistration.loses %></td>
+          </tr>
+        <% }) %>
+      </table>
+    <% } %>
+  </div>
+</div>
+
+<%- include('../elements/footer.ejs') %>

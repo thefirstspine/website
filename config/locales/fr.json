@@ -18,7 +18,8 @@
 		"account": "Compte",
 		"yourAccount": "Votre compte",
 		"logout": "Se déconnecter",
-		"referAFriend": "Parrainer un ami"
+		"referAFriend": "Parrainer un ami",
+		"driftersTales": "Les Contes du Vagabond"
 	},
 	"footer": {
 		"stayConnected": "Restons connectés",
@@ -349,5 +350,15 @@
 		"title": "Evénements",
 		"online": "En ligne",
 		"physic": "IRL"
+	},
+	"tournament": {
+		"modifiers": {
+			"great-ancients-eggs": "Les oeufs de Grands Anciens",
+			"souvenirs-from-your-enemy": "Souvenirs de votre adversaire",
+			"harvesting-souls": "Moisson d'Âmes",
+			"annihilation-matts": "Mâts de l'Annihilation",
+			"frozen-statues": "Statues gelées",
+			"mutations": "Mutations"
+		}
 	}
 }

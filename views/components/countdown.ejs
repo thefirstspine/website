@@ -1,0 +1,29 @@
+<script>
+  Vue.component('countdown', {
+    data: function () {
+      return {
+        dateStr: '',
+      }
+    },
+    mounted: async function() {
+      setInterval(() => {
+        const targetDate = new Date(this.date);
+        const currDate = new Date();
+        const diff = targetDate.getTime() - currDate.getTime();
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        this.dateStr = `${days.toLocaleString([], {minimumIntegerDigits: 2})} . ${hours.toLocaleString([], {minimumIntegerDigits: 2})} . ${minutes.toLocaleString([], {minimumIntegerDigits: 2})} . ${seconds.toLocaleString([], {minimumIntegerDigits: 2})}`;
+      }, 10);
+    },
+    props: ['date'],
+    template: '#countdown',
+  })
+</script>
+
+<script type="text/x-template" id="countdown">
+  <span>
+    {{ dateStr }}
+  </span>
+</script>

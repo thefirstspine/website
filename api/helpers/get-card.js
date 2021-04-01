@@ -11,9 +11,7 @@ module.exports = {
 
   fn: async function(inputs, exits) {
     try {
-      const baseUrl = process.env ?
-        process.env.REST_URL :
-        process.env.REST_URL;
+      const baseUrl = process.env.REST_URL;
       const url = `${baseUrl}/rest/cards/${inputs.id}`;
       const result = await fetch(url);
       const resultJson = await result.json();

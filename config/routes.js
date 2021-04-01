@@ -31,7 +31,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   
-  // LOcales
+  // Locales
   'GET /l/fr': 'LocaleController.fr',
   'GET /l/en': 'LocaleController.en',
 
@@ -59,7 +59,7 @@ module.exports.routes = {
   'GET /events': 'EventsController.index',
 
   // Adventures
-  'GET /adventures': 'AdventuresController.index',
+  'GET /drifter-s-tales': 'AdventuresController.index',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
@@ -81,5 +81,10 @@ module.exports.routes = {
   // Report
   'GET /report/:id': 'ReportController.index',
   'POST /report/:id': 'ReportController.report',
+
+  // Tournament
+  'GET /tournaments/:slug': 'TournamentsController.viewPage',
+  'POST /tournaments/:slug/register': 'TournamentsController.register',
+  'POST /tournaments/:slug/match/:id': 'TournamentsController.createMatchCode',
 
 };

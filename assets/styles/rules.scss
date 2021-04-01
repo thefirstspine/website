@@ -1,0 +1,19 @@
+#rules {
+  .rotate-on-mobile {
+    @media screen and (max-width: 768px) {
+      transform: rotate(90deg);
+    }
+  }
+  .rules-heading {
+    padding: 200px 0 100px 0;
+    background-image: url(../images/top-summoner.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  hr {
+    height: 1px;
+    background-color: #999;
+    margin: 6em;
+  }
+}

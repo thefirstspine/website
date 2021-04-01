@@ -73,7 +73,7 @@ module.exports = {
       // Add the rewards to the user
       const promises = Object.keys(codeEntity.loots).map((lootName) => {
         return fetch(
-          `${process.env.ARENA_URL}/wizard/${req.user_id}/reward`,
+          `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/${req.user_id}/reward`,
           {
             method: 'POST',
             body: JSON.stringify({

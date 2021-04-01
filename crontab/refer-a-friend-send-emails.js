@@ -1,9 +1,5 @@
 module.exports = {
-
-  friendlyName: 'Refer a friend routine',
-  description: '',
-
-  fn: async function () {
+  run: async function () {
     // Load modules
     const fetch = require('node-fetch');
     const fs = require('fs');

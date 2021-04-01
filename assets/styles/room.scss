@@ -1,0 +1,50 @@
+.room-messages {
+  display: block;
+  height: 35em;
+  overflow: auto;
+  margin-bottom: .5em;
+
+  .room-message {
+    position: relative;
+    background: #2e2e2e;
+    border-radius: .4em;
+    margin: .5em;
+    padding: .5em;
+  }
+  
+  .room-message:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #2e2e2e;
+    border-left: 0;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #6B6B6B;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #8B8B8B;
+  }
+  &::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+  }
+}
+
+.room-input {
+  a.button {
+    margin: 0;
+  }
+}
