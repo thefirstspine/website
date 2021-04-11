@@ -12,6 +12,33 @@ module.exports = {
       'pages/drifter-s-tales.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        tags: [
+          {
+            type: 'property',
+            name: 'og:url',
+            value: req.baseUrl + req.url,
+          },
+          {
+            type: 'property',
+            name: 'og:type',
+            value: 'website',
+          },
+          {
+            type: 'property',
+            name: 'og:title',
+            value: 'The First Spine - ' + req.i18n.__('navigation.driftersTales'),
+          },
+          {
+            type: 'property',
+            name: 'og:description',
+            value: 'Les Contes du Vagabond est un jeu à paraître début 2022 sur PC.',
+          },
+          {
+            type: 'property',
+            name: 'og:image',
+            value: req.baseUrl + '/images/the-fox.png',
+          },
+        ],
       }
     );
   }

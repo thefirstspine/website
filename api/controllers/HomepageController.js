@@ -47,28 +47,39 @@ module.exports = {
       'volkha',
       'insanes-echo',
       'fire',
-      /*
-      These cards are digital-only.
-      TODO: Think about to add them
-      'curse-of-mara',
-      'eternity-gift',
-      'hunter-souvenir',
-      'conjurer-souvenir',
-      'summoner-souvenir',
-      'sorcerer-souvenir',
-      'snow-man-s-present',
-      'great-old-egg',
-      'juvenile-great-old',
-      'great-old',
-      'ovil',
-      'applicant',
-      */
     ];
 
     return res.view(
       'pages/homepage.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id, req.session.locale),
+        tags: [
+          {
+            type: 'property',
+            name: 'og:url',
+            value: req.baseUrl + req.url,
+          },
+          {
+            type: 'property',
+            name: 'og:type',
+            value: 'website',
+          },
+          {
+            type: 'property',
+            name: 'og:title',
+            value: 'The First Spine - ' + req.i18n.__('navigation.home'),
+          },
+          {
+            type: 'property',
+            name: 'og:description',
+            value: req.i18n.__("about.howWePlayText1") + req.i18n.__("about.howWePlayText2") + req.i18n.__("about.howWePlayText3"),
+          },
+          {
+            type: 'property',
+            name: 'og:image',
+            value: req.baseUrl + '/images/the-fox.png',
+          },
+        ],
         news: await sails.models.news.find({
           limit: 3,
           sort: 'createdAt DESC',

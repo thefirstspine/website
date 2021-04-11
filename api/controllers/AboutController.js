@@ -12,6 +12,33 @@ module.exports = {
       'pages/about.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        tags: [
+          {
+            type: 'property',
+            name: 'og:url',
+            value: req.baseUrl + req.url,
+          },
+          {
+            type: 'property',
+            name: 'og:type',
+            value: 'website',
+          },
+          {
+            type: 'property',
+            name: 'og:title',
+            value: 'The First Spine - ' + req.i18n.__('navigation.about'),
+          },
+          {
+            type: 'property',
+            name: 'og:description',
+            value: req.i18n.__("about.howWePlayText1") + req.i18n.__("about.howWePlayText2") + req.i18n.__("about.howWePlayText3"),
+          },
+          {
+            type: 'property',
+            name: 'og:image',
+            value: req.baseUrl + '/images/the-fox.png',
+          },
+        ],
       }
     );
   }

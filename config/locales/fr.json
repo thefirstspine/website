@@ -19,7 +19,8 @@
 		"yourAccount": "Votre compte",
 		"logout": "Se déconnecter",
 		"referAFriend": "Parrainer un ami",
-		"driftersTales": "Les Contes du Vagabond"
+		"driftersTales": "Les Contes du Vagabond",
+		"arena": "arena"
 	},
 	"footer": {
 		"stayConnected": "Restons connectés",
@@ -360,5 +361,6 @@
 			"frozen-statues": "Statues gelées",
 			"mutations": "Mutations"
 		}
-	}
+	},
+	"Vos codes sont arrivés !": "Vos codes sont arrivés !"
 }
