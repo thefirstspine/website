@@ -36,7 +36,7 @@ module.exports = {
           {
             type: 'property',
             name: 'og:image',
-            value: 'https://www.thefirstspine.fr' + '/images/og-characters.jpg',
+            value: 'https://www.thefirstspine.fr' + '/images/og-characters2.jpg',
           },
         ],
       }

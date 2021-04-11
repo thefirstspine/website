@@ -49,7 +49,7 @@ module.exports = {
         {
           type: 'property',
           name: 'og:image',
-          value: 'https://www.thefirstspine.fr' + '/images/og-cards.jpg',
+          value: 'https://www.thefirstspine.fr' + '/images/og-cards2.jpg',
         },
       ],
       ...await sails.helpers.layoutConfig(req.user_id),
