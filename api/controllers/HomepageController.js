@@ -77,7 +77,7 @@ module.exports = {
           {
             type: 'property',
             name: 'og:image',
-            value: 'https://www.thefirstspine.fr' + '/images/og-characters.png',
+            value: 'https://www.thefirstspine.fr' + '/images/og-characters.jpg',
           },
         ],
         news: await sails.models.news.find({
