@@ -17,7 +17,7 @@ module.exports = {
           {
             type: 'property',
             name: 'og:url',
-            value: req.baseUrl + req.url,
+            value: 'https://www.thefirstspine.fr' + req.url,
           },
           {
             type: 'property',
@@ -37,7 +37,7 @@ module.exports = {
           {
             type: 'property',
             name: 'og:image',
-            value: req.baseUrl + '/images/arena-0.png',
+            value: 'https://www.thefirstspine.fr' + '/images/arena-0.png',
           },
         ],
       }
