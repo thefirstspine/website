@@ -13,10 +13,33 @@ module.exports = {
       {
         ...await sails.helpers.layoutConfig(req.user_id),
         title: "arena.playOnline",
-        /*
-        browserVersion: await sails.helpers.getWebAppVersion('play'),
-        mobileVersion: await sails.helpers.getWebAppVersion('play.m'),
-        */
+        tags: [
+          {
+            type: 'property',
+            name: 'og:url',
+            value: 'https://www.thefirstspine.fr' + req.url,
+          },
+          {
+            type: 'property',
+            name: 'og:type',
+            value: 'website',
+          },
+          {
+            type: 'property',
+            name: 'og:title',
+            value: 'The First Spine - ' + req.i18n.__('navigation.arena'),
+          },
+          {
+            type: 'property',
+            name: 'og:description',
+            value: req.i18n.__("arena.introduction"),
+          },
+          {
+            type: 'property',
+            name: 'og:image',
+            value: 'https://www.thefirstspine.fr' + '/images/og-cards2.jpg',
+          },
+        ],
       }
     );
   }

@@ -12,6 +12,33 @@ module.exports = {
       'pages/blog.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        tags: [
+          {
+            type: 'property',
+            name: 'og:url',
+            value: 'https://www.thefirstspine.fr' + req.url,
+          },
+          {
+            type: 'property',
+            name: 'og:type',
+            value: 'website',
+          },
+          {
+            type: 'property',
+            name: 'og:title',
+            value: 'The First Spine - ' + req.i18n.__('navigation.news'),
+          },
+          {
+            type: 'property',
+            name: 'og:description',
+            value: req.i18n.__("navigation.news"),
+          },
+          {
+            type: 'property',
+            name: 'og:image',
+            value: 'https://www.thefirstspine.fr' + '/images/og-characters2.jpg',
+          },
+        ],
         title: "news.title",
         news: await sails.models.news.find({
           sort: 'createdAt DESC',
@@ -34,6 +61,33 @@ module.exports = {
       'pages/article.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
+        tags: [
+          {
+            type: 'property',
+            name: 'og:url',
+            value: 'https://www.thefirstspine.fr' + req.url,
+          },
+          {
+            type: 'property',
+            name: 'og:type',
+            value: 'article',
+          },
+          {
+            type: 'property',
+            name: 'og:title',
+            value: 'The First Spine - ' + article.title,
+          },
+          {
+            type: 'property',
+            name: 'og:description',
+            value: (article.text.replace(/(<([^>]+)>)/ig,' ').slice(0, 120).split(' ').slice(0, -1).join(' ')) + '...',
+          },
+          {
+            type: 'property',
+            name: 'og:image',
+            value: 'https://www.thefirstspine.fr' + '/images/' + article.image,
+          },
+        ],
         title: article.title,
         article,
       }

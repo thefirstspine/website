@@ -25,6 +25,33 @@ module.exports = {
     // Construct data to pass to the renderer
     const dataToView = {
       tournament,
+      tags: [
+        {
+          type: 'property',
+          name: 'og:url',
+          value: 'https://www.thefirstspine.fr' + req.url,
+        },
+        {
+          type: 'property',
+          name: 'og:type',
+          value: 'article',
+        },
+        {
+          type: 'property',
+          name: 'og:title',
+          value: 'The First Spine - ' + tournament.title,
+        },
+        {
+          type: 'property',
+          name: 'og:description',
+          value: (tournament.text.replace(/(<([^>]+)>)/ig,' ').slice(0, 120).split(' ').slice(0, -1).join(' ')) + '...',
+        },
+        {
+          type: 'property',
+          name: 'og:image',
+          value: 'https://www.thefirstspine.fr' + '/images/og-cards2.jpg',
+        },
+      ],
       ...await sails.helpers.layoutConfig(req.user_id),
     }
     
