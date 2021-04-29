@@ -59,7 +59,7 @@ module.exports.routes = {
   'GET /events': 'EventsController.index',
 
   // Adventures
-  'GET /drifter-s-tales': 'AdventuresController.index',
+  'GET /drifters-tales': 'AdventuresController.index',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
