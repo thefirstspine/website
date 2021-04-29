@@ -8,6 +8,31 @@
 module.exports = {
 
   async mailingList(req, res) {
+    const email = req.body.email;
+
+    if (
+      !email ||
+      !/^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(email)
+    )
+    {
+      req.flash('mailingListError', "Merci de rentrer une adresse valide.");
+      return res.redirect('/drifters-tales');
+    }
+
+    const emails = await sails.models.mailinglist.find({
+      email,
+      campaign: 'drifters-tales',
+    });
+    if (emails.length > 0) {
+      req.flash('mailingListError', "Vous avez déjà été inscrit.");
+      return res.redirect('/drifters-tales');
+    }
+
+    await sails.models.mailinglist.create({
+      email,
+      campaign: 'drifters-tales',
+    });
+    req.flash('mailingListMessage', "Vous avez été inscrit ! Merci !");
     return res.redirect('/drifters-tales');
   },
 
@@ -16,6 +41,8 @@ module.exports = {
       'pages/drifter-s-tales.ejs',
       {
         devlogs: await sails.models.devlog.find({product: 'drifters-tales'}),
+        mailingListError: req.flash('mailingListError'),
+        mailingListMessage: req.flash('mailingListMessage'),
         ...await sails.helpers.layoutConfig(req.user_id),
         tags: [
           {

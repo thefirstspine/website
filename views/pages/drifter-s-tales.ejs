@@ -33,6 +33,36 @@
   <div class="separator my-6"></div>
 
   <div class="container my-6">
+    <h1 class="is-size-3 is-uppercase has-text-primary mb-6">Restez informez</h1>
+    <form class="columns" action="/drifters-tales/mailing-list" method="POST">
+      <div class="column is-4 is-offset-4 has-text-centered">
+        <p class="mb-4">
+          Restez informé sur le développement des Contes du Vagabond.
+        </p>
+        <% if (mailingListError) { %>
+          <p class="has-text-danger"><%= mailingListError %></p>
+        <% } %>
+        <% if (mailingListMessage) { %>
+          <p class="has-text-success"><%= mailingListMessage %></p>
+        <% } %>
+        <div class="field has-addons">
+          <div class="control is-expanded has-icons-left">
+            <input class="input is-fullwidth" type="email" placeholder="Votre adresse e-mail" name="email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+          <div class="control">
+            <button type="submit" class="button is-primary m-0">Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="separator my-6"></div>
+
+  <div class="container my-6">
     <h1 class="is-size-3 is-uppercase has-text-primary mb-6">Journal de développement</h1>
     <div class="columns">
       <% devlogs.forEach(function(devlog, index) { %>
