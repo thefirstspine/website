@@ -7,10 +7,15 @@
 
 module.exports = {
 
+  async mailingList(req, res) {
+    return res.redirect('/drifters-tales');
+  },
+
   async index(req, res) {
     return res.view(
       'pages/drifter-s-tales.ejs',
       {
+        devlogs: await sails.models.devlog.find({product: 'drifters-tales'}),
         ...await sails.helpers.layoutConfig(req.user_id),
         tags: [
           {

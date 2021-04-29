@@ -10,11 +10,61 @@
     </div>
   </div>
 
-  <div class="container mb-6">
-    <p class="mb-4">Les Contes du Vagabond est un jeu à paraître début 2022 sur PC. </p>
-    <p class="is-size-4 has-text-primary">Premier devlog dans</p>
-    <countdown class="is-size-5 has-text-primary is-family-monospace" date="2021/04/30 09:00:00"></countdown>
+  <div class="container">
+    <p class="mb-4 is-size-4">Les Contes du Vagabond vous propose de petites histoires liées entre-elles dans l'univers de The First Spine.</p>
+    <p class="mb-4 is-size-5">Vous êtes un voyageur, peut-être un marchand, peut-être un mercenaire. Ce qui est sûr, c'est que vous êtes devenu un Vagabond, car en sortant de ce Labyrinthe vous avez perdu tout souvenir de votre vie passée.</p>
+
+    <div class="my-6">
+      <screenshots
+        :images="[
+          '/images/drifters-tales-screenshot-1.jpg',
+          '/images/drifters-tales-video-placeholder.jpg',
+          '/images/drifters-tales-video-placeholder.jpg',
+          '/images/drifters-tales-video-placeholder.jpg',
+          '/images/drifters-tales-video-placeholder.jpg',
+          '/images/drifters-tales-video-placeholder.jpg',
+        ]"
+      ></screenshots>
+    </div>
+
+    <p class="mb-4 is-size-5 has-text-grey is-uppercase">Date de lancement : début 2022.</p>
   </div>
+
+  <div class="separator my-6"></div>
+
+  <div class="container my-6">
+    <h1 class="is-size-3 is-uppercase has-text-primary mb-6">Journal de développement</h1>
+    <div class="columns">
+      <% devlogs.forEach(function(devlog, index) { %>
+        <% if (index % 3 === 0) { %>
+          </div><div class="columns">
+        <% } %>
+        <div class="column is-4">
+          <figure class="image is-16by9">
+            <img src="https://img.youtube.com/vi/<%= devlog.youtubeId %>/maxresdefault.jpg" />
+          </figure>
+        </div>
+      <% }) %>
+      <% if (devlogs.length <= 3) { %>
+        <% for(let i = 0; i < 3 - devlogs.length; i++) { %>
+          <div class="column is-4">
+            <figure class="image is-16by9">
+              <img src="/images/drifters-tales-video-placeholder.jpg" />
+            </figure>
+          </div>
+        <% } %>
+      <% } else { %>
+        <% for(let i = 0; i < devlogs.length % 3 + 1; i++) { %>
+          <div class="column is-4">
+            <figure class="image is-16by9">
+              <img src="/images/drifters-tales-video-placeholder.jpg" />
+            </figure>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
+
 
 </div>
 

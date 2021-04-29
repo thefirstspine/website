@@ -60,6 +60,7 @@ module.exports.routes = {
 
   // Adventures
   'GET /drifters-tales': 'AdventuresController.index',
+  'POST /drifters-tales/mailing-list': 'AdventuresController.mailingList',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',
