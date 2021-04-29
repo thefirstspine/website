@@ -29,16 +29,17 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    // order: [
-    //   'cookieParser',
-    //   'session',
-    //   'bodyParser',
-    //   'compress',
-    //   'poweredBy',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    // ],
+    order: [
+      'cookieParser',
+      'session',
+      'flash',
+      'bodyParser',
+      'compress',
+      //'poweredBy',
+      'router',
+      'www',
+      //'favicon',
+    ],
 
 
     /***************************************************************************
@@ -54,6 +55,11 @@ module.exports.http = {
     //   var middlewareFn = skipper({ strict: true });
     //   return middlewareFn;
     // })(),
+
+    flash: (function _configureFlash() {
+      var flash = require('connect-flash');
+      return flash();
+    })(),
 
   },
 

@@ -1,0 +1,32 @@
+<script>
+  Vue.component('screenshots', {
+    data: function () {
+      return {
+        selectedImage: null,
+      }
+    },
+    mounted: async function() {
+    },
+    props: ['images'],
+    template: '#screenshots',
+  })
+</script>
+
+<script type="text/x-template" id="screenshots">
+  <div>
+    <div class="columns">
+      <div v-for="image in images" :class="['column', `is-${12 / images.length}`]">
+        <a v-on:click="selectedImage = image">
+          <img :src="image" />
+        </a>
+      </div>
+    </div>
+    <div class="modal is-active" v-if="selectedImage">
+      <div class="modal-background" v-on:click="selectedImage = null"></div>
+      <div class="modal-content is-large">
+        <img :src="selectedImage" alt="">
+      </div>
+      <button class="modal-close is-large" aria-label="close" v-on:click="selectedImage = null"></button>
+    </div>
+  </div>
+</script>
