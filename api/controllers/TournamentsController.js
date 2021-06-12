@@ -197,6 +197,7 @@ module.exports = {
         "gameTypeId": "standard",
         "theme": tournament.theme,
         "modifiers": tournament.modifiers.split(','),
+        "expirationTimeModifier": tournament.speed,
       }
     };
     const result = await fetch(`${process.env.ARENA_REALMS_URL.replace('{realm}', tournament.realm)}/api`, {
