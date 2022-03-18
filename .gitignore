@@ -136,3 +136,5 @@ dist_production
 
 .env
 data
+
+.vs
