@@ -350,5 +350,16 @@
 		"title": "Events",
 		"online": "Online",
 		"physic": "IRL"
-	}
+	},
+  "drifters-tales": {
+    "intro1": "Drifter's Tales offers you to live bond stories within The First Spine's lore.",
+    "intro2": "You are a traveller, maybe a merchant, maybe a mercenary. Now, you are a Drifter. Because by exiting that Maze, you've lost all your memories.",
+    "screenshots": "These screenshots are not representing final state of the game.",
+    "release": "Launch date: 2022, september.",
+    "stayInformed": "Stay tuned",
+    "newsletter": "Stay tuned on the development of the game.",
+    "email": "Your email address",
+    "send": "Send",
+    "devlog": "Devlogs"
+  }
 }
