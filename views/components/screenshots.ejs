@@ -23,7 +23,7 @@
     </div>
     <div class="modal is-active" v-if="selectedImage">
       <div class="modal-background" v-on:click="selectedImage = null"></div>
-      <div class="modal-content is-large">
+      <div class="modal-content is-large" style="width:90%;max-width:1612px;">
         <img :src="selectedImage" alt="">
       </div>
       <button class="modal-close is-large" aria-label="close" v-on:click="selectedImage = null"></button>
