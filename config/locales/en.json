@@ -351,16 +351,21 @@
 		"online": "Online",
 		"physic": "IRL"
 	},
-  "driftersTales": {
-    "intro1": "Drifter's Tales offers you to live bond stories within The First Spine's lore.",
-    "intro2": "You are a traveller, maybe a merchant, maybe a mercenary. Now, you are a Drifter. Because by exiting that Maze, you've lost all your memories.",
-    "screenshots": "These screenshots are not representing final state of the game.",
-    "release": "Launch date: 2022, september.",
-    "stayInformed": "Stay tuned",
-    "newsletter": "Stay tuned on the development of the game.",
-    "email": "Your email address",
-    "send": "Send",
-    "devlog": "Devlogs",
-    "getIt": "Free early access on Steam"
-  }
+	"driftersTales": {
+		"intro1": "Drifter's Tales offers you to live bond stories within The First Spine's lore.",
+		"intro2": "You are a traveller, maybe a merchant, maybe a mercenary. Now, you are a Drifter. Because by exiting that Maze, you've lost all your memories.",
+		"screenshots": "These screenshots are not representing final state of the game.",
+		"release": "Launch date: 2022, september.",
+		"stayInformed": "Stay tuned",
+		"newsletter": "Stay tuned on the development of the game.",
+		"email": "Your email address",
+		"send": "Send",
+		"devlog": "Devlogs",
+		"getIt": "Free early access on Steam",
+		"giveSuccess": "Thanks for your tip! We will make good use of it, we plan to buy coffee to continue working on this game =)",
+		"giveCancel": "You abandoned the payment",
+		"tipTitle": "Give a tip",
+		"tipText": "This early access is free and will remain so throughout the development period. If you want to encourage its development, you can tip the developers so that they can continue their work in peace."
+	},
+	"driftersTails.giveSuccess": "driftersTails.giveSuccess"
 }

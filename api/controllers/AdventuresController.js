@@ -7,6 +7,36 @@
 
 module.exports = {
 
+  async give(req, res) {
+
+    const id = parseInt(req.param('id'));
+    let amount = 0;
+
+    switch (id) {
+      case 1:
+        amount = 100;
+        break;
+      case 2:
+        amount = 200;
+        break;
+      case 3:
+        amount = 500;
+        break;
+      default:
+        return res.notFound();
+    }
+
+    const payment = await sails.helpers.createPayment(
+      amount,
+      "Pourboire pour Drifter's Tales",
+      "Un pouboire pour encourager le développement de Drifter's Tales. Merci à vous =)",
+      process.env.WEBSITE_URL + "/drifters-tales/?give=cancel#give",
+      process.env.WEBSITE_URL + "/drifters-tales/?give=success#give",
+    );
+
+    return res.send(payment.checkoutCode);
+  },
+
   async mailingList(req, res) {
     const email = req.body.email;
 
@@ -43,6 +73,8 @@ module.exports = {
         devlogs: await sails.models.devlog.find({product: 'drifters-tales'}),
         mailingListError: req.flash('mailingListError'),
         mailingListMessage: req.flash('mailingListMessage'),
+        giveCancel: req.param('give') === 'cancel',
+        giveSuccess: req.param('give') === 'success',
         ...await sails.helpers.layoutConfig(req.user_id),
         tags: [
           {

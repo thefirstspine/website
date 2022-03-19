@@ -7,18 +7,34 @@
       <h1 class="is-size-4 is-uppercase has-text-primary has-text-shadow">
         Les Contes du Vagabond
       </h1>
-      <a class="button is-info is-large">
-        <span class="icon">
-          <i class="fab fa-steam"></i>
-        </span>
-        <span><%= __("driftersTales.getIt") %></span>
-      </a>
+      <p class="mt-6">
+        <a class="button is-info is-large">
+          <span class="icon">
+            <i class="fab fa-steam"></i>
+          </span>
+          <span><%= __("driftersTales.getIt") %></span>
+        </a>
+      </p>
     </div>
   </div>
 
   <div class="container">
     <p class="mb-4 is-size-4"><%= __("driftersTales.intro1") %></p>
     <p class="mb-4 is-size-5"><%= __("driftersTales.intro2") %></p>
+
+    <div class="my-6">
+      <figure class="image is-16by9">
+        <iframe
+          class="has-ratio"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/sRg8SgFJaUU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </figure>
+    </div>
 
     <div class="my-6">
       <screenshots
@@ -35,6 +51,46 @@
 
     <p class="mb-4 is-size-5 has-text-grey is-uppercase"><%= __("driftersTales.screenshots") %></p>
     <p class="mb-4 is-size-5 has-text-grey is-uppercase"><%= __("driftersTales.release") %></p>
+  </div>
+  <a name="give"></a>
+
+  <div class="separator my-6"></div>
+
+  <div class="container my-6">
+    <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.tipTitle") %></h1>
+    <div class="columns">
+      <div class="column is-6 is-offset-3">
+        <% if (giveCancel) { %>
+          <p class="has-text-danger"><%= __("driftersTales.giveCancel") %></p>
+        <% } %>
+        <% if (giveSuccess) { %>
+          <p class="has-text-success"><%= __("driftersTales.giveSuccess") %></p>
+        <% } %>
+        <% if (!giveSuccess && !giveCancel) { %>
+          <p class="mb-4 is-size-5"><%= __("driftersTales.tipText") %></p>
+        <% } %>
+      </div>
+    </div>
+    <p class="mb-4">
+      <a class="button is-info is-large" href="/drifters-tales/give/1" target="_blank">
+        <span class="icon" style="font-size: .5em">
+          <i class="fas fa-coins"></i>
+        </span>
+        <span>1 &euro;</span>
+      </a>
+      <a class="button is-warning is-large" href="/drifters-tales/give/2" target="_blank">
+        <span class="icon">
+          <i class="fas fa-coins"></i>
+        </span>
+        <span>2 &euro;</span>
+      </a>
+      <a class="button is-danger is-large" href="/drifters-tales/give/3" target="_blank">
+        <span class="icon" style="font-size: 1.5em">
+          <i class="fas fa-coins"></i>
+        </span>
+        <span>5 &euro;</span>
+      </a>
+    </p>
   </div>
 
   <div class="separator my-6"></div>
