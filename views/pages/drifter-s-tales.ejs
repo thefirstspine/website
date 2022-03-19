@@ -7,18 +7,18 @@
       <h1 class="is-size-4 is-uppercase has-text-primary has-text-shadow">
         Les Contes du Vagabond
       </h1>
-      <a class="button is-primary is-medium">
+      <a class="button is-info is-large">
         <span class="icon">
           <i class="fab fa-steam"></i>
         </span>
-        <span></span>
+        <span><%= __("driftersTales.getIt") %></span>
       </a>
     </div>
   </div>
 
   <div class="container">
-    <p class="mb-4 is-size-4">Les Contes du Vagabond vous propose de petites histoires liées entre-elles dans l'univers de The First Spine.</p>
-    <p class="mb-4 is-size-5">Vous êtes un voyageur, peut-être un marchand, peut-être un mercenaire. Ce qui est sûr, c'est que vous êtes devenu un Vagabond. Car en sortant de ce Labyrinthe vous avez perdu tout souvenir de votre vie passée.</p>
+    <p class="mb-4 is-size-4"><%= __("driftersTales.intro1") %></p>
+    <p class="mb-4 is-size-5"><%= __("driftersTales.intro2") %></p>
 
     <div class="my-6">
       <screenshots
@@ -33,18 +33,18 @@
       ></screenshots>
     </div>
 
-    <p class="mb-4 is-size-5 has-text-grey is-uppercase">Ces captures d'écran représentent un jeu en cours de développement.</p>
-    <p class="mb-4 is-size-5 has-text-grey is-uppercase">Date de lancement : septembre 2022.</p>
+    <p class="mb-4 is-size-5 has-text-grey is-uppercase"><%= __("driftersTales.screenshots") %></p>
+    <p class="mb-4 is-size-5 has-text-grey is-uppercase"><%= __("driftersTales.release") %></p>
   </div>
 
   <div class="separator my-6"></div>
 
   <div class="container my-6">
-    <h1 class="is-size-3 is-uppercase has-text-primary mb-6">Restez informé</h1>
+    <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.stayInformed") %></h1>
     <form class="columns" action="/drifters-tales/mailing-list" method="POST">
       <div class="column is-4 is-offset-4 has-text-centered">
         <p class="mb-4">
-          Restez informé sur le développement des Contes du Vagabond.
+          <%= __("driftersTales.newsletter") %>
         </p>
         <% if (mailingListError) { %>
           <p class="has-text-danger"><%= mailingListError %></p>
@@ -54,13 +54,13 @@
         <% } %>
         <div class="field has-addons">
           <div class="control is-expanded has-icons-left">
-            <input class="input is-fullwidth" type="email" placeholder="Votre adresse e-mail" name="email">
+            <input class="input is-fullwidth" type="email" placeholder="<%= __("driftersTales.email") %>" name="email">
             <span class="icon is-small is-left">
               <i class="fas fa-envelope"></i>
             </span>
           </div>
           <div class="control">
-            <button type="submit" class="button is-primary m-0">Envoyer</button>
+            <button type="submit" class="button is-primary m-0"><%= __("driftersTales.send") %></button>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
   <div class="separator my-6"></div>
 
   <div class="container my-6">
-    <h1 class="is-size-3 is-uppercase has-text-primary mb-6">Journal de développement</h1>
+    <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.devlog") %></h1>
     <div class="columns">
       <% devlogs.forEach(function(devlog, index) { %>
         <% if (index % 3 === 0) { %>

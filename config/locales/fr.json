@@ -362,7 +362,7 @@
 			"mutations": "Mutations"
 		}
 	},
-  "drifters-tales": {
+  "driftersTales": {
     "intro1": "Les Contes du Vagabond vous propose de petites histoires liées entre-elles dans l'univers de The First Spine.",
     "intro2": "Vous êtes un voyageur, peut-être un marchand, peut-être un mercenaire. Ce qui est sûr, c'est que vous êtes devenu un Vagabond. Car en sortant de ce Labyrinthe vous avez perdu tout souvenir de votre vie passée.",
     "screenshots": "Ces captures d'écran représentent un jeu en cours de développement.",
@@ -371,7 +371,8 @@
     "newsletter": "Restez informé sur le développement des Contes du Vagabond.",
     "email": "Votre adresse e-mail",
     "send": "Envoyer",
-    "devlog": "Journal de développement"
+    "devlog": "Journal de développement",
+    "getIt": "Accès anticipé gratuit sur Steam"
   },
 	"Vos codes sont arrivés !": "Vos codes sont arrivés !"
 }
