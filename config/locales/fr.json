@@ -362,17 +362,23 @@
 			"mutations": "Mutations"
 		}
 	},
-  "driftersTales": {
-    "intro1": "Les Contes du Vagabond vous propose de petites histoires liées entre-elles dans l'univers de The First Spine.",
-    "intro2": "Vous êtes un voyageur, peut-être un marchand, peut-être un mercenaire. Ce qui est sûr, c'est que vous êtes devenu un Vagabond. Car en sortant de ce Labyrinthe vous avez perdu tout souvenir de votre vie passée.",
-    "screenshots": "Ces captures d'écran représentent un jeu en cours de développement.",
-    "release": "Date de lancement : septembre 2022.",
-    "stayInformed": "Restez informé",
-    "newsletter": "Restez informé sur le développement des Contes du Vagabond.",
-    "email": "Votre adresse e-mail",
-    "send": "Envoyer",
-    "devlog": "Journal de développement",
-    "getIt": "Accès anticipé gratuit sur Steam"
-  },
+	"driftersTales": {
+		"intro1": "Les Contes du Vagabond vous propose de petites histoires liées entre-elles dans l'univers de The First Spine.",
+		"intro2": "Vous êtes un voyageur, peut-être un marchand, peut-être un mercenaire. Ce qui est sûr, c'est que vous êtes devenu un Vagabond. Car en sortant de ce Labyrinthe vous avez perdu tout souvenir de votre vie passée.",
+		"screenshots": "Ces captures d'écran représentent un jeu en cours de développement.",
+		"release": "Date de lancement : septembre 2022.",
+		"stayInformed": "Restez informé",
+		"newsletter": "Restez informé sur le développement des Contes du Vagabond.",
+		"email": "Votre adresse e-mail",
+		"send": "Envoyer",
+		"devlog": "Journal de développement",
+		"getIt": "Accès anticipé gratuit sur Steam",
+		"giveSuccess": "Merci pour votre pouboire ! Nous en ferons bon usage, nous comptons acheter du café pour continuer à travailler sur ce jeu =)",
+		"giveCancel": "Vous avez abandonné le paiement",
+		"tipTitle": "Donner un pourboire",
+		"give": "Donner",
+		"yourName": "Votre nom",
+		"tipText": "Cet accès anticipé est gratuit et le restera pendant toute la période de développement. Si vous voulez encourager son développement, vous pouvez donner un pourboire aux développeurs pour qu'ils puissent continuer leur travail en tout sérénité. Le nom que vous nous donnerez sera présent dans le jeu final !"
+	},
 	"Vos codes sont arrivés !": "Vos codes sont arrivés !"
 }
