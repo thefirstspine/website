@@ -1,0 +1,48 @@
+<script>
+Vue.component('donation-button', {
+  data: function () {
+    return {
+      selectedAmount: 0,
+      giverName: '',
+    }
+  },
+  mounted: async function() {
+    // TODO
+  },
+  methods: {
+    getAmount(amount = -1) {
+      return [
+        1,
+        2,
+        5,
+      ][amount >= 0 ? amount : this.selectedAmount];
+    },
+    give() {
+      window.location = `/drifters-tales/give/${this.selectedAmount + 1}?name=${this.giverName}`
+    },
+  },
+  template: '#donation-button',
+})
+</script>
+
+<script type="text/x-template" id="donation-button">
+  <div>
+    <div class="control columns">
+      <div class="column is-4" v-for="index of 3">
+        <a :class="`button py-6 is-large ${selectedAmount === index - 1 ? 'is-primary' : 'is-dark'}`" v-on:click="selectedAmount = index - 1">
+          <%= __("driftersTales.give") %> {{ getAmount(index - 1) }} &euro;
+        </a>
+      </div>
+    </div>
+    <div class="field has-addons" style="width:100%">
+      <div class="control" style="width:100%">
+        <input class="input is-large" v-model="giverName" type="text" placeholder="<%= __("driftersTales.yourName") %> ">
+      </div>
+      <div class="control">
+        <a class="button is-large is-primary m-0" v-on:click="give()">
+          <%= __("driftersTales.give") %> {{ getAmount() }} &euro;
+        </a>
+      </div>
+    </div>
+  </div>
+</script>
