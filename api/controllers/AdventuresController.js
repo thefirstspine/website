@@ -28,7 +28,7 @@ module.exports = {
 
     const payment = await sails.helpers.createPayment(
       amount,
-      "Pourboire pour Drifter's Tales",
+      "Pourboire pour Drifter's Tales de la part de " + req.query['name'],
       "Un pouboire pour encourager le développement de Drifter's Tales. Merci à vous =)",
       process.env.WEBSITE_URL + "/drifters-tales/?give=cancel#give",
       process.env.WEBSITE_URL + "/drifters-tales/?give=success#give",

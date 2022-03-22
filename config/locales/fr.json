@@ -376,7 +376,9 @@
 		"giveSuccess": "Merci pour votre pouboire ! Nous en ferons bon usage, nous comptons acheter du café pour continuer à travailler sur ce jeu =)",
 		"giveCancel": "Vous avez abandonné le paiement",
 		"tipTitle": "Donner un pourboire",
-		"tipText": "Cet accès anticipé est gratuit et le restera pendant toute la période de développement. Si vous voulez encourager son développement, vous pouvez donner un pourboire aux développeurs pour qu'ils puissent continuer leur travail en tout sérénité."
+		"give": "Donner",
+		"yourName": "Votre nom",
+		"tipText": "Cet accès anticipé est gratuit et le restera pendant toute la période de développement. Si vous voulez encourager son développement, vous pouvez donner un pourboire aux développeurs pour qu'ils puissent continuer leur travail en tout sérénité. Le nom que vous nous donnerez sera présent dans le jeu final !"
 	},
 	"Vos codes sont arrivés !": "Vos codes sont arrivés !"
 }

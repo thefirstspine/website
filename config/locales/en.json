@@ -365,7 +365,9 @@
 		"giveSuccess": "Thanks for your tip! We will make good use of it, we plan to buy coffee to continue working on this game =)",
 		"giveCancel": "You abandoned the payment",
 		"tipTitle": "Give a tip",
-		"tipText": "This early access is free and will remain so throughout the development period. If you want to encourage its development, you can tip the developers so that they can continue their work in peace."
+    "give": "Give",
+    "yourName": "Your name",
+		"tipText": "This early access is free and will remain so throughout the development period. If you want to encourage its development, you can tip the developers so that they can continue their work in peace. The name you will give us will appear in the final release!"
 	},
 	"driftersTails.giveSuccess": "driftersTails.giveSuccess"
 }
