@@ -21,6 +21,9 @@ module.exports = {
         break;
       case 3:
         amount = 500;
+        break;;
+      case 4:
+        amount = 1000;
         break;
       default:
         return res.notFound();
