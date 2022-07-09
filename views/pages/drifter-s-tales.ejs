@@ -8,11 +8,17 @@
         Les Contes du Vagabond
       </h2>
       <p class="mt-6">
-        <a class="button is-info is-large" href="https://store.steampowered.com/app/1935960/Drifters_Tales" target="_blank">
+        <a class="button is-primary is-large" href="https://store.steampowered.com/app/1935960/Drifters_Tales" target="_blank">
           <span class="icon">
             <i class="fab fa-steam"></i>
           </span>
-          <span><%= __("driftersTales.getIt") %></span>
+          <span><%= __("driftersTales.getItOnSteam") %></span>
+        </a>
+        <a class="button is-primary is-large" href="https://store.steampowered.com/app/1935960/Drifters_Tales" target="_blank">
+          <span class="icon">
+            <i class="fab fa-itch-io"></i>
+          </span>
+          <span><%= __("driftersTales.getItOnItch") %></span>
         </a>
       </p>
     </div>
@@ -44,18 +50,24 @@
           '/images/drifters-tales-screenshot-3.jpg',
           '/images/drifters-tales-screenshot-4.jpg',
           '/images/drifters-tales-screenshot-5.jpg',
+        ]"
+      ></screenshots>
+      <screenshots
+        :images="[
           '/images/drifters-tales-screenshot-6.jpg',
+          '/images/drifters-tales-screenshot-7.jpg',
+          '/images/drifters-tales-screenshot-8.jpg',
+          '/images/drifters-tales-screenshot-9.jpg',
+          '/images/drifters-tales-screenshot-10.jpg',
         ]"
       ></screenshots>
     </div>
-
-    <p class="mb-4 is-size-5 has-text-grey is-uppercase"><%= __("driftersTales.screenshots") %></p>
-    <p class="mb-4 is-size-5 has-text-grey is-uppercase"><%= __("driftersTales.release") %></p>
   </div>
   <a name="give"></a>
 
   <div class="separator my-6"></div>
 
+  <!--
   <div class="container my-6">
     <h1 class="is-size-3 is-uppercase has-text-primary"><%= __("driftersTales.tipTitle") %></h1>
     <img class="mb-6" src="/images/arena-4.png" />
@@ -78,6 +90,7 @@
   </div>
 
   <div class="separator my-6"></div>
+  -->
 
   <div class="container my-6">
     <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.stayInformed") %></h1>
