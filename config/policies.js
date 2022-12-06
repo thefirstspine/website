@@ -50,5 +50,6 @@ module.exports.policies = {
   'tournamentmatch/*':['load-user', 'is-logged-in', 'is-admin'],
   'tournamentmatch/find':[],
   'tournamentmatch/findOne':[],
+  'mailinglist/*':['load-user', 'is-logged-in', 'is-admin'],
 
 };
