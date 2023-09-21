@@ -5,7 +5,7 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const fetch = require('node-fetch');
+const { default: axios } = require("axios");
 
 module.exports = {
 
@@ -24,27 +24,21 @@ module.exports = {
     const errors = [];
 
     try {
-      const response = await fetch(
+      const response = await axios.post(
         `${process.env.AUTH_URL}/api/v2/login`,
         {
-          method: 'POST',
-          headers: {
-            'Content-type': 'application/json',
-          },
-          body: JSON.stringify({
-            email: req.body.email,
-            password: req.body.password,
-          }),
+          email: req.body.email,
+          password: req.body.password,
         }
       );
-      const json = await response.json();
-      if (json.access_token) {
-        req.session.access_token = json.access_token;
+      if (response.access_token) {
+        req.session.access_token = response.access_token;
         return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
       } else {
         errors.push("login.error-wrongEmailOrPassword");
       }
     } catch (e) {
+      console.error(e);
       errors.push("login.error-unavailable");
     }
 
@@ -60,7 +54,7 @@ module.exports = {
   },
 
   async tryLoginWithFacebook(req, res) {
-    const response = await fetch(
+    const response = await axios.post(
       `${process.env.AUTH_URL}/api/v2/login-with-facebook`, {
         method: 'post',
         body: JSON.stringify({
@@ -108,7 +102,7 @@ module.exports = {
     } else {
       try {
         // Sign up
-        const response = await fetch(
+        const response = await axios.post(
           `${process.env.AUTH_URL}/api/v2/signup`,
           {
             method: 'POST',
@@ -124,7 +118,7 @@ module.exports = {
         const json = await response.json();
         if (json.user_id) {
           // We had a response!
-          const response = await fetch(
+          const response = await axios.post(
             `${process.env.AUTH_URL}/api/v2/login`,
             {
               method: 'POST',
@@ -191,7 +185,7 @@ module.exports = {
     const errors = [];
     const messages = [];
 
-    await fetch(
+    await axios.post(
       `${process.env.AUTH_URL}/api/v2/reset-password`,
       {
         method: 'POST',
@@ -227,7 +221,7 @@ module.exports = {
     } else if (!req.body.password || req.body.password.length < 8) {
       errors.push("profile.error-length");
     } else {
-      const response = await fetch(
+      const response = await axios.put(
         `${process.env.AUTH_URL}/api/v2/me`,
         {
           method: 'PUT',
@@ -248,7 +242,7 @@ module.exports = {
     }
     
 
-    const response = await fetch(
+    const response = await axios.get(
       `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/me`,
       {
         method: 'GET',
@@ -276,7 +270,7 @@ module.exports = {
   async viewProfile(req, res) {
     const errors = [];
 
-    const response = await fetch(
+    const response = await axios.get(
       `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/me`,
       {
         method: 'GET',

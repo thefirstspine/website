@@ -44,14 +44,13 @@ module.exports = async function (req, res, proceed) {
 
       // On a token too old (more than 6 hours), refresh the token
       if ((Date.now() - (jsonJwtPayload.iat * 1000)) > (6 * 60 * 60 * 1000)) {
-        const result = await fetch(
+        const result = await axios.post(
           `${baseUrl}/api/v2/refresh`,
           {
             headers: {
               'Content-type': 'application/json',
               'Authorization': `Bearer ${accessToken}`,
             },
-            method: 'POST',
           }
         );
         const resultJson = await result.json();
