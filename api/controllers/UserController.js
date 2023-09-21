@@ -55,6 +55,7 @@ module.exports = {
   },
 
   async tryLoginWithFacebook(req, res) {
+    // TODO: Fix
     const response = await axios.post(
       `${process.env.AUTH_URL}/api/v2/login-with-facebook`, {
         method: 'post',
@@ -103,6 +104,7 @@ module.exports = {
     } else {
       try {
         // Sign up
+        // TODO: Fix
         const response = await axios.post(
           `${process.env.AUTH_URL}/api/v2/signup`,
           {
@@ -119,6 +121,7 @@ module.exports = {
         const json = await response.json();
         if (json.user_id) {
           // We had a response!
+          // TODO: Fix
           const response = await axios.post(
             `${process.env.AUTH_URL}/api/v2/login`,
             {
@@ -186,6 +189,7 @@ module.exports = {
     const errors = [];
     const messages = [];
 
+    // TODO: Fix
     await axios.post(
       `${process.env.AUTH_URL}/api/v2/reset-password`,
       {
@@ -222,6 +226,7 @@ module.exports = {
     } else if (!req.body.password || req.body.password.length < 8) {
       errors.push("profile.error-length");
     } else {
+      // TODO: Fix
       const response = await axios.put(
         `${process.env.AUTH_URL}/api/v2/me`,
         {
@@ -242,7 +247,7 @@ module.exports = {
       }
     }
     
-
+    // TODO: Fix
     const response = await axios.get(
       `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/me`,
       {
@@ -271,6 +276,7 @@ module.exports = {
   async viewProfile(req, res) {
     const errors = [];
 
+    // TODO: Fix
     const response = await axios.get(
       `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/me`,
       {

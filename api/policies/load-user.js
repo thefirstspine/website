@@ -18,6 +18,7 @@ module.exports = async function (req, res, proceed) {
   if (accessToken) {
     // Try to retrieve the user with the token
     try {
+      // TODO: Fix
       const result = await axios.get(
         `${baseUrl}/api/v2/me`,
         {
@@ -44,6 +45,7 @@ module.exports = async function (req, res, proceed) {
 
       // On a token too old (more than 6 hours), refresh the token
       if ((Date.now() - (jsonJwtPayload.iat * 1000)) > (6 * 60 * 60 * 1000)) {
+        // TODO: Fix
         const result = await axios.post(
           `${baseUrl}/api/v2/refresh`,
           {

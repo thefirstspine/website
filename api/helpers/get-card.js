@@ -13,6 +13,7 @@ module.exports = {
     try {
       const baseUrl = process.env.REST_URL;
       const url = `${baseUrl}/rest/cards/${inputs.id}`;
+      // TODO: Fix
       const result = await axios.get(url);
       const resultJson = await result.json();
       return exits.success(resultJson);

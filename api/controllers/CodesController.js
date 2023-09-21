@@ -72,6 +72,7 @@ module.exports = {
       // Add the code to the profile
       // Add the rewards to the user
       const promises = Object.keys(codeEntity.loots).map((lootName) => {
+        // TODO: Fix
         return axios.post(
           `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/${req.user_id}/reward`,
           {

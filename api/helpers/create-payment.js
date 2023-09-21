@@ -28,6 +28,7 @@ module.exports = {
   fn: async function(inputs, exits) {
     try {
       const url = `${process.env.SHOP_URL}/purchase`;
+      // TODO: Fix
       const response = await axios.post(url, {
         body: JSON.stringify({
           cancelUrl: inputs.cancelUrl,
