@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const { default: axios } = require("axios");
 
 module.exports = {
 
@@ -12,7 +12,7 @@ module.exports = {
   fn: async function(inputs, exits) {
     try {
       const url = `${process.env.ROOMS_URL}/api/subjects/arena/rooms`;
-      const response = await fetch(url, {
+      const response = await axios.post(url, {
         body: JSON.stringify({
           name: inputs.name,
           senders: [],

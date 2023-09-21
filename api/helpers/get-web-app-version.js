@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const { default: axios } = require("axios");
 
 module.exports = {
 
@@ -12,7 +12,7 @@ module.exports = {
   fn: async function(inputs, exits) {
     try {
       const path = `https://${inputs.plateform}.thefirstspine.fr/version`;
-      const response = await fetch(path);
+      const response = await axios.get(path);
       const version = await response.text();
       return exits.success(version);
     } catch (e) {

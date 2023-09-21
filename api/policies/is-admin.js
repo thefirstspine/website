@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 module.exports = async function (req, res, proceed) {
 
   // If `req.me` is set, then we know that this request originated

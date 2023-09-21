@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const { default: axios } = require("axios");
 
 module.exports = async function (req, res, proceed) {
 
@@ -18,7 +18,7 @@ module.exports = async function (req, res, proceed) {
   if (accessToken) {
     // Try to retrieve the user with the token
     try {
-      const result = await fetch(
+      const result = await axios.get(
         `${baseUrl}/api/v2/me`,
         {
           headers: {

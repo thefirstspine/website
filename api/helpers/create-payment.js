@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const { default: axios } = require("axios");
 
 module.exports = {
 
@@ -28,7 +28,7 @@ module.exports = {
   fn: async function(inputs, exits) {
     try {
       const url = `${process.env.SHOP_URL}/purchase`;
-      const response = await fetch(url, {
+      const response = await axios.post(url, {
         body: JSON.stringify({
           cancelUrl: inputs.cancelUrl,
           successUrl: inputs.successUrl,
