@@ -31,8 +31,9 @@ module.exports = {
           password: req.body.password,
         }
       );
-      if (response.access_token) {
-        req.session.access_token = response.access_token;
+      const json = response.data;
+      if (json.access_token) {
+        req.session.access_token = json.access_token;
         return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
       } else {
         errors.push("login.error-wrongEmailOrPassword");
