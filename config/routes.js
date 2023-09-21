@@ -51,10 +51,6 @@ module.exports.routes = {
   'GET /blog': 'BlogController.listArticles',
   'GET /blog/:slug': 'BlogController.viewArticle',
   
-  // Refer a friend
-  'GET /refer-a-friend': 'ReferAFriendController.index',
-  'GET /refer-a-friend/:code': 'ReferAFriendController.code',
-  
   // Events
   'GET /events': 'EventsController.index',
 
@@ -83,10 +79,5 @@ module.exports.routes = {
   // Report
   'GET /report/:id': 'ReportController.index',
   'POST /report/:id': 'ReportController.report',
-
-  // Tournament
-  'GET /tournaments/:slug': 'TournamentsController.viewPage',
-  'POST /tournaments/:slug/register': 'TournamentsController.register',
-  'POST /tournaments/:slug/match/:id': 'TournamentsController.createMatchCode',
 
 };
