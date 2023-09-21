@@ -18,7 +18,6 @@ module.exports = async function (req, res, proceed) {
   if (accessToken) {
     // Try to retrieve the user with the token
     try {
-      // TODO: Fix
       const result = await axios.get(
         `${baseUrl}/api/v2/me`,
         {
@@ -29,7 +28,7 @@ module.exports = async function (req, res, proceed) {
           method: 'GET',
         }
       );
-      const resultJson = await result.json();
+      const resultJson = result.data;
       if (resultJson.user_id) {
         req.user_id = resultJson.user_id; // store user ID for future purposes
       }
@@ -45,9 +44,9 @@ module.exports = async function (req, res, proceed) {
 
       // On a token too old (more than 6 hours), refresh the token
       if ((Date.now() - (jsonJwtPayload.iat * 1000)) > (6 * 60 * 60 * 1000)) {
-        // TODO: Fix
         const result = await axios.post(
           `${baseUrl}/api/v2/refresh`,
+          {},
           {
             headers: {
               'Content-type': 'application/json',
@@ -55,7 +54,7 @@ module.exports = async function (req, res, proceed) {
             },
           }
         );
-        const resultJson = await result.json();
+        const resultJson = result.data;
         if (resultJson.access_token) {
           req.session.access_token = accessToken = resultJson.access_token; // store the refreshed access token
         }

@@ -12,9 +12,8 @@ module.exports = {
   fn: async function(inputs, exits) {
     try {
       const path = `https://${inputs.plateform}.thefirstspine.fr/version`;
-      // TODO: Fix
       const response = await axios.get(path);
-      const version = await response.text();
+      const version = response.data;
       return exits.success(version);
     } catch (e) {
       return exits.success(false);

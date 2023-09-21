@@ -32,9 +32,8 @@ module.exports = {
     });
     
     const destinies = await Promise.all(destiniesToFetch.map(async (d) => {
-      // TODO: Fix
       const response = await axios.get(`${process.env.REST_URL}/rest/decks/${d}`);
-      return response.json();
+      return response.data;
     }));
 
     const originsToFetch = [
@@ -45,9 +44,8 @@ module.exports = {
       return req.query[d] === '1';
     });
     const origins = await Promise.all(originsToFetch.map(async (d) => {
-      // TODO: Fix
       const response = await axios.get(`${process.env.REST_URL}/rest/decks/${d}`);
-      return response.json();
+      return response.data;
     }));
 
     const allowedStyles = [

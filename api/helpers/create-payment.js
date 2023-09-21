@@ -28,9 +28,8 @@ module.exports = {
   fn: async function(inputs, exits) {
     try {
       const url = `${process.env.SHOP_URL}/purchase`;
-      // TODO: Fix
-      const response = await axios.post(url, {
-        body: JSON.stringify({
+      const response = await axios.post(url,
+        {
           cancelUrl: inputs.cancelUrl,
           successUrl: inputs.successUrl,
           item: {
@@ -38,14 +37,15 @@ module.exports = {
             name: inputs.itemName,
             description: inputs.itemDescription,
           }
-        }),
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Client-Cert': Buffer.from(process.env.SHOP_PUBLIC_KEY.replace(/\\n/gm, '\n')).toString('base64'),
         },
-      });
-      const resultJson = await response.json();
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Client-Cert': Buffer.from(process.env.SHOP_PUBLIC_KEY.replace(/\\n/gm, '\n')).toString('base64'),
+          },
+        }
+      );
+      const resultJson = response.data;
       return exits.success(resultJson);
     } catch (e) {
       console.log(e);
