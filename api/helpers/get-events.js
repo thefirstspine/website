@@ -11,7 +11,7 @@ module.exports = {
       const date = (new Date()).toISOString();
       const url = `${baseUrl}/events?filter=datetimeTo||gt||${date}&sort=datetimeFrom,ASC`;
       const result = await axios.get(url);
-      const resultJson = result.json;
+      const resultJson = result.data;
       return exits.success(resultJson);
     } catch (e) {
       console.log(e);
