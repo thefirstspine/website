@@ -135,12 +135,12 @@
 		"offline": "By printing",
 		"howWePlayTitle": "How do we play?",
 		"howWePlayText1": "The First Spine is a strategic card game for 2 to 4 players. Each player places creatures and artifacts on a board while playing deadly spells.",
-		"howWePlayText2": "At the end of each player's turn, their creatures and artefacts collide with those of their enemies.",
+		"howWePlayText2": "At the end of each player's turn, their creatures and artefacts confront with those of their enemies.",
 		"howWePlayText3": "One objective: destroy enemy wizards.",
 		"storyTitle": "The lore of the game",
 		"storyText1": "A long time ago, the world of Aetheria was only ashes. One day a thorn sprouted from the ground; what is called The First Spine created the vegetation. Vegetation, in turn, spawned the creatures that inhabit the world as we know it today.",
 		"storyText2": "The story of the first prophet named Insane is told on the continent of Exodia. This one managed to create a powerful artifact called The Crown; the presence of this artifact gave the people of Aetheria extremely powerful supernatural powers.",
-		"storyText3": "We are now capable of the greatest wonders, as of the greatest misdeeds. Some are able to build artifacts by the mere strength of their mind. Others have the power to materialize creatures that were unknown to us. And finally, some have the power to cast powerful spells by saying simple words.",
+		"storyText3": "We are now capable of the greatest wonders, as of the greatest misdeeds. Some are able to build artifacts by the mere strength of their mind. Others have the power to materialize creatures that were unknown to us or cast powerful spells by saying simple words.",
 		"storyText4": "Today, The Crown is lost. Legend says it can only be found by the most powerful of all wizards."
 	},
 	"news": {
@@ -211,7 +211,7 @@
 		"startText1": "Each part is broken down into turns going in a clockwise order. Each turn contains 3 phases of games to be played in order: discard / draw, actions and finally confrontations.",
 		"startText2": "Before playing",
 		"startText3": "The player who starts is the one who lost a previous game. If no game has been played before, the one who got up the earliest starts.",
-		"startText4": "Before the turj",
+		"startText4": "Before the turn",
 		"startText5": "Before starting your turn, effects that happen “before your turn” resolve before the discard / draw phase.",
 		"discardTitle": "Discard & Draw",
 		"discardText1": "You can discard a card, i.e. put it in your discard pile. You can discard additional cards, for one hit point per card.",
