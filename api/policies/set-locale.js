@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 module.exports = async (req, res, proceed) => {
   const getLocalFromPrefs = (accept) => {
     if (!accept) {

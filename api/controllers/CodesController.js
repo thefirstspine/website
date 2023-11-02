@@ -5,7 +5,7 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const fetch = require('node-fetch');
+const { default: axios } = require("axios");
 
 module.exports = {
   
@@ -72,14 +72,13 @@ module.exports = {
       // Add the code to the profile
       // Add the rewards to the user
       const promises = Object.keys(codeEntity.loots).map((lootName) => {
-        return fetch(
+        return axios.post(
           `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/${req.user_id}/reward`,
           {
-            method: 'POST',
-            body: JSON.stringify({
-              name: lootName,
-              num: codeEntity.loots[lootName],
-            }),
+            name: lootName,
+            num: codeEntity.loots[lootName],
+          },
+          {
             headers: {
               'X-Client-Cert': Buffer.from(process.env.ARENA_PUBLIC_KEY.replace(/\\n/gm, '\n')).toString('base64'),
               'Content-type': 'application/json',

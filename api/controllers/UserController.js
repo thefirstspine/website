@@ -5,7 +5,7 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const fetch = require('node-fetch');
+const { default: axios } = require("axios");
 
 module.exports = {
 
@@ -24,20 +24,14 @@ module.exports = {
     const errors = [];
 
     try {
-      const response = await fetch(
+      const response = await axios.post(
         `${process.env.AUTH_URL}/api/v2/login`,
         {
-          method: 'POST',
-          headers: {
-            'Content-type': 'application/json',
-          },
-          body: JSON.stringify({
-            email: req.body.email,
-            password: req.body.password,
-          }),
+          email: req.body.email,
+          password: req.body.password,
         }
       );
-      const json = await response.json();
+      const json = response.data;
       if (json.access_token) {
         req.session.access_token = json.access_token;
         return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
@@ -45,6 +39,7 @@ module.exports = {
         errors.push("login.error-wrongEmailOrPassword");
       }
     } catch (e) {
+      console.error(e);
       errors.push("login.error-unavailable");
     }
 
@@ -60,19 +55,15 @@ module.exports = {
   },
 
   async tryLoginWithFacebook(req, res) {
-    const response = await fetch(
-      `${process.env.AUTH_URL}/api/v2/login-with-facebook`, {
-        method: 'post',
-        body: JSON.stringify({
-          code: req.query.code,
-          redirect_uri: 'https://www.thefirstspine.fr/login-with-facebook',
-        }),
-        headers: {
-          'Content-type': 'application/json',
-        },
-      });
+    const response = await axios.post(
+      `${process.env.AUTH_URL}/api/v2/login-with-facebook`,
+      {
+        code: req.query.code,
+        redirect_uri: 'https://www.thefirstspine.fr/login-with-facebook',
+      },
+    );
 
-    const responseJson = await response.json();
+    const responseJson = response.data;
     if (response.status >= 400) {
       return res.redirect('/login');
     }
@@ -108,36 +99,24 @@ module.exports = {
     } else {
       try {
         // Sign up
-        const response = await fetch(
+        const response = await axios.post(
           `${process.env.AUTH_URL}/api/v2/signup`,
           {
-            method: 'POST',
-            headers: {
-              'Content-type': 'application/json',
-            },
-            body: JSON.stringify({
-              email: req.body.email,
-              password: req.body.password,
-            }),
-          }
+            email: req.body.email,
+            password: req.body.password,
+          },
         );
-        const json = await response.json();
+        const json = response.data;
         if (json.user_id) {
           // We had a response!
-          const response = await fetch(
+          const response = await axios.post(
             `${process.env.AUTH_URL}/api/v2/login`,
             {
-              method: 'POST',
-              headers: {
-                'Content-type': 'application/json',
-              },
-              body: JSON.stringify({
-                email: req.body.email,
-                password: req.body.password,
-              }),
-            }
+              email: req.body.email,
+              password: req.body.password,
+            },
           );
-          const jsonLogin = await response.json();
+          const jsonLogin = response.data;
           // Store referer (if provided)
           const refering = req.query.refer ? await sails.models.refer.findOne({code: req.query.refer, user: null}) : null;
           if (refering) {
@@ -191,17 +170,11 @@ module.exports = {
     const errors = [];
     const messages = [];
 
-    await fetch(
+    await axios.post(
       `${process.env.AUTH_URL}/api/v2/reset-password`,
       {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: req.body.email,
-        }),
-      }
+        email: req.body.email,
+      },
     );
 
     messages.push('forgotten-password.message-sent');
@@ -227,18 +200,17 @@ module.exports = {
     } else if (!req.body.password || req.body.password.length < 8) {
       errors.push("profile.error-length");
     } else {
-      const response = await fetch(
+      const response = await axios.put(
         `${process.env.AUTH_URL}/api/v2/me`,
         {
-          method: 'PUT',
+          password: req.body.password,
+        },
+        {
           headers: {
             'Content-type': 'application/json',
             'Authorization': `Bearer ${req.session.access_token}`,
           },
-          body: JSON.stringify({
-            password: req.body.password,
-          }),
-        }
+        },
       );
       if (response.status >= 400) {
         errors.push("profile.error-unkown");
@@ -247,18 +219,16 @@ module.exports = {
       }
     }
     
-
-    const response = await fetch(
+    const response = await axios.get(
       `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/me`,
       {
-        method: 'GET',
         headers: {
           'Content-type': 'application/json',
           'Authorization': `Bearer ${req.session.access_token}`,
         },
       }
     );
-    const wizard = await response.json();
+    const wizard = response.data;
 
     return res.view(
       'pages/profile.ejs',
@@ -276,17 +246,16 @@ module.exports = {
   async viewProfile(req, res) {
     const errors = [];
 
-    const response = await fetch(
+    const response = await axios.get(
       `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/me`,
       {
-        method: 'GET',
         headers: {
           'Content-type': 'application/json',
           'Authorization': `Bearer ${req.session.access_token}`,
         },
       }
     );
-    const wizard = await response.json();
+    const wizard = response.data;
 
     return res.view(
       'pages/profile.ejs',

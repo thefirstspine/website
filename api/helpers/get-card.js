@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const { default: axios } = require("axios");
 
 module.exports = {
 
@@ -13,8 +13,8 @@ module.exports = {
     try {
       const baseUrl = process.env.REST_URL;
       const url = `${baseUrl}/rest/cards/${inputs.id}`;
-      const result = await fetch(url);
-      const resultJson = await result.json();
+      const result = await axios.get(url);
+      const resultJson = result.data;
       return exits.success(resultJson);
     } catch (e) {
       console.log(e);
