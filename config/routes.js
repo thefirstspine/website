@@ -64,7 +64,6 @@ module.exports.routes = {
   'POST /login': 'UserController.tryLogin',
   'GET /forgotten-password': 'UserController.viewForgottenPasswordForm',
   'POST /forgotten-password': 'UserController.sendNewPassword',
-  'GET /login-with-facebook': 'UserController.tryLoginWithFacebook',
   'GET /profile': 'UserController.viewProfile',
   'POST /profile': 'UserController.editProfile',
   'GET /subscribe': 'UserController.viewSubscriptionForm',
