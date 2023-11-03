@@ -54,24 +54,6 @@ module.exports = {
     );
   },
 
-  async tryLoginWithFacebook(req, res) {
-    const response = await axios.post(
-      `${process.env.AUTH_URL}/api/v2/login-with-facebook`,
-      {
-        code: req.query.code,
-        redirect_uri: 'https://www.thefirstspine.fr/login-with-facebook',
-      },
-    );
-
-    const responseJson = response.data;
-    if (response.status >= 400) {
-      return res.redirect('/login');
-    }
-
-    req.session.access_token = responseJson.access_token;
-    return res.redirect(req.query.redirect ? `/${req.query.redirect}` : '/profile');
-  },
-
   async logout(req, res) {
     req.session.access_token = null;
     return res.redirect('/');
