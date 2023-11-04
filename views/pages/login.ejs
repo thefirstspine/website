@@ -6,7 +6,7 @@
       <div class="column is-8 is-offset-2">
         <div class="columns">
           <div class="column is-one-third">
-            <div class="illustration" style="min-height: 500px;"></div>
+            <div class="illustration"></div>
           </div>
           <form class="column" method="POST" action="/login?redirect=<%= redirect %>">
             <h1 class="is-size-3 has-text-centered is-uppercase"><%= __("login.title") %></h1>
@@ -42,7 +42,22 @@
                 </div>
               </div>
               <div class="field">
-                <div class="notification is-danger is-light">Facebook is no longer supporting Login for The First Spine. We decided to delete the feature.</div>
+                <div class="columns">
+                  <div class="column">
+                    <hr class="middle" />
+                  </div>
+                  <div class="column has-text-centered is-one-quarter">
+                    <span class="middle"><%= __("login.or") %></span>
+                  </div>
+                  <div class="column">
+                    <hr class="middle" />
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <facebook-login></facebook-login>
+                </div>
               </div>
             </div>
             <div class="informations">

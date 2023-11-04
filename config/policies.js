@@ -21,6 +21,7 @@ module.exports.policies = {
 
   UserController: {
     '*': ['load-user', 'set-locale', 'is-logged-in'],
+    'tryLoginWithFacebook': ['load-user', 'set-locale'],
     'viewForgottenPasswordForm': ['load-user', 'set-locale'],
     'sendNewPassword': ['load-user', 'set-locale'],
     'viewLoginForm': ['load-user', 'set-locale'],

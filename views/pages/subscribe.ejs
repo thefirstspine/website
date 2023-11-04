@@ -49,10 +49,28 @@
                   <input type="submit" value="<%= __("subscribe.subscribe") %>" class="button is-primary is-size-5" />
                 </div>
               </div>
+              <div class="field">
+                <div class="columns">
+                  <div class="column">
+                    <hr class="middle" />
+                  </div>
+                  <div class="column has-text-centered is-one-quarter">
+                    <span class="middle"><%= __("subscribe.or") %></span>
+                  </div>
+                  <div class="column">
+                    <hr class="middle" />
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <facebook-login></facebook-login>
+                </div>
+              </div>
             </div>
           </form>
           <div class="column is-one-third">
-            <div class="illustration" style="min-height: 500px;"></div>
+            <div class="illustration"></div>
           </div>
         </div>
       </div>

@@ -1,0 +1,23 @@
+<script>
+Vue.component('facebook-login', {
+  data: function () {
+    return {
+    }
+  },
+  mounted: async function() {
+  },
+  methods: {
+    fblogin() {
+      window.location.href = 'https://www.facebook.com/v6.0/dialog/oauth?client_id=481790999175484&redirect_uri=https://www.thefirstspine.fr/login-with-facebook&scope=email';
+    }
+  },
+  props: [],
+  template: '#facebook-login',
+})
+</script>
+
+<script type="text/x-template" id="facebook-login">
+  <div>
+    <a class="button is-facebook is-size-5" v-on:click="fblogin()"><%= __("login.loginWithFacebook") %></a>
+  </div>
+</script>
