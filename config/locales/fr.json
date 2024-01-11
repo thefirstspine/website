@@ -19,7 +19,7 @@
 		"yourAccount": "Votre compte",
 		"logout": "Se déconnecter",
 		"referAFriend": "Parrainer un ami",
-		"driftersTales": "Les Contes du Vagabond",
+		"driftersTales": "Drifter's Tales",
 		"arena": "arena"
 	},
 	"footer": {
@@ -363,15 +363,17 @@
 		}
 	},
 	"driftersTales": {
-		"intro1": "Les Contes du Vagabond vous propose de petites histoires liées entre-elles dans l'univers de The First Spine.",
-		"intro2": "Vous êtes un voyageur, peut-être un marchand, peut-être un mercenaire. Ce qui est sûr, c'est que vous êtes devenu un Vagabond. Car en sortant de ce Labyrinthe vous avez perdu tout souvenir de votre vie passée.",
+		"intro1": "Découvrez l'histoire de The First Spine avec la version numérique 100% solo.",
+		"intro2": "Vous êtes un guérisseur. Ou peut-être un forgeron. A moins que vous ne soyez un prêtre ou un architecte.",
+		"intro3": "Quoi qu'il en soit, votre destinée importera plus que votre origine.",
 		"screenshots": "Ces captures d'écran représentent un jeu en cours de développement.",
 		"release": "Date de lancement : septembre 2022.",
 		"stayInformed": "Restez informé",
-		"newsletter": "Restez informé sur le développement des Contes du Vagabond.",
+		"newsletter": "Restez informé sur le jeu",
 		"email": "Votre adresse e-mail",
 		"send": "Envoyer",
 		"devlog": "Journal de développement",
+		"videos": "Vidéos",
 		"getItOnSteam": "Jouez sur Steam",
 		"getItOnItch": "Jouez sur Itch",
 		"giveSuccess": "Merci pour votre pouboire ! Nous en ferons bon usage, nous comptons acheter du café pour continuer à travailler sur ce jeu =)",
