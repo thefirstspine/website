@@ -3,24 +3,30 @@
 <div id="drifter-s-tales" class="has-text-centered">
   <div class="drifter-s-tales-heading has-text-centered">
     <div class="container">
-      <img src="/images/drifters-tales-logo.png" />
+      <h1 class="is-size-1 is-uppercase has-text-primary has-text-shadow">Drifter's Tales</h1>
+      <h2 class="is-size-4 is-uppercase has-text-primary has-text-shadow">
+        Les Contes du Vagabond
+      </h2>
       <p class="mt-6">
-        <a class="button is-primary is-large" href="https://store.steampowered.com/app/2366490/DRIFTERS_TALES__A_narrative_board_game/" target="_blank">
+        <a class="button is-primary is-large" href="https://store.steampowered.com/app/1935960/Drifters_Tales" target="_blank">
           <span class="icon">
             <i class="fab fa-steam"></i>
           </span>
           <span><%= __("driftersTales.getItOnSteam") %></span>
         </a>
+        <a class="button is-primary is-large" href="https://store.steampowered.com/app/1935960/Drifters_Tales" target="_blank">
+          <span class="icon">
+            <i class="fab fa-itch-io"></i>
+          </span>
+          <span><%= __("driftersTales.getItOnItch") %></span>
+        </a>
       </p>
     </div>
   </div>
 
-  <div class="container" style="margin-top: -300px;">
-    <p class="mb-4 is-size-3"><%= __("driftersTales.intro1") %></p>
-    <p class="mb-4 is-size-4"><%= __("driftersTales.intro2") %></p>
-    <p class="mb-4 is-size-4"><%= __("driftersTales.intro3") %></p>
-
-    <p class="my-6">&nbsp;</p>
+  <div class="container">
+    <p class="mb-4 is-size-4"><%= __("driftersTales.intro1") %></p>
+    <p class="mb-4 is-size-5"><%= __("driftersTales.intro2") %></p>
 
     <div class="my-6">
       <figure class="image is-16by9">
@@ -28,7 +34,7 @@
           class="has-ratio"
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/AYdYcBRrje8"
+          src="https://www.youtube.com/embed/sb9Jl24EwDU"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -39,26 +45,52 @@
     <div class="my-6">
       <screenshots
         :images="[
-          '/images/drifters-tales-screenshot-11.png',
-          '/images/drifters-tales-screenshot-12.png',
-          '/images/drifters-tales-screenshot-13.png',
-          '/images/drifters-tales-screenshot-14.png',
-          '/images/drifters-tales-screenshot-15.png',
+          '/images/drifters-tales-screenshot-1.jpg',
+          '/images/drifters-tales-screenshot-2.jpg',
+          '/images/drifters-tales-screenshot-3.jpg',
+          '/images/drifters-tales-screenshot-4.jpg',
+          '/images/drifters-tales-screenshot-5.jpg',
         ]"
       ></screenshots>
       <screenshots
         :images="[
-          '/images/drifters-tales-screenshot-16.png',
-          '/images/drifters-tales-screenshot-17.png',
-          '/images/drifters-tales-screenshot-18.png',
-          '/images/drifters-tales-screenshot-19.png',
-          '/images/drifters-tales-screenshot-20.png',
+          '/images/drifters-tales-screenshot-6.jpg',
+          '/images/drifters-tales-screenshot-7.jpg',
+          '/images/drifters-tales-screenshot-8.jpg',
+          '/images/drifters-tales-screenshot-9.jpg',
+          '/images/drifters-tales-screenshot-10.jpg',
         ]"
       ></screenshots>
     </div>
   </div>
+  <a name="give"></a>
 
   <div class="separator my-6"></div>
+
+  <!--
+  <div class="container my-6">
+    <h1 class="is-size-3 is-uppercase has-text-primary"><%= __("driftersTales.tipTitle") %></h1>
+    <img class="mb-6" src="/images/arena-4.png" />
+    <div class="columns">
+      <div class="column is-6 is-offset-3">
+        <% if (giveCancel) { %>
+          <p class="has-text-danger"><%= __("driftersTales.giveCancel") %></p>
+        <% } %>
+        <% if (giveSuccess) { %>
+          <p class="has-text-success"><%= __("driftersTales.giveSuccess") %></p>
+        <% } %>
+        <% if (!giveSuccess && !giveCancel) { %>
+          <p class="mb-4 is-size-5"><%= __("driftersTales.tipText") %></p>
+        <% } %>
+        <p class="mb-4">
+          <donation-button></donation-button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator my-6"></div>
+  -->
 
   <div class="container my-6">
     <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.stayInformed") %></h1>
@@ -91,7 +123,7 @@
   <div class="separator my-6"></div>
 
   <div class="container my-6">
-    <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.videos") %></h1>
+    <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.devlog") %></h1>
     <div class="columns">
       <% devlogs.forEach(function(devlog, index) { %>
         <% if (index % 3 === 0) { %>
@@ -137,14 +169,12 @@
   <div class="container my-6">
     <h1 class="is-size-3 is-uppercase has-text-primary mb-6">Press articles & kits</h1>
 
-    <a class="button is-info is-large" href="https://1drv.ms/f/s!Ag_xcaBrnlLTgn7d97BLEXKPEivX?e=umcmbj" target="_blank">
+    <a class="button is-info is-large" href="/zip/press-kit.zip" target="_blank">
       <span class="icon">
         <i class="fas fa-file-download"></i>
       </span>
       <span>Download the press kit</span>
     </a>
-
-    <p class="is-size-8 has-text-grey">Press releases, screenshots & videos</p>
 
     <div class="columns mt-6 has-text-left">
       <div class="column is-4">
@@ -154,9 +184,9 @@
           Based in France
         </p>
         <p class="mb-4 is-size-6">
-          <strong>Key dates:</strong><br />
-          Demo: January 24th, 2024<br />
-          Release: July 24th, 2024
+          <strong>Release date:</strong><br />
+          Early access: April 9, 2022<br />
+          Final release: September, 2022
         </p>
         <p class="mb-4 is-size-6">
           <strong>Platforms:</strong><br />
@@ -168,18 +198,19 @@
         <p>In Drifter’s Tales, you can play different stories featuring unique mechanics and challenge devious and powerful enemies. You play as a wizard whose possibilities are materialized by cards with unique effects. These cards have to be placed on a game board, allowing you to advance to your opponent to ensure you the victory.</p>
         <p class="mb-4 is-size-5 mt-4 has-text-weight-bold is-uppercase has-text-primary">Features</p>
         <ul>
-          <li>The game features 12 playable stories of 20 minutes long with unique mechanics (mazes, time-limited actions, infiltration, etc.). Each playthrough allows the player to play to certain stories depending on their path, making each playthrough unique.</li>
-          <li>The deckbuilding side of the game contains 80+ cards, which can be obtained in various ways – leveling, loot, secrets, side quests, chests, random encounters. Each card can be modifiable with 10 modifiers.</li>
-          <li>Highly strategic battle with multiple builds and enemies - each battle requires from the player to analyze the pattern of the enemy to choose to right strategy at the right time.</li>
+          <li>Eight playable stories with strong narrative experience</li>
+          <li>Highly strategic battles on a game board that features more than 40 cards</li>
+          <li>Cards can be modified with modifiers that changes capacities & statistics</li>
+          <li>Each story features a covenant that requires some actions to be rewarded with a unique card</li>
+          <li>The player can bet on the number of cards to play during the story to be rewarded at the end</li>
+          <li>Asynchronous online mode with events that serves the narrative</li>
         </ul>
-        <!--
         <p class="mb-4 is-size-5 mt-4 has-text-weight-bold is-uppercase has-text-primary">Articles</p>
         <p class="mb-4">Here's where we are listed:</p>
         <ul>
           <li><a href="https://gameskeys.net/top-steam-games-to-tryout-in-april-2022/#DriftersTales" target="_blank" rel="nofollow">Top Steam Games To Tryout In April 2022 on GamesKeys</a></li>
           <li><a href="https://www.gamedeveloper.com/press-release/drifters-tales-a-new-indie-narrative-strategic-cards-game-is-available-for-free-on-early-access" target="_blank" rel="nofollow">Drifter’s Tales: a new indie narrative & strategic cards game is available for free on early access on Gamedeveloper.com</a></li>
         </ul>
-        -->
       </div>
     </div>
   </div>
