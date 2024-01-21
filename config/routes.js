@@ -54,10 +54,9 @@ module.exports.routes = {
   // Events
   'GET /events': 'EventsController.index',
 
-  // Adventures
-  'GET /drifters-tales': 'AdventuresController.index',
-  'GET /drifters-tales/give/:id': 'AdventuresController.give',
-  'POST /drifters-tales/mailing-list': 'AdventuresController.mailingList',
+  // Drifter's Tales
+  'GET /drifters-tales': 'DriftersTalesController.index',
+  'POST /drifters-tales/mailing-list': 'DriftersTalesController.mailingList',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',

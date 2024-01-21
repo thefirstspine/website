@@ -352,8 +352,9 @@
 		"physic": "IRL"
 	},
 	"driftersTales": {
-		"intro1": "Drifter's Tales offers you to live bond stories within The First Spine's lore.",
-		"intro2": "You are a traveller, maybe a merchant, maybe a mercenary. Now, you are a Drifter. Because by exiting that Maze, you've lost all your memories.",
+		"intro1": "Discover the story of The First Spine with the 100% single-player digital version.",
+		"intro2": "You are a healer. Or maybe a blacksmith. Unless you are a priest or an architect.",
+		"intro3": "Either way, your destiny will matter more than your origin.",
 		"screenshots": "These screenshots are not representing final state of the game.",
 		"release": "Launch date: 2022, september.",
 		"stayInformed": "Stay tuned",
@@ -366,9 +367,9 @@
 		"giveSuccess": "Thanks for your tip! We will make good use of it, we plan to buy coffee to continue working on this game =)",
 		"giveCancel": "You abandoned the payment",
 		"tipTitle": "Give a tip",
-    "give": "Give",
-    "yourName": "Your name",
-		"tipText": "This early access is free and will remain so throughout the development period. If you want to encourage its development, you can tip the developers so that they can continue their work in peace. The name you will give us will appear in the final release!"
-	},
-	"driftersTails.giveSuccess": "driftersTails.giveSuccess"
+		"give": "Give",
+		"yourName": "Your name",
+		"tipText": "This early access is free and will remain so throughout the development period. If you want to encourage its development, you can tip the developers so that they can continue their work in peace. The name you will give us will appear in the final release!",
+		"videos": "Videos"
+	}
 }
