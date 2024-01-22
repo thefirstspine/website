@@ -370,6 +370,18 @@
 		"give": "Give",
 		"yourName": "Your name",
 		"tipText": "This early access is free and will remain so throughout the development period. If you want to encourage its development, you can tip the developers so that they can continue their work in peace. The name you will give us will appear in the final release!",
-		"videos": "Videos"
-	}
+		"videos": "Videos",
+		"tryTheDemo": "Try the demo of our relaunch",
+		"tryTheDemoText": "You can download the demo of our relaunch on Steam. Click the button below to get your code.",
+		"askCode": "Request a code",
+		"howToDemo": "How to use the code?",
+		"howToDemoText": "On your Steam client, click \"Add a game\" at the bottom left, then select \"Activate a product on Steam...\". Enter your code in the window that should appear.",
+		"steamSupport": "Click here to access the Steam help article"
+	},
+	"driftersTales.alreadyRegistered": "Are you already registered",
+	"driftersTales.registered": "Thank you! You are successfully registered!",
+	"driftersTales.invalidEmail": "Please enter a valid email address.",
+	"driftersTales.spamError": "The number of code requests is limited to 4 per IP address. You can request a code by sending an email to teddy[at]thefirstspine.fr",
+	"driftersTales.notEnoughCodes": "Unfortunately there aren't enough codes anymore. Try again in a few hours to get new codes!",
+	"driftersTales.demoCode": "Here is your code to try the demo directly on Steam: %s"
 }

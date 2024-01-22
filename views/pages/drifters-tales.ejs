@@ -58,34 +58,86 @@
     </div>
   </div>
 
+  <a name="demo"></a>
   <div class="separator my-6"></div>
 
-  <div class="container my-6">
-    <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.stayInformed") %></h1>
-    <form class="columns" action="/drifters-tales/mailing-list" method="POST">
-      <div class="column is-4 is-offset-4 has-text-centered">
-        <p class="mb-4">
-          <%= __("driftersTales.newsletter") %>
-        </p>
-        <% if (mailingListError) { %>
-          <p class="has-text-danger"><%= mailingListError %></p>
-        <% } %>
-        <% if (mailingListMessage) { %>
-          <p class="has-text-success"><%= mailingListMessage %></p>
-        <% } %>
-        <div class="field has-addons">
-          <div class="control is-expanded has-icons-left">
-            <input class="input is-fullwidth" type="email" placeholder="<%= __("driftersTales.email") %>" name="email">
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
-          <div class="control">
-            <button type="submit" class="button is-primary m-0"><%= __("driftersTales.send") %></button>
+  <div style="background-position: top center; background-repeat: no-repeat; min-height: 600px; background-image: url(/images/drifters-tales-demo-background.png); margin-top: -100px;">
+    <div class="container my-6">
+      <p class="mt-6">&nbsp;</p>
+      <p class="mt-6">&nbsp;</p>
+      <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.tryTheDemo") %></h1>
+      <form action="/drifters-tales/steam-code" method="POST">
+        <div class="columns">
+          <div class="column is-6 is-offset-3 has-text-centered">
+            <p class="mb-4 is-size-4">
+              <%= __("driftersTales.tryTheDemoText") %>
+            </p>
           </div>
         </div>
+        <div class="columns">
+          <div class="column is-4 is-offset-4 has-text-centered">
+            <% if (steamCodeError) { %>
+              <p class="notification is-danger"><%= __(steamCodeError) %></p>
+            <% } %>
+            <% if (steamCodeMessage) { %>
+              <p class="notification is-success"><%= __(steamCodeMessage, steamCode) %></p>
+            <% } %>
+            <input type="hidden" name="code" value="code">
+            <div class="field">
+              <div class="control">
+                <button type="submit" class="button is-primary is-large"><%= __("driftersTales.askCode") %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <p class="mt-6">&nbsp;</p>
+      <div class="columns">
+        <div class="column is-6 has-text-right">
+          <img src="/images/steam-demo-how-to.png" />
+        </div>
+        <div class="column is-6 has-text-left">
+          <h2 class="is-size-4 is-uppercase has-text-primary mb-6"><%= __("driftersTales.howToDemo") %></h2>
+          <p class="my-3"><%= __("driftersTales.howToDemoText") %></p>
+          <p class="my-3"><a href="https://help.steampowered.com/en/faqs/view/2A12-9D79-C3D7-F870" target="_blank"><%= __("driftersTales.steamSupport") %></a></p>
+        </div>
       </div>
-    </form>
+    </div>
+  </div>
+
+  <a name="mailinglist"></a>
+  <div class="separator my-6"></div>
+
+  <div style="background-position: top center; background-repeat: no-repeat; min-height: 400px; background-image: url(/images/drifters-tales-email-background.png); margin-top: -100px;">
+    <div class="container my-6">
+      <p class="mt-6">&nbsp;</p>
+      <p class="mt-6">&nbsp;</p>
+      <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.stayInformed") %></h1>
+      <form class="columns" action="/drifters-tales/mailing-list" method="POST">
+        <div class="column is-4 is-offset-4 has-text-centered">
+          <p class="mb-4">
+            <%= __("driftersTales.newsletter") %>
+          </p>
+          <% if (mailingListError) { %>
+            <p class="notification is-danger"><%= __(mailingListError) %></p>
+          <% } %>
+          <% if (mailingListMessage) { %>
+            <p class="notification is-success"><%= __(mailingListMessage) %></p>
+          <% } %>
+          <div class="field has-addons">
+            <div class="control is-expanded has-icons-left">
+              <input class="input is-fullwidth" type="email" placeholder="<%= __("driftersTales.email") %>" name="email">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+            <div class="control">
+              <button type="submit" class="button is-primary m-0"><%= __("driftersTales.send") %></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 
   <div class="separator my-6"></div>

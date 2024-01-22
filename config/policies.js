@@ -43,5 +43,6 @@ module.exports.policies = {
   'event/findOne':[],
   'code/*':['load-user', 'is-logged-in', 'is-admin'],
   'mailinglist/*':['load-user', 'is-logged-in', 'is-admin'],
+  'steamcode/*':['load-user', 'is-logged-in', 'is-admin'],
 
 };
