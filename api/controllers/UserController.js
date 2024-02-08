@@ -39,7 +39,7 @@ module.exports = {
         errors.push("login.error-wrongEmailOrPassword");
       }
     } catch (e) {
-      console.error(e);
+      console.log({ errorFromAxios: e});
       if (e?.response?.status == 401) {
         errors.push("login.error-wrongEmailOrPassword");
       } else if (e?.response?.data?.message) {
@@ -142,7 +142,7 @@ module.exports = {
           errors.push("subscribe.error-check");
         }
       } catch (e) {
-        console.log(e);
+        console.log({ errorFromAxios: e});
         if (e?.response?.status == 401) {
           errors.push("login.error-wrongEmailOrPassword");
         } else if (e?.response?.status == 400) {
