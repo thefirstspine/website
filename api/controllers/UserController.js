@@ -29,12 +29,7 @@ module.exports = {
         {
           email: req.body.email,
           password: req.body.password,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        },
+        }
       );
       const json = response.data;
       if (json.access_token) {
@@ -71,11 +66,6 @@ module.exports = {
       {
         code: req.query.code,
         redirect_uri: 'https://www.thefirstspine.fr/login-with-facebook',
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
       },
     );
 
@@ -121,11 +111,6 @@ module.exports = {
             email: req.body.email,
             password: req.body.password,
           },
-          {
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          },
         );
         const json = response.data;
         if (json.user_id) {
@@ -135,11 +120,6 @@ module.exports = {
             {
               email: req.body.email,
               password: req.body.password,
-            },
-            {
-              headers: {
-                'Content-Type': 'application/json'
-              }
             },
           );
           const jsonLogin = response.data;
@@ -208,11 +188,6 @@ module.exports = {
       `${process.env.AUTH_URL}/api/v2/reset-password`,
       {
         email: req.body.email,
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
       },
     );
 
