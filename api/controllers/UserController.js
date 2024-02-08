@@ -26,10 +26,10 @@ module.exports = {
     try {
       const response = await axios.post(
         `${process.env.AUTH_URL}/api/v2/login`,
-        JSON.stringify({
+        {
           email: req.body.email,
           password: req.body.password,
-        }),
+        },
         {
           headers: {
             'Content-Type': 'application/json'
@@ -68,10 +68,10 @@ module.exports = {
   async tryLoginWithFacebook(req, res) {
     const response = await axios.post(
       `${process.env.AUTH_URL}/api/v2/login-with-facebook`,
-      JSON.stringify({
+      {
         code: req.query.code,
         redirect_uri: 'https://www.thefirstspine.fr/login-with-facebook',
-      }),
+      },
       {
         headers: {
           'Content-Type': 'application/json'
@@ -117,10 +117,10 @@ module.exports = {
         // Sign up
         const response = await axios.post(
           `${process.env.AUTH_URL}/api/v2/signup`,
-          JSON.stringify({
+          {
             email: req.body.email,
             password: req.body.password,
-          }),
+          },
           {
             headers: {
               'Content-Type': 'application/json'
@@ -132,10 +132,10 @@ module.exports = {
           // We had a response!
           const response = await axios.post(
             `${process.env.AUTH_URL}/api/v2/login`,
-            JSON.stringify({
+            {
               email: req.body.email,
               password: req.body.password,
-            }),
+            },
             {
               headers: {
                 'Content-Type': 'application/json'
@@ -206,9 +206,9 @@ module.exports = {
 
     await axios.post(
       `${process.env.AUTH_URL}/api/v2/reset-password`,
-      JSON.stringify({
+      {
         email: req.body.email,
-      }),
+      },
       {
         headers: {
           'Content-Type': 'application/json'
@@ -241,9 +241,9 @@ module.exports = {
     } else {
       const response = await axios.put(
         `${process.env.AUTH_URL}/api/v2/me`,
-        JSON.stringify({
+        {
           password: req.body.password,
-        }),
+        },
         {
           headers: {
             'Content-type': 'application/json',
@@ -289,6 +289,7 @@ module.exports = {
       `${process.env.ARENA_REALMS_URL.replace('{realm}', 'sanctuaire')}/wizard/me`,
       {
         headers: {
+          'Content-type': 'application/json',
           'Authorization': `Bearer ${req.session.access_token}`,
         },
       }
