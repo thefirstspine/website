@@ -81,8 +81,8 @@ module.exports = {
       {
         devlogs: [
           { youtubeId: 'AYdYcBRrje8' },
+          { youtubeId: 'YNC_nAy8h6k' },
           { youtubeId: 'kTd0D3NbRrM' },
-          { youtubeId: 'eRmVNS0-t0Q' },
         ],
         mailingListError: mailingListError.length > 0 ? mailingListError : null,
         mailingListMessage: mailingListMessage.length > 0 ? mailingListMessage : null,
