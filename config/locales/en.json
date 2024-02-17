@@ -376,6 +376,9 @@
 		"askCode": "Request a code",
 		"howToDemo": "How to use the code?",
 		"howToDemoText": "On your Steam client, click \"Add a game\" at the bottom left, then select \"Activate a product on Steam...\". Enter your code in the window that should appear.",
+		"howToDemoText2": "If you don't see the demo appear in your library (this can happen if you have already installed the full game) you can force install it with the Steam console.",
+		"howToDemoText3": "Click here to open the console",
+		"howToDemoText4": "then type \"app_install 2799080\" to force the installation. You should see the demo in your library.",
 		"steamSupport": "Click here to access the Steam help article"
 	},
 	"driftersTales.alreadyRegistered": "Are you already registered",
