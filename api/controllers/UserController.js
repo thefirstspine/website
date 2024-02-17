@@ -39,8 +39,14 @@ module.exports = {
         errors.push("login.error-wrongEmailOrPassword");
       }
     } catch (e) {
-      console.error(e);
-      errors.push("login.error-unavailable");
+      console.log({ errorFromAxios: e});
+      if (e?.response?.status == 401) {
+        errors.push("login.error-wrongEmailOrPassword");
+      } else if (e?.response?.data?.message) {
+        errors.push(e?.response?.data?.message);
+      } else {
+        errors.push("login.error-unavailable");
+      }
     }
 
     return res.view(
@@ -136,8 +142,16 @@ module.exports = {
           errors.push("subscribe.error-check");
         }
       } catch (e) {
-        console.log(e);
-        errors.push("subscribe.error-unavailable");
+        console.log({ errorFromAxios: e});
+        if (e?.response?.status == 401) {
+          errors.push("login.error-wrongEmailOrPassword");
+        } else if (e?.response?.status == 400) {
+          errors.push("subscribe.error-check");
+        } else if (e?.response?.data?.message) {
+          errors.push(e?.response?.data?.message);
+        } else {
+          errors.push("login.error-unavailable");
+        }
       }
     }
 

@@ -9,7 +9,7 @@
     },
     mounted: async function() {
       const cardId = this.$attrs.cardid;
-      const response = await fetch(`<%= process.env.REST_URL %>/rest/cards/${cardId}`);
+      const response = await fetch(`<%= process.env.GAME_ASSETS_URL %>/rest/cards/${cardId}`);
       this.cardStyle = this.$attrs.cardstyle;
       this.card = await response.json();
     },

@@ -7,6 +7,40 @@
 
 module.exports = {
 
+  async steamCode(req, res) {
+    // Antispam
+    const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    const alreadyRequestedCodesForIp = await sails.models.steamcode.find({
+      where: {
+        product: 'drifters-tales-relaunch-demo',
+        ipAddress,
+      },
+      limit: 10,
+    });
+    if (alreadyRequestedCodesForIp.length >= 4) {
+      req.flash('steamCodeError', 'driftersTales.spamError');
+      return res.redirect('/drifters-tales#demo');
+    }
+
+    // Get entity
+    const entity = await sails.models.steamcode.find({
+      where: {
+        used: false,
+        product: 'drifters-tales-relaunch-demo',
+      },
+      limit: 1,
+    });
+    if (entity.length == 0) {
+      req.flash('steamCodeError', 'driftersTales.notEnoughCodes');
+      return res.redirect('/drifters-tales#demo');
+    }
+
+    await sails.models.steamcode.updateOne({ id: entity[0].id }, { used: true, ipAddress });
+    req.flash('steamCode', entity[0].code);
+    req.flash('steamCodeMessage', 'driftersTales.demoCode');
+    return res.redirect('/drifters-tales#demo');
+  },
+
   async mailingList(req, res) {
     const email = req.body.email;
 
@@ -15,38 +49,46 @@ module.exports = {
       !/^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(email)
     )
     {
-      req.flash('mailingListError', "Merci de rentrer une adresse valide.");
-      return res.redirect('/drifters-tales');
+      req.flash('mailingListError', 'driftersTales.invalidEmail');
+      return res.redirect('/drifters-tales#mailinglist');
     }
 
     const emails = await sails.models.mailinglist.find({
       email,
-      campaign: 'drifters-tales',
+      campaign: 'drifters-tales-relaunch',
     });
     if (emails.length > 0) {
-      req.flash('mailingListError', "Vous avez déjà été inscrit.");
-      return res.redirect('/drifters-tales');
+      req.flash('mailingListError', 'driftersTales.alreadyRegistered');
+      return res.redirect('/drifters-tales#mailinglist');
     }
 
     await sails.models.mailinglist.create({
       email,
       campaign: 'drifters-tales-relaunch',
     });
-    req.flash('mailingListMessage', "Vous avez été inscrit ! Merci !");
-    return res.redirect('/drifters-tales');
+    req.flash('mailingListMessage', 'driftersTales.registered');
+    return res.redirect('/drifters-tales#mailinglist');
   },
 
   async index(req, res) {
+    const mailingListError = req.flash('mailingListError');
+    const mailingListMessage = req.flash('mailingListMessage');
+    const steamCodeError = req.flash('steamCodeError');
+    const steamCodeMessage = req.flash('steamCodeMessage');
+    const steamCode = req.flash('steamCode');
     return res.view(
       'pages/drifters-tales.ejs',
       {
         devlogs: [
           { youtubeId: 'AYdYcBRrje8' },
+          { youtubeId: 'YNC_nAy8h6k' },
           { youtubeId: 'kTd0D3NbRrM' },
-          { youtubeId: 'eRmVNS0-t0Q' },
         ],
-        mailingListError: req.flash('mailingListError'),
-        mailingListMessage: req.flash('mailingListMessage'),
+        mailingListError: mailingListError.length > 0 ? mailingListError : null,
+        mailingListMessage: mailingListMessage.length > 0 ? mailingListMessage : null,
+        steamCodeError: steamCodeError.length > 0 ? steamCodeError : null,
+        steamCodeMessage: steamCodeMessage.length > 0 ? steamCodeMessage : null,
+        steamCode: steamCode.length > 0 ? steamCode : null,
         ...await sails.helpers.layoutConfig(req.user_id),
         tags: [
           {
