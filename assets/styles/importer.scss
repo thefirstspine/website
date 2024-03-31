@@ -1,6 +1,10 @@
 
 @charset "utf-8";
 
+/* Import Bulma */
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/bulma";
+
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap');
 $family-primary: "Lora", serif;
 $body-background-color: #000;
@@ -21,8 +25,6 @@ $table-background-color: rgba(0, 0, 0, .1);
 $table-color: #FFF;
 $table-head-cell-color: $primary;
 
-/* Import TFS globals */
-@import "../../node_modules/bulma/bulma.sass";
 
 /* Import Vue components */
 @import "./card.scss";
@@ -136,7 +138,7 @@ footer {
 }
 
 .announcement {
-  background: $danger;
+  background: $red;
   color: #FFF;
   height: 2em;
   padding: .25em;

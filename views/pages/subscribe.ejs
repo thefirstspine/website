@@ -14,14 +14,14 @@
             <% } %>
             <% if(typeof(errors) !== 'undefined' && errors && errors.length) { %>
               <% errors.forEach(function(error){ %>
-                <article  class="message is-danger">
+                <article  class="message is-danger my-3">
                   <div class="message-body">
                     <%= __(error) %>
                   </div>
                 </article >
               <% }); %>
             <% } %>
-            <div class="field">
+            <div class="field my-3">
               <div class="control has-icons-left">
                 <input class="input is-medium" type="email" name="email" placeholder="<%= __("subscribe.email") %>">
                 <span class="icon is-medium is-left">
@@ -29,7 +29,7 @@
                 </span>
               </div>
             </div>
-            <div class="field">
+            <div class="field my-3">
               <div class="control has-icons-left">
                 <input class="input is-medium" type="password" name="password" placeholder="<%= __("subscribe.password") %>">
                 <span class="icon is-medium is-left">
@@ -37,13 +37,13 @@
                 </span>
               </div>
             </div>
-            <div class="field">
+            <div class="field my-3">
               <label class="checkbox has-text-white">
                 <input type="checkbox" name="conditions" value="accept" />
                 <%- __("subscribe.cgu") %>
               </label>
             </div>
-            <div class="buttons">
+            <div class="buttons my-3">
               <div class="field">
                 <div class="control">
                   <input type="submit" value="<%= __("subscribe.subscribe") %>" class="button is-primary is-size-5" />
