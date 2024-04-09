@@ -5,11 +5,11 @@
   "description": "Sails application",
   "keywords": [],
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@fortawesome/fontawesome-free": "^6.5.2",
     "@sailshq/connect-redis": "^6.1.3",
-    "@sailshq/lodash": "^3.10.4",
+    "@sailshq/lodash": "^3.10.6",
     "@sailshq/socket.io-redis": "^6.1.2",
-    "@types/node": "^20.12.2",
+    "@types/node": "^20.12.6",
     "axios": "^1.6.8",
     "bulma": "^1.0.0",
     "connect-flash": "^0.1.1",
@@ -26,10 +26,10 @@
     "sails-hook-orm": "^4.0.3",
     "sails-hook-sockets": "^3.0.0",
     "sails-postgresql": "^5.0.1",
-    "sass": "^1.72.0"
+    "sass": "^1.74.1"
   },
   "devDependencies": {
-    "eslint": "8.57.0"
+    "eslint": "9.0.0"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
