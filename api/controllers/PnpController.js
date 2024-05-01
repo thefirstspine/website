@@ -20,8 +20,6 @@ module.exports = {
   },
 
   async build(req, res) {
-    const fetch = require('node-fetch');
-
     const destiniesToFetch = [
       'conjurer',
       'summoner',
@@ -48,21 +46,13 @@ module.exports = {
       return response.data;
     }));
 
-    const allowedStyles = [
-      'classic',
-      'nostalgy',
-      'scales',
-      'cartographer',
-    ];
-    const style = allowedStyles.includes(req.query.style) ? req.query.style : 'classic';
-
     return res.view(
       'pages/pnp-renderer.ejs',
       {
         ...await sails.helpers.layoutConfig(req.user_id),
         layout: 'layouts/printable',
         title: 'Print and Play',
-        style,
+        style: 'classic',
         destinies,
         origins,
         colors: {
