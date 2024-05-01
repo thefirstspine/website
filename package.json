@@ -26,10 +26,10 @@
     "sails-hook-orm": "^4.0.3",
     "sails-hook-sockets": "^3.0.0",
     "sails-postgresql": "^5.0.1",
-    "sass": "^1.74.1"
+    "sass": "^1.76.0"
   },
   "devDependencies": {
-    "eslint": "9.0.0"
+    "eslint": "9.1.1"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
