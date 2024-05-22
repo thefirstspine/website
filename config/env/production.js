@@ -24,6 +24,8 @@ process.env.ALLOW_UNSAFE_MIGRATIONS = true;
 
 module.exports = {
 
+  hookTimeout: 60000,
+
 
   /**************************************************************************
   *                                                                         *
