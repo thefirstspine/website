@@ -1,28 +1,26 @@
 
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap');
-$family-primary: "Lora", serif;
-$body-background-color: #000;
-$body-color: #FFF;
-$strong-color: #FFF;
-$body-overflow-y: auto;
 $primary: hsl(48, 100%, 67%);
-$primary-invert: #000;
-$dropdown-content-background-color: #222;
-$dropdown-item-hover-color: $primary;
-$dropdown-item-color: #FFF;
-$dropdown-item-hover-background-color: #333;
-$dropdown-content-background-color: #222;
-$gap: 32px;
-$fullhd: 2088px + (2 * $gap);
-$widescreen: 1344px + (2 * $gap);
-$table-background-color: rgba(0, 0, 0, .1);
-$table-color: #FFF;
-$table-head-cell-color: $primary;
+$red: #ff3333;
 
-/* Import TFS globals */
-@import "../../node_modules/bulma/bulma.sass";
+@use "../../node_modules/bulma/sass" with (
+  $family-primary: '"Lora", serif',
+  $body-background-color: #000,
+  $body-color: #FFF,
+  $strong-color: #FFF,
+  $body-overflow-y: auto,
+  $primary: $primary,
+  $navbar-burger-color: $primary,
+  $gap: 32px,
+  $fullhd: 2088px,
+  $widescreen: 1344px,
+  $table-background-color: rgba(0, 0, 0, .1),
+  $table-color: #FFF,
+  $table-head-cell-color: $primary,
+);
+
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap');
 
 /* Import Vue components */
 @import "./card.scss";
@@ -104,10 +102,6 @@ html.printable {
   text-shadow: black 0 0 20px, black 0 0 20px, black 0 0 20px, black 0 0 20px, black 0 0 20px;
 }
 
-.has-text-pink {
-  color: HOTPINK!important;
-}
-
 .container {
   padding: 0 1em;
 }
@@ -136,7 +130,7 @@ footer {
 }
 
 .announcement {
-  background: $danger;
+  background: $red;
   color: #FFF;
   height: 2em;
   padding: .25em;
@@ -266,6 +260,7 @@ footer {
   }
   .navbar-burger {
     margin-top: 10px;
+    color: $primary;
   }
   .flags {
     a {

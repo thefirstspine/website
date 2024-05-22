@@ -12,14 +12,14 @@
             <h1 class="is-size-3 has-text-centered is-uppercase"><%= __("login.title") %></h1>
             <% if(typeof(errors) !== 'undefined' && errors && errors.length) { %>
               <% errors.forEach(function(error){ %>
-                <article  class="message is-danger">
+                <article  class="message is-danger my-3">
                   <div class="message-body">
                     <%= __(error) %>
                   </div>
                 </article >
               <% }); %>
             <% } %>
-            <div class="field">
+            <div class="field my-3">
               <div class="control has-icons-left">
                 <input class="input is-medium" type="email" name="email" placeholder="<%= __("login.email") %>">
                 <span class="icon is-medium is-left">
@@ -27,7 +27,7 @@
                 </span>
               </div>
             </div>
-            <div class="field">
+            <div class="field my-3">
               <div class="control has-icons-left">
                 <input class="input is-medium" type="password" name="password" placeholder="<%= __("login.password") %>">
                 <span class="icon is-medium is-left">

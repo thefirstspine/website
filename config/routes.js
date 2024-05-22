@@ -57,6 +57,7 @@ module.exports.routes = {
   // Drifter's Tales
   'GET /drifters-tales': 'DriftersTalesController.index',
   'POST /drifters-tales/mailing-list': 'DriftersTalesController.mailingList',
+  'POST /drifters-tales/steam-code': 'DriftersTalesController.steamCode',
   
   // User & auth
   'GET /login': 'UserController.viewLoginForm',

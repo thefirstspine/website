@@ -381,7 +381,21 @@
 		"tipTitle": "Donner un pourboire",
 		"give": "Donner",
 		"yourName": "Votre nom",
-		"tipText": "Cet accès anticipé est gratuit et le restera pendant toute la période de développement. Si vous voulez encourager son développement, vous pouvez donner un pourboire aux développeurs pour qu'ils puissent continuer leur travail en tout sérénité. Le nom que vous nous donnerez sera présent dans le jeu final !"
+		"tipText": "Cet accès anticipé est gratuit et le restera pendant toute la période de développement. Si vous voulez encourager son développement, vous pouvez donner un pourboire aux développeurs pour qu'ils puissent continuer leur travail en tout sérénité. Le nom que vous nous donnerez sera présent dans le jeu final !",
+		"tryTheDemo": "Essayez la démo de notre relaunch",
+		"tryTheDemoText": "Vous pouvez télécharger la démo de notre relaunch sur Steam. Cliquez sur le bouton ci-dessous pour obtenir votre code.",
+		"askCode": "Demander un code",
+		"howToDemo": "Comment utiliser le code ?",
+		"howToDemoText": "Sur votre client Steam, cliquez sur \"Ajouter un jeu\" en bas à gauche, puis selectionnez \"Activer un produit sur Steam...\". Entrez votre code dans la fenêtre qui devrait apparaître.",
+		"howToDemoText2": "Si vous ne voyez pas la démo apparaître dans votre bibliothèque (ceci peut se produire si vous avez déjà installé le jeu complet) vous pouvez forcer son installation avec la console Steam.",
+		"howToDemoText3": "Cliquez ici pour ouvrir la console",
+		"howToDemoText4": "puis entrez \"app_install 2799080\" pour forcer l'installation. Vous devriez voir la démo dans votre bibliothèque.",
+		"steamSupport": "Cliquez ici pour accéder à l'article d'aide de Steam"
 	},
-	"Vos codes sont arrivés !": "Vos codes sont arrivés !"
+	"driftersTales.alreadyRegistered": "Vous êtes déjà enregistré",
+	"driftersTales.registered": "Merci ! Vous êtes bien enregistré !",
+	"driftersTales.invalidEmail": "Merci de rentrer une adresse valide.",
+	"driftersTales.spamError": "Le nombre de demande de code est limité à 4 par adresse IP. Vous pouvez demander un code en envoyant un email à teddy[at]thefirstspine.fr",
+	"driftersTales.notEnoughCodes": "Il n'y a malheureusement plus assez de codes. Retentez dans quelques heures afin d'avoir de nouveau codes !",
+	"driftersTales.demoCode": "Voici votre code pour essayer la démo directement sur Steam : %s"
 }
