@@ -9,7 +9,7 @@ module.exports = {
     try {
       const baseUrl = process.env.CALENDAR_URL;
       const date = (new Date()).toISOString();
-      const url = `${baseUrl}/events?filter=datetimeTo||gt||${date}&sort=datetimeFrom,ASC`;
+      const url = `${baseUrl}/events/next`;
       const result = await axios.get(url);
       const resultJson = result.data;
       return exits.success(resultJson);
