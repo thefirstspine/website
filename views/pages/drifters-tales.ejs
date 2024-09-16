@@ -28,7 +28,7 @@
           class="has-ratio"
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/AYdYcBRrje8"
+          src="https://www.youtube.com/embed/X14Mh3RO3F8"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -39,69 +39,22 @@
     <div class="my-6">
       <screenshots
         :images="[
-          '/images/drifters-tales-screenshot-11.png',
-          '/images/drifters-tales-screenshot-12.png',
-          '/images/drifters-tales-screenshot-13.png',
-          '/images/drifters-tales-screenshot-14.png',
-          '/images/drifters-tales-screenshot-15.png',
+          '/images/drifters-tales-screenshot1.png',
+          '/images/drifters-tales-screenshot2.png',
+          '/images/drifters-tales-screenshot3.png',
+          '/images/drifters-tales-screenshot4.png',
+          '/images/drifters-tales-screenshot5.png',
         ]"
       ></screenshots>
       <screenshots
         :images="[
-          '/images/drifters-tales-screenshot-16.png',
-          '/images/drifters-tales-screenshot-17.png',
-          '/images/drifters-tales-screenshot-18.png',
-          '/images/drifters-tales-screenshot-19.png',
-          '/images/drifters-tales-screenshot-20.png',
+          '/images/drifters-tales-screenshot6.png',
+          '/images/drifters-tales-screenshot7.png',
+          '/images/drifters-tales-screenshot8.png',
+          '/images/drifters-tales-screenshot9.png',
+          '/images/drifters-tales-screenshot10.png',
         ]"
       ></screenshots>
-    </div>
-  </div>
-
-  <a name="demo"></a>
-  <div class="separator my-6"></div>
-
-  <div style="background-position: top center; background-repeat: no-repeat; min-height: 600px; background-image: url(/images/drifters-tales-demo-background.png); margin-top: -100px;">
-    <div class="container my-6">
-      <p class="mt-6">&nbsp;</p>
-      <p class="mt-6">&nbsp;</p>
-      <h1 class="is-size-3 is-uppercase has-text-primary mb-6"><%= __("driftersTales.tryTheDemo") %></h1>
-      <form action="/drifters-tales/steam-code" method="POST">
-        <div class="columns">
-          <div class="column is-6 is-offset-3 has-text-centered">
-            <p class="mb-4 is-size-4">
-              <%= __("driftersTales.tryTheDemoText") %>
-            </p>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-4 is-offset-4 has-text-centered">
-            <% if (steamCodeError) { %>
-              <p class="notification is-danger"><%= __(steamCodeError) %></p>
-            <% } %>
-            <% if (steamCodeMessage) { %>
-              <p class="notification is-success"><%= __(steamCodeMessage, steamCode) %></p>
-            <% } %>
-            <input type="hidden" name="code" value="code">
-            <div class="field">
-              <div class="control">
-                <button type="submit" class="button is-primary is-large"><%= __("driftersTales.askCode") %></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-      <p class="mt-6">&nbsp;</p>
-      <div class="columns">
-        <div class="column is-6 has-text-right">
-          <img src="/images/steam-demo-how-to.png" />
-        </div>
-        <div class="column is-6 has-text-left">
-          <h2 class="is-size-4 is-uppercase has-text-primary mb-6"><%= __("driftersTales.howToDemo") %></h2>
-          <p class="my-3"><%= __("driftersTales.howToDemoText") %> <a href="https://help.steampowered.com/en/faqs/view/2A12-9D79-C3D7-F870" target="_blank"><%= __("driftersTales.steamSupport") %></a></p>
-          <p class="my-3"><%= __("driftersTales.howToDemoText2") %> <a href="steam://open/console" target=""_blank><%= __("driftersTales.howToDemoText3") %></a> <%= __("driftersTales.howToDemoText4") %></p>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -163,23 +116,6 @@
           </figure>
         </div>
       <% }) %>
-      <% if (devlogs.length <= 3) { %>
-        <% for(let i = 0; i < 3 - devlogs.length; i++) { %>
-          <div class="column is-4">
-            <figure class="image is-16by9">
-              <img src="/images/drifters-tales-video-placeholder.jpg" />
-            </figure>
-          </div>
-        <% } %>
-      <% } else { %>
-        <% for(let i = 0; i < devlogs.length % 3 + 1; i++) { %>
-          <div class="column is-4">
-            <figure class="image is-16by9">
-              <img src="/images/drifters-tales-video-placeholder.jpg" />
-            </figure>
-          </div>
-        <% } %>
-      <% } %>
     </div>
   </div>
 
@@ -189,11 +125,11 @@
   <div class="container my-6">
     <h1 class="is-size-3 is-uppercase has-text-primary mb-6">Press articles & kits</h1>
 
-    <a class="button is-info is-large" href="https://1drv.ms/f/s!Ag_xcaBrnlLTgn7d97BLEXKPEivX?e=umcmbj" target="_blank">
+    <a class="button is-info is-large" href="https://1drv.ms/f/c/d3529e6ba071f10f/Eg_xcaBrnlIggNN-AQAAAAABykiEwOhEYprtHAnykfms2Q" target="_blank">
       <span class="icon">
         <i class="fas fa-file-download"></i>
       </span>
-      <span>Download the press kit</span>
+      <span>Get the press kit</span>
     </a>
 
     <p class="is-size-8 has-text-grey">Press releases, screenshots & videos</p>
@@ -208,7 +144,7 @@
         <p class="mb-4 is-size-6">
           <strong>Key dates:</strong><br />
           Demo: January 24th, 2024<br />
-          Release: July 24th, 2024
+          Release: September 18th, 2024
         </p>
         <p class="mb-4 is-size-6">
           <strong>Platforms:</strong><br />
