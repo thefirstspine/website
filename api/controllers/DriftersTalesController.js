@@ -80,9 +80,11 @@ module.exports = {
       'pages/drifters-tales.ejs',
       {
         devlogs: [
-          { youtubeId: 'AYdYcBRrje8' },
-          { youtubeId: 'YNC_nAy8h6k' },
-          { youtubeId: 'kTd0D3NbRrM' },
+          { youtubeId: 'ILz9mu43RNA' },
+          { youtubeId: 'azJsiV2W-Q0' },
+          { youtubeId: 'b2KAqQknR9I' },
+          { youtubeId: 'l0mOjg59o-I' },
+          { youtubeId: '_5xXhNdXrPE' },
         ],
         mailingListError: mailingListError.length > 0 ? mailingListError : null,
         mailingListMessage: mailingListMessage.length > 0 ? mailingListMessage : null,
